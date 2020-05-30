@@ -1,12 +1,12 @@
-.. |current_year| replace:: 2019
-.. |current_release| replace:: 2.4.5
+.. |current_year| replace:: 2020
+.. |current_release| replace:: 0.1
 .. |license| replace:: Apache 2.0 license
 .. _Apache 2.0 license: https://pfsense.org/about-pfsense/#legal
 
-.. |store_link| replace:: `Netgate Store`_
-.. _Netgate Store: https://store.netgate.com
-.. |appliance_link| replace:: `Netgate Appliances`_
-.. _Netgate Appliances: https://www.netgate.com/products/appliances
+.. |store_link| replace:: `Firew4ll Store`_
+.. _Firew4ll Store: https://www.firew4ll.com
+.. |appliance_link| replace:: `Firew4ll Appliance`_
+.. _Firew4ll Appliance: https://www.firew4ll.com
 .. |tnsr_link| replace:: `TNSR product page`_
 .. _TNSR product page: https://www.tnsr.com/
 .. |support_link| replace:: `Netgate Global Support`_
