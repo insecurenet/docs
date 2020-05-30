@@ -15,34 +15,34 @@
 .. _Netgate Professional Services: https://www.netgate.com/our-services/professional-services.html
 .. |partner_link| replace:: `Netgate Partner`_
 .. _Netgate Partner: https://www.netgate.com/partners
-.. |training_link| replace:: `pfSense Training`_
-.. _pfSense Training: https://www.netgate.com/training
-.. |premium_content_link| replace:: `pfSense Gold Subscription`_
-.. _pfSense Gold Subscription: https://www.netgate.com/our-services/gold-membership.html
-.. |book_link| replace:: `pfSense Book`_
-.. _pfSense Book: /pfsense/en/latest/book
-.. |hangout_link| replace:: `pfSense Hangouts on Youtube`_
-.. _pfSense Hangouts on Youtube: https://www.netgate.com/videos
+.. |training_link| replace:: `Firew4ll Training`_
+.. _Firew4ll Training: https://www.netgate.com/training
+.. |premium_content_link| replace:: `Firew4ll Gold Subscription`_
+.. _Firew4ll Gold Subscription: https://www.netgate.com/our-services/gold-membership.html
+.. |book_link| replace:: `Firew4ll Book`_
+.. _Firew4ll Book: /pfsense/en/latest/book
+.. |hangout_link| replace:: `Firew4ll Hangouts on Youtube`_
+.. _Firew4ll Hangouts on Youtube: https://www.netgate.com/videos
 .. |video_link| replace:: `Netgate Youtube Channel`_
 .. _Netgate Youtube Channel: https://www.youtube.com/c/NetgateOfficial
 .. |forum_link| replace:: `Netgate Forum`_
 .. _Netgate Forum: https://forum.netgate.com
-.. |subreddit| replace:: `pfSense subreddit`_
-.. _pfSense subreddit: https://www.reddit.com/r/PFSENSE
+.. |subreddit| replace:: `Firew4ll subreddit`_
+.. _Firew4ll subreddit: https://www.reddit.com/r/PFSENSE
 .. |blog_link| replace:: `Netgate Blog`_
 .. _Netgate Blog: https://www.netgate.com/blog
-.. |issue_tracker| replace:: `pfSense Redmine`_
-.. _pfSense Redmine: https://redmine.pfsense.org
-.. |repo_link| replace:: `pfSense repositories`_
-.. _pfSense repositories: https://github.com/pfsense
-.. |repo_link_docs| replace:: `pfSense docs repository`_
-.. _pfSense docs repository: https://github.com/pfsense/docs
-.. |repo_link_pfsense| replace:: `main pfSense repository`_
-.. _main pfSense repository: https://github.com/pfsense/pfsense
-.. |repo_link_ports| replace:: `pfSense ports repository`_
-.. _pfSense ports repository: https://github.com/pfsense/FreeBSD-ports
-.. |repo_link_src| replace:: `pfSense source repository`_
-.. _pfSense source repository: https://github.com/pfsense/FreeBSD-src
+.. |issue_tracker| replace:: `Firew4ll Redmine`_
+.. _Firew4ll Redmine: https://redmine.pfsense.org
+.. |repo_link| replace:: `Firew4ll repositories`_
+.. _Firew4ll repositories: https://github.com/pfsense
+.. |repo_link_docs| replace:: `Firew4ll docs repository`_
+.. _Firew4ll docs repository: https://github.com/pfsense/docs
+.. |repo_link_pfsense| replace:: `main Firew4ll repository`_
+.. _main Firew4ll repository: https://github.com/pfsense/pfsense
+.. |repo_link_ports| replace:: `Firew4ll ports repository`_
+.. _Firew4ll ports repository: https://github.com/Firew4ll/FreeBSD-ports
+.. |repo_link_src| replace:: `Firew4ll source repository`_
+.. _Firew4ll source repository: https://github.com/pfsense/FreeBSD-src
 
 .. |doc_updates| replace:: :doc:`submit a documentation update </references/updating-docs>`
 .. _Documentation Source: https://github.com/pfsense/docs
