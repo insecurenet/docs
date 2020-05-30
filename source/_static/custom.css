@@ -3,6 +3,13 @@ svg .st0, svg .st1, svg .st2 {
   fill: #ffffff;
 }
 
+.wy-side-nav-search, .wy-nav-top {
+    background: #EC8B5E;
+}
+.wy-side-nav-search>div.version
+{
+    color: #ffffff;
+}
 .custom-top-nav {
   height: 45px;
   width: 100%;
@@ -48,6 +55,7 @@ svg .st0, svg .st1, svg .st2 {
 
 .wy-nav-side {
   top: 45px;
+  background: #141A46;
 }
 
 /* don't display fixed header on small screens */

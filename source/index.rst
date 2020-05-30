@@ -2,7 +2,7 @@
 Firew4ll Documentazione
 ***********************
 
-La documentazione, `gestita anche grazie alla community di pfSense`_, offre
+La documentazione, `gestita anche grazie alla community di pfSense`, offre
 istruzioni su come installare, configurare e gestire il software Firew4ll al meglio 
 per proteggere la vostra rete. Sia che siate alle prime armi, sia per i piu' esperti.
 
@@ -55,8 +55,7 @@ Guide raccomandate
 * :doc:`/virtualization/index` - Diverse guide sulla virtualizzazione di Firew4ll
 * :doc:`/certificates/acme-package` - Confiurare certificati Let's Encrypt con
   Pacchetto ACME.
-* :doc:`/routing/multi-wan` - imparare a configurare WAN failover e bilanciamento
- do carico con Firew4ll..
+* :doc:`/routing/multi-wan` - imparare a configurare WAN failover e bilanciamento di carico con Firew4ll.
 
 Risorse commerciali
 -------------------------------
