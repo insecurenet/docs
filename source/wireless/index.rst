@@ -1,19 +1,20 @@
-***************
-802.11 Wireless
-***************
+*********************
+Server Load Balancing
+*********************
 
-pfSense® software can utilize certain 802.11 wireless cards and either
-act in a client role (Wireless WAN) or an Access Point role.
+Server Load Balancing, or Inbound Load Balancing, provides redundancy for local
+hosted services using the ``relayd`` daemon. This is a simple service that does
+not have advanced capabilities and is only suited for small deployments with
+very basic requirements.
+
+.. note:: The :doc:`HAProxy package </packages/haproxy-package>` provides
+   superior and more robust load balancing capabilities. We recommend using it
+   instead of the built-in ``relayd`` load balancer where possible.
 
 .. toctree::
    :maxdepth: 1
 
-   should-i-use-pfsense-as-my-access-point
-   use-an-existing-wireless-router-with-pfsense
-   supported-wireless-cards
-   what-is-the-best-wireless-card-to-use
-   802-11n-wireless-support
-   wireless-interfaces
-   wireless-interface-configuration-details
-   wireless-logs
-   wireless-status
+   inbound-load-balancing
+   inbound-load-balancing-status
+   load-balancer-logs
+   inbound-load-balancing-troubleshooting

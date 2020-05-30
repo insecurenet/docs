@@ -1,20 +1,36 @@
-******************
-Backup and Restore
-******************
+*********************
+Routing and Multi-WAN
+*********************
 
-Backups are a key element for most computing devices. Using a backup, a failed
-pfSense® device can be up and running in only a few moments.
-
-pfSense stores all of its settings in a central configuration file,
-``config.xml``. A backup of this file can easily be used to restore pfSense to
-a working state.
+A core feature of any firewall or router is making decisions about where to send
+packets. In pfSense® software, gateways are hosts which forward traffic to other
+networks. Packets can be routed to a gateway based on their destination in a
+traditional way (static routes), based on firewall rule matching criteria
+(policy routing), or even to multiple gateways for load balancing or failover
+(multi-wan).
 
 .. toctree::
    :maxdepth: 1
 
-   configuration-backup-and-restore
-   autoconfigbackup
-   automatically-restore-during-install
-   password-storage-security-policies
-   remote-config-backup
-   restoring-a-pfsense-configuration-to-a-different-version
+   gateway-settings
+   static-routes
+   configuring-ipv6-router-advertisements
+   using-multiple-wan-connections
+   multi-wan-compatibility
+   multi-wan
+   multi-wan-for-ipv6
+   multi-wan-openvpn
+   directing-traffic-with-policy-routing
+   bypassing-policy-routing
+   load-balancing-uneven-multi-wan-connections
+   viewing-routes
+   list-of-routing-table-flags
+   gateway-monitoring-errors
+   no-buffer-space-available
+   connectivity-troubleshooting
+   troubleshooting-multi-wan
+   troubleshooting-traceroute-output
+   unable-to-access-some-websites
+
+.. seealso:: There are also :doc:`Packages </packages/index>` which provide dynamic
+   routing via protocols such as BGP and OSPF.

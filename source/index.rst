@@ -11,16 +11,16 @@ per proteggere la vostra rete. Sia che siate alle prime armi, sia per i piu' esp
 .. toctree::
    :maxdepth: 2
 
-   general/index
-   releases/index
-   install/index
+   prefazione/index
+   introduzione/index
+   rete/index
    product-manuals
    hardware/index
-   config/index
-   backup/index
-   interfaces/index
-   wireless/index
-   cellular/index
+   installagg/index
+   configurazione/index
+   interfacce/index
+   utenti/index
+   certificati/index
    routing/index
    firewall/index
    nat/index
