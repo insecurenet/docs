@@ -26,7 +26,7 @@ sys.path.insert(0, os.path.abspath('.'))
 
 # -- General configuration ------------------------------------------------
 
-html_baseurl = 'https://docs.netgate.com/pfsense/en/latest'
+html_baseurl = 'https://firew4ll-docs.readthedocs.io/it/latest/'
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
@@ -51,9 +51,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'pfSense'
-copyright = '2002 - 2019 Rubicon Communications LLC'
-author = u'Netgate'
+project = u'Firew4ll'
+copyright = '2020 INSECURENET SRL'
+author = u'InSecureNet'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -102,7 +102,7 @@ html_theme_path = ["../_themes", ]
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-html_title = "pfSense Documentation"
+html_title = "Firew4ll Documentazione"
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #html_short_title = None
@@ -164,7 +164,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
   (master_doc, 'quickstart.tex', u'quickstart Documentation',
-   u'Jared Dillard', 'manual'),
+   u'Francesco Pellegrino', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
