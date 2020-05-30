@@ -64,6 +64,3 @@ Risorse commerciali
 * |support_link|
 * |pse_link|
 * |training_link|
-
-.. _maintained with the help of the community: https://github.com/pfsense/docs
-.. _The pfSense Book: /pfsense/en/latest/book
