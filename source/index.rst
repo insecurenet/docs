@@ -1,5 +1,5 @@
 ***********************
-Friew4ll Documentazione
+Firew4ll Documentazione
 ***********************
 
 La documentazione, `gestita anche grazie alla community di pfSense`_, offre
