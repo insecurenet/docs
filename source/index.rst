@@ -46,7 +46,6 @@ per proteggere la vostra rete. Sia che siate alle prime armi, sia per i piu' esp
    :maxdepth: 2
    :caption: References
 
-   references/index
 
 Guide raccomandate
 ------------------
