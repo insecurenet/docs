@@ -21,26 +21,27 @@ per proteggere la vostra rete. Sia che siate alle prime armi, sia per i piu' esp
    interfacce/index
    utenti/index
    certificati/index
-   routing/index
+   backup/index
    firewall/index
    nat/index
-   trafficshaper/index
-   certificates/index
-   usermanager/index
-   services/index
-   dhcp/index
-   dns/index
-   captiveportal/index
-   loadbalancing/index
-   highavailability/index
-   monitoring/index
-   virtualization/index
+   routing/index
+   bridging/index
+   vlan/index
+   multiwan/index
    vpn/index
-   troubleshooting/index
-   packages/index
-   cache-proxy/index
+   trafficoshaper/index/index
+   bilanciamento/index
+   wireless/index
+   captiveportal/index
+   ha/index
+   virtualization/index
+   servizi/index
+   monitoraggio/index
+   pacchetti/index
+   software3parti/index
+   catturapacchetti/index
    ids-ips/index
-   development/index
+   guidamenu/index
 
 .. toctree::
    :maxdepth: 2
@@ -52,10 +53,10 @@ Guide raccomandate
 
 * :doc:`/ids-ips/setup-snort-package` - Guida per configurare Snort IDS/IPS con
   rilevamento e filtraggio dell'ID dell'applicazione
-* :doc:`/virtualization/index` - Diverse guide sulla virtualizzazione di Firew4ll
-* :doc:`/certificates/acme-package` - Confiurare certificati Let's Encrypt con
+* :doc:`/virtualizzazione/index` - Diverse guide sulla virtualizzazione di Firew4ll
+* :doc:`/certificati/acme-package` - Confiurare certificati Let's Encrypt con
   Pacchetto ACME.
-* :doc:`/routing/multi-wan` - imparare a configurare WAN failover e bilanciamento di carico con Firew4ll.
+* :doc:`/multiwan` - imparare a configurare WAN failover e bilanciamento di carico con Firew4ll.
 
 Risorse commerciali
 -------------------------------
