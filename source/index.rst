@@ -1,14 +1,12 @@
-*********************
-pfSense Documentation
-*********************
+***********************
+Friew4ll Documentazione
+***********************
 
-The documentation, `maintained with the help of the community`_, offers
-instructions on how to install, configure, and use pfSense® software to protect
-your network. Whether you are new to firewalls, or a seasoned veteran, our docs
-offer something for everyone.
+La documentazione, `gestita anche grazie alla community di pfSense`_, offre
+istruzioni su come installare, configurare e gestire il software Firew4ll al meglio 
+per proteggere la vostra rete. Sia che siate alle prime armi, sia per i piu' esperti.
 
-.. tip:: For continually updated advice, from the core developers themselves, on
-  how to best operate pfSense software, check out `The pfSense Book`_.
+.. tip:: La documentazione è in continua evoluzione e aggiornamento.
 
 .. toctree::
    :maxdepth: 2
@@ -50,18 +48,18 @@ offer something for everyone.
 
    references/index
 
-Recommended guides
+Guide raccomandate
 ------------------
 
-* :doc:`/ids-ips/setup-snort-package` - Guide for setting up Snort IDS/IPS with
-  Application ID detection and filtering
-* :doc:`/virtualization/index` - Several guides on virtualizing pfSense
-* :doc:`/certificates/acme-package` - Setting up Let's Encrypt certificates with
-  ACME package.
-* :doc:`/routing/multi-wan` - learn about configuring WAN failover and load
-  balancing with pfSense.
+* :doc:`/ids-ips/setup-snort-package` - Guida per configurare Snort IDS/IPS con
+  rilevamento e filtraggio dell'ID dell'applicazione
+* :doc:`/virtualization/index` - Diverse guide sulla virtualizzazione di Firew4ll
+* :doc:`/certificates/acme-package` - Confiurare certificati Let's Encrypt con
+  Pacchetto ACME.
+* :doc:`/routing/multi-wan` - imparare a configurare WAN failover e bilanciamento
+ do carico con Firew4ll..
 
-Additional Commercial Resources
+Risorse commerciali
 -------------------------------
 
 * |support_link|
