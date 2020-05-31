@@ -3,6 +3,12 @@
 .. |license| replace:: Apache 2.0 license
 .. _Apache 2.0 license: https://pfsense.org/about-pfsense/#legal
 
+.. |insecurenet| replace:: `InSecureNet`_
+.. _InSecureNet: https://www.insecurenet.com
+.. |firew4ll| replace:: `Firew4LL`_
+.. _Firew4LL: https://www.firew4ll.com
+.. |firew4ll-os| replace:: `Firew4LL-OS`_Apache
+.. _Firew4LL-OS: https://firew4ll.com
 .. |store_link| replace:: `Firew4ll Store`_
 .. _Firew4ll Store: https://www.firew4ll.com
 .. |appliance_link| replace:: `Firew4ll Appliance`_
