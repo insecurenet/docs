@@ -10,9 +10,10 @@ Nato grazie anche al supporto del |pin| (Pugliese INnovativi) della |regionepugl
 
 Con Firew4ll-OS si può implementare un firewall in poche ore.
 
-    ** – Francesco Pellegrino (InSecureNet SRL) **
+     **– Francesco Pellegrino (InSecureNet SRL)**
 	
-..tips::
+.. tips::
 Grazie al lavoro di |insecurenet| è disponibile all'indirizzo: 
 https://www.insecurelab.it/hackzionario un progetto per la
 semplificazione dei termini informatici.
+
