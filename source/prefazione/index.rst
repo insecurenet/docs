@@ -17,3 +17,8 @@ Grazie al lavoro di |insecurenet| è disponibile all'indirizzo:
 https://www.insecurelab.it/hackzionario un progetto per la
 semplificazione dei termini informatici.
 
+.. toctree::
+   :maxdepth: 1
+   
+   copyright
+   commenti
