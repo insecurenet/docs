@@ -157,8 +157,8 @@ Se è richiesta questa funzionalità, gli host devono essere segmentati
 tramite l'uso di più switch, VLAN o utilizzare funzionalità di switch
 equivalenti come PVLAN. Le VLAN sono coperte dalla LAN Virtuale (VLAN).
 
-Comprensione della notazione della subnet mask CIDR
-===================================================
+Conoscere e capire la notazione della subnet mask CIDR
+''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 |firew4ll| utilizza la notazione CIDR (Routing dell’intra-dominio senza
 classe, Classless Inter-Domain Routing) anziché la subnet mask
@@ -285,7 +285,7 @@ La calcolatrice converte da decimale puntato a maschera CIDR e viceversa, come m
 convertire un prefisso CIDR in notazione decimale puntata. 
 Immettere un prefisso CIDR o una maschera decimale punteggiata e fare clic sul pulsante Calcola per trovare la conversione.
 
-.. image:: /_static/rete1.png
+.. image:: /_static/rete/rete1.png
 :align: center
 Fig. 1: Convertitore subnet mask
 
@@ -297,7 +297,7 @@ questo esempio, l'indirizzo di rete è 10.70.64.0/22 e le reti
 utilizzabili /24 sono da 67. Il termine "Indirizzo di trasmissione" in
 questa tabella indica l'indirizzo più alto.
 
-.. image:: /_static/rete2.png
+.. image:: /_static/rete/rete2.png
 :align: center
 Fig. 2: Calcolatore di rete/nodo
 
