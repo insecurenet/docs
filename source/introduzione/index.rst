@@ -125,3 +125,70 @@ Server DHCP
 Tuttavia esistono limitazioni nella GUI di |firew4ll| per la configurazione avanzata del
 demone ISC DHCP.
 
+Terminologia delle interfacce
+=============================
+
+A ogni interfaccia |firew4ll| può essere assegnato un qualsiasi nome,
+ma inizialmente hanno tutti nomi predefiniti: WAN, LAN e OPT.
+
+WAN
+---
+
+Abbreviazione di *Wide Area Network*, **WAN** è la
+rete pubblica non controllata esterna firewall. In altre parole,
+l'interfaccia WAN è la connessione del firewall a Internet o ad altre
+reti upstream. In una distribuzione WAN multiple, WAN è la prima o
+principale connessione Internet.
+
+.. note:: Il firewall deve avere almeno un'interfaccia WAN.
+
+LAN
+---
+
+Abbreviazione di *Local Area Network*, **LAN** è comunemente la rete privata. 
+In genere utilizza uno schema di *indirizzamento IP privato* per i client locali. 
+Nelle reti  di piccole dimensioni, è in genere l'unica interfaccia interna.
+
+OPT
+---
+
+Le interfacce *OPT o opzionali* si riferiscono a qualsiasi interfaccia
+aggiuntiva diversa da WAN e LAN primarie. Le interfacce OPT possono essere
+segmenti LAN aggiuntivi, connessioni WAN, segmenti DMZ, interconnessioni
+ad altre reti private e così via.
+
+DMZ
+---
+
+Abbreviazione del termine militare zona demilitarizzata (*demilitarized
+zone*), **DMZ** si riferisce alla zona cuscinetto tra un'area protetta e una zona di
+guerra. Nella rete, è un'area in cui i server pubblici sono
+raggiungibili da Internet tramite WAN, ma isolati dalla LAN. Impedisce
+ai sistemi di altri segmenti di essere messi in pericolo se la rete è
+compromessa, proteggendo allo stesso tempo gli host nella DMZ da altri
+segmenti locali e da Internet in generale.
+
+Denominazione dell'interfaccia di FreeBSD
+-----------------------------------------
+
+Il nome di un'interfaccia di FreeBSD inizia con il nome del suo driver
+di rete. È quindi seguito da un numero che inizia da 0 e aumenta in modo
+incrementale di uno per ogni interfaccia aggiuntiva che condivide quel
+driver. Ad esempio, un driver comune utilizzato dalle schede di
+interfaccia di rete Intel gigabit è igb. La prima di queste carte in un
+sistema sarà igb0, la seconda è *igb1* e così via. Altri nomi di driver
+comuni includono cxl (Chelsio 10G), em (anche Intel 1G), ix (Intel 10G),
+bge (vari chipset Broadcom), tra gli altri. Se un sistema combina una
+scheda Intel e una scheda Chelsio, le interfacce saranno rispettivamente
+igb0 e cxl0.
+
+.. seealso:: Le assegnazioni e la denominazione dell'interfaccia sono trattate
+ulteriormente in *Installazione e aggiornamento*.
+
+Ricerca di informazioni e supporto
+==================================
+
+Tutte le richieste di informazioni e supporto possono essere trovate o trasmesse su:
+
+ - |firew4ll|
+ - |insecurenet|
