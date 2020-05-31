@@ -286,7 +286,7 @@ convertire un prefisso CIDR in notazione decimale puntata.
 Immettere un prefisso CIDR o una maschera decimale punteggiata e fare clic sul pulsante Calcola per trovare la conversione.
 
 .. image:: /_static/rete/rete1.png
-:align: center
+   :align: center
 Fig. 1: Convertitore subnet mask
 
 Immettere la maschera decimale con punti nella sezione Calcolatore di
@@ -298,7 +298,7 @@ utilizzabili /24 sono da 67. Il termine "Indirizzo di trasmissione" in
 questa tabella indica l'indirizzo più alto.
 
 .. image:: /_static/rete/rete2.png
-:align: center
+   :align: center
 Fig. 2: Calcolatore di rete/nodo
 
 Trovare una rete CIDR corrispondente
