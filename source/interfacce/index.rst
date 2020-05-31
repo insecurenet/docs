@@ -40,13 +40,11 @@ tutte le regole del firewall per il gruppo di interfacce* mostra la
 scheda delle regole del firewall per il gruppo definito nella figura
 *Aggiungere un gruppo di interfacce*
 
-Vedere anche:
-~~~~~~~~~~~~~
+	.. seealso::
+		Configurazione delle regole del firewall* , per informazioni sulla gestione delle regole del firewall.
 
-*Configurazione delle regole del firewall* , per informazioni sulla
-gestione delle regole del firewall.
-
-1. **Ordine di elaborazione del gruppo di regole**
+Ordine di elaborazione del gruppo di regole
+===========================================
 
 L'ordine di elaborazione delle regole per un utente è:
 
@@ -79,7 +77,7 @@ passaggio, una norma specifica per l’interfaccia non può bloccare il
 traffico trasmesso da una regola della scheda di gruppo.
 
 Uso con interfacce WAN
-----------------------
+======================
 
 È sconsigliato l'utilizzo di gruppi di interfaccia con più reti WAN. Ciò
 potrebbe sembrare conveniente, ma le regole del gruppo non ricevono lo
@@ -92,7 +90,7 @@ di fatto significa che le regole del gruppo solo funzionano come
 previsto sulla WAN con il gateway predefinito.
 
 Wireless
-========
+''''''''
 
 La scheda Wireless sotto **Interfacce>(assegnare)** è per la creazione e
 la gestione di interfacce aggiuntive virtuali del punto di accesso
@@ -104,7 +102,7 @@ Informazioni approfondite su questa funzione possono essere trovate in
 *wireless*.
 
 VLAN
-====
+''''
 
 Le interfacce contrassegnate con VLAN, o 802.1Q, si trovano nella scheda
 **VLAN** sotto **Interfacce>(assignare).** Le istanze VLAN permettono al
@@ -115,7 +113,7 @@ scheda **Assegnazioni interfaccia**. Informazioni approfondite su questa
 funzionalità si possono trovare nelle *LAN virtuali (VLANs).*
 
 QinQ
-====
+''''
 
 La scheda QinQ sotto **Interfacce>(assignare)** permette di creare
 un'interfaccia compatibile 802.1ad, nota anche come *VLAN fornite*.
@@ -124,10 +122,10 @@ pacchetto. Questo può aiutare a trasportare il traffico contrassegnato
 con VLAN per altre reti attraverso una rete intermedia utilizzando un
 tag diverso o sovrapponendolo. Informazioni approfondite su questa
 funzionalità possono essere trovate in *Configurazione di QinQ di
-pfSense*.
+|firew4ll|*.
 
 Bridge
-======
+''''''
 
 Bridge di interfaccia, o più interfacce legate insieme in un dominio di
 broadcast con livello condiviso 2, vengono creati e gestiti sulla scheda
@@ -135,13 +133,13 @@ broadcast con livello condiviso 2, vengono creati e gestiti sulla scheda
 bridge, compreso come crearli e gestirli, è in *Bridging*.
 
 OpenVPN
-=======
+'''''''
 
-Dopo la creazione di un'istanza OpenVPN, può essere assegnata in Interfacce>(assegnare). Assegnare un'interfaccia OpenVPN abilita le regole specifiche dell'interfaccia e consente di utilizzare l'interfaccia altrove nella GUI si richieda un'interfaccia assegnata. Questo attiva anche la creazione di un gateway dinamico. Questo gateway può essere usato per la politica di routing, o in un gruppo gateway per Multi-WAN. Vedere *Assegnazione delle interfacce* OpenVPN per maggiori informazioni. 
-============================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
-
+Dopo la creazione di un'istanza OpenVPN, può essere assegnata in Interfacce>(assegnare). Assegnare un'interfaccia OpenVPN abilita le regole specifiche dell'interfaccia e consente di utilizzare l'interfaccia altrove nella GUI si richieda un'interfaccia assegnata. Questo attiva anche la creazione di un gateway dinamico. Questo gateway può essere usato per la politica di routing, o in un gruppo gateway per Multi-WAN. 
+	.. seealso::
+		*Assegnazione delle interfacce* OpenVPN per maggiori informazioni. 
 PPP
-===
+'''
 
 Ci sono quattro tipi di interfacce PPP:
 
@@ -156,7 +154,9 @@ Nella maggior parte di questi casi sono gestiti direttamente dalle
 impostazioni di interfaccia, ma possono anche essere modificati sotto
 **Interfacce>(assegnare)** nella scheda **PPP**.
 
-1. **PPP con Multi-Link (MLPPP)**
+
+PPP con Multi-Link (MLPPP)
+==========================
 
 La modifica di un'istanza PPP consente che PPP con Multi-Link (MLPPP)
 siano configurati per i fornitori supportati. MLPPP uniscono
@@ -168,11 +168,10 @@ del carico e sul failover. Il collegamento MLPPP è presentato come
 un'interfaccia con un indirizzo IP, e se un collegamento non riesce, la
 connessione funziona lo stesso ma con capacità ridotta.
 
-Per maggiori informazioni su MLPPP, vedere *Collegamenti di multiple
-WAN*.
+	.. tip:: Per maggiori informazioni su MLPPP, vedere *Collegamenti di multiple WAN*.
 
 Tipi di interfaccia PPP (Protocollo Point-to-Point)
----------------------------------------------------
+===================================================
 
 Aggiungere o modificare una voce PPP come segue:
 
@@ -186,7 +185,7 @@ Aggiungere o modificare una voce PPP come segue:
    di questa sezione.
 
 PPP (3G / 4G, Modem)
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
 Il tipo di collegamento **PPP** viene utilizzato per parlare con un
 modem su un dispositivo seriale. Questo può essere qualsiasi cosa da un
@@ -198,7 +197,7 @@ modem. Fare clic su una voce specifica per selezionarla per l'uso. Dopo
 aver selezionato l'interfaccia, facoltativamente, immettere una
 **Descrizione** per la voce PPP.
 
-**Nota:** Il dispositivo seriale per un modem non viene rilevato
+.. note:: Il dispositivo seriale per un modem non viene rilevato
 automaticamente. Alcuni modem si presentano come diversi dispositivi, e
 il dispositivo dipendente per la linea PPP può essere una delle scelte
 disponibili, ma iniziare con l'ultimo dispositivo, quindi provare il
@@ -260,7 +259,7 @@ servizio** di riempire prima altri campi pertinenti sulla pagina.
     Interfacce**.
 
 PPPoE (Protocollo Point-to-Point Protocol su Ethernet)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------------------------
 
 PPPoE è un metodo popolare di autenticazione e accesso ad una rete ISP,
 più comunemente riscontrato sulle reti DSL.
@@ -299,7 +298,7 @@ segue:
     inusuali simili.
 
 PPTP (Protocollo di tunneling con Point-to-Point)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------
 
 Da non confondere con una VPN PPTP, questo tipo di interfaccia PPTP è
 destinato a connettersi a un ISP e autenticarsi, più o meno lo stesso
@@ -315,7 +314,7 @@ identico a PPTP. Fare riferimento alle sezioni precedenti per
 informazioni sulla configurazione.
 
 Opzioni avanzate PPP
---------------------
+====================
 
 Tutti i tipi di PPP hanno diverse opzioni avanzate in comune che possono
 essere modificate nelle loro voci qui. Nella maggior parte dei casi
@@ -339,11 +338,8 @@ queste opzioni, fare clic su\ |image5| **Visualizzare avanzate**.
     è stata impostata anche la **Chiamata su richiesta**, il firewall
     tornerà alla modalità chiamata su richiesta.
 
-**Nota:** pfSense eseguirà per default il monitoraggio del gateway, che
-genererà due ping ICMP al secondo sull'interfaccia. Il Timeout inattivo
-non funzionerà in questo caso. Questo può essere risolto modificando il
-gateway per questo link PPP, e selezionando **Disabilitare il
-monitoraggio del gateway**.
+	.. note:: 
+		|firew4ll| eseguirà per default il monitoraggio del gateway, chegenereràgenererà due ping ICMP al secondo sull'interfaccia. Il Timeout inattivo non funzionerà in questo caso. Questo può essere risolto modificando il gateway per questo link PPP, e selezionando **Disabilitare il monitoraggio del gateway**.
 
     **Compressione (vjcomp)** Questa opzione controlla se verrà
     utilizzata o meno la compressione dell'intestazione TCP di Van
@@ -373,9 +369,8 @@ monitoraggio del gateway**.
     frammentare” dai suoi dati in uscita. Se questo comportamento non è
     desiderabile, controllare **Disabilita tcpmssfix**.
 
-**Nota:** I valori MTU e MSS per l'interfaccia possono essere regolati
-anche nella pagina di configurazione dell'interfaccia sotto il menu
-**Interfacce**, come le **interfacce> WAN.**
+	.. note:: 
+		I valori MTU e MSS per l'interfaccia possono essere regolati anche nella pagina di configurazione dell'interfaccia sotto il menu **Interfacce**, come le **interfacce> WAN.**
 
     **Sequenza breve (ShortSeq)** Questa opzione è significativa solo se
     MLPPP è negoziata. Proibisce intestazioni di frammento multi-link
@@ -395,7 +390,7 @@ anche nella pagina di configurazione dell'interfaccia sotto il menu
     protocollo.**
 
 GRE (Incapsulamento del routing generico)
-=========================================
+'''''''''''''''''''''''''''''''''''''''''
 
 L'incapsulamento del routing generico (GRE) è un metodo di tunneling del
 traffico tra due endpoint senza crittografia. Può essere utilizzato per
@@ -445,7 +440,7 @@ Come creare o gestire un'interfaccia GRE:
 -  Fare clic su **Salvare**
 
 GIF (Interfaccia di tunnel generica)
-====================================
+''''''''''''''''''''''''''''''''''''
 
 Un'interfaccia di tunnel generica (GIF) è simile al GRE; entrambi i
 protocolli sono un mezzo per tunnel del traffico tra due host senza
@@ -455,11 +450,8 @@ sono comunemente utilizzati per ottenere la connettività IPv6 ad un
 broker di tunnel come Hurricane Electric in luoghi in cui la
 connettività IPv6 non è disponibile.
 
-Vedere anche:
-~~~~~~~~~~~~~
-
-Vedere *Collegamento con un servizio di Tunnel Broker* per informazioni
-sulla connessione a un servizio tunnelbroker.
+	.. seealso::
+		Vedere *Collegamento con un servizio di Tunnel Broker* per informazioni sulla connessione a un servizio tunnelbroker.
 
 Le interfacce GIF trasportano più informazioni attraverso il tunnel di
 quelle che possono fare con GRE, ma il GIF non è così ampiamente
@@ -525,18 +517,16 @@ Come creare o gestire un'interfaccia GIF:
     **Descrizione** Una breve descrizione di questo tunnel GIF a scopo
     di documentazione.
 
--  Fare clic su **Salvare**
+-  Fare clic su **Salva**
 
-**Nota:** Se l'interfaccia GIF è assegnata in
-**Interfacce>(assegnare),** impostare il **tipo di configurazione IPv4**
-e il **tipo di configurazione IPv6** su *Nessuno*. Il firewall creerà
-automaticamente un gateway dinamico in questa situazione.
+	.. note:: 
+		Se l'interfaccia GIF è assegnata in **Interfacce>(assegnare),** impostare il **tipo di configurazione IPv4** e il **tipo di configurazione IPv6** su *Nessuno*. Il firewall creerà automaticamente un gateway dinamico in questa situazione.
 
 LAGG (Aggregazione di Link)
-===========================
+'''''''''''''''''''''''''''
 
 L'aggregazione dei link è gestita da interfacce di tipo lagg(4) (LAGG)
-su pfSense. LAGG combina più interfacce fisiche come un'unica
+su |firew4ll|. LAGG combina più interfacce fisiche come un'unica
 interfaccia logica. Ci sono diversi modi in cui questo può funzionare,
 sia per guadagnare sulla larghezza di banda supplementare, sulla
 ridondanza, o su qualche combinazione delle due.
@@ -555,9 +545,8 @@ Come creare o gestire interfacce LAGG:
     quando si modifica un'istanza esistente. Per aggiungere interfacce a
     questo LAGG, selezionare una o più interfacce in questo elenco.
 
-**Nota:** Un'interfaccia può essere aggiunta ad un gruppo LAGG solo se
-non è assegnata. Se un'interfaccia non è presente nell'elenco, è
-probabile che sia già stata assegnata come interfaccia.
+	.. note:: 
+		Un'interfaccia può essere aggiunta ad un gruppo LAGG solo se non è assegnata. Se un'interfaccia non è presente nell'elenco, è probabile che sia già stata assegnata come interfaccia.
 
     **Protocollo LAGG** Attualmente esistono sei diverse modalità
     operative per le interfacce LAGG: LACP, Failover, Bilanciamento di
@@ -583,7 +572,7 @@ probabile che sia già stata assegnata come interfaccia.
     limitazione diventa effettivamente irrilevante. La limitazione non è
     rilevante anche per il failover.
 
-    Oltre a configurare questa opzione su pfSense, lo switch deve
+    Oltre a configurare questa opzione su |firew4ll|, lo switch deve
     abilitare LACP su queste porte o avere le porte raggruppate in un
     gruppo LAG. Entrambe le parti devono concordare la configurazione in
     modo che possa funzionare correttamente
@@ -595,10 +584,8 @@ probabile che sia già stata assegnata come interfaccia.
     prima interfaccia selezionata nell'elenco, e continuerà in ordine
     fino a raggiungere la fine delle interfacce selezionate.
 
-**Nota:** Per impostazione predefinita, il traffico può essere ricevuto
-solo sull'interfaccia attiva. Creare un sistema adattabile per
-net.link.lagg.failover\_rx\_all con il valore di 1 per consentire al
-traffico di essere ricevuto su ogni interfaccia del gruppo.
+.. note:: 
+	Per impostazione predefinita, il traffico può essere ricevuto solo sull'interfaccia attiva. Creare un sistema adattabile per ``net.link.lagg.failover_rx_all`` con il valore di 1 per consentire al traffico di essere ricevuto su ogni interfaccia del gruppo.
 
     **Bilanciamento del carico** La modalità di bilanciamento del carico
     accetta il traffico in entrata su qualsiasi porta del gruppo LAGG e
@@ -631,7 +618,7 @@ traffico di essere ricevuto su ogni interfaccia del gruppo.
    altre cose su di esso come una VLAN.
 
 LAGG e regolazione del traffico
--------------------------------
+===============================
 
 A causa di limitazioni in FreeBSD, lagg(4) non supporta altq(4), quindi
 non è possibile usare direttamente il regolatore del traffico sulle
@@ -642,13 +629,13 @@ limitatori possono controllare l'utilizzo della larghezza di banda sulle
 interfacce LAGG.
 
 Portata della LAGG
-------------------
+==================
 
 L'utilizzo di un LAGG non garantisce necessariamente un flusso completo
 pari alla somma di tutte le interfacce. In particolare, un singolo
 flusso non supererà la portata di un'interfaccia membro della LAGG. Il
 traffico su un LAGG viene gestito in modo tale che i flussi tra due
-host, come pfSense e un gateway upstream, utilizzino solo un singolo
+host, come |firew4ll| e un gateway upstream, utilizzino solo un singolo
 link poiché il flusso avviene tra un singolo indirizzo MAC su ciascun
 lato.
 
@@ -656,7 +643,7 @@ Nelle reti dove ci sono molti host che comunicano con diversi indirizzi
 MAC, l'uso può avvicinarsi alla somma di tutte le interfacce nel LAGG.
 
 Configurazione dell'interfaccia
-===============================
+'''''''''''''''''''''''''''''''
 
 Per assegnare una nuova interfaccia:
 
@@ -678,7 +665,7 @@ l'interfaccia si aprirà la pagina di configurazione per l'interfaccia.
 Sono disponibili le seguenti opzioni per tutti i tipi di interfaccia.
 
 Descrizione
------------
+===========
 
 Il nome della interfaccia. Questo cambierà il nome dell'interfaccia nel
 menu **Interfacce**, nelle schede sotto **Firewall>Regole**, in
@@ -690,23 +677,26 @@ un'interfaccia per l'aggiunta di regole del firewall o la scelta di
 altre funzionalità per interfaccia.
 
 Tipo di configurazione IPv4
----------------------------
+===========================
 
 Consente di configurare le impostazioni IPv4 per l'interfaccia. Dettagli
 per questa opzione sono nella sezione successiva,\ *Tipi di WAN con
 Ipv4*.
 
 IPv6 Tipo di configurazione
----------------------------
+===========================
 
 Consente di configurare le impostazioni IPv6 per l'interfaccia. Dettagli
 per questa opzione sono in\ *Tipi di WAN con IPv6*.
 
 Indirizzo MAC
--------------
+=============
 
 L'indirizzo MAC di un'interfaccia può essere modificato ( “mascherato”)
 per simulare un pezzo di apparecchiatura precedente.
+
+	.. warning::
+		Avvertimento: Si consiglia di evitare questa pratica. Il vecchio MAC sarebbe generalmente eliminato resettando l'apparecchiatura a cui questo firewall si connette, o cancellando la tabella ARP, o in attesa che le vecchie voci ARP scadano. È una soluzione a lungo termine a un problema temporaneo.
 
 Lo spoofing dell'indirizzo MAC del firewall precedente può consentire
 una transizione agevole da un vecchio router a un nuovo router, in modo
@@ -732,7 +722,7 @@ alternativa, inserire l'indirizzo MAC originale della scheda di rete e
 salvare/applicare, quindi svuotare nuovamente il valore.
 
 MTU (Unità di trasmissione massima)
------------------------------------
+===================================
 
 Il campo dimensione di **massima unità di trasmissione (MTU)** può
 essere lasciato vuoto, ma può essere modificato quando richiesto. Alcune
@@ -747,14 +737,14 @@ il valore effettivo può variare a seconda della configurazione
 dell'interfaccia.
 
 MSS (Dimensione massima del segmento)
--------------------------------------
+=====================================
 
 Simile al campo MTU, il campo MSS adegua la dimensione massima del
 segmento (MSS) di connessioni TCP alla dimensione specificata, al fine
 di lavorare intorno ai problemi con il percorso MTU Discovery
 
 Velocità e duplex
------------------
+=================
 
 Il valore predefinito per la velocità di collegamento e duplex è quello
 di lasciare che il firewall decida cosa è meglio. L’ opzione predefinita
@@ -769,9 +759,9 @@ velocità specifica e duplex forzato, deve essere corrisposto dal
 firewall.
 
 Blocco delle reti private 
---------------------------
+=========================
 
-Quando il **blocco delle reti private** è attivo pfSense inserisce
+Quando il **blocco delle reti private** è attivo |firew4ll| inserisce
 automaticamente una regola che impedisce a qualsiasi rete RFC 1918
 (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16) e loopback (127.0.0.0/8) di
 comunicare su tale interfaccia. Questa opzione è di solito desiderabile
@@ -779,9 +769,9 @@ solo su interfacce di tipo WAN per impedire la possibilità di traffico
 privato numerato in arrivo su un'interfaccia pubblica.
 
 Blocco delle reti bogon
------------------------
+=======================
 
-Quando il **blocco delle reti bogon** è attivo, pfSense bloccherà il
+Quando il **blocco delle reti bogon** è attivo, |firew4ll| bloccherà il
 traffico da un elenco di reti riservate e non assegnate. Questo elenco
 viene aggiornato periodicamente dal firewall, automaticamente.
 
@@ -798,7 +788,7 @@ potrebbe essere troppo piccolo. Tale valore può essere regolato in
 **Sistema>Avanzate** nella scheda **Firewall & NAT**.
 
 Tipi di WAN con IPv4
-====================
+''''''''''''''''''''
 
 Una volta che un'interfaccia è stata assegnata, nella maggior parte dei
 casi richiederà un indirizzo IP. Per le connessioni IPv4 sono
@@ -808,15 +798,15 @@ di **configurazione IPv4** su una pagina di interfaccia (ad es.
 **Interfacce>WAN**).
 
 Nessuno
--------
+=======
 
 Quando il **tipo di configurazione IPv4** è impostato su *Nessuno*, IPv4
 è disabilitato sull'interfaccia. Questo è utile se l'interfaccia non ha
 connettività IPv4 o se l'indirizzo IP dell'interfaccia è gestito in
 altro modo, come per un'interfaccia OpenVPN o GIF.
 
-statico IPv4
-------------
+IPv4 statico
+============
 
 Con IPv4 statico, l'interfaccia contiene un indirizzo IP configurato
 manualmente. Una volta scelto, sono disponibili tre campi aggiuntivi
@@ -879,18 +869,13 @@ WAN:
 
 -  Cliccare su **Inserire**
 
-**Nota:** Selezionando un gateway IPv4 dall'elenco a discesa o
-aggiungendo e selezionando un nuovo gateway, pfSense tratterà questa
-interfaccia come un'interfaccia di tipo WAN per il NAT e le funzioni
-correlate. Questo non è auspicabile per interfacce interne come LAN o
-DMZ. I gateway possono ancora essere utilizzati su interfacce interne
-per percorsi statici senza selezionare un gateway IPv4 upstream qui
-sullo schermo delle interfacce.
+	.. note:: 
+		Selezionando un gateway IPv4 dall'elenco a discesa o aggiungendo e selezionando un nuovo gateway, |firew4ll| tratterà questa interfaccia come un'interfaccia di tipo WAN per il NAT e le funzioni correlate. Questo non è auspicabile per interfacce interne come LAN o DMZ. I gateway possono ancora essere utilizzati su interfacce interne per percorsi statici senza selezionare un gateway IPv4 upstream qui sullo schermo delle interfacce.
 
 DHCP
-----
+====
 
-Quando un'interfaccia è impostata su DHCP, pfSense tenterà la
+Quando un'interfaccia è impostata su DHCP, |firew4ll| tenterà la
 configurazione IPv4 automatica di questa interfaccia tramite DHCP.
 Questa opzione attiva anche diversi campi aggiuntivi nella pagina. Nella
 maggior parte dei casi questi campi aggiuntivi possono essere lasciati
@@ -937,10 +922,10 @@ in bianco.
     configurazione dhclient personalizzato. Il percorso completo deve
     essere dato. L'utilizzo di un file personalizzato è raramente
     necessario, ma alcuni ISP richiedono campi DHCP o opzioni che non
-    sono supportate nella GUI pfSense.
+    sono supportate nella GUI |firew4ll|.
 
 Tipi di PPP
------------
+===========
 
 I vari tipi di connessione basati su PPP, come PPP, PPPoE, PPTP e L2TP,
 sono tutti trattati in dettaglio in precedenza in questo capitolo (PPP).
@@ -951,7 +936,7 @@ pagina o passare a **Interfacce>(assegnare)** sulla schede **PPP**,
 trovare la voce, e modificarla.
 
 Tipi di WAN con IPv6
-====================
+''''''''''''''''''''
 
 Analogamente a IPv4, il **tipo di configurazione IPv6** controlla se e
 come un indirizzo IPv6 è assegnato ad un'interfaccia. Ci sono diversi
@@ -963,7 +948,8 @@ questo firewall è collegato e come l'ISP ha distribuito IPv6.
 Per ulteriori informazioni sull'IPv6, inclusa un'introduzione di base,
 vedere *IPv6*.
 
-1. **Nessuno**
+Nessuno
+=======
 
 Quando il **tipo di configurazione IPv6** è impostato su *Nessuno*, IPv6
 è disabilitato sull'interfaccia. Questo è utile se l'interfaccia non ha
@@ -971,7 +957,7 @@ connettività IPv6 o se l'indirizzo IP dell'interfaccia è gestito in
 altro modo, come per un'interfaccia OpenVPN o GIF.
 
 IPv6 statico
-------------
+============
 
 I controlli degli IPv6 statici funzionano in modo identico alle
 impostazioni degli IPv4 statici. Vedere *IPv4 statico* per i dettagli.
@@ -988,15 +974,15 @@ circuito. Cambiare il gateway IPv4 predefinito non ha effetto sul
 gateway IPv6 e viceversa.
 
 DHCP6
------
+=====
 
-DHCP6 configura pfSense per tentare la configurazione IPv6 automatica di
+DHCP6 configura |firew4ll| per tentare la configurazione IPv6 automatica di
 questa interfaccia tramite DHCPv6. DHCPv6 configura l'interfaccia con un
 indirizzo IP, lunghezza del preisso, server DNS, ecc. ma non un gateway.
 Il gateway è ottenuto tramite annunci del router, quindi questa
 interfaccia sarà impostata per accettare annunci del router. Si tratta
 di una scelta progettuale nell'ambito della specifica IPv6, non di una
-limitazione di pfSense. Per maggiori informazioni sulla pubblicità del
+limitazione di |firew4ll|. Per maggiori informazioni sulla pubblicità del
 router, vedere *Annunci del Router*.
 
 Sono disponibili diversi campi aggiuntivi per DHCP con IPv4 che non
@@ -1043,23 +1029,23 @@ esistono per DHCP con IPv4:
     configurazione personalizzato. Il percorso completo deve essere
     dato. L'utilizzo di un file personalizzato è raramente necessario,
     ma alcuni ISP richiedono campi DHCP o opzioni che non sono
-    supportati nella GUI pfSense.
+    supportati nella GUI |firew4ll|.
 
 SLAAC
------
+=====
 
 L'autoconfigurazione senza indirizzo (SLAAC) come il tipo IPv6 fa in
-modo che pfSense configuri l'indirizzo IPv6 per l'interfaccia degli
+modo che |firew4ll| configuri l'indirizzo IPv6 per l'interfaccia degli
 annunci router (RA) che pubblicizzano il prefisso e le relative
 informazioni. Si noti che il DNS non è tipicamente fornito tramite RA,
-quindi pfSense tenterà comunque di ottenere i server DNS tramite DHCPv6
+quindi |firew4ll| tenterà comunque di ottenere i server DNS tramite DHCPv6
 quando si utilizza SLAAC. In futuro, le estensioni RDNSS per il processo
 RA possono consentire che i DNS server siano ottenuti da RA. Per
 maggiori informazioni sugli annunci del router, vedere *Annunci del
 Router*.
 
 Tunnel di 6RD
--------------
+=============
 
 6RD è una tecnologia di tunneling IPv6 impiegata da alcuni ISP per
 attivare rapidamente il supporto IPv6 per le loro reti, passando il
@@ -1085,7 +1071,7 @@ confine 6RD e la lunghezza del prefisso IPv4 di 6RD.
     all'interno della stessa sottorete più grande.
 
 Tunnel 6to4
------------
+===========
 
 Simile a 6RD, *6to4* è un altro metodo di tunneling del traffico IPv6
 all'interno IPv4. A differenza di 6RD, tuttavia, 6to4 utilizza prefissi
@@ -1110,10 +1096,10 @@ possibilità che alcuni peer IPv6 non abbiano la connettività alla rete
 connettono ai relay 6to4, e questo potrebbe anche variare a seconda del
 nodo 6to4 a cui l'utente è effettivamente collegato.
 
-Tracciare Interfaccia
----------------------
+Track Interface
+===============
 
-La scelta di *Tracciare l’interfaccia* funziona in concerto con un'altra
+La scelta di *Track Interface* funziona in concerto con un'altra
 interfaccia IPv6 utilizzando la delega del prefisso DHCPv6. Quando una
 delega è ricevuta dall'ISP, questa opzione indica quale interfaccia
 verrà assegnata agli indirizzi IPv6 delegati dall'ISP e nei casi in cui
@@ -1137,7 +1123,7 @@ Ad esempio, Se una delega è fornita dall'ISP significa che le reti 16
 Per maggiori informazioni su come funziona il prefisso di delega, vedere
 *Delega del prefisso DHCP6 prefisso*.
 
-pfSense supporta numerosi tipi di interfacce di rete, sia da utilizzare
+|firew4ll| supporta numerosi tipi di interfacce di rete, sia da utilizzare
 direttamente interfacce fisiche oppure impiegando altri protocolli come
 PPP o VLAN.
 
@@ -1145,7 +1131,7 @@ Le assegnazioni di interfaccia e la creazione di nuove interfacce
 virtuali sono tutte gestite in **Interfacce>(assegnare).**
 
 Interfacce fisiche e virtuali
-=============================
+'''''''''''''''''''''''''''''
 
 La maggior parte delle interfacce discusse in questo capitolo possono
 essere assegnate come WAN, LAN o come interfaccia OPT sotto
@@ -1156,7 +1142,7 @@ impostazione predefinita, questo elenco include solo le interfacce
 fisiche, ma le altre schede in **Interfacce>(assegnare)** possono creare
 interfacce virtuali che possono poi essere assegnate.
 
-Le interfacce su pfSense supportano varie combinazioni di opzioni sulle
+Le interfacce su |firew4ll| supportano varie combinazioni di opzioni sulle
 interfacce stesse. Possono anche supportare più reti e protocolli su una
 singola interfaccia, o più interfacce possono essere unite in una
 maggiore capacità o interfaccia virtuale ridondante.
@@ -1178,7 +1164,7 @@ creati, non assegnati, e gestiti.
 .. |image0| image:: media/image1.png
    :width: 0.26389in
    :height: 0.26389in
-.. |image1| image:: media/image2.jpeg
+.. |image1| image:: media/image2.png
    :width: 6.51389in
    :height: 2.90278in
 .. |image2| image:: media/image3.png
