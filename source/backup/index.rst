@@ -218,8 +218,8 @@ Per un firewall con HTTPS con certificato auto-firmato, il comando sarebbe il se
 		| grep "name=' csrf_magic'" | sed 's/.*value="\(.*\)".*/\1/' > csrf.txt
 
 -  Inviare il modulo di accesso con il primo token CSRF e salvare il
-   secondo token CSRF:
-	::
+   secondo token CSRF::
+	
 		$ wget -qO- --keep-session-cookies --load-cookies cookies.txt \
 		--save-cookies cookies.txt --no-check-certificate \
 		--post-data "login=Login&usernamefld=admin&passwordfld=firew4ll& csrf_magic=$(cat csrf.txt)" \
