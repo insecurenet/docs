@@ -1,13 +1,18 @@
-*******************
-General Information
-*******************
+************
+INTRODUZIONE
+************
 
-General information about the pfSense® project/organization.
+**Firew4LL-OS** è un sistema operativo basato su **FreeBSD** e derivante
+dal fork di pfSense, completamente tradotto in italiano, tranne
+che nei termini prettamente tecnici, corredato da documentazione
+anch'essa in italiano.
+Nato grazie anche al supporto del |pin| (Pugliese INnovativi) della |regionepuglia|.
 
-.. toctree::
-   :maxdepth: 1
+Con Firew4ll-OS si può implementare un firewall in poche ore.
 
-   comparison-to-commercial-alternatives
-   can-pfsense-meet-regulatory-requirements
-   can-i-sell-pfsense
-
+    ** – Francesco Pellegrino (InSecureNet SRL) **
+	
+..tips::
+Grazie al lavoro di |insecurenet| è disponibile all'indirizzo: 
+https://www.insecurelab.it/hackzionario un progetto per la
+semplificazione dei termini informatici.
