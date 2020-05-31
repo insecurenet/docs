@@ -271,8 +271,7 @@ Il comando dd è il modo più semplice per cancellare la tabella delle
 partizioni dalla chiavetta USB su sistemi operativi UNIX e simili a UNIX
 come Linux, FreeBSD e OS X.
 
-.. code-block:: none
-	$sudo dd if=/dev/zero of= memstick_disk_path bs=1M count=1
+``$sudo dd if=/dev/zero of= memstick_disk_path bs=1M count=1``
 
 Sostituisci memstick_disk_path con il percorso del dispositivo del disco della chiavetta, ad es. ``/dev/ sdb``, ``/dev/da1`` o ``/dev/rdisk3``.
 
