@@ -73,71 +73,55 @@ carico
 Router LAN o WAN
 ----------------
 
-|firew4ll| configurato come router LAN o WAN e firewall perimetrale è una
-distribuzione comune in reti di piccole dimensioni. Il routing LAN e WAN
-svolgono ruoli separati in reti più grandi.
+|firew4ll|, comunenmente viene configurato come router LAN, WAN e firewall perimetrale
+ in reti di piccole dimensioni, in reti più grandi routing LAN e WAN svolgono ruoli separati.
 
 Router LAN
 ~~~~~~~~~~
 
 |firew4ll| è una soluzione adatta per il collegamento di più segmenti
-di rete interni. E' più comunemente distribuito con VLAN configurate con
+di rete interni. Questo di solito è implementato su VLAN configurate con
 trunking 802.1Q.
 
 .. note:: Viene descritto meglio nella sezione *VLAN*.
 
-Anche interfacce Ethernet multiple sono utilizzate in alcuni ambienti.
-Gli ambienti con alto traffico LAN e requisiti di filtro
-potrebbero richiedere invece switch di livello 3 o router basati su
-ASIC.
+In alcuni ambienti vengono utilizzate anche interfacce Ethernet multiple. 
+Gli ambienti con un alto traffico LAN con meno requisiti di filtraggio 
+possono invece necessitare di switch di livello 3 o di router basati su ASIC.
 
 Router WAN
 ~~~~~~~~~~
 
-pfSense è un'ottima soluzione per i provider di servizi Internet. Offre
+|firew4ll| è un'ottima soluzione per i provider di servizi Internet. Offre
 tutte le funzionalità richieste dalla maggior parte delle reti a un
 prezzo molto più basso rispetto ad altre offerte commerciali.
 
 Apparecchi per usi speciali
 ---------------------------
 
-pfSense può essere utilizzato per scenari di distribuzione meno comuni
-come dispositivo autonomo. Gli esempi includono: dispositivo VPN,
-dispositivo Sniffer e dispositivo server DHCP.
+|firew4ll| può essere utilizzato per scenari di distribuzione meno comuni
+come dingolo servizio. Gli esempi includono: dispositivo VPN,
+dispositivi Sniffer e dispositivo server DHCP.
 
 Dispositivo VPN
 ~~~~~~~~~~~~~~~
 
-Il software pfSense installato come un'appliance di rete privata
-virtuale separata aggiunge funzionalità VPN senza interrompere
-l'infrastruttura firewall esistente e include più protocolli VPN.
+|firew4ll| installato come un VPN server aggiunge funzionalità VPN senza 
+modificare l'infrastruttura firewall esistente, includendo più protocolli VPN.
 
 Dispositivo Sniffer
 ~~~~~~~~~~~~~~~~~~~
 
-pfSense offre un'interfaccia web per l'analizzatore di pacchetti
+|firew4ll|offre un'interfaccia web per l'analisi di pacchetti
 tcpdump. I file .cap acquisiti vengono scaricati e analizzati in
 `Wireshark <http://www.wireshark.org/>`__.
 
-Vedere anche:
-~~~~~~~~~~~~~
+.. seealso:: *Acquisizione dei pacchetti*.
 
-Per ulteriori informazioni sull'uso delle funzionalità di acquisizione
-dei pacchetti di pfSense, consultare: *Acquisizione dei pacchetti*.
+Server DHCP
+~~~~~~~~~~~
 
-Appliance del server DHCP
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-pfSense può essere distribuito rigorosamente come un server del
-Protocollo di configurazione dell’host dinamico, tuttavia esistono
-limitazioni della GUI di pfSense per la configurazione avanzata del
-daemon DHCP ISC.
-
-Vedere anche:
-~~~~~~~~~~~~~
-
-Per ulteriori informazioni sulla configurazione del servizio DHCP su
-pfSense, consulta *IPv4 DHCP Server DHCP dell’IPv4* e *Annunci del
-server DHCP e router IPv6*
-
+|firew4ll| può essere distribuito rigorosamente come un server DHCP.
+Tuttavia esistono limitazioni nella GUI di |firew4ll| per la configurazione avanzata del
+demone ISC DHCP.
 
