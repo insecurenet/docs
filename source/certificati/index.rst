@@ -1,15 +1,17 @@
-*****************
-Cellular Wireless
-*****************
+**********************
+Certificate Management
+**********************
 
-pfSense® software can use a supported cellular modem (3G/4G/LTE) as a WAN
-interface for connectivity. This can be used as a sole means of connectivity
-or as a backup.
+Certificates are used to authenticate devices and for use with encryption such
+as TLS for the WebGUI, IPsec, OpenVPN, and other services.
+
+pfSense® software includes a built-in certificate management interface where
+certificates can be created for internal or external use.
 
 .. toctree::
    :maxdepth: 1
 
-   configuring-3g-modems
-   known-working-3g-4g-modems
-   verizon-uml290
-   verizon-uml295
+   certificate-management
+   acme-package
+   dh-parameters
+   using-easyrsa-certificates-in-2-x

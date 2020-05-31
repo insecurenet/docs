@@ -56,11 +56,10 @@ Guide raccomandate
 * :doc:`/virtualizzazione/index` - Diverse guide sulla virtualizzazione di Firew4ll
 * :doc:`/certificati/acme-package` - Confiurare certificati Let's Encrypt con
   Pacchetto ACME.
-* :doc:`/multiwan` - imparare a configurare WAN failover e bilanciamento di carico con Firew4ll.
+* :doc:`/multiwan/multi-wan` - imparare a configurare WAN failover e bilanciamento di carico con Firew4ll.
 
 Risorse commerciali
 -------------------------------
 
 * |support_link|
 * |pse_link|
-* |training_link|
