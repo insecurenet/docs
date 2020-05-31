@@ -1,9 +1,11 @@
-**CONFIGURAZIONE**
+***********************
+Configurazione Firew4ll
+***********************
 
 Configurazione guidata
-======================
+''''''''''''''''''''''
 
-La prima volta che un utente a accede ad un pfSense, il firewall
+La prima volta che un utente a accede ad un |firew4ll|, il firewall
 presenta automaticamente la configurazione guidata. La prima pagina
 della guida è presentata nella figura *Schermata di avvio della
 configurazione guidata.*
@@ -11,16 +13,14 @@ configurazione guidata.*
 Fare clic su |image0| **Avanti** per avviare il processo di
 configurazione con la guida
 
-**Suggerimento:** Usare la configurazione guidata è opzionale. Fare clic
-sul logo di pfSense in alto a sinistra della pagina per uscire dalla
-guida in ogni momento.
+.. tip:: Usare la configurazione guidata è opzionale. Fare clic sul logo di |firew4ll| in alto a sinistra della pagina per uscire dalla guida in ogni momento.
 
 |image1|
 
 Fig. 1: Schermata di avvio della configurazione guidata
 
 Schermata per le Informazioni generali
---------------------------------------
+======================================
 
 La prossima schermata (Figura *Schermata delle informazioni generali*)
 configura il nome di questo firewall, il dominio in cui risiede, il
@@ -43,7 +43,7 @@ server ei del DNS per il firewall.
 
     Questi server DNS possono essere lasciati vuoti se il risolutore del
     DNS rimane attivo usando le impostazioni predefinite. La
-    configurazione di pfSense predefinita ha il risolutore del DNS
+    configurazione di |firew4ll| predefinita ha il risolutore del DNS
     attivo nella modalità risolutore (non nella modalità d'inoltro),
     quando si imposta questa modalità, il risolutore del DNS non ha
     bisogno dei server di DNS del d'inoltro perché comunicherà
@@ -62,26 +62,22 @@ server ei del DNS per il firewall.
     dei soli server DNS configurati manualmente, disabilitare questa
     opzione.
 
-**Vedere anche:**
-
-Per maggiori informazioni sulla configurazione del risolutore del DNS,
-vedere *Risolutore DNS*
+.. seealso:: Per maggiori informazioni sulla configurazione del risolutore del DNS, vedere *Risolutore DNS*
 
 Fare clic su |image2| **Avanti** per continuare
 
 |image3|\ Fig. 2: Schermata delle informazioni generali
 
 Configurazione del NTP e della zona oraria
-------------------------------------------
+==========================================
 
-La prossima schermata (Figura *Schermata del NTP e della zona oraria*)
-contiene impostazioni relative all'ora.
+La prossima schermata (Figura *Schermata del NTP e della timezone*) contiene impostazioni relative all'ora.
 
     **Nome host del server dell'ora** Un nome dell’host del server con
     protocollo dell'ora della rete (NTP) o indirizzo IP. Fintanto un
     server con NTP specifico non sia richiesto, come uno sulla LAN, la
     cosa migliore è lasciare il nome host del server dell’orario
-    predefinito 0.pfsense.pool.ntp.org. Questo valore prenderà un server
+    predefinito 0.|firew4ll|.pool.ntp.org. Questo valore prenderà un server
     qualsiasi da un pool di host noti.
 
     Questa numerazione è specifica in modo che .pool.ntp.org operi e
@@ -98,8 +94,8 @@ Fare clic su |image4| **Avant**\ i per continuare
 
 Fig 3: Schermata del NTP e della zona oraria
 
-Configurazione della WAN
-------------------------
+Configurazione dell'interfaccia WAN
+===================================
 
 La prossima pagina della guida configura l'interfaccia WAN del firewall.
 Questa è la rete esterna che affronta l'ISP o il router di upstream,
@@ -120,7 +116,7 @@ tipi di connessione ISP comuni.
     informazioni sulle diverse tipologie di WAN, vedere *Configurazione
     e tipologie di interfaccia*
 
-**Nota:** Se l'interfaccia WAN è wireless, saranno presentate opzioni
+.. note::  Se l'interfaccia WAN è wireless, saranno presentate opzioni
 aggiuntive dalla guida che non sono illustrate da questa guida della
 installazione di base. Fare riferimento a *Wireless* , che ha una
 sezione sulla WAN wireless del maggiori informazioni. Se qualcuna si
@@ -130,14 +126,14 @@ momento.
 
 |image6|
 
-Fig. 4: Configurazione della WAN
+Fig. 4: Configurazione dell'interfaccia WAN
 
     **Indirizzo MAC** Questo campo, mostrato in Figura *Configurazione
     generale della WAN*, cambia l'Indirizzo MAC usato sull'interfaccia
     di rete WAN. E' anche conosciuto come ‘sproofing’ dell'indirizzo
     MAC.
 
-**Nota:** I problemi attenuati dallo sproofing dell'indirizzo MAC sono
+.. note::  I problemi attenuati dallo sproofing dell'indirizzo MAC sono
 di solito temporanei e facilmente aggirabili. La migliore procedura è
 mantenere l'indirizzo MAC originale dell'hardware, ricorrendo allo
 sproofing solo quando assolutamente necessario.
@@ -226,13 +222,13 @@ Fig. 7: Impostazioni del nome dell'host DHCP
     mantenuta il più possibile in quel caso. Da notare, inoltre, che
     questa scelta non lascerà cadere una connessione già esistente.
 
-    **Minimo tempo di attesa PPPoE** Specifica quanto tempo pfSense
+    **Minimo tempo di attesa PPPoE** Specifica quanto tempo |firew4ll|
     concederà alla connessione PPPoE per rimanere up senza trasmettere
     dati prima di disconnetterla. Questo è utile solo quando accoppiato
     alla chiamata su richiesta, e di solito è lasciato vuoto
     (disabilitato)
 
-**Nota:** questa opzione richiede anche la disattivazione del
+.. note::  questa opzione richiede anche la disattivazione del
 monitoraggio del gateway, altrimenti la connessione non sarà mai
 inattiva.
 
@@ -282,8 +278,8 @@ impostazioni della WAN sono state inserite
 
 Fig. 10: Opzioni di filtraggio dell'ingresso integrate
 
-Configurazione di interfaccia LAN
----------------------------------
+Configurazione dell' interfaccia LAN
+====================================
 
 Questa pagina della guida configura l'\ **indirizzo IP della LAN** e la
 **maschera di sottorete** (Figura *Configurazione della LAN*).
@@ -317,7 +313,7 @@ Fig. 11: Configurazione della LAN.
 Fare clic su |image15| **Avanti** per continuare
 
 Impostare la password amministrativa
-------------------------------------
+====================================
 
 Il prossimo passo è cambiare le password amministrativa per la WebGUI
 come mostrato nella Figura *Cambiare la password amministrativa*. La
@@ -333,14 +329,14 @@ Fare clic su |image16| **Avanti** per continuare
 Fig. 12: Cambiare la password Amministrativa.
 
 Completare la configurazione guidata
-------------------------------------
+====================================
 
 Questa procedura completa la configurazione guidata delle impostazioni.
-Fare clic su **ricaricare** (Figura *Ricaricare la WebGUI di pfSense*) e
+Fare clic su **ricaricare** (Figura *Ricaricare la WebGUI di |firew4ll|*) e
 la WebGUI applicherà le impostazioni dalla procedura guidata e
 ricaricherà i servizi modificati dalla procedura guidata.
 
-**Suggerimento:** Se l'Indirizzo IP della LAN è stato cambiato dalla
+.. tip:: Se l'Indirizzo IP della LAN è stato cambiato dalla
 guida e la guida è stata iniziata dalla lan, regolare l'indirizzo IP del
 computer client di conseguenza dopo aver fatto click su ricaricare.
 
@@ -349,7 +345,7 @@ password nuova. il nome utente rimane admin.
 
 |image18|
 
-Fig. 13: Ricaricare la WebGUI di pfSense
+Fig. 13: Ricaricare la WebGUI di |firew4ll|
 
 A questo punto il firewall avrà connettività di base a internet tramite
 WAN e client sul lato LAN saranno in grado di raggiungere i siti
@@ -360,7 +356,7 @@ ripetuta, rivisitare la procedura guidata **di Sistema> Configurazione
 guidata** dall'interno della WebGUI.
 
 Configurazione dell'interfaccia
-===============================
+'''''''''''''''''''''''''''''''
 
 Gli aspetti fondamentali della configurazione dell'interfaccia possono
 essere eseguiti alla console e nella procedura guidata di configurazione
@@ -370,7 +366,7 @@ Alcuni elementi di base sono trattati qui, i dettagli possono essere
 trovati in *Tipi di interfaccia e configurazione*.
 
 Assegnare le Interfacce
------------------------
+=======================
 
 A ulteriori interfacce aggiunte dopo la configurazione iniziale possono
 essere assegnati ruoli visitando **Interfacce> (assegnare)**. Ci sono
@@ -378,9 +374,7 @@ numerose schede in quella pagina utilizzate per l'assegnazione e la
 creazione di diversi tipi di interfacce. Le due schede più comunemente
 utilizzate sono **assegnazioni di interfaccia** e **VLAN**.
 
-**Vedere anche:**
-
-La configurazione VLAN è inclusa nelle *LAN virtuali (VLAN)*.
+.. seealso:: La configurazione VLAN è inclusa nelle *LAN virtuali (VLAN)*.
 
 La scheda delle assegnazioni di interfaccia mostra un elenco di tutte le
 interfacce attualmente assegnate: WAN, LAN, e tutte le voci OPTX
@@ -422,8 +416,8 @@ Questa azione aggiungerà un'altra linea con una nuova interfaccia OPT
 numerata superiore a qualsiasi interfaccia OPT esistente, o se questa è
 la prima interfaccia aggiuntiva, *OPT1*.
 
-Fondamenti della configurazione dell'interfaccia
-------------------------------------------------
+Nozioni di base sulla configurazione dell'interfaccia
+=====================================================
 
 Le interfacce sono configurate scegliendo la loro voce dal menu
 **interfacce**. Per esempio, per configurare l'interfaccia WAN,
@@ -439,47 +433,20 @@ essere rinominata, comprese WAN e LAN, con un nome personalizzato.
 Inoltre, ogni interfaccia può essere abilitata e disattivata a
 piacimento, a condizione che almeno un'interfaccia rimanga abilitata.
 
-#. .. rubric:: Vedere anche:
-      :name: vedere-anche
-
-   .. rubric:: Per informazioni dettagliate sulla configurazione
-      dell'interfaccia, vedere *Tipi e configurazione di interfaccia.*
-      :name: per-informazioni-dettagliate-sulla-configurazione-dellinterfaccia-vedere-tipi-e-configurazione-di-interfaccia.
-
-   .. rubric:: Il tipo di configurazione IPv4 può essere modificato tra
-      IPv4 statico, *DHCP, PPPoE, PPP, PPTP, L2TP,* o *niente* per
-      lasciare l'interfaccia senza un indirizzo IPv4. Quando si utilizza
-      *IPv4 statico*, è possibile impostare un indirizzo IPv4, una
-      maschera di sottorete e un gateway upstream di IPv4. Se si sceglie
-      una delle altre opzioni, i campi specifici del tipo appaiono per
-      configurare ciascun tipo.
-      :name: il-tipo-di-configurazione-ipv4-può-essere-modificato-tra-ipv4-statico-dhcp-pppoe-ppp-pptp-l2tp-o-niente-per-lasciare-linterfaccia-senza-un-indirizzo-ipv4.-quando-si-utilizza-ipv4-statico-è-possibile-impostare-un-indirizzo-ipv4-una-maschera-di-sottorete-e-un-gateway-upstream-di-ipv4.-se-si-sceglie-una-delle-altre-opzioni-i-campi-specifici-del-tipo-appaiono-per-configurare-ciascun-tipo.
-
-   .. rubric:: Il tipo di configurazione IPv6 può essere impostato su
-      *IPv6 statico*, *DHCP6, SLAAC, Tunnel 6rd, Tunnel 6to4,
-      Interfaccia di traccia,* o *niente* per lasciare l’IPv6 non
-      configurato sull'interfaccia. Quando si seleziona l’IPv6 statico,
-      un impostare l’indirizzo IPv6, la lunghezza del prefisso e il
-      gateway di upstream di IPv6.
-      :name: il-tipo-di-configurazione-ipv6-può-essere-impostato-su-ipv6-statico-dhcp6-slaac-tunnel-6rd-tunnel-6to4-interfaccia-di-traccia-o-niente-per-lasciare-lipv6-non-configurato-sullinterfaccia.-quando-si-seleziona-lipv6-statico-un-impostare-lindirizzo-ipv6-la-lunghezza-del-prefisso-e-il-gateway-di-upstream-di-ipv6.
-
-   .. rubric:: Se questa è un'interfaccia wireless, la pagina conterrà
-      molte opzioni aggiuntive per configurare la parte dell'interfaccia
-      wireless. Consultare *Wireless* per i dettagli.
-      :name: se-questa-è-uninterfaccia-wireless-la-pagina-conterrà-molte-opzioni-aggiuntive-per-configurare-la-parte-dellinterfaccia-wireless.-consultare-wireless-per-i-dettagli.
-
-**Nota**: Selezionando un **Gateway** dall'elenco a discesa, o
-aggiungendo un nuovo gateway e selezionandolo, pfSense tratterà quella
-interfaccia come un'interfaccia di tipo WAN per il NAT e le funzioni
-correlate. Questo non è auspicabile per interfacce interne come LAN o
-DMZ. I gateway possono ancora essere utilizzati su tali interfacce per
-percorsi statici e altri scopi *senza* selezionare un gateway qui sulla
-pagina delle interfacce.
+.. seealso:: Per informazioni dettagliate sulla configurazione dell'interfaccia, vedere *Tipi e configurazione di interfaccia.*
+ 
+ La configurazione IPv4 può essere modificata tra *statico, DHCP, PPPoE, PPP, PPTP, L2TP,* o *niente* per       lasciare l'interfaccia senza un indirizzo IPv4. Quando si utilizza *IPv4 statico*, è possibile impostare un indirizzo IPv4, una subnet mask e il gateway IPv4. Se si sceglie una delle altre opzioni, i campi specifici del tipo appaiono per essere configurati.      
+ 
+ La configurazione IPv6 può essere impostata su *statico*, *DHCP6, SLAAC, Tunnel 6rd, Tunnel 6to4, Track interface,* o *niente* per lasciare l'interfaccia senza un indirizzo l’IPv6. Quando si seleziona *statico*, è possibile mpostare l’indirizzo IPv6, la lunghezza del prefisso e il gateway IPv6.
+ 
+ Se questa è un'interfaccia wireless, la pagina conterrà molte opzioni aggiuntive per configurare l'interfaccia. Consultare *Wireless* per i dettagli.
+ 
+.. note::  Selezionando un **Gateway** dall'elenco a discesa, o aggiungendo un nuovo gateway e selezionandolo, |firew4ll| tratterà quella interfaccia come un'interfaccia di tipo WAN per il NAT e le funzioni correlate. Questo non è auspicabile per interfacce interne come LAN o DMZ. I gateway possono ancora essere utilizzati su tali interfacce per percorsi statici e altri scopi *senza* selezionare un gateway qui sulla pagina delle interfacce.
 
 Gestione delle liste nella GUI
-==============================
+''''''''''''''''''''''''''''''
 
-La WebGUI di pfSense ha un gruppo comune di icone che sono usate per la
+La WebGUI di |firew4ll| ha un gruppo comune di icone che sono usate per la
 gestione di liste e collezioni di oggetti del firewall. Non tutte le
 icone sono usate in ogni pagina, ma i loro significati sono coerenti al
 contesto in cui sono viste. Esempi di tali lista includono regole del
@@ -513,12 +480,12 @@ sulle icone trovate in altre parti del firewall. Per esempio, per
 trovare il significato delle icone usate solo nella gestione dei
 certificati, guardare in *Gestione dei certificati*
 
-**Suggerimento:** Per determinare quale azione un'icona eseguirà,
+.. tip:: Per determinare quale azione un'icona eseguirà,
 passare il mouse sopra l'icona con il puntatore e un suggerimento
 mostrerà una breve descrizione dello scopo dell'icona.
 
 Navigare velocemente nella GUI con le scorciatoie
-=================================================
+'''''''''''''''''''''''''''''''''''''''''''''''''
 
 Molte aree della GUI hanno icone di scelta rapida presenti nella zona
 conosciuta come la "barra di Breadcrumb", come visto in Figura *Esempio
@@ -567,11 +534,11 @@ hanno lo stesso significato della sezione precedente.
 
 Fig. 15: Scorciatoie sullo stato del servizio
 
-Opzioni della configurazione generale
-=====================================
+Opzioni Configurazione Generale
+'''''''''''''''''''''''''''''''
 
 **Sistema> Configurazione generale** contiene opzioni che impostano
-elementi di configurazione di base per pfSense e la GUI. Alcune di
+elementi di configurazione di base per |firew4ll| e la GUI. Alcune di
 queste opzioni si trovano anche nella *Procedura guidata di
 configurazione*.
 
@@ -591,7 +558,7 @@ Per esempio, se il **nome host** è fw1 e il dominio è esempio.com,
 allora l'FQDN è fw1.esempio.com.
 
 Impostazioni del server DNS
----------------------------
+===========================
 
 Le opzioni in questa sezione controllano come il firewall risolva i nomi
 host usando il DNS.
@@ -601,7 +568,7 @@ host usando il DNS.
 
     Questi server DNS possono essere lasciati vuoti se il risolutore DNS
     rimarrà attivo utilizzando le impostazioni predefinite. La
-    configurazione predefinita di pfSense ha il risolutore DNS attivo in
+    configurazione predefinita di |firew4ll| ha il risolutore DNS attivo in
     modalità risolutore (non in modalità d’inoltro). Quando impostato in
     questo modo il risolutore DNS non ha bisogno di inoltrare i server
     DNS quindi comunicherà direttamente con i server della root del DNS
@@ -609,7 +576,7 @@ host usando il DNS.
     questi server DNS configurati, abilitare la modalità di inoltro nel
     risolutore del DNS o utilizzare l’inoltro del DNS.
 
-**Vedere anche:**
+.. seealso:: 
 
 Per ulteriori informazioni sulla configurazione del risolutore del DNS
 vedere *Risolutore del DNS*
@@ -632,7 +599,7 @@ essere lasciati vuoti.
     soli server DNS configurati manualmente, deselezionare questa
     opzione.
 
-    **Disabilitare l’inoltro DNS** Per impostazione predefinita, pfSense
+    **Disabilitare l’inoltro DNS** Per impostazione predefinita, |firew4ll|
     consulta il risolutore del DNS o l’inoltro del DNS in esecuzione sul
     firewall per risolvere i nomi host da solo. Lo fa elencando host
     locali (127.0.0.1) come suoi server DNS primari. L'attivazione di
@@ -640,7 +607,7 @@ essere lasciati vuoti.
     firewall ad usare i server DNS configurati sopra invece dei suoi.
 
 Localizzazione
---------------
+==============
 
 Le opzioni in questa sezione controllano la lingua e il visualizzazione
 dell'orario del firewall.
@@ -656,7 +623,7 @@ dell'orario del firewall.
     (Protocollo dell'orario della rete). A meno che non sia richiesto
     uno specifico server NTP, come uno sulla LAN, la migliore pratica è
     lasciare il valore dei server dell'orario al valore predefinito
-    0.pfsense.pool.ntp.org. Questo valore sceglierà un server casuale da
+    0.|firew4ll|.pool.ntp.org. Questo valore sceglierà un server casuale da
     un pool di host NTP noti e buoni.
 
     Per utilizzare Più di server di orario, aggiungerli Nella STESSA
@@ -668,12 +635,12 @@ dell'orario del firewall.
     server NTP unici in modo che lo stesso server non venga usato due
     volte.
 
-    **Lingua** La GUI di pfSense è stata tradotta in altre lingue oltre
+    **Lingua** La GUI di |firew4ll| è stata tradotta in altre lingue oltre
     all'inglese predefinito. Le lingue alternativa sono il *Portoghese
     (Brasile)* e il *Turco*.
 
 Configuratore web
------------------
+=================
 
 Le opzioni in questa sezione controllano vari aspetti del comportamento
 della GUI.
@@ -711,7 +678,7 @@ della GUI.
     orizzontale. Il numero massimo di colonne è 4.
 
     **Mostrare/Nascondere i pannelli associati** Alcuni settori della
-    GUI di pfSense contengono pannelli pieghevoli con impostazioni.
+    GUI di |firew4ll| contengono pannelli pieghevoli con impostazioni.
     questi pannelli occupano spazio in più sullo schermo, quindi sono
     nascosti per impostazione predefinita. Per gli amministratori del
     firewall che usano frequentemente i pannelli, questo può diventare
@@ -747,8 +714,8 @@ della GUI.
     carico sul firewall, dipende dall'hardware in uso. Consentire più
     tempo tra gli aggiornamenti ridurrebbe il carico complessivo.
 
-Opzioni della configurazione avanzata
-=====================================
+Opzioni Configurazione Avanzata
+'''''''''''''''''''''''''''''''
 
 **Sistema> Avanzate** contiene numerose opzioni di natura avanzata.
 Alcune di queste opzioni richiedono la regolazione per il routing di
@@ -760,18 +727,18 @@ Alcune di queste opzioni sono trattate più in dettaglio nelle altre
 sezioni del libro in cui la loro discussione è più coerente o rilevante,
 ma sono tutti menzionati qui con una breve descrizione.
 
-Scheda di accesso all'amministrazione
--------------------------------------
+Scheda accesso amministrazione
+==============================
 
 Le opzioni presenti nella scheda di **accesso all'amministrazione**
 regolano i vari metodi di gestione del firewall, anche tramite
 interfaccia web, SSH, console seriale e fisica.
 
-#. .. rubric:: Configuratore web (WebGUI)
-      :name: configuratore-web-webgui
+Configuratore web (WebGUI)
+-------------------------
 
-   .. rubric:: Protocollo
-      :name: protocollo
+Protocollo
+~~~~~~~~~~
 
 Il protocollo WebGUI può essere impostato su **HTTP** o **HTTPS**. La
 migliore Pratica è Quella di utilizzare HTTPS in modo che il traffico da
@@ -785,7 +752,7 @@ a discesa del **certificato SSL**. Il certificato predefinito di posta è
 un certificato auto-firmato generatore automaticamente. Questa non è una
 situazione ideale, ma e meglio che non avere affatto crittografia.
 
-**Suggerimento:** Per usare un certificato e una chiave SSL firmati
+.. tip:: Per usare un certificato e una chiave SSL firmati
 esternamente, importarli utilizzando gestione dei certificati, quindi
 selezionare qui il certificato.
 
@@ -801,7 +768,7 @@ permanente. Internet Explorer mostrerà una schermata di avvertimento con
 un link per continuare, come Chrome. opera mostrerà una finestra di
 avviso.
 
-**Suggerimento:** Per generare un nuovo certificato auto-firmato per la
+.. tip:: Per generare un nuovo certificato auto-firmato per la
 GUI, connettersi utilizzando la consola o ssh e da un prompt della
 shell, eseguire il following comando:
 
@@ -827,8 +794,8 @@ aumentare il numero massimo di processi. Per impostazione predefinita,
 il valore e impostato su 2, quindi il firewall esegue due processi per
 operatore del server web.
 
-Reindirizzamento della WebGUI
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Reindirizzamento alla WebGUI
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Per impostazione predefinita, per facilità di accesso e compatibilità,
 il firewall esegue un reindirizzamento sulla porta 80 in modo che se un
@@ -849,6 +816,9 @@ requisiti di conformità di sicurezza, this comportamento non è
 accettabile. Può essere disabilitato selezionando **disabilitare il
 completamento automatico dell'accesso del configuratore web**. Questo
 controlla solo il completamento automatico del modulo di accesso.
+
+.. seealso:: Attenzione: Pochi browser rispettano questa opzione. Molti di loro offrono comunque la possibilità di salvare le password anche quando il modulo
+specifica che non dovrebbe essere consentito. Questo comportamento deve essere controllato o modificato utilizzando le opzioni del browser
 
 Messaggi di accesso alla WebGUI
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -874,14 +844,14 @@ rimuove la regola di blocco automatico. Con questa regola disabilitata,
 è possibile controllare quali indirizzi IP LAN possono accedere alla
 WebGUI utilizzando le regole del firewall.
 
-**Nota:** Il ripristino dell'indirizzo IP LAN dalla console di sistema
+.. note::  Il ripristino dell'indirizzo IP LAN dalla console di sistema
 ripristina anche la regola anti-blocco. Se l'accesso amministrativo è
 bloccato dopo l'abilitazione, scegliere l'opzione del menù della console
 2, quindi scegliere di impostare l'indirizzo IP LAN, e inserire nello
 stesso esatto indirizzo IP e le informazioni di accompagnamento.
 
 Controllo rebind del DNS
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 Il firewall blocca le risposte di un indirizzo IP privato da server DNS
 configurati per impostazione predefinita, per evitare attacchi rebinding
@@ -889,10 +859,7 @@ al DNS. Marcare questa casella per disabilitare la protezione rebinding
 del dns se interferisce con l'accesso al configuratore web o la
 risoluzione del nome.
 
-**Vedere anche**:
-
-Maggiori dettagli sugli attacchi di rebinding del DNS possono essere
-trovati su Wikipedia.
+.. seealso::  Maggiori dettagli sugli attacchi di rebinding del DNS possono essere trovati su Wikipedia.
 
 Il caso più comune per disabilitare questo sarebbe quando il firewall di
 posta è impostato per utilizzare un server DNS interno che restituirà
@@ -900,13 +867,10 @@ risposte private ​​(RFC1918) per il nome dell’host. Quando si accede al
 firewall tramite indirizzo IP, questi controlli non vengono eseguiti
 perché l'attacco è rilevante solo quando si usa un nome host.
 
-**Suggerimento:** Invece di disabilitare tutte le protezioni del
-rebinding del DNS, può essere selettivamente disabilitato per il dominio
-nel risolutore o l’inoltro del DNS. Vedere *Risolutore del DNS e
-protezione del rebinding del DNS* e *Inoltro del DNS e protezione del
-rebinding del DNS*.
+.. tip:: Invece di disabilitare tutte le protezioni del rebinding del DNS, può essere selettivamente disabilitato per il dominio
+nel risolutore o l’inoltro del DNS. Vedere *Risolutore del DNS e protezione del rebinding del DNS* e *Inoltro del DNS e protezione del rebinding del DNS*.
 
-Applicazione del HTTP\_REFERER del browser
+Applicazione del HTTP_REFERER del browser
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 La GUI controlla l'URL di riferimento quando si accede per impedire un
@@ -915,21 +879,21 @@ un'opzione quando l'amministratore non intendeva che ciò accadesse.
 Anche questo rompe anche alcuni comportamenti convenienti e
 desiderabili, come avere una pagina che collega un vari dispositivi
 firewall. Per disattivare questo comportamento, selezionare
-**disabilitare il controllo dell'applicazione HTTP\_REFERER**.
+**disabilitare il controllo dell'applicazione HTTP_REFERER**.
 
-Nomi dell’host alternativi
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Hostname alternativi
+~~~~~~~~~~~~~~~~~~~~
 
 Per mantenere il controllo sul rebind del DNS e attiva l’applicazione
-del HTTP\_REFERER, ma controllare leggermente il loro comportamento,
+del HTTP_REFERER, ma controllare leggermente il loro comportamento,
 compilare nomi host alternativi nella casella. Per impostazione
 predefinita il sistema consentirà l'accesso al nome dell'host
 configurato sul firewall e a tutti gli indirizzi IP configurati sul
 firewall. L'aggiunta di un nome host nel campo permetterà di utilizzare
 questi nomi dellìhost per l'accesso alla GUI e per l'URL di riferimento.
 
-Attacco Man-in-the-Middle/Avvertimento
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Attacco MITM (Man-in-the-Middle)/Attenzione
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Se un browser tenta di accedere alla GUI utilizzando un indirizzo IP non
 configurato sul firewall, come un inoltro della porta da un altro
@@ -946,7 +910,7 @@ fidato. L'accesso non è disabilitato in questo caso, c’è solo un
 avvertimento, quindi non c'è alcuna opzione per disabilitare questo
 comportamento.
 
-Testo della scheda del browser
+Testo nella scheda del browser
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Per impostazione predefinita, la GUI del firewall stampa il nome
@@ -961,122 +925,69 @@ schede separate tendono a preferire il nome dell’host prima
 firewall con molte pagine in schede separare tendono a preferire il nome
 della pagina prima.
 
-Shell Sicura (SSH)
-~~~~~~~~~~~~~~~~~~
+SSH 
+---
 
-Il server della shell sicura (SSH) può essere abilitato per consentire
-l'accesso da remoto alla console e la gestione dei file. Un utente può
-connettersi con qualsiasi client standard ssh, come il client ssh della
-linea di comando OpenSSH, PuTTY, SecureCRT o iTerm. Per accedere
-all'account admin, si può usare il nome utente amministratore o
-l'account root, ed entrambi accettano la password di amministratore
-della WebGUI per il login.
+Il server SSH può essere abilitato per consentire l'accesso da remoto alla console e la gestione dei file. Un utente può connettersi con qualsiasi client standard ssh, come il client ssh della linea di comando OpenSSH, PuTTY, SecureCRT o iTerm. Per accedere all'account admin, si può usare il nome utente amministratore o l'account root, ed entrambi accettano la password di amministratore della WebGUI per il login.
 
-Gli utenti del gestore utente che hanno il privilegio Utente - Sistema –
-accesso dell’account hanno anche il permesso per accedere su ssh. Questi
-utenti non hanno privilegi di accesso alla root, e non stampano il menù
-quando fanno il login perché molte delle opzioni richiedono privilegi di
-root.
+Gli utenti del gestore utente che hanno il privilegio Utente - Sistema – accesso dell’account hanno anche il permesso per accedere su ssh. Questi utenti non hanno privilegi di accesso alla root, e non stampano il menù quando fanno il login perché molte delle opzioni richiedono privilegi di root.
 
-**Suggerimento:** Per concedere agli utenti ulteriori privilegi di
-shell, usa il pacchetto sudo.
+.. tip:: Per concedere agli utenti ulteriori privilegi di shell, usa il pacchetto sudo.
 
-I trasferimenti di file da e verso il firewall pfSense sono possibili
+I trasferimenti di file da e verso il firewall |firew4ll| sono possibili
 anche utilizzando un client di copia sicura (SCP), come la riga di
 comando di OpenSSH scp, FileZilla, WinSCP o Fugu. Per usare SCP,
 connettersi come utente della root, non come admin. Se un utente
 personalizzato ha il permesso Utente - Sistema - Copia i file o tutti
 gli accessi, allora possono anche utilizzare SCP.
 
-**Suggerimento:** I client SSH devono essere aggiornati. Col tempo, gli
-standard di sicurezza evolvono e le impostazioni del server SSH
-utilizzate da pfSense cambiano. I client obsoleti potrebbero non essere
-in grado di connettersi utilizzando le chiavi di sicurezza forti e gli
-algoritmi richiesti da sshd su pfSense. Se un client non si connette,
-controllare per un aggiornamento dal fornitore.
+.. tip:: I client SSH devono essere aggiornati. Col tempo, gli standard di sicurezza evolvono e le impostazioni del server SSH utilizzate da |firew4ll| cambiano. I client obsoleti potrebbero non essere in grado di connettersi utilizzando le chiavi di sicurezza forti e gli algoritmi richiesti da sshd su |firew4ll|. Se un client non si connette, controllare per un aggiornamento dal fornitore.
 
-Abilitare la shell sicura
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Abilitare SSH
+~~~~~~~~~~~~~
 
-Per abilitare il daemon SSH, selezionare **Abilitare la shell sicura**.
-Dopo aver salvato con questa opzione abilitata, il firewall genererà le
-chiavi SSH se non sono già presenti e poi avviare il demon SSH.
+Per abilitare il servizio SSH, selezionare **Abilitare la shell sicura**. 
+Dopo aver salvato con questa opzione abilitata, il firewall genererà le chiavi SSH se non sono già presenti e poi avviare il servizio SSH.
 
 Metodo di autenticazione
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-SSH può essere configurato per consentire solo accessi basati su chiavi
-e non sulla password. Gli accessi basati sulle chiavi sono una pratica
-molto più sicura, anche se ci vuole più preparazione per configurare.
+SSH può essere configurato per consentire solo accessi basati su chiavi e non sulla password. Gli accessi basati sulle chiavi sono una pratica molto più sicura, anche se ci vuole più preparazione per configurare. 
 
-Per forzare l'autenticazione Basata Sulle chiavi, selezionare
-**Disabilitare l’accesso con password per la shell sicura**.
+Per forzare l'autenticazione Basata Sulle chiavi, selezionare **Disabilitare l’accesso con password per la shell sicura**.
 
-Le chiavi per l'utente per accesso basato sulle chiavi vengono aggiunte
-modificando gli utenti in **Gestione Utente** (*Gestione Utente e
-Autenticazione*). Quando si modifica un utente, incollare le chiavi
-pubbliche consentite nel campo di testo chiavi autorizzate per il loro
-account.
+Le chiavi per l'utente per accesso basato sulle chiavi vengono aggiunte modificando gli utenti in **Gestione Utente** (*Gestione Utente e Autenticazione*). Quando si modifica un utente, incollare le chiavi pubbliche consentite nel campo di testo chiavi autorizzate per il loro account.
 
 Porta SSH
 ~~~~~~~~~
 
-Spostare il server SSH su una porta alternativa fornisce un
-miglioramento trascurabile della sicurezza, e libera la porta per altri
-usi. Per cambiare la porta, digitare la porta nuova nella casella
-**Porta SSH**.
+Spostare il server SSH su una porta alternativa fornisce un miglioramento trascurabile della sicurezza, e libera la porta per altri usi. Per cambiare la porta, digitare la porta nuova nella casella **Porta SSH**.
 
-**Suggerimento:** Gli scanner SSH con forza bruta si concentrano sul
-colpire la porta TCP 22 ma se il daemon è aperto a Internet su un'altra
-porta, verrà trovato e colpito dagli scanner.
+.. tip:: Gli scanner SSH con brute-force si concentrano sul colpire la porta TCP 22 ma se il daemon è aperto a Internet su un'altra porta, verrà trovato e colpito dagli scanner.
 
 Le migliori pratiche per SSH
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Se questo firewall è installato in un ambiente che richiede di lasciare
-l'accesso SSH senza restrizioni da regole firewall, il che è pericoloso,
-è fortemente raccomandato di spostare il servizio SSH su una porta
-alternativa casuale e forzare l’autenticazione con la chiave.
-Spostandosi su una porta alternativa si eviterà il fastidio di un
-registro da molti, ma non tutti, tentativi di login SSH con forza bruta
-e scansioni casuali. Questo può essere ancora trovato con una scansione
-della porta, quindi il passaggio all'autenticazione basata su chiave
-deve sempre essere fatto su ogni server SSH accessibile al pubblico per
-eliminare la possibilità di attacchi di forza bruta.
+Se questo firewall è installato in un ambiente che richiede di lasciare l'accesso SSH senza restrizioni da regole firewall, il che è pericoloso, è fortemente raccomandato di spostare il servizio SSH su una porta alternativa casuale e forzare l’autenticazione con la chiave. 
+Spostandosi su una porta alternativa si eviterà il fastidio di un registro da molti, ma non tutti, tentativi di login SSH con forza bruta e scansioni casuali. Questo può essere ancora trovato con una scansione della porta, quindi il passaggio all'autenticazione basata su chiave deve sempre essere fatto su ogni server SSH accessibile al pubblico per eliminare la possibilità di attacchi di forza bruta.
 
-Più accessi non riusciti dallo stesso indirizzo IP comporteranno il
-blocco dell'indirizzo IP che cerca di autenticarsi.
+Più accessi non riusciti dallo stesso indirizzo IP comporteranno il blocco dell'indirizzo IP che cerca di autenticarsi.
 
-Comunicazioni seriali
-~~~~~~~~~~~~~~~~~~~~~
+Comunicazione seriale
+---------------------
 
-Se pfSense è in esecuzione su hardware senza un monitor o se verrà
-eseguito "headless" (senza tastiera e video collegati), la console
-seriale può essere abilitata per mantenere il controllo fisico, purché
-l'hardware abbia una porta seriale (non USB).
+Se |firew4ll| è in esecuzione su hardware senza un monitor o se verrà eseguito "headless" (senza tastiera e video collegati), la console seriale può essere abilitata per mantenere il controllo fisico, purché l'hardware abbia una porta seriale (non USB).
 
-Se viene rilevato l'hardware che non ha una porta VGA, la console
-seriale è forzata e non può essere disabilitata, e le opzioni seriali
-sono tutte nascoste tranne la velocità.
+Se viene rilevato l'hardware che non ha una porta VGA, la console seriale è forzata e non può essere disabilitata, e le opzioni seriali sono tutte nascoste tranne la velocità.
 
 Terminale seriale
 ~~~~~~~~~~~~~~~~~
 
-Quando il terminale seriale è impostato, la console è abilitata sulla
-prima porta seriale. Questa console riceverà i messaggi di avvio del
-kernel e un menu dopo che il firewall avrà terminato l'avvio. Questo non
-disabiliterà la tastiera onboard e la console video.
+Quando il terminale seriale è impostato, la console è abilitata sulla prima porta seriale. Questa console riceverà i messaggi di avvio del kernel e un menu dopo che il firewall avrà terminato l'avvio. Questo non disabiliterà la tastiera onboard e la console video.
 
-Per connettersi alla console seriale, utilizzare un cavo null modem
-collegato at a porta seriale o ad un adattatore su un altro PC o
-dispositivo seriale.
+Per connettersi alla console seriale, utilizzare un cavo null modem collegato at a porta seriale o ad un adattatore su un altro PC o dispositivo seriale. 
 
-**Vedere anche**:
-
-Per ulteriori informazioni sul collegamento a una console seriale,
-vedere *Collegamento a una console seriale* e *Avviare un client
-seriale*. Quando si apportano modifiche alla console seriale, il
-firewall deve essere riavviato prima che abbia effetto.
+.. seealso:: Per ulteriori informazioni sul collegamento a una console seriale, vedere *Collegamento a una console seriale* e *Avviare un client seriale*. Quando si apportano modifiche alla console seriale, il firewall deve essere riavviato prima che abbia effetto.
 
 Velocità della console seriale
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1098,7 +1009,7 @@ Console primaria
 Sull'hardware con la console seriale abilitata e una porta VGA
 disponibile, il selettore della **console primaria** sceglie quale è la
 console preferita, quindi riceverà i messaggi del log di avvio da
-pfSense. Altri messaggi del kernel del sistema operativo appariranno su
+|firew4ll|. Altri messaggi del kernel del sistema operativo appariranno su
 tutte le connessioni della console, ed entrambe le console avranno un
 menù utilizzabile.
 
@@ -1106,8 +1017,8 @@ Nei casi in cui l'avvio non possa essere completato, la console
 preferita deve essere utilizzata per risolvere il problema, come
 riassegnare le interfacce.
 
-Menu della console
-~~~~~~~~~~~~~~~~~~
+Menu console
+~~~~~~~~~~~~
 
 Normalmente il menù della console è sempre mostrato sulla console di
 sistema, e il menù sarà disponibile fino a quando qualcuno ha accesso
@@ -1117,20 +1028,16 @@ password. Lo stesso nome utente e la password possono essere utilizzati
 qui per la WebGUI. DOPO Aver impostato questa opzione, il firewall deve
 essere riavviato prima che abbia effetto.
 
-**Nota:** Mentre questo fermerà l'accidentale pressione di tasti e terrà
-fuori gli utenti occasionali, questo non è affatto un metodo di
-sicurezza perfetto. Una persona informata con accesso fisico può ancora
-ripristinare le password (vedere *Password dimenticata con una console
-bloccata*). Considerare altri metodi fisici di sicurezza se la sicurezza
-della console è un requisito.
+.. note::  Mentre questo fermerà l'accidentale pressione di tasti e terrà fuori gli utenti occasionali, questo non è affatto un metodo di sicurezza perfetto. Una persona informata con accesso fisico può ancora ripristinare le password (vedere *Password dimenticata con una console bloccata*). Considerare altri metodi fisici di sicurezza se la sicurezza della console è un requisito.
 
 Scheda Firewall / NAT
----------------------
+=====================
 
 Opzioni avanzate del firewall
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------
 
-**Compatibilità con IP da non frammentare**
+Compatibilità con IP non frammentati
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Questa opzione è una soluzione per i sistemi operativi che generano
 pacchetti frammentati con il set di bit da non frammentare (DF). Linux
@@ -1181,30 +1088,26 @@ Disabilitare il firewall
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Quando il filtro Disabilitare tutti i pacchetti è impostato, il firewall
-pfSense viene trasformato in una piattaforma che funziona solo come
+|firew4ll| viene trasformato in una piattaforma che funziona solo come
 routing. Ciò avviene disabilitando completamente pf, e di conseguenza,
 NAT è disabilitato in quanto è anche gestito da pf.
 
-**Suggerimento:** Per disabilitare solo il NAT, non utilizzare questa
+.. tip:: Per disabilitare solo il NAT, non utilizzare questa
 opzione. Consultare *Disabilitare il NAT in uscita* per ulteriori
 informazioni sul controllo del comportamento NAT in uscita.
 
-Disabilitare la pulizia del firewall
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Disabilitare la normalizzazione nel firewall
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Quando impostata, l'opzione di pulizia in pf è disabilitata. L'azione di
 pulizia in pf può interferire con NFS, e in rari casi, anche con il
-traffico VoIP. Per impostazione predefinita, pfSense usa l'opzione
+traffico VoIP. Per impostazione predefinita, |firew4ll| usa l'opzione
 riassemblaggio dei frammenti che riassembla i pacchetti frammentati
 prima di mandarli a destinazione, quando è possibile. Si possono trovare
 maggiori Informazioni sulla funzione di pulizia di pf nella sezione
 *Documentazione della pulizia di pf in OpenBSD*.
 
-**Nota:** Disabilitare la pulizia disabilita anche altre caratteristiche
-che si basano sulla pulizia per funzionare, come il clearing dei bit del
-DF e la randomizzazione ID. Disabilitare la pulizia non disabilita il
-clamping MSS se è attivo per VPN, o quando un valore MSS è configurato
-su un'interfaccia.
+.. note::  Disabilitare la pulizia disabilita anche altre caratteristiche che si basano sulla pulizia per funzionare, come il clearing dei bit del DF e la randomizzazione ID. Disabilitare la pulizia non disabilita il clamping MSS se è attivo per VPN, o quando un valore MSS è configurato su un'interfaccia.
 
 Timeout adattivo del Firewall
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1241,18 +1144,7 @@ conteggi di stato inizio e fine. Il fattore di aggiustamento del timeout
 valore finale adattivo) / (Differenza tra i talori di fine adattivo e di
 inizio adattivo).
 
-**Nota:** Per esempio, si consideri un firewall con **inizio adattivo**
-impostato su 600000, **fine adattiva** impostata su 1200000 e **stati
-massimi del firewall** impostati su 1000000. In questa Situazione,
-Quando la dimensione della tabella di stato raggiunge 900.000 voci il
-timeout di stato sarà scalato al 50% del suo valore normale.
-
-(1.200.000 - 900.000) / (1.200.000 - 600.000) = 300.000 / 600.000 =
-0.50, 50%
-
-Continuando l'esempio, quando la tabella di stato è piena a 1.000.000 di
-stati i valori di timeout saranno ridotti a un terzo dei loro valori
-originali.
+.. note::  Per esempio, si consideri un firewall con **inizio adattivo** impostato su 600000, **fine adattiva** impostata su 1200000 e **stati massimi del firewall** impostati su 1000000. In questa situazione, quando la dimensione della tabella di stato raggiunge 900.000 voci il timeout di stato sarà scalato al 50% del suo valore normale. (1.200.000 - 900.000) / (1.200.000 - 600.000) = 300.000 / 600.000 = 0.50, 50%. Continuando l'esempio, quando la tabella di stato è piena a 1.000.000 di stati i valori di timeout saranno ridotti a un terzo dei loro valori originali.
 
 Stati massimi del firewall
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1269,10 +1161,7 @@ stati. Il firewall deve avere RAM libera adeguata per contenere l'intera
 tabella di stato prima di aumentare questo valore. Gli stati del
 firewall sono discussi ulteriormente nella *Filtrazione stateful*.
 
-**Suggerimento:** Su un firewall con 8GB di RAM la tabella di stato
-avrebbe una dimensione predefinita di circa 800.000 stati. Un valore
-personalizzato di stati massimi del firewall di 4.000.000 consumerebbe
-circa 4 GB di RAM, la metà del totale disponibile di 8GB.
+.. tip:: Su un firewall con 8GB di RAM la tabella di stato avrebbe una dimensione predefinita di circa 800.000 stati. Un valore personalizzato di stati massimi del firewall di 4.000.000 consumerebbe circa 4 GB di RAM, la metà del totale disponibile di 8GB.
 
 Voci di tabella massime del firewall
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1291,20 +1180,18 @@ combinati.
 Entrate Massime di Frammenti del Firewall
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Quando la pulizia è abilitata il firewall mantiene una tabella di
+Quando la normalizzazione è abilitata il firewall mantiene una tabella di
 frammenti di pacchetti in attesa di essere riassemblati. Per
 impostazione predefinita questa tabella può contenere 5000 frammenti. In
 rari casi una rete può avere un tasso insolitamente alto di pacchetti
 frammentati che possono richiedere più spazio in questa tabella.
 
 quando questo limite è raggiunto, il messaggio di log seguente apparirà
-nel registro di sistema principale
+nel registro di sistema:
+``kernel: [zone: pf frag entries] PF frag entries limit reached``
 
-#. .. rubric:: 
-      :name: section-2
-
-   .. rubric:: Filtraggio della route statica
-      :name: filtraggio-della-route-statica
+Filtro rotta statica
+~~~~~~~~~~~~~~~~~~~~
 
 L'opzione delle **Regole di bypass del firewall per il traffico sulla
 stessa interfaccia** si applica se il firewall ha una o più route
@@ -1330,7 +1217,7 @@ indirizzi possono connettersi a una VPN. Ulteriori informazioni su
 queste regole possono essere trovate su *Tutte le regole del firewall e
 VPN*.
 
-Disabilitare la risposta-a (reply-to)
+Disabilitare la risposta a (reply-to)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In una configurazione Multi-WAN il firewall ha benefici con il
@@ -1343,15 +1230,9 @@ firewall ricorda il percorso attraverso cui la connessione è stata
 stabilita e instrada il traffico di risposta al gateway per
 quell'interfaccia.
 
-**Suggerimento:** Le interfacce di tipo WAN sono interfacce che hanno un
-gateway impostato sulla configurazione del menu di **interfacce**, o
-interfacce che hanno un gateway dinamico come DHCP, PPPoE, o con
-interfacce OpenVPN, GIF o GRE assegnate.
+.. tip:: Le interfacce di tipo WAN sono interfacce che hanno un gateway impostato sulla configurazione del menu di **interfacce**, o interfacce che hanno un gateway dinamico come DHCP, PPPoE, o con interfacce OpenVPN, GIF o GRE assegnate. 
 
-In situazioni come il bridging questo comportamento è indesiderabile se
-l'indirizzo IP del gateway di WAN è diverso dall'indirizzo IP del
-gateway degli host dietro l'interfaccia con il ponte. La disattivazione
-di reply-to permetterà ai client di comunicare con il gateway corretto.
+In situazioni come il bridging questo comportamento è indesiderabile se l'indirizzo IP del gateway di WAN è diverso  dall'indirizzo IP del gateway degli host dietro l'interfaccia con il ponte. La disattivazione di reply-to permetterà ai client di comunicare con il gateway corretto. 
 
 Un altro caso che ha problemi con reply-to comporta l'instradamento
 statico as altri sistemi in una più grande sottorete WAN. Disabiltare
@@ -1362,28 +1243,11 @@ Questo comportamento può essere anche disabilitato sulle regole
 individuali del firewall piuttosto che globalmente usando questa
 opzione.
 
-Disabilitare le regole del NETGATE
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Nella configurazione di Multi-WAN il traffico per le reti collegate
-direttamente e le reti VPN deve ancora scorrere correttamente quando si
-utilizza la politica di routing. pfSense inserisce Le regole per
-superare il traffico locale e VPN senza un gateway di specificato, per
-mantenere la connettività. In alcuni casi queste regole di negazione
-possono sovrapporsi al traffico e consentirne più del previsto.
+Intervallo risoluzione alias hostname
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Suggerimento:** Si consiglia di creare regole di negazione manuale
-nella parte superiore delle interfacce interne come la LAN. Queste
-regole dovrebbero superare le destinazioni locali e VPN senza un
-ingresso impostato sulla regola, per onorare la tabella di routing del
-sistema. Queste regole non devono essere in cima alle regole di
-interfaccia, ma devono essere al di sopra di regole che hanno un
-ingresso impostato.
-
-Intervallo che risolve I nomi host dell’alias
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Questa opzione controlla la frequenza con cui i nomi degli host in alias
+Questa opzione controlla la frequenza con cui gli alias degli hostname
 vengono risolti e aggiornati dal daemon filterdns. Per impostazione
 predefinita è 300 secondi (5 minuti). Nelle configurazioni con un
 piccolo numero di nomi di host o un server DNS veloce/con basso carico,
@@ -1407,31 +1271,27 @@ Bogon** controlla con quale frequenza vengono aggiornate queste liste.
 Ulteriori informazioni sulle reti bogon può essere trovata in *Reti di
 bogon bloccate*.
 
-#. .. rubric:: Trasferimento del’indirizzo di rete
-      :name: trasferimento-delindirizzo-di-rete
+NAT
+---
 
-   .. rubric:: Riflessione del NAT per l’inoltro delle porte
-      :name: riflessione-del-nat-per-linoltro-delle-porte
+Refection NAT per il Port Forward
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-L’opzione **Modalità di riflessione del NAT per le porte d’inolto**
-controlla come la riflessione del NAT venga gestita dal firewall. Queste
+L’opzione **Modalità di Refection NAT per il Port Forward**
+controlla come la reflection del NAT venga gestita dal firewall. Queste
 regole di reindirizzamento del NAT consentono ai client di accedere alle
 porte d’inoltro utilizzando gli indirizzi IP pubblici sul firewall dalle
 reti locali interne.
 
-Vedere anche:
-~~~~~~~~~~~~~
+.. seealso:: Fare riferimento a *Reflection NAT* per una discussione sul merito della reflection NAT rispetto ad altre tecniche come Split DNS.
 
-Fare riferimento a *Riflessione del NAT* per una discussione sul merito
-della riflessione NAT rispetto ad altre tecniche come Split DNS.
-
-Ci sono tre possibili modalità per la riflessione del NAT:
+Ci sono tre possibili modalità per il reflection NAT:
 
     **Disabilitato** Valore predefinito. Quando è disabilitata, le porte
     d’inoltro sono accessibili dalla WAN e non solo da reti locali
     interne.
 
-    **Puro NAT** Questa modalità utilizza un insieme di regole NAT per
+    **NAT Puro** Questa modalità utilizza un insieme di regole NAT per
     dirigere i pacchetti alla destinazione della porta d’inoltro. Ha
     migliore scalabilità, ma deve essere possibile determinare con
     precisione l'interfaccia e l'indirizzo IP del gateway utilizzato per
@@ -1441,41 +1301,38 @@ Ci sono tre possibili modalità per la riflessione del NAT:
     protocolli disponibili per le porte d’inoltro.
 
     Quando questa opzione è abilitata, **NAT automatico in uscita per la
-    riflessione** deve essere attivata anche se i client e i server sono
+    reflection** deve essere attivata anche se i client e i server sono
     nella stessa rete locale.
 
     **NAT + Proxy La modalità** *NAT + proxy* utilizza un programma di
     aiuto per inviare i pacchetti alla destinazione della porta
-    d’inoltro. La connessione viene ricevuta dal deemon per riflessione
+    d’inoltro. La connessione viene ricevuta dal deemon per reflection
     e agisce come un proxy, creando una nuova connessione al server
     locale. Questo comportamento mette un onere più grande sul firewall,
     ma è utile in situazioni in cui l'interfaccia e/o l’indirizzo IP del
     gateway utilizzati per la comunicazione con l'oggetto non possono
     essere determinati con precisione al momento in cui le regole
-    vengono caricate. Le regole di riflessione *NAT + proxy* non sono
+    vengono caricate. Le regole di reflection *NAT + proxy* non sono
     create per intervalli più grandi di 500 porte e non saranno
     utilizzate per più di 1000 porte in totale tra tutte le porte
     forward. Solo le porte d’inoltro TCP sono supportate.
 
 Singole regole NAT hanno la possibilità di sostituire la configurazione
-della riflessione NAT globale, quindi possono avere riflessione NAT
+della reflection NAT globale, quindi possono avere reflection NAT
 forzata o disattivata caso per caso.
 
-#. .. rubric:: 
-      :name: section-3
+Reflection Timeout
+~~~~~~~~~~~~~~~~~~
 
-   .. rubric:: Timeout della riflessione
-      :name: timeout-della-riflessione
-
-L’impostazione del **timeout della riflessione** forza un timeout sulle
-connessioni fatte durante l'esecuzione della riflessione NAT per le
+L’impostazione del ** reflection timeout** forza un timeout sulle
+connessioni fatte durante l'esecuzione della reflection NAT per le
 porte d’inoltro in modalità *NAT + proxy*. Se le connessioni sono aperte
 e consumano risorse, questa opzione può mitigare tale questione.
 
-Riflessione NAT per NAT 1: 1
+Reflection NAT per NAT 1: 1
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Se selezionata, questa opzione aggiunge regole di riflessione aggiuntive
+Se selezionata, questa opzione aggiunge regole di reflection aggiuntive
 che consentono l'accesso a mappature 1:1 di indirizzi IP esterni da reti
 interne. Questo dà la stessa funzionalità che già esiste per la porta
 d’inoltro, ma per NAT 1: 1. Ci sono scenari di routing complessi che
@@ -1486,22 +1343,18 @@ NAT, non in uscita. Lo stile della regola di base è simile alla modalità
 *NAT puro* per le porte d’inoltro. Come con la porta forward, ci sono
 opzioni per le voci per ignorare questo comportamento.
 
-Riflessione per il NAT automatico in uscita
+Reflection per il NAT automatico in uscita
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Se selezionata, questa opzione consente di creare automaticamente in
-uscita regole di NAT che assistono regole di riflessione che dirigono il
+uscita regole di NAT che assistono regole di reflection che dirigono il
 traffico verso la stessa sottorete da cui ha avuto origine. Queste
-regole aggiuntive permettono al NAT puro e alla riflessione del NAT 1:1
+regole aggiuntive permettono al NAT puro e alla reflection del NAT 1:1
 di funzionare pienamente quando i client e i server sono nella stessa
 sottorete. Nella maggior parte dei casi, questa casella deve essere
-selezionata per far operare la riflessione del NAT.
+selezionata per far operare la reflection del NAT.
 
-**Nota:** Questo comportamento è necessario perché quando i client e
-server si trovano nella stessa sottorete, la fonte di traffico deve
-essere modificata in modo che la connessione sembri provenire dal
-firewall. In caso contrario, il traffico di ritorno potrà bypassare il
-firewall e la connessione non avrà successo.
+.. note::  Questo comportamento è necessario perché quando i client e server si trovano nella stessa sottorete, la fonte di traffico deve essere modificata in modo che la connessione sembri provenire dal firewall. In caso contrario, il traffico di ritorno potrà bypassare il firewall e la connessione non avrà successo.
 
 TFTP Proxy
 ~~~~~~~~~~
@@ -1526,11 +1379,7 @@ specifiche dei siti.
 Tutti i valori sono espressi in *secondi* e controllono per quanto tempo
 un collegamento in quello stato verrà trattenuto nella tabella di stato.
 
-Vedere anche:
-~~~~~~~~~~~~~
-
-Le descrizioni delle seguenti opzioni si riferiscono a condizioni di
-stato del firewall come descritto in *Sti di interpretazione*.
+.. seealso:: Le descrizioni delle seguenti opzioni si riferiscono a condizioni di stato del firewall come descritto in *Sti di interpretazione*.
 
     **Prima TCP** Il primo pacchetto di una connessione TCP.
 
@@ -1568,24 +1417,22 @@ stato del firewall come descritto in *Sti di interpretazione*.
     altri protocolli.
 
 Scheda per le reti
-------------------
+==================
 
 Opzioni IPv6 Consentire IPv6
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------
 
-Quando l'opzione Consentire IPv6 non è selezionata, tutto il traffico
-IPv6 sarà bloccato.
+Quando l'opzione ``Consentire IPv6`` non è selezionata, tutto il traffico IPv6 sarà bloccato.
 
 Questa opzione è selezionata per impostazione predefinita in nuove
 configurazioni in modo che il firewall sia in grado di trasmettere e
 ricevere il traffico IPv6 se le regole lo permettono. Questa opzione
 controlla un insieme di regole di blocco che impediscono al traffico
 IPv6 di essere gestito dal firewall per consentire la compatibilità con
-le configurazioni importate da o aggiornate da versioni di pfSense
+le configurazioni importate da o aggiornate da versioni di |firew4ll|
 precedenti alla 2.1.
 
-**Nota:** Questa opzione non disabilita le funzioni di IPv6 o evita che
-venga configurato, controlla solo il flusso del traffico.
+.. note::  Questa opzione non disabilita le funzioni di IPv6 o evita che venga configurato, controlla solo il flusso del traffico.
 
 Tunneling IPv4 su IPv6
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1598,10 +1445,7 @@ Una volta configurata, questa inoltra tutto il traffico in entrata con
 protocollo 41/IPv6 a un host dietro questo firewall, invece di gestirlo
 localmente.
 
-**Suggerimento:** L'attivazione di questa opzione non aggiunge regole
-firewall per consentire il traffico del protocollo 41. Una regola deve
-esistere sull'interfaccia WAN per consentire al traffico di passare
-attraverso la ricezione locale di host.
+.. tip:: L'attivazione di questa opzione non aggiunge regole firewall per consentire il traffico del protocollo 41. Una regola deve esistere sull'interfaccia WAN per consentire al traffico di passare attraverso la ricezione locale di host.
 
 Preferire IPv4 su IPv6
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1614,24 +1458,13 @@ In rari casi in cui il firewall ha parzialmente configurato, ma non
 completamente indirizzato, l’IPv6, questo può consentire al firewall di
 continuare a raggiungere gli host di internet su IPv4.
 
-**Nota:** Questa opzione controlla il comportamento del firewall stesso,
-come ad esempio il polling per gli aggiornamenti, le installazioni dei
-pacchetti, le regole do download, e il recupero di altri dati. Non può
-influenzare il comportamento dei clienti dietro il firewall.
+.. note::  Questa opzione controlla il comportamento del firewall stesso, come ad esempio il polling per gli aggiornamenti, le installazioni dei pacchetti, le regole dei download, e il recupero di altri dati. Non può influenzare il comportamento dei clienti dietro il firewall.
 
-#. .. rubric:: 
-      :name: section-4
+Interfacce di rete
+------------------
 
-   .. rubric:: Interfacce di rete
-      :name: interfacce-di-rete
-
-   .. rubric:: Polling del dispositivo
-      :name: polling-del-dispositivo
-
-polling dispositivo è una tecnica che permette al sistema periodicamente
-dispositivi di rete polling di nuovi dati anziché basarsi su interrupt.
-Ciò impedisce il firewall WebGUI, SSH, ecc dall'essere causa
-inaccessibile a
+Polling del dispositivo
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Il polling dei dispositivi è una tecnica che consente al sistema di
 esaminare periodicamente i dispositivi di rete per i nuovi dati invece
@@ -1642,44 +1475,21 @@ polling è stata quasi eliminata grazie ai progressi del sistema
 operativo e a metodi più efficienti di gestione degli interrupt come
 MSI/MSIX.
 
-**Nota:** Con il polling abilitato, il sistema sembrerà utilizzare il
-100% della CPU. Questo è normale, perchè il thread di polling sta usando
-CPU per cercare i pacchetti. Il thread di polling viene eseguito con una
-priorità più bassa in modo che se gli altri programmi hanno bisogno di
-tempo sulla CPU, sospenderà l’attività per il tempo necessario. Lo
-svantaggio è che questa opzione rende il grafico della CPU meno utile.
+.. note::  Con il polling abilitato, il sistema sembrerà utilizzare il 100% della CPU. Questo è normale, perchè il thread di polling sta usando CPU per cercare i pacchetti. Il thread di polling viene eseguito con una priorità più bassa in modo che se gli altri programmi hanno bisogno ditempo sulla CPU, sospenderà l’attività per il tempo necessario. Lo svantaggio è che questa opzione rende il grafico della CPU meno utile.
 
-#. .. rubric:: 
-      :name: section-5
+Hardware Checksum Offloading
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   .. rubric:: Hardware Checksum Offloading
-      :name: hardware-checksum-offloading
+Se selezionata, questa opzione disabilita lo scaricamento del checksum dell’hardware sulle schede di rete. Lo scaricamento del checksum è generalmente vantaggioso in quanto consente al checksum di essere calcolato (in uscita) o verificato (in entrata) nell’hardware ad un tasso molto più veloce di quanto potrebbe essere gestito via software.
 
-Se selezionata, questa opzione disabilita lo scaricamento del cecksum
-dell’hardware sulle schede di rete. Lo scaricamento del checksum è
-generalmente vantaggioso in quanto consente al checksum di essere
-calcolato (in uscita) o verificato (in entrata) nell’hardware ad un
-tasso molto più veloce di quanto potrebbe essere gestito via software.
+.. note::  Quando lo scaricamento del checksum è attivato, la cattura di un pacchetto vedrà vuoti (tutti zero) o checksum di pacchetti segnalati come errati. Questi sono normali quando la manipolazione del checksum avviene nell’hardware.
 
-**Nota:** Quando lo scaricamento del checksum è attivato, la cattura di
-un pacchetto vedrà vuoti (tutti zero) o checksum di pacchetti segnalati
-come errati. Questi sono normali quando la manipolazione del checksum
-avviene nell’hardware.
+Lo scaricamento del checksum viene interrotto in alcuni hardware, in particolare le schede Realtek e le schede virtualizzate/emulate come quelle su Xen/KVM. I sintomi tipici di scaricamento del checksum interrotto includono pacchetti corrotti e scarse prestazioni di throughput. 
 
-Lo scaricamento del checksum viene interrotto in alcuni hardware, in
-particolare le schede Realtek e le schede virtualizzate/emulate come
-quelle su Xen/KVM. I sintomi tipici di scaricamento del checksum
-interrotto includono pacchetti corrotti e scarse prestazioni di
-throughput.
+.. tip:: In casi di virtualizzazione come Xen/KVM può essere necessario disattivare lo scaricamento del checksum sull'host, nonché sulla VM. Se le prestazioni sono ancora scarse o si hanno errori su questi tipi di macchine virtuali, cambiare il tipo di scheda di rete, se possibile.
 
-**Suggerimento:** In casi di virtualizzazione come Xen/KVM può essere
-necessario disattivare lo scaricamento del checksum sull'host, nonché la
-VM. Se le prestazioni sono ancora scarse o si hanno errori su questi
-tipi di macchine virtuali, cambiare il tipo di scheda di rete, se
-possibile.
-
-Caricamento della segmentazione TCP dell’hardware
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Hardware TCP Segmentation Offloading
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Selezionando questa opzione verrà disabilitato lo scaricamento della
 segmentazione TCP dell’hardware (TSO, TSO4, TSO6). Il TSO fa sì che il
@@ -1693,8 +1503,11 @@ compito è già stato eseguito in altre parti della rete, rompendo così il
 principio end-to-end modificando i pacchetti che non sono stati
 originati su questa struttura.
 
-Scaricamento della grande ricezione dell’hardware
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. seealso:: Attenzione: Questa opzione non è auspicabile per i router e i firewall, ma può giovare alle postazioni di lavoro e agli elettrodomestici. E' disabilitato per impostazione predefinita, e dovrebbe rimanere disabilitato a meno che il firewall non agisca principalmente o esclusivamente in un ruolo di appliance/endpoint.
+
+
+Hardware Large Receive Offloading
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Selezionare questa opzione disabiliterà lo scaricamento della grande
 ricezione dell’hardware (LRO). LRO è simile a TSO, ma per il percorso è
@@ -1709,7 +1522,8 @@ destinati a questa struttura, e dovranno essere divisi nuovamente sul
 percorso in uscita, aumentando il carico di lavoro in modo significativo
 e rompere la end-to-end.
 
-**Sopprimere i messaggi arp**
+Sopprimere i messaggi arp
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Il firewall crea una voce nel registro di sistema principale quando un
 indirizzo IP sembra passare a un indirizzo MAC diverso. Questa voce di
@@ -1731,10 +1545,10 @@ sistema più utile in quanto non sarà ingombrato con messaggi di log non
 necessari.
 
 Schede varie
-------------
+============
 
 Supporto proxy
-~~~~~~~~~~~~~~
+--------------
 
 Se questo firewall risiede in una rete che richiede un proxy per
 l'accesso a Internet in uscita, immettere le opzioni proxy in questa
@@ -1748,11 +1562,8 @@ Questa opzione specifica la posizione del proxy per effettuare i
 collegamenti esterni. Deve essere un indirizzo IP o un nome di dominio
 completo.
 
-#. .. rubric:: 
-      :name: section-6
-
-   .. rubric:: Porta del proxy
-      :name: porta-del-proxy
+Porta del proxy
+~~~~~~~~~~~~~~~
 
 La porta da utilizzare per la connessione al’ URL del proxy. Per
 impostazione predefinita, la porta è 8080 per l’URL del proxy HTTP e 443
@@ -1772,13 +1583,13 @@ Password del proxy
 Se necessario, questa è la password associata al nome utente impostato
 nell'opzione precedente.
 
-#. .. rubric:: BIlanciamento del carico
-      :name: bilanciamento-del-carico
+BIlanciamento del carico
+------------------------
 
-   .. rubric:: Connessioni appiccicose (Sticky connections)
-      :name: connessioni-appiccicose-sticky-connections
+Sticky connections
+~~~~~~~~~~~~~~~~~~
 
-Quando pfSense è diretto ad eseguire il bilanciamento del carico, le
+Quando |firew4ll| è diretto ad eseguire il bilanciamento del carico, le
 connessioni successive saranno reindirizzate in modo round-robin verso
 un server web o gateway, bilanciando il carico su tutti i server o
 percorsi disponibili. Quando Sticky Connections è attivo questo
@@ -1817,12 +1628,7 @@ raggiungere sempre lo stesso server fino a quando sta navigando in un
 sito. Questo comportamento potrebbe non essere richiesto a seconda del
 contenuto del server.
 
-**Suggerimento:** Per un maggiore controllo su come le connessioni
-utente sono associate con i server in uno scenario di bilanciamento del
-carico, prendere in considerazione l'utilizzo del pacchetto HAProxy
-invece del bilanciatore di carico relayd integrato. HAProxy supporta
-diversi metodi per garantire che gli utenti siano correttamente
-indirizzati verso un server di backend.
+.. tip:: Per un maggiore controllo su come le connessioni utente sono associate con i server in uno scenario di bilanciamento del carico, prendere in considerazione l'utilizzo del pacchetto HAProxy invece del bilanciatore di carico relayd integrato. HAProxy supporta diversi metodi per garantire che gli utenti siano correttamente indirizzati verso un server di backend. 
 
 Il **Timeout di tracciamento della sorgente** per connessioni
 appiccicose controlla per quanto tempo l'associazione appiccicosa sarà
@@ -1836,7 +1642,8 @@ browser Web spesso tenere connessioni aperte per un po' perché gli
 utenti sono su un sito, ma se c'è un sacco di tempo di inattività,
 connessioni possono essere chiuse e gli stati possono scadere.
 
-\ **Commutazione Gateway predefinita**
+Commutazione Gateway predefinita
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Abilitare la commutazione predefinita del gateway** consente
 l'acquisizione di altri gateway non predefiniti se il gateway
@@ -1847,19 +1654,17 @@ predefinito per far sì il traffico dal firewall stesso possa arrivare a
 Internet per DNS, aggiornamenti, pacchetti e servizi aggiuntivi come
 squid.
 
-**Suggerimento:** quando si utilizza il risolutore DNS Resolver in
-modalità predefinita non d’inoltro, è necessario il passaggio
-predefinito del gateway per il funzionamento corretto di Multi-WAN. Se
-non è possibile utilizzare la commutazione predefinita del gateway,
-considerare di utilizzare invece la modalità di inoltro.
+.. tip:: quando si utilizza il risolutore DNS Resolver in modalità predefinita non d’inoltro, è necessario il passaggio predefinito del gateway per il funzionamento corretto di Multi-WAN. Se non è possibile utilizzare la commutazione predefinita del gateway, considerare di utilizzare invece la modalità di inoltro.
 
 Ci sono casi in cui cambiare il gateway predefinito non è desiderabile,
 tuttavia, come quando il firewall ha altri gateway che non sono
 collegati a Internet. In futuro questa opzione sarà ampliata in modo da
 poter essere controllata sulla base del gateway.
 
+.. seealso:: Attenzione: Questa opzione è nota per non funzionare correttamente con una WAN di tipo PPP (PPPoE, L2TP, ecc.) come impostazione predefinita gateway.
+
 Risparmio energetico
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
 Quando è selezionata **Abilitare powerD,** il daemon powerD viene
 avviato. Questo daemon controlla il sistema e può abbassare o aumentare
@@ -1868,12 +1673,7 @@ hanno bisogno di potenza, la velocità della CPU sarà aumentata se
 necessario. Questa opzione ridurrà la quantità di calore generata da una
 CPU, e può anche ridurre il consumo di energia..
 
-**Nota:** Il comportamento di questa opzione dipende molto dall'hardware
-in uso. In alcuni casi, la frequenza della CPU può diminuire, ma non ha
-alcun effetto misurabile sul consumo di energia e/o di calore, dove
-altri si raffredderanno e useranno meno energia considerevolmente. Si
-considera sicuro da eseguire, ma è lasciato fuori per impostazione
-predefinita a meno che l'hardware supportato viene rilevato.
+.. note::  Il comportamento di questa opzione dipende molto dall'hardware in uso. In alcuni casi, la frequenza della CPU può diminuire, ma non ha alcun effetto misurabile sul consumo di energia e/o di calore, dove altri si raffredderanno e useranno meno energia considerevolmente. Si considera sicuro da eseguire, ma è lasciato fuori per impostazione predefinita a meno che l'hardware supportato viene rilevato.
 
 La modalità per il poker può essere selezionato anche per tre stati del
 sistema:
@@ -1905,15 +1705,10 @@ Esistono quattro modalità scelte per ciascuno di questi stati:
     potenza. Alza la frequenza della CPU più velocemente e la abbassa
     più lentamente. Questa è la modalità predefinita.
 
-**Nota:** Alcuni hardware richiedono l’esecuzione di powerD per
-funzionare alla sua massima frequenza della CPU raggiungibile. Se il
-dispositivo firewall non è abilitato, ma funziona sempre a quella che
-sembra essere una bassa frequenza della CPU, abilitare powerD e
-impostarlo al massimo per almeno lo stato di **Alimentazione a corrente
-alternata**.
+.. note::  Alcuni hardware richiedono l’esecuzione di powerD per funzionare alla sua massima frequenza della CPU raggiungibile. Se il dispositivo firewall non è abilitato, ma funziona sempre a quella che sembra essere una bassa frequenza della CPU, abilitare powerD e impostarlo al massimo per almeno lo stato di **Alimentazione a corrente alternata**.
 
 Cane da guardia (Watchdog)
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 Alcuni hardware del firewall includono una funzione Watchdog che può
 ripristinare l'hardware quando il daemon del watchdog non può più
@@ -1935,11 +1730,11 @@ subito un blocco rigido.
     carico e fa scattare il watchdog accidentalmente, aumentare il
     timeout.
 
-#. .. rubric:: Hardware termico e crittografico
-      :name: hardware-termico-e-crittografico
+Hardware termico e crittografico
+--------------------------------
 
-   .. rubric:: Hardware crittografico
-      :name: hardware-crittografico
+Hardware crittografico
+~~~~~~~~~~~~~~~~~~~~~~      
 
 Ci sono alcune opzioni disponibili per accelerare le operazioni
 crittografiche tramite hardware. Alcune sono incorporate nel kernel,
@@ -1968,13 +1763,10 @@ ubsec(4). Nella maggior parte dei casi, se viene rilevato un chip
 acceleratore supportato, verrà visualizzato nel widget **Informazioni di
 sistema** sula dashboard.
 
-#. .. rubric:: 
-      :name: section-7
+Sensori termici
+~~~~~~~~~~~~~~~
 
-   .. rubric:: Sensori termici
-      :name: sensori-termici
-
-pfSense è in grado di leggere i dati di temperatura da alcune fonti da
+|firew4ll| è in grado di leggere i dati di temperatura da alcune fonti da
 visualizzare sulla dashboard. Se il firewall ha una CPU supportata,
 selezionare un sensore termico caricherà il driver appropriato per
 leggere la sua temperatura.
@@ -1998,27 +1790,21 @@ Se il firewall non ha un chip sensore termico supportato, questa opzione
 non avrà alcun effetto. Per scaricare il modulo selezionato, impostare
 questa opzione su Nessuno/ACPI e quindi riavviare il sistema.
 
-**Nota:** I moduli coretemp e amdtemp riportano dati termici
+.. note::  I moduli coretemp e amdtemp riportano dati termici
 direttamente dal core della CPU. Questo può o non può essere indicativo
 della temperatura in altre parti del sistema. Le temperature del case
 possono variare notevolmente dalle temperature sulla matrice CPU.
 
-#. .. rubric:: Pianificazioni
-      :name: pianificazioni
+Pianificazioni
+~~~~~~~~~~~~~~
 
-   .. rubric:: L'opzione Non uccidere le connessioni quando scade la
-      pianificazione controlla se gli stati sono cancellati o meno
-      quando una regola per le pianificazione passa in uno stato che
-      bloccherebbe il traffico. Se deselezionata, le connessioni vengono
-      interrotte quando il tempo di pianificazione è scaduto. Se
-      selezionata, le connessioni vengono lasciate sole e non verranno
-      automaticamente chiuse dal firewall.
-      :name: lopzione-non-uccidere-le-connessioni-quando-scade-la-pianificazione-controlla-se-gli-stati-sono-cancellati-o-meno-quando-una-regola-per-le-pianificazione-passa-in-uno-stato-che-bloccherebbe-il-traffico.-se-deselezionata-le-connessioni-vengono-interrotte-quando-il-tempo-di-pianificazione-è-scaduto.-se-selezionata-le-connessioni-vengono-lasciate-sole-e-non-verranno-automaticamente-chiuse-dal-firewall.
+L'opzione **Non terminare le connessioni quando scade la pianificazione* controlla se gli stati sono cancellati o meno quando una regola per le pianificazione passa in uno stato che bloccherebbe il traffico. Se deselezionata, le connessioni vengono interrotte quando il tempo di pianificazione è scaduto. Se selezionata, le connessioni vengono lasciate sole e non verranno automaticamente chiuse dal firewall.
 
- Monitoraggio del gateway
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Monitoraggio del gateway
+------------------------
 
-**Cancellare gli stati quando il gateway è down**
+Cancellare gli stati quando il gateway è down
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Quando si utilizza la Multi-WAN, per impostazione predefinita il
 processo di monitoraggio non azzera gli stati quando un gateway va in
@@ -2037,14 +1823,10 @@ tutti gli Stati quando non riesce.
 Maggiori informazioni su come questo impatti sulla Multi-WAN può essere
 trovato in *Uccisione degli stati/Switch forzato*.
 
-**Nota:** Quando questa opzone viene attivata, l'intera tabella di stato
-viene cancellata. Ciò è necessario perché non è possibile uccidere tutti
-gli Stati per la WAN non funzionante e per gli stati LAN associati alla
-WAN non funzionante. Rimuovere di stati sul lato WAN da solo è
-inefficace, pure gli stati lato LAN devono essere cancellati.
+.. note::  Quando questa opzone viene attivata, l'intera tabella di stato viene cancellata. Ciò è necessario perché non è possibile uccidere tutti gli Stati per la WAN non funzionante e per gli stati LAN associati alla WAN non funzionante. Rimuovere di stati sul lato WAN da solo è inefficace, pure gli stati lato LAN devono essere cancellati.
 
-Salta le regole quando Gateway down
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Salta le regole quando il Gateway è giù
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Per impostazione predefinita, quando una regola ha un insieme di gateway
 specifici e questo gateway è down, il gateway è omesso dalla regola e il
@@ -2057,7 +1839,7 @@ predefinito, il traffico corrisponderà invece a una regola diversa.
 Questo è utile se il traffico deve sempre e solo utilizzare una
 specifica WAN e non scorrere mai su qualsiasi altra rete WAN.
 
-**Suggerimento:** Quando si utilizza questa opzione, creare una regola
+.. tip:: Quando si utilizza questa opzione, creare una regola
 di rifiuto o di blocco in accordo con la politica della regola di
 routing con gli stessi criteri di corrispondenza. Questo consentirà di
 evitare il traffico da altre regole potenzialmente corrispondenti al di
@@ -2065,7 +1847,7 @@ sotto di essa nel set di regole e di prendere un percorso non
 intenzionale.
 
 Impostazioni del disco RAM 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------
 
 Le directory /tmp e /var sono usate per scrivere file e contenere dati
 temporanei e/o volatili. Utilizzando un disco RAM si può ridurre la
@@ -2111,39 +1893,23 @@ periodicamente se configurato.
     meinri sono i dati che verranno persi in tal caso, ma backup più
     frequenti scrivono di più sul disco.
 
-RAM dimensioni del disco
-~~~~~~~~~~~~~~~~~~~~~~~~
+.. warning:: 
+	Attenzione: A parte i punti di cui sopra, ci sono diversi elementi per cui essere cauti quando si sceglie se utilizzare o meno l'opzione del disco di RAM. Usato impropriamente, questa opzione può portare alla perdita di dati o altri guasti imprevisti.
+	I log di sistema sono mantenuti in /var ma non sono sottoposti a backup come i database RRD e DHCP. I log verranno reimpostati nuovamente ad ogni riavvio. Per i log persistenti, utilizzare syslog da remoto per inviare i log a un altro dispositivo in rete.
+	I pacchetti potrebbero non tener conto dell'uso dei dischi della RAM e potrebbero non funzionare correttamente al momento dell'avvio o in altri modi. Provare ogni pacchetto, anche se non funziona immediatamente dopo il riavvio.
+	Questi sono dischi RAM, quindi la quantità di RAM disponibile per altri programmi sarà ridotta dalla quantità di spazio utilizzato dai dischi RAM. Per esempio se il firewall ha 2GB di RAM, e ha 512MB per /var e 512MB per /tmp, allora solo 1GB di RAM sarà disponibile al sistema operativo per uso generale.
+	Particolare attenzione deve essere presa quando si sceglie un formato di disco RAM, ciò è discusso nella sezione seguente.
 
-L'impostazione di una dimensione troppo piccola per / tmp e / var può
-ritorcersi contro, soprattutto quando si tratta di pacchetti. Le
-dimensioni suggerite nella pagina sono un minimo assoluto e spesso sono
-richieste dimensioni molto più grandi. Il più comune fallimento è che
-quando è installato un pacchetto, e parti del pacchetto tattili posti
-sia / tmp e / var e dal momento che può riempire il disco RAM e causare
-perdita di dati. Un altro errore comune è la creazione / var come un
-disco RAM e poi dimenticare di spostare una cache squid a un esterno
-posizione di / var - se non controllate, che verrà riempire il disco
-RAM.
 
-Per tmp /, è richiesto un minimo di 40 MiB. Per / var è richiesto un
-minimo di 60 MiB. Per determinare la dimensione corretta, controllare
-l'uso corrente del / tmp e / var directory prima di fare un
-interruttore. Controllare l'utilizzo più volte nel corso di un paio di
-giorni, quindi non e 'colto in un punto basso. Guardando l'utilizzo
-durante l'installazione del pacchetto aggiunge un altro punto di dati
-utili.
-
-Dimensioni del disco di RAM
----------------------------
+Dimensioni del disco RAM
+------------------------
 
 Impostare una dimensione troppo piccola per /tmp e /var può essere controproduttivo, specialmente quando si tratta di pacchetti. Le dimensioni suggerite sulla pagina sono un minimo assoluto e spesso sono richieste dimensioni molto più grandi. Il guasto più comune si ottiene quando un pacchetto è installato, e parti del pacchetto risiedono in entrambi /tmp e /var e si può infine riempire il disco RAM e causare la perdita di altri dati. Un altro errore comune è impostare /var come un disco RAM e poi dimenticare di spostare una cache squid in una posizione al di fuori di /var - se lasciato deselezionato, riempirà il disco RAM.
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Per /tmp è richiesto un minimo di 40 MiB. Per /var è richiesto un minimo di 60 MiB. Per determinare la dimensione corretta, controllare l'uso corrente delle directory /tmp e /var prima di fare uno scambio. Controllare l'uso più volte nel corso di un paio di giorni in modo da non essere catturato in un punto basso. Tenere d’occhio l'uso durante l'installazione di un pacchetto aggiunge un altro utile punto per i dati.
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Scheda dei parametri sintonizzabili del sistema
------------------------------------------------
+===============================================
 
 La scheda **Sistema dei parametri sintonizzabili** in **Sistema>
 Avanzate** fornisce un mezzo per impostare in fase di esecuzione
@@ -2156,13 +1922,13 @@ sviluppatore o di un rappresentante del supporto, possono decidere di
 modificare o aggiungere i valori in questa pagina in modo che essi siano
 impostati all'avvio del sistema.
 
-**Nota:** I parametri sintonizzabili in questa pagina sono diversi dai
+.. note::  I parametri sintonizzabili in questa pagina sono diversi dai
 Parametri sintonizzabili del caricatore. I Parametri sintonizzabili del
 caricatore sono valori di sola lettura dopo l'avvio del sistema, e
 questi valori devono essere impostati in /boot/loader.conf.local.
 
 Creazione e modifica dei parametri sintonizzabili
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------
 
 Per modificare un sintonizzabile esistente, fare clic su |image40|.
 
@@ -2176,7 +1942,7 @@ campi sono disponibili:
 
     **Valore** Il valore a cui verrà impostato il sintonizzabile.
 
-**Nota:** Alcuni valori hanno requisiti di formattazione. A causa del
+.. note::  Alcuni valori hanno requisiti di formattazione. A causa del
 gran numero di OID sysctl, la GUI non convalida che il dato valore
 funzionerà per il sintonizzabile prescelto.
 
@@ -2185,7 +1951,7 @@ funzionerà per il sintonizzabile prescelto.
 Fare clic su **Salvare** quando il modulo è completo.
 
 OID accordabili e valori
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 Ci sono molti OID disponibili da sysctl, alcuni di essi possono essere
 impostati, alcuni sono uscite di sola lettura, e altri devono essere
@@ -2196,16 +1962,16 @@ un poco più profondo, la pagina `*sysctl
 * <https://www.freebsd.org/cgi/man.cgi?query=sysctl>`__\ del manuale di
 FreeBSD contiene istruzioni dettagliate e informazioni.
 
-notifiche
----------
+Notifiche
+=========
 
-pfSense notifica all'amministratore eventi ed errori importanti mediante
+|firew4ll| notifica all'amministratore eventi ed errori importanti mediante
 la visualizzazione di un avviso nella barra dei menu, indicato
-dall’icona |image42|. pfSense può anche inviare queste notifiche da
+dall’icona |image42|. |firew4ll| può anche inviare queste notifiche da
 remoto via e-mail utilizzando il protocollo SMTP o tramite Growl.
 
 SMTP e-mail
-~~~~~~~~~~~
+-----------
 
 Le notifiche e-mail sono fornite da una connessione SMTP diretta ad un
 server di posta. Il server deve essere configurato per consentire
@@ -2268,17 +2034,17 @@ notifica di prova e inviarlo tramite SMTP utilizzando le impostazioni
 memorizzate in precedenza. Salvare le impostazioni prima di fare clic su
 questo pulsante.
 
-Avvio/Arresto del suono
-~~~~~~~~~~~~~~~~~~~~~~~
+Suono all' avvio/arresto
+------------------------
 
-Se l'hardware firewall ha un altoparlante PC pfSense gimmetterà un suono
+Se l'hardware firewall ha un altoparlante PC |firew4ll| gimmetterà un suono
 quando l’avvio finisce e di nuovo quando viene avviato un arresto.
 
 Selezionare **Disattivare il segnale acustico di avvio/arresto** per
 evitare che il firewall emetta questi suoni.
 
 Growl
-~~~~~
+-----
 
 Growl fornisce un metodo discreto di fornire notifiche sul desktop.
 Queste notifiche pop-up compaiono sul desktop e poi si nascondono o
@@ -2290,11 +2056,11 @@ accessibile s Windows e anche su FreeBSD / Linux.
 
     **Nome di registrazione** Il nome del servizio che il firewall
     utilizza per registrare con il server Growl. Per default è
-    pfSense-Growl. Consideriamo questo come il *tipo* di notifica vista
+    |firew4ll|-Growl. Consideriamo questo come il *tipo* di notifica vista
     dal server Growl.
 
     **Nome di notifica** Il nome del sistema che produce le notifiche.
-    Il valore predefinito di avviso growl pfSense può essere
+    Il valore predefinito di avviso growl |firew4ll| può essere
     sufficiente, personalizzarlo con il nome host firewall o qualsiasi
     altro valore per differenziarlo.
 
@@ -2311,49 +2077,19 @@ una notifica di test tramite Growl utilizzando le impostazioni salvate
 in precedenza. Salvare prima di tentare un test.
 
 Nozioni di base del menu della console
-======================================
+''''''''''''''''''''''''''''''''''''''
 
 Le operazioni di configurazione e manutenzione di base possono essere
 eseguite dalla console di sistema. La console è disponibile tramite
 tastiera e monitor, console seriale o SSH. I metodi di accesso variano a
 seconda dell'hardware. Di seguito è riportato un esempio di come
 apparirà il menu della console, ma può variare leggermente a seconda
-della versione e della piattaforma
+della versione e della piattaforma:
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| +---------------------------------------------------------------------+-----------+------+------------------------------------------------+   |
-| | \*\*\* Welcome to pfSense 2.4.0-RELEASE (amd64) on pfsense \*\*\*   |                                                                       |
-| +=====================================================================+===========+======+================================================+   |
-| | WAN (wan)                                                           | -> vmx0   | ->   | v4/DHCP4: 198.51.100.6/24                      |   |
-| +---------------------------------------------------------------------+-----------+------+------------------------------------------------+   |
-| | LAN (lan)                                                           | -> vmx1   | ->   | v6/DHCP6: 2001:db8::20c:29ff:fe78:6e4e/64      |   |
-| |                                                                     |           |      |                                                |   |
-| |                                                                     |           |      | v4: 10.6.0.1/24                                |   |
-| +---------------------------------------------------------------------+-----------+------+------------------------------------------------+   |
-| |                                                                     |           |      | v6/t6: 2001:db8:1:eea0:20c:29ff:fe78:6e58/64   |   |
-| +---------------------------------------------------------------------+-----------+------+------------------------------------------------+   |
-| | 1) Logout (SSH only) 9) pfTop                                       |                                                                       |
-| |                                                                     |                                                                       |
-| | 2) Assign Interfaces 10) Filter Logs                                |                                                                       |
-| |                                                                     |                                                                       |
-| | 3) Set interface(s) IP address 11) Restart webConfigurator          |                                                                       |
-| |                                                                     |                                                                       |
-| | 4) Reset webConfigurator password 12) PHP shell + pfSense tools     |                                                                       |
-| |                                                                     |                                                                       |
-| | 5) Reset to factory defaults 13) Update from console                |                                                                       |
-| |                                                                     |                                                                       |
-| | 6) Reboot system 14) Disable Secure Shell (sshd)                    |                                                                       |
-| |                                                                     |                                                                       |
-| | 7) Halt system 15) Restore recent configuration                     |                                                                       |
-| |                                                                     |                                                                       |
-| | 8) Ping host 16) Restart PHP-FPM                                    |                                                                       |
-| |                                                                     |                                                                       |
-| | 9) Shell                                                            |                                                                       |
-| +---------------------------------------------------------------------+-----------+------+------------------------------------------------+   |
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
+|image49|
 
 Assegnare Interfacce
---------------------
+====================
 
 Questa opzione riavvia il compito di **Assegnazione di interfaccia**,
 che è coperto in dettaglio in *Assegnare Interfacce* e *Assegnazione
@@ -2362,7 +2098,7 @@ interfacce VLAN, riassegnare le interfacce esistenti, o assegnarne di
 nuove.
 
 Impostare indirizzo IP dell’interfaccia (delle interfaccee)
------------------------------------------------------------
+===========================================================
 
 Lo script per impostare un indirizzo IP interfaccia può impostare gli
 indirizzi IP di interfacce WAN, LAN, o OPT, ma ci sono anche altre utili
@@ -2385,7 +2121,7 @@ funzioni su questo script:
 
 Questa opzione di menu richiama uno script per reimpostare la password e
 lo stato di account dell’admin. La password viene reimpostata al valore
-predefinito di pfSense.
+predefinito di |firew4ll|.
 
 Lo script prevede anche un paio di altre azioni per contribuire a
 recuperare l'ingresso al firewall:
@@ -2403,25 +2139,21 @@ recuperare l'ingresso al firewall:
 -  
 
 Ripristino delle impostazioni di fabbrica
------------------------------------------
+=========================================
 
 Questa opzione del menu ripristina la configurazione del sistema alle
 impostazioni di fabbrica. Tenterà inoltre di rimuovere tutti i pacchetti
 installati.
 
-**Nota:** Questa azione non apportare altre modifiche al file system. Se
-i file di sistema sono stati danneggiati o alterati in modo
-indesiderato, la pratica migliore è quella di fare una copia di backup,
-e reinstallare dal supporto di installazione.
+.. note::  
+	Questa azione non apportare altre modifiche al file system. Se i file di sistema sono stati danneggiati o alterati in modo indesiderato, la pratica migliore è quella di fare una copia di backup, e reinstallare dal supporto di installazione.
 
-Questa azione è disponibile anche nella WebGUI in **Diagnostica>
-Impostazioni di fabbrica**.
+Questa azione è disponibile anche nella WebGUI in **Diagnostica>Impostazioni di fabbrica**.
 
 Riavvio del sistema
--------------------
+===================
 
-Questa scelta del menu arresterà in domo pulito il firewall di pfSense e
-riavvierà il sistema operativo.
+Questa scelta del menu arresterà in modo pulito |firew4ll| e riavvierà il sistema operativo.
 
 Alcune opzioni avanzate possono essere visualizzate anche in questa
 pagina, a seconda del supporto hardware:
@@ -2441,40 +2173,33 @@ pagina, a seconda del supporto hardware:
     il firewall in modalità singolo utente per scopi diagnostici. Il
     firewall non può recuperare automaticamente da questo stato,
     l'accesso alla console è necessario per utilizzare la modalità
-    utente singolo e riavviare il firewall. Questa opzione non è
-    disponibile per SG-1000.
-
-    **Riavviare ed eseguire un controllo del filesystem** Questo riavvia
+    utente singolo e riavviare il firewall.
+	
+.. warning::
+	Attenzione: In modalità utente singolo, le impostazioni predefinite filesystem di root di sola lettura e altri file system non sono montati. Il firewall inoltre non dispone di una connessione di rete attiva. Questa opzione deve essere utilizzata solo sotto la guida di un rappresentante del supporto o un utente di FreeBSD con conoscenze avanzate.
+    
+	**Riavviare ed eseguire un controllo del filesystem** Questo riavvia
     il firewall e forze un controllo del filesystem utilizzando fsck, si
     esegue per cinque volte. Questa operazione in genere può correggere
-    i problemi con il file system sul firewall. Questa opzione non è
-    disponibile per SG-1000.
+    i problemi con il file system sul firewall. 
 
-**Nota:** La modalità utente singolo e le opzioni di controllo del
-filesystem richiedono una lettera maiuscola da inserire per confermare
-l'azione. Ciò è necessario per evitare di attivare le opzioni
-accidentalmente. Le opzioni di riavvio e reroot possono essere inserite
-in maiuscolo o minuscolo.
+.. note:: 
+	La modalità utente singolo e le opzioni di controllo del filesystem richiedono una lettera maiuscola da inserire per confermare l'azione. Ciò è necessario per evitare di attivare le opzioni accidentalmente. Le opzioni di riavvio e reroot possono essere inserite in maiuscolo o minuscolo.
 
-Questa azione è disponibile anche nella WebGUI in **Diagnostica>
-Riavvio**
+Questa azione è disponibile anche nella WebGUI in **Diagnostica>Riavvio**
 
-Sistema halt
-------------
+Arresta il sistema
+==================
 
 Questa scelta di menu interrompe in modo pulito il firewall e allo
 stesso tempo lo ferma o lo spegne a seconda del supporto hardware.
 
-Questa azione è anche disponibile nella WebGUI in **Diagnostica> Sistema
-Halt**
+Questa azione è anche disponibile nella WebGUI in **Diagnostica>Arresta il sistema**
 
-Ospite ping
------------
+Ping host
+=========
 
-Questa opzione del menu esegue uno script che tenta di contattare un
-host per confermare se è raggiungibile tramite una rete collegata. Lo
-script richiede all'utente un indirizzo IP, e poi invia all'host di
-destinazione tre richieste ICMP echo.
+Questa opzione del menu esegue uno script che tenta di contattare un host per confermare se è raggiungibile tramite una rete collegata. Lo script richiede all'utente un indirizzo IP, e poi invia all'host di destinazione tre richieste ICMP echo.
 
 Lo script visualizza l'output del test, incluso il numero di pacchetti
 ricevuti, i numeri di sequenza, i tempi di risposta e la percentuale di
@@ -2484,14 +2209,14 @@ Lo script usa ping quando viene dato un indirizzo IPv4 o un hostname, e
 ping6 quando viene dato un indirizzo IPv6.
 
 Shell
------
+=====
 
 Questa scelta del menù avvia una linea di comando nella shell. Una shell
 è molto utile e molto potente, ma ha anche il potenziale per essere
 molto pericolosa.
 
-**Nota:** La maggior parte degli utenti pfSense non hanno bisogno di
-toccare la shell, o anche di sapere che esiste.
+.. note::  
+	La maggior parte degli utenti |firew4ll| non hanno bisogno di usare la shell, o anche di sapere che esiste.
 
 Le attività di configurazione complesse possono richiedere l'impiego
 della shell, e alcuni compiti di risoluzione dei problemi sono
@@ -2499,7 +2224,7 @@ facilmente eseguibili dalla shell, ma c'è sempre la possibilità di
 causare un danno irreparabile al sistema.
 
 Gli utenti veterani di FreeBSD possono sentirsi un po 'come a casa lì,
-ma ci sono molti comandi che non sono presenti in un sistema pfSense in
+ma ci sono molti comandi che non sono presenti in un sistema |firew4ll| in
 quanto le parti non necessarie del sistema operativo vengono rimosse per
 vincoli di sicurezza e dimensioni.
 
@@ -2509,7 +2234,7 @@ comodità degli utenti, non è consigliabile o supportato l'utilizzo di
 altre shell.
 
 pfTop
------
+=====
 
 Questa opzione del menu richiama pftop che mostra una visione in tempo
 reale degli stati del firewall, e la quantità di dati che hanno inviato
@@ -2517,26 +2242,23 @@ e ricevuto. Può aiutare le sessioni di pinpoint che attualmente
 utilizzano grandi quantità di larghezza di banda, e può anche aiutare a
 diagnosticare altri problemi di connessione di rete.
 
-Vedere anche:
-~~~~~~~~~~~~~
+	.. seealso:: 
+		Vedere *Guardare gli stati con pfTop* per ulteriori informazioni su come utilizzare pfTop.
 
-Vedere *Guardare gli stati con pfTop* per ulteriori informazioni su come
-utilizzare pfTop.
+Filtri Log
+==========
 
-Riltro di registro
-------------------
-
-L’opzione di menu **Filtro di resistro** visualizza le voci di registro
+L’opzione di menu **Filtri Log** visualizza le voci di registro
 del firewall in tempo reale, nella loro forma grezza. I registri grezzi
 contengono molte più informazioni per linea della vista del registro
 nella WebGUI (**Stato> Registri di sistema, scheda Firewall**), ma non
 tutte queste informazioni sono facili da leggere.
 
-**Suggerimento:** Per una vista da console semplificata dei registri in
-tempo reale con dettagli bassi, utilizzare questo comando shell:
+	.. tip:: 
+		Per una vista da console semplificata dei registri in tempo reale con dettagli bassi, utilizzare questo comando shell:
 
-Riavviare il configuratore web
-------------------------------
+Riavviare webConfigurator
+=========================
 
 Il riavvio del webConfigurator riavvia il processo di sistema che esegue
 la WebGUI (nginx). In casi estremamente rari il processo potrebbe essere
@@ -2546,17 +2268,17 @@ Se l'interfaccia grafica non risponde e questa opzione non consente di
 ripristinare l'accesso, selezionare l'opzione 16 del menu per
 **Riavviare PHP-FPM** dopo l'utilizzo di questa opzione di menu.
 
-strumenti di shell PHP + pfSense
---------------------------------
+PHP Shell + Strumenti |firew4ll|
+================================
 
 La shell PHP è una potente utility che esegue il codice PHP nel contesto
 del sistema in esecuzione. Come con la shell normale, è anche
 potenzialmente pericolosa da usare. Questa è usata principalmente dagli
 sviluppatori e utenti esperti che sono intimamente familiari sia con PHP
-sia il codice di base di pfSense.
+sia il codice di base di |firew4ll|.
 
-Gli script di riproduzione
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Gli script di ripristino
+------------------------
 
 Ci sono diversi script di riproduzione per la shell PHP che
 automatizzano compiti semplici o consentono l'accesso alla GUI.
@@ -2564,76 +2286,79 @@ automatizzano compiti semplici o consentono l'accesso alla GUI.
 Questi script vengono eseguiti all'interno della shell PHP in questo
 modo:
 
+``firew4ll shell: playback scriptname``
+
 Possono essere anche eseguiti da una linea di comando come:
 
-#. .. rubric:: 
-      :name: section-12
+.. code-block:: none
+	# pfSsh.php playback scriptname
 
-   .. rubric:: Cambiare la password
-      :name: cambiare-la-password
-
+changepassword
+~~~~~~~~~~~~~~
 Questo script modifica la password di un utente, e richiede di
 ripristinare le proprietà dell'account se è disabilitato o scaduto.
 
-Disabilitare carp/abilitare carp
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+disablecarp/enablecarp
+~~~~~~~~~~~~~~~~~~~~~~
 
 Questi script disabilitano e abilitano le funzioni di alta disponibilità
 CARP, e disattiverà gli indirizzi virtuali IP di tipo CARP. Questa
 azione non persiste dopo il riavvio.
 
-Disabilitare il manutenzione carp/abilitare il manutenzione carp
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+disablecarpmaint / enablecarpmaint
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Questi script attivano e disattivano la modalità di manutenzione CARP,
 che lascia attivo il CARP ma degrada questa unità così l'altro nodo può
 assumere il controllo. Questa modalità di manutenzione persisterà dopo
 il riavvio.
 
-#. .. rubric:: 
-      :name: section-13
-
-   .. rubric:: DHCP disabilitato
-      :name: dhcp-disabilitato
+disabledhcpd
+~~~~~~~~~~~~
 
 Questo script rimuove tutte le configurazioni DHCP dal firewall,
 disabilitando il servizio DHCP e rimuovendo completamente tutte le
 relative impostazioni.
 
-**Disabilita il controllo referrer**
+disablereferercheck
+~~~~~~~~~~~~~~~~~~~~
 
 Questo script disattiva il controllo di HTTP\_REFERER menzionato in
 *Applicazione HTTP\_REFERER del browser*. Questo può aiutare per
 ottenere l'accesso alla GUI se una sessione del browser innesca questa
 protezione.
 
-**Consentire a tutte le wan**
+enableallowallwan
+~~~~~~~~~~~~~~~~~
 
 Questo script aggiunge il consenso a tutte le regole per IPv4 e IPv6 per
 l'interfaccia WAN.
 
-Abilitare SHD
-~~~~~~~~~~~~~
+.. warning::
+	Attenzione: Essere estremamente attenti con questa opzione, è destinata ad essere una misura temporanea per ottenere l'accesso ai servizi sull'interfaccia WAN del firewall in situazioni in cui la rete LAN non è utilizzabile. Una volta che le regole di accesso corrette sono messe in atto, rimuovere le regole aggiunte da questo script.
+
+enablesshd
+~~~~~~~~~~
 
 Questo script abilita il daemon SSH, come l'opzione di menu della
 console o l'opzione GUI.
 
-Localizzatore di configurazione esterno 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+externalconfiglocator
+~~~~~~~~~~~~~~~~~~~~~
 
 Questo script cercherà un file config.xml su un dispositivo esterno,
 come ad esempio una chiavetta USB, e lo sposterà in posizione per l'uso
 da parte del firewall.
 
-Stato del gateway
-~~~~~~~~~~~~~~~~~
+gatewaystatus
+~~~~~~~~~~~~~
 
 Questo script stampa lo stato del gateway corrente e le statistiche.
 Accetta anche un parametro opzionale breve che stampa solo il nome di
 gateway e lo stato, omettendo gli indirizzi e dati statistici.
 
-Generare certificato GUI
-~~~~~~~~~~~~~~~~~~~~~~~~
+generateguicert
+~~~~~~~~~~~~~~~
 
 Questo script crea un nuovo certificato auto-firmato per il firewall e
 lo attiva per l'impiego nella GUI. Questo è utile nei casi in cui il
@@ -2642,27 +2367,30 @@ riempie anche nei dettagli del certificato utilizzando il nome host del
 firewall e altre informazioni personalizzate, per meglio identificare
 l'host.
 
-Sincronizzazione git
-~~~~~~~~~~~~~~~~~~~~
+gitsync
+~~~~~~~
 
 Questo script complesso sincronizza il PHP e altre fonti di script con i
-file dal repository github di pfSense. E’ più utile sullo snapshot di
+file dal repository github di |firew4ll|. E’ più utile sullo snapshot di
 sviluppo per raccogliere le modifiche dall’impegno più recente.
+
+.. warning::
+	Avvertimento: Questo script può essere pericoloso da utilizzare in altre circostanze. utilizzare questo solo sotto la direzione di un rappresentante dello sviluppatore o un supporto tecnico.
 
 Se lo script viene eseguito senza alcun parametro stampa un messaggio di
 aiuto che illustra il suo utilizzo. Maggiori informazioni possono essere
-trovate sul pfSense Doc Wiki.
+trovate sul |firew4ll| Doc Wiki.
 
-Installare pacchetto/elenco dei pacchetti/disinstallare pacchetto
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+installpkg / listpkg / uninstallpkg
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Questi script si interfacciano con il sistema dei pacchetti pfSense in
+Questi script si interfacciano con il sistema dei pacchetti |firew4ll| in
 un modo simile alla GUI. Questi sono utilizzati principalmente per il
 debug dei problemi del pacchetto, confrontando le informazioni in
 config.xml rispetto al database dei pacchetti.
 
-Driil di ancoraggio pf
-~~~~~~~~~~~~~~~~~~~~~~
+pfanchordrill
+~~~~~~~~~~~~~
 
 Questo script ricorsivamente ricerca attraverso gli ancoraggi di pf e
 stampa qualsiasi NAT o regole del firewall che trova. Questo può aiutare
@@ -2670,8 +2398,8 @@ a rintracciare un comportamento imprevisto in settori come il
 bilanciamento del carico relayd che si basano sulle regole di ancoraggio
 che altrimenti non sarebbero visibili nella GUI.
 
-Drill delle tabelle pf
-~~~~~~~~~~~~~~~~~~~~~~
+pftabledrill
+~~~~~~~~~~~~
 
 Questo script stampa il contenuto di tutte le tabelle pf, che contengono
 indirizzi utilizzati nelle alias del firewall così come tabelle di
@@ -2680,47 +2408,49 @@ blocco GUI/SSH. Questo script è utile per controllare se un indirizzo IP
 specifico si trova in qualsiasi tabella, piuttosto che la ricerca
 individuale.
 
-Rimuovere configurazione del pacchetto
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+removepkgconfig
+~~~~~~~~~~~~~~~
 
 Questo script rimuove tutte le tracce di dati di configurazione del
 pacchetto dalla esecuzione di config.xml. Questo può essere utile se un
 pacchetto ha impostazioni danneggiate o altrimenti ha lasciato i
 pacchetti in uno stato incoerente.
 
-Rimuovere shaper
-~~~~~~~~~~~~~~~~
+removeshaper
+~~~~~~~~~~~~
 
 Questo script rimuove le impostazioni shaper del traffico ALTQ, che può
 essere utile se la configurazione shaper impedisce regole di carico o è
 altrimenti scorretta e previene il corretto funzionamento del firewall.
 
-Reimpostare la webgui
-~~~~~~~~~~~~~~~~~~~~~
+resetwebgui
+~~~~~~~~~~~
 
 Questo script ripristina le impostazioni della GUI per i widget, colonne
 cdella dashboard, il tema e altre impostazioni relative alla GUI. Può
 restituire la GUI, in particolare la dashboard, ad uno stato stabile se
 non funziona correttamente.
 
-Riavviare DHCPD
-~~~~~~~~~~~~~~~
+restartdhcpd
+~~~~~~~~~~~~
 
 Questo script arresta e riavvia il daemon DHCP.
 
-Riavviare IPsec
-~~~~~~~~~~~~~~~
+restartipsec
+~~~~~~~~~~~~
 
 Questo script riscrive e ricarica la configurazione IPsec per
 strongSwan.
 
-SVC
+svc
 ~~~
 
 Questo script permette di controllare i servizi in esecuzione sul
 firewall, come interagire con i servizi a **Stato> Servizi**.
 
 La forma generale del comando è:
+
+``playback svc <action> <service name> [service-specific options]``
 
 L'azione può essere fermata, iniziata, o riavviata.
 
@@ -2735,15 +2465,18 @@ istanze, come ad esempio le voci OpenVPN o Captive Portal.
 Esempi:
 
 -  Fermare miniupnpd:
+	``pfSsh.php playback svc stop miniupnpdUU
 
 -  Riavviare il client OpenVPN con ID 2:
+	``pfSsh.php playback svc restart openvpn client 2``
 
--  Avviare il processo del Captice Porta per la zona “ MiaZona”:
+-  Avviare il processo del Captive Portal per la zona “MiaZona”:
+	``pfSsh.php playback svc start captiveportal MyZone``
 
-   1. .. rubric:: Aggiornamento dalla console
-         :name: aggiornamento-dalla-console
+Aggiornamento dalla console
+===========================
 
-Questa opzione del menu esegue lo script pfSense-aggiornamento per
+Questa opzione del menu esegue lo script |firew4ll|-aggiornamento per
 aggiornare il firewall per l'ultima versione disponibile. Questa è
 operativamente identica a eseguire un aggiornamento dalla GUI e richiede
 una connessione di rete per raggiungere il server di aggiornamento.
@@ -2751,15 +2484,15 @@ una connessione di rete per raggiungere il server di aggiornamento.
 Questo metodo di aggiornamento è coperto con maggiori dettagli in
 *Aggiornamento utilizzando la Console*.
 
-Attivare/Disattivare la Shell sicura (SSHD)
--------------------------------------------
+Attivare/Disattivare SSHD
+=========================
 
 Questa opzione attiva o disattiva lo stato del daemon della Shell,sicura
 SSHD. Questa opzione funziona come l'opzione nella WebGUI per abilitare
 o disabilitare SSH, ma è accessibile dalla console.
 
 Ripristino della configurazione recente
----------------------------------------
+=======================================
 
 Questa opzione di menu avvia uno script che elenca e ripristina i backup
 dalla cronologia della configurazione. Questo è simile a l'accesso alla
@@ -2774,7 +2507,7 @@ particolarmente utile se un errore di configurazione recente
 accidentalmente ha rimosso l'accesso alla GUI.
 
 Riavviare PHP-FPM
------------------
+=================
 
 Questa opzione del menu arresta e riavvia il deaemon che gestisce i
 processi di PHP per nginx. Se il processo del server web della GUI è in
@@ -2783,26 +2516,17 @@ opzione. Eseguire questa opzione in combinazione con **Riavviare il
 configuratore web** per il miglior risultato.
 
 Sincronizzazione dell’orario
-============================
+''''''''''''''''''''''''''''
 
-Il tempo e le questioni dell’orologio sono relativamente comuni su
-hardware, ma sui firewall sono critiche, soprattutto se il firewall sta
-eseguendo attività che coinvolgono i certificati di convalida come parte
-di un'infrastruttura PKI.
+Il tempo e le questioni dell’orologio sono relativamente comuni sull' hardware, ma sui firewall sono critiche, soprattutto se il firewall sta eseguendo attività che coinvolgono i certificati di convalida come parte di un'infrastruttura PKI.
 
-La sincronizzazione dell’oratio proprio è una necessità assoluta sui
-sistemi integrati, alcuni dei quali non hanno una batteria di bordo di
-preservare le loro data e l'ora quando viene tolta.
+La sincronizzazione dell'orario di sistema è una necessità primaria sui sistemi integrati, alcuni dei quali non hanno una batteria a bordo per preservara la date e l'ora quando la corrente elettrica viene tolta.
 
-t
 
-Non solo otterrà che tutto questo sia in linea con l’aiuto alle attività
-di sistema critiche, ma assicura anche che i file di log sul firewall
-abbiano un corretto timestamp, che aiuta con la risoluzione dei problemi
-di registrazione, e la gestione generale del sistema
+Non solo questo aiuterà a mantenere tutto in linea con i compiti critici del sistema, ma assicura anche che i file di log sul firewall siano adeguatamente cronometrati, il che aiuterà la risoluzione dei problemi, la tenuta dei registri e la gestione generale del sistema.
 
 Problemi per mantenere l’orario
--------------------------------
+===============================
 
 L'hardware può avere problemi significativi nel mantenere l’orario,
 anche se tali problemi sono generalmente isolati dall’hardware vecchio e
@@ -2817,15 +2541,15 @@ questi problemi.
 
 Il modo migliore per evitare problemi di tempo è quello di utilizzare un
 hardware di qualità che è stato testato e non fa verificare questi
-problemi, come l'hardware trovato nel negozio pfSense.
+problemi, come l'hardware trovato nel negozio |firew4ll|.
 
 Ci sono quattro elementi per controllare se l'hardware presenta
 significativi problemi di mantenimento dell’orario.
 
-Protocollo per l’orario di rete
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+NTP (Network Time Protocol)
+---------------------------
 
-Per impostazione predefinita, i tentativi pfSense per sincronizzare
+Per impostazione predefinita, i tentativi |firew4ll| per sincronizzare
 l'ora utilizzando il pool di server del protocollo dell’orario di rete
 (NTP) ntp.org. Questo assicura una data precisa e l'ora sul firewall, e
 ospiterà il normale scostamento d’orario. Se la data e l'ora del
@@ -2840,11 +2564,11 @@ per la Dashboard offre anche informazioni di base relative al server NTP
 selezionato per l'uso da parte del firewall.
 
 Aggiornamenti BIOS
-~~~~~~~~~~~~~~~~~~
+------------------
 
 Abbiamo visto vecchi hardware che funzionavano bene per anni su Windows
 incontrare grossi problemi nel mantenere l’orario una volta
-ridistribuito su FreeBSD (e di conseguenza, pfSense). I sistemi stavano
+ridistribuito su FreeBSD (e di conseguenza, |firew4ll|). I sistemi stavano
 eseguendo una versione del BIOS con diverse revisioni obsolete. Una
 delle revisioni ha affrontato un problema di mantenimento dell’orario
 che apparentemente non ha mai interessato Windows. L'applicazione del
@@ -2852,17 +2576,17 @@ BIOS aggiornamento ha risolto il problema. La prima cosa da controllare
 è assicurarsi che l'hardware in questione abbia l'ultimo BIOS
 disponibile.
 
-Impostazioni PNP del sistema operatico nel BIOS
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Impostazioni PNP del sistema operativo nel BIOS
+-----------------------------------------------
 
 Un altro hardware potrebbe avere difficoltà a mantenere l’orario in
-FreeBSD e pfSense a meno che il sistema operativo con PNP nel BIOS non
+FreeBSD e |firew4ll| a meno che il sistema operativo con PNP nel BIOS non
 sia stato impostato su *No*. Se il BIOS non ha un'opzione di
 configurazione PNP del sistema operativo, cercare un’impostazione del OS
 e impostare su *altri*.
 
 Disabilitare ACPI
-~~~~~~~~~~~~~~~~~
+-----------------
 
 Alcuni fornitori di BIOS hanno prodotto le implementazioni ACPI
 (Advanced Configuration and Power Interface) che sono buggy nella
@@ -2874,17 +2598,14 @@ Mentre il supporto ACPI può essere disattivato nel BIOS e nel sistema
 operativo, si consiglia di non utilizzare hardware che richieda tali
 cambiamenti.
 
-#. .. rubric:: 
-      :name: section-14
+Regolare impostazioni Timecounter
+---------------------------------
 
-   .. rubric:: Regolare l’impostazione hardware del contatore del tempo
-      :name: regolare-limpostazione-hardware-del-contatore-del-tempo
-
-Sui sistemi rari, il valore sysctl del kern.timecounter.hardware può
+Sui sistemi rari, il valore sysctl del ``kern.timecounter.hardware`` può
 avere bisogno di essere cambiato per correggere un’imprecisione
 dell’orologio. Questo è noto per essere un problema con le versioni
 precedenti di VMware, come ESX 5.0 in combinazione con un'immagine
-pfSense o FreeBSD basata su amd64. Questo caso particolare è stato un
+|firew4ll| o FreeBSD basata su amd64. Questo caso particolare è stato un
 bug nel hypervisor che è stato risolto nel ESX 5.1 e nei successivi.
 
 In questi sistemi il contatore del tempo predefinito finirà per fermare
@@ -2894,7 +2615,7 @@ distorsioni di grandi quantità con il contatore del tempo sbagliato.
 
 Per cambiare il contatore del tempo, accedere a **Sistema> Avanzate**,
 nella scheda **Parametri sintonizzabili del sistema** e aggiungere una
-voce da impostare kern.timecounter.hardware per i8254
+voce da impostare ``kern.timecounter.hardware`` a ``i8254``
 
 Ciò fa in modo che il sistema utilizzi il chip i8254 come contatore del
 tempo, che tipicamente mantiene bene ma non può essere veloce come altri
@@ -2910,11 +2631,15 @@ A seconda della piattaforma e dell’hardware, ci possono essere anche
 altri contatori di tempo da provare. Per una lista di quelli disponibili
 su un firewall, eseguire il seguente comando:
 
+``# sysctl kern.timecounter.choice``
+
 Il firewall stamperà un elenco dei contatori di tempo disponibili e la
 loro "qualità" come riportato da FreeBSD:
 
+``kern.timecounter.choice: TSC-low(1000) ACPI-safe(850) i8254(0) dummy(-1000000)``
+
 Provare una di questi quattro valori per l'impostazione sysctl di
-kern.timecounter.hardware. In termini di “qualità” in questo elenco, il
+``kern.timecounter.hardware``. In termini di “qualità” in questo elenco, il
 più grande è il numero migliore, ma la fruibilità effettiva varia da
 sistema a sistema.
 
@@ -2947,13 +2672,13 @@ mantenimento del tempo nel kernel SMP di Poul-Henning Kamp del progetto
 FreeBSD, e nel codice sorgente di FreeBSD.
 
 Regolare la frequenza del timer del Kernel
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------------
 
 In rari casi, regolando la frequenza del timer del kernel, o il
 sintonizzabile del kernel kern.hz, si possono aiutare le prestazioni o
 la stabilità. Questo è particolarmente vero in ambienti virtualizzati.
 Il valore predefinito è 1000, ma in alcuni casi 100, 50, o 10 sarà un
-valore migliore a seconda del sistema. Quando pfSense è installato in
+valore migliore a seconda del sistema. Quando |firew4ll| è installato in
 VMware, viene rilevato e impostato automaticamente questo parametro
 sintonizzabile a 100, che dovrebbe funzionare bene in quasi tutti i casi
 con prodotti VMware.
@@ -2961,17 +2686,17 @@ con prodotti VMware.
 Per modificare questa impostazione, aggiungere una riga al
 /boot/loader.conf.local con il nuovo valore:
 
-Sincronizzazione del tempo GPS
-------------------------------
+Sincronizzazione ora GPS
+==============================
 
 Come aiuto nel mantenere un orologio preciso, la sincronizzazione
-dell'ora GPS è fornita anche da pfSense su un hardware supportato. Sono
+dell'ora GPS è fornita anche da |firew4ll| su un hardware supportato. Sono
 supportati alcuni dispositivi seriali o GPS con USB, e in combinazione
 con server per l’orario, che possono aiutare a mantenere l'orologio
 preciso. Per ulteriori dettagli, vedere *nTPD*.
 
 Risoluzione dei problemi
-========================
+''''''''''''''''''''''''
 
 L'\ **installazione guidata** e le attività di configurazione relative
 funzionano per la maggior parte delle situazioni, ma ci possono essere
@@ -2980,8 +2705,8 @@ direzioni previste. Alcuni di questi problemi possono essere specifici
 di un particolare ambiente o di configurazione, ma possono essere
 affrontati con la risoluzione dei problemi di base.
 
-Non riesco ad accedere WebGUI da LAN
-------------------------------------
+Non riesco ad accedere WebGUI dalla LAN
+=======================================
 
 Se la WebGUI non è accessibile dalla LAN, la prima cosa da controllare è
 il cablaggio. Se il cavo è un cavo fatto a mano o più breve di 3 piedi
@@ -3022,13 +2747,15 @@ altro router NAT, può anche usare 192.168.1.1. Se la stessa sottorete è
 presente sulla WAN e sulla LAN, possono verificarsi risultati
 imprevedibili, tra cui l'impossibilità di instradare il traffico o
 accedere alla WebGUI. In caso di dubbio, scollegare il cavo WAN,
-riavviare il firewall pfSense e riprovare.
+riavviare il firewall |firew4ll| e riprovare.
 
 Se il client riceve un ripristino della connessione, prima provare a
 riavviare il processo server WebGUI dalla console di sistema,
 tipicamente l'opzione 11, seguita dall'opzione 16 per riavviare PHP-FPM.
 Se questo non aiuta, avviare una shell dalla console (opzione 8) e
 digitare:
+
+``# sockstat | grep nginx``
 
 Il firewall restituirà una lista di tutti i processi Nginx in
 esecuzione, e la porta su cui sono in ascolto, come questa:
@@ -3051,10 +2778,10 @@ firewall.
 Provare a connettersi all'indirizzo IP della LAN del firewall usando
 direttamente quella porta, sia HTTP sia HTTPS. Per esempio, se
 l'indirizzo IP della LAN era 192.168.1.1, e stava ascoltando sulla porta
-82, provare http://192.168. 1. 1:82 e https:///192.168. 1.1:82.
+82, provare http://192.168.1.1:82 e https:///192.168.1.1:82.
 
-Nessun Internet dalla LAN
--------------------------
+Non si naviga in internet dalla LAN
+===================================
 
 Se il PC client è in grado di raggiungere la WebGUI ma non Internet, ci
 sono diverse cose da considerare. L'interfaccia WAN può non essere
@@ -3064,7 +2791,7 @@ del NAT, o anche qualcosa di semplice come un problema di gateway
 locale.
 
 Problemi con l’interfaccia WAN
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------
 
 In primo luogo, controllare l'interfaccia WAN per essere sicuri che sia
 operativa. Andare alla sezione **Stato> Interfacce** e guardare lo stato
@@ -3082,7 +2809,7 @@ consultare il provider di servizi Internet per un aiuto per quanto
 riguarda le impostazioni e lo stato del circuito.
 
 Problemi relativi alla risoluzione DNS
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------
 
 All'interno della WebGUI, navigare fino a **Diagnostica > Ping** e
 inserire l'indirizzo del gateway ISP. L'indirizzo del gateway è elencato
@@ -3103,7 +2830,7 @@ la connettività per gli aggiornamenti bogon*.
 
 Se la risoluzione DNS non funziona sul firewall, controllare prima quale
 servizio DNS è abilitato sul firewall e come è configurato. Per
-impostazione predefinita, un firewall pfSense è configurato per
+impostazione predefinita, un firewall |firew4ll| è configurato per
 utilizzare il risolutore DNS in una modalità che non richiede server DNS
 specifici. Interrogare direttamente i server root e altri server
 autorevoli. Installazioni precedenti e installazioni aggiornate
@@ -3135,7 +2862,7 @@ tutto il resto non riesce, prendere in considerazione l'utilizzo della i
 nome server della pubblica DNS di Google (8.8.8, 8.8.4.4) sul firewall
 invece di quelli forniti dall'ISP.
 
-Se DNS funziona dal firewall pfSense ma non da un PC client, potrebbe
+Se DNS funziona dal firewall |firew4ll| ma non da un PC client, potrebbe
 essere la configurazione del risolutore DNS o il DNS Forwarder sul
 firewall, la configurazione del client, o le regole del firewall. Fuori
 dalla casella, il risolutore del DNS gestisce le query DNS per i client
@@ -3151,10 +2878,10 @@ DNS e i DNS Forwarder sono disabilitati, i server DNS di sistema vengono
 assegnati direttamente ai client, ma se questo non è il caso in oggetto
 per questa impostazione, definirli nelle impostazioni DHCP. Se il PC
 client non è configurato per DHCP, accertati che abbia il server DNS
-corretto: o l'indirizzo IP della LAN del firewall pfSense o un gruppo
+corretto: o l'indirizzo IP della LAN del firewall |firew4ll| o un gruppo
 alternativo di server DNS interni o esterni.
 
-Un'altra possibilità per il DNS di lavorare dal firewall pfSense ma non
+Un'altra possibilità per il DNS di lavorare dal firewall |firew4ll| ma non
 da un client locale è una regola firewall troppo rigida sulla LAN.
 Controllare **Stato>Registri di sistema**, nella scheda **Firewall**. Se
 le connessioni bloccate appaiono nel registro dal client locale che
@@ -3163,26 +2890,26 @@ firewall nella parte superiore delle regole LAN per tale interfaccia che
 consentirà le connessioni ai server DNS sulla **porta TCP e UDP 53**.
 
 Problemi con il gateway del client
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------
 
-Affinché un firewall pfSense instradi correttamente il traffico Internet
+Affinché un firewall |firew4ll| instradi correttamente il traffico Internet
 per i PC client, esso deve avere il proprio gateway. Se i PC client sono
-configurati utilizzando il server DHCP integrato nei firewall pfSense,
+configurati utilizzando il server DHCP integrato nei firewall |firew4ll|,
 questo verrà impostato automaticamente. Tuttavia, se i client ricevono
 informazioni DHCP da un server DHCP alternativo, o se i loro indirizzi
 IP sono stati inseriti manualmente, controllare due volte che il loro
 gateway sia impostato per l'indirizzo IP dell'interfaccia a cui si
-collegano sul firewall pfSense. Ad esempio, se i client sono
-sull'interfaccia LAN pfSense e l'indirizzo IP per l'interfaccia LAN è
+collegano sul firewall |firew4ll|. Ad esempio, se i client sono
+sull'interfaccia LAN |firew4ll| e l'indirizzo IP per l'interfaccia LAN è
 192.168.1.1, l'indirizzo del gateway sui PC client deve essere impostato
 su 192.168.1.1.
 
-Firewall Problemi Rule
-~~~~~~~~~~~~~~~~~~~~~~
+Problemi Regole Firewall 
+------------------------
 
-Se la regola di default "LAN per chiunque" è stata modificata o rimossa
+Se la regola di default "LAN verso tutti" è stata modificata o rimossa
 dall'interfaccia LAN, il traffico che tenta di raggiungere Internet dai
-PC client tramite il firewall pfSense può essere bloccato. Questo è
+PC client tramite il firewall |firew4ll| può essere bloccato. Questo è
 facilmente confermato raggiungendo **Stato>Registro di sistema** e
 guardando la scheda del **Firewall**. Se ci sono voci che mostrano
 connessioni bloccate dai PC della LAN che tentano di raggiungere gli
@@ -3195,8 +2922,8 @@ Se funziona dal lato LAN ma non da un'interfaccia OPT, assicurati che il
 firewall abbia delle regole per permettere al traffico di passare. Le
 regole non vengono create come predefinite sulle interfacce OPT.
 
-NAT Problemi Rule
-~~~~~~~~~~~~~~~~~
+Problemi Regole NAT
+-------------------
 
 Se le norme NAT in uscita sono state modificate rispetto alle loro
 impostazioni predefinite, il traffico che tenta di raggiungere Internet
@@ -3218,13 +2945,13 @@ in uscita.
 
 Lo stesso vale per il traffico proveniente da utenti VPN: OpenVPN,
 IPsec, ecc. Se questi utenti hanno bisogno di raggiungere Internet
-tramite questo firewall pfSense, avranno bisogno di regole NAT in uscita
+tramite questo firewall |firew4ll|, avranno bisogno di regole NAT in uscita
 per le loro sottoreti. Vedere *NAT in uscita* per maggiori informazioni.
 
-File di configurazione XML di pfSense
-=====================================
+File di configurazione XML di |firew4ll|
+''''''''''''''''''''''''''''''''''''''''
 
-I firewall di pfSense memorizzano tutte le loro impostazioni in un file
+I firewall di |firew4ll| memorizzano tutte le loro impostazioni in un file
 di configurazione in formato XML. Tutte le impostazioni di
 configurazione, comprese le impostazioni per i pacchetti, sono contenute
 in questo file. Tutti gli altri file di configurazione per i servizi e
@@ -3235,7 +2962,7 @@ configurazione XML.
 Coloro che hanno familiarità con FreeBSD e i sistemi operativi correlati
 l'hanno scoperto nel modo più duro, quando le loro modifiche ai file di
 configurazione di sistema sono state ripetutamente sovrascritte dal
-firewall prima di arrivare a capire che pfSense gestisce tutto
+firewall prima di arrivare a capire che |firew4ll| gestisce tutto
 automaticamente.
 
 La maggior parte delle persone non avrà mai bisogno di sapere dove
@@ -3245,12 +2972,15 @@ quindi può anche essere accessibile direttamente da /conf/ config.xml,
 ma questo varia in base al layout della piattaforma e del filesystem.
 
 Modifica manuale della configurazione
--------------------------------------
+=====================================
 
 Alcune opzioni di configurazione sono disponibili solo modificando
 manualmente il file di configurazione, anche se questo non è richiesto
 nella stragrande maggioranza delle distribuzioni. Alcune di queste
-opzioni sono coperte in altre parti di questo libro.
+opzioni sono coperte in altre parti di questa guida.
+
+.. warning:: 
+	Attenzione: Anche per gli amministratori esperti è facile modificare erroneamente il file di configurazione. Tenere sempre i backup ed essere consapevoli che la rottura della configurazione si tradurrà in conseguenze indesiderate.
 
 Il metodo più semplice e sicuro per modificare il file di configurazione
 è quello di fare un backup da **Diagnostica>Backup/ Ripristino**,
@@ -3270,7 +3000,7 @@ riavvio/ricarica del servizio relativo alla parte modificata della
 configurazione.
 
 Cosa fare quando si è bloccati fuori dalla WebGUI
-=================================================
+'''''''''''''''''''''''''''''''''''''''''''''''''
 
 In alcune circostanze un amministratore può essere bloccato fuori dalla
 WebGUI. Non abbiate paura se questo accade; ci sono un certo numero di
@@ -3279,14 +3009,18 @@ ma è quasi sempre possibile recuperare l'accesso. Gli scenari peggiori
 richiedono l'accesso fisico, come chiunque con accesso fisico può
 bypassare misure di sicurezza.
 
+.. warning::
+	Attenzione: Che le tattiche di questa sezione siano una lezione. La sicurezza fisica di un firewall è fondamentale, soprattutto in ambienti in cui il firewall è fisicamente situato in un'area comune e accessibile a persone diverse dagli amministratori autorizzati.
+
 Prima di intraprendere qualsiasi di questi passaggi, provare le
 credenziali predefinite:
 
-    **Nome utente** Admin
+    **Nome utente**: Admin
 
-    **Parola d'ordine** pfSense
+    **Parola d'ordine**: firew4ll
 
-1. **Password dimenticata**
+Password dimenticata
+====================
 
 La password dell'amministratore del firewall può essere facilmente
 reimpostata usando la console del firewall se è stata persa. Accedere
@@ -3295,34 +3029,39 @@ alla console fisica (Seriale o Tastiera/Monitor) e utilizzare l'opzione
 ripristinare l'account admin se è stato disabilitato o scaduto.
 
 Dopo aver reimpostato la password, l'utente amministratore può
-effettuare il login con la password predefinita pfsense.
+effettuare il login con la password predefinita |firew4ll|.
 
-1. \ **Password dimenticata con una console bloccata**
+Password dimenticata con console bloccata
+=============================================
 
 Se la console è protetta da password, non tutto è perduto. Ci vogliono
 due riavvii da realizzare, ma la password può essere resettata con un
 accesso fisico alla console:
 
--  Riavviare il firewall pfSense
+-  Riavviare il firewall |firew4ll|
 
 -  Scegliere l'opzione di avvio singolo utente (2) dal menu loader
-   (quello con il logo ASCII pfSense)
+   (quello con il logo ASCII |firew4ll|)
 
--  Premere Invio quando richiesto per avviare / bin / sh
+-  Premere Invio quando richiesto per avviare /bin/sh
 
 -  Rimozione di tutte le partizioni come riscrivibili
 
+``# /sbin/mount -a -t ufs``
+
 -  Eseguire il comando integrato di reimpostazione della password:
+
+``# /etc/rc.initial.password``
 
 -  Seguire le istruzioni per reimpostare la password
 
 -  Riavviare
 
 Al riavvio del firewall, l'utente amministratore può effettuare il login
-con la password predefinita pfsense.
+con la password predefinita |firew4ll|.
 
 Confusione HTTP contro HTTPS
-----------------------------
+============================
 
 Assicurarsi che il client si connette con il protocollo corretto, HTTP o
 HTTPS. Se uno non funziona, provare l'altra. Se l'interfaccia grafica
@@ -3330,16 +3069,16 @@ non è stato configurato correttamente, il firewall può essere in
 esecuzione l'interfaccia grafica su una combinazione di porta e
 protocollo di inaspettato, come ad esempio:
 
--  http: // pfsensehostname: 443
+-  http://firew4llhostname:443
 
--  https: // pfsensehostname: 80
+-  https://firew4llhostname:80
 
 Per reimpostarlo dalla console, reimpostare l'indirizzo IP
 dell'interfaccia LAN, inserire lo stesso indirizzo IP, e lo script
 chiederà di ripristinare la WebGUI su HTTP.
 
 Accesso bloccato con regole firewall
-------------------------------------
+====================================
 
 Se un amministratore remoto perde l'accesso alla WebGUI a causa di una
 modifica delle regole del firewall, allora l'accesso può ancora essere
@@ -3354,7 +3093,7 @@ regola dalla LAN è meglio che perdere tutto o dover fare un viaggio
 nella posizione del firewall!
 
 Aggirare da remoto il blocco Firewall con le regole
----------------------------------------------------
+===================================================
 
 Ci sono alcuni modi per manipolare il comportamento del firewall nella
 shell per riguadagnare l'accesso alla GUI del firewall. Le seguenti
@@ -3362,7 +3101,7 @@ tattiche sono elencate in ordine di facilità e di quanto impatto abbiano
 sul sistema in esecuzione.
 
 Aggiungere una regola con EasyRule
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------
 
 Il modo più semplice, assumendo che l'amministratore conosca l'indirizzo
 IP di un PC client remoto che ha bisogno di accesso, è quello di
@@ -3371,45 +3110,62 @@ firewall. Nell'esempio seguente, lo script easyrule permetterà l'accesso
 all'interfaccia WAN, da x.x.x.x (l'indirizzo IP del client) a y.y.y.y
 (presumibilmente l'indirizzo IP WAN) sulla porta TCP 443:
 
+``# easyrule pass wan tcp x.x.x.x y.y.y.y 443``
+
 Una volta che lo script easyrule aggiunge la regola, il client sarà in
 grado di accedere alla GUI dall'indirizzo di origine specificato.
 
 Aggiungere una regola “consentire a tutti” sulla WAN dalla shell
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------------------------------------
 
 Un'altra tattica consiste nell’attivare temporaneamente una regola
 “consentire a tutti” sulla WAN per lasciare dentro un client.
 
+.. warning::
+	Attenzione: Un regola tipo “consentire a tutti” è pericolosa da avere su un'interfaccia WAN collegata a Internet. Non dimenticare di rimuovere la regola una volta aggiunta da questo script
+
 Per aggiungere una regola “consentire a tutti” all'interfaccia WAN,
 eseguire il seguente comando al prompt della shell:
+
+``# pfSsh.php playback enableallowallwan``
 
 Una volta che l'amministratore riprende l'accesso e risolve il problema
 originale impedendo loro di raggiungere la GUI, rimuovere la "regola
 consentire tutti" sulla WAN.
 
 Disattivare il firewall
-~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------
 
 Un amministratore può (solo temporaneamente) disattivare le regole del
 firewall disattivare la console fisica o SSH.
 
+.. warning::
+		Attenzione: Questo disabilita completamente pf che disabilita le regole del firewall e del NAT. Se la rete gestita da questo firewall si basa sul NAT per funzionare, cosa che la maggior parte fanno, allora l'esecuzione di questo comando interromperà la connettività dalla LAN a Internet.
+
 Per disabilitare il firewall, collegarsi alla console fisica o SSH ed
 utilizzare l'opzione 8 per avviare una shell e digitare:
 
+	``# pfctl -d``
+	
 Questo comando disabiliterà il firewall, comprese tutte le funzioni NAT.
 L'accesso alla WebGUI è ora possibile da qualsiasi luogo, almeno per
-pochi minuti o fino a quando un processo sul firewall conceda alloo
+pochi minuti o fino a quando un processo sul firewall conceda allo
 schema di regole ia ricaricarsi (che è quasi ogni pagina da salvare o
 l’azione **Applicare le modifiche**). Una volta che l'amministratore ha
 regolato le regole e recuperato l'accesso necessario, riattivare il
 firewall digitando:
 
-**Modifica manuale dello schema delle regole**
+	``# pfctl -e``
+
+Modifica manuale dello schema delle regole
+-------------------------------------------
 
 L'insieme di regole caricato viene mantenuto in /tmp/rules.debug. Se
 l'amministratore ha familiarità con la sintassi PF, può modificare il
 file per risolvere il problema della connettività e ricaricare le
 regole:
+
+	``# Pfctl -f /tmp/rules.debug``
 
 Dopo essere rientrato nella WebGUI con quella correzione temporanea,
 l'amministratore deve eseguire qualsiasi lavoro è necessario nella
@@ -3418,7 +3174,7 @@ salvate nella WebGUI, la modifica temporanea in /tmp/ rules.debug verrà
 sovrascritta.
 
 Per aggirare da remoto il blocco Firewall con Tunneling SSH
------------------------------------------------------------
+===========================================================
 
 Se l'accesso remoto alla WebGUI è bloccato dal firewall, ma l'accesso
 SSH è permesso, allora c'è un modo relativamente facile per entrare: il
@@ -3443,7 +3199,7 @@ accessibile dalla porta locale reindirizzata.
 Fig. 16: Impostazione del Tunnel SSH con porta 80 in PuTTY
 
 Bloccato fuori a causa di un errore della configurazione Squid
---------------------------------------------------------------
+==============================================================
 
 Se un amministratore del firewall configura accidentalmente lo Squid per
 usare la stessa porta della WebGUI, può causare una condizione di gara
@@ -3454,44 +3210,51 @@ accessibile per correggere la configurazione.
 
 La seguente procedura può aiutare a riprenderne il controllo.
 
--  Connettersi alla console del firewall di pfSense con SSH o accesso
+-  Connettersi alla console del firewall di |firew4ll| con SSH o accesso
    fisico
 
 -  Avviare una shell, opzione 8 dalla console.
 
 -  Terminae il processo di squid:
 
+	``# /usr/local/etc/rc.d/squid.sh stop``
+
+
 Se questo non funziona, provare questo comando:
 
+	``# killall -9 squid``
+
 o:
+
+	``# squid -k shutdown
 
 Una volta che il processo squid è completamente terminato, utilizzare
 l'opzione del menu della console 11 per riavviare il processo WebGUI, e
 quindi tentare di accedere nuovamente alla WebGUI.
 
-**Nota:** Lavorare rapidamente o ripetere il comando di spegnimento,
-perché lo squid può essere riavviato automaticamente dai suoi script di
-monitoraggio interni a seconda del metodo utilizzato per fermare il
-processo
+	.. note::  
+		Lavorare rapidamente o ripetere il comando di spegnimento, perché lo squid può essere riavviato automaticamente dai suoi script di monitoraggio interni a seconda del metodo utilizzato per fermare il processo
 
-La maggior parte della configurazione di pfSense viene eseguita usando
+La maggior parte della configurazione di |firew4ll| viene eseguita usando
 il configuratore GUI basato sul web (configuratore we), o WebGUI in
 breve. Ci sono alcuni compiti che possono essere eseguiti anche dalla
 console, sia che si tratti di un monitor e una tastiera, una porta
 seriale, o tramite SSH.
 
 Collegamento al WebGUI
-======================
+''''''''''''''''''''''
 
 Per raggiungere la WebGUI, connettersi con un browser web da un computer
 collegato alla LAN. Questo computer può essere collegato direttamente
 con un cavo di rete o allo stesso interruttore dell'interfaccia LAN del
 firewall. Per default, l'indirizzo IP della LAN di un nuovo sistema
-pfSense è 192.168.1.1 con una maschera /24 (255.255.255.0), e c'è anche
+|firew4ll| è 192.168.1.1 con una maschera /24 (255.255.255.0), e c'è anche
 un server DHCP in esecuzione. Se il computer è impostato per utilizzare
 DHCP, dovrebbe ottenere un indirizzo nella sottorete LAN
-automaticamente. Quindi aprire un browser e raggiungere https://192.168.
-1.1.
+automaticamente. Quindi aprire un browser e raggiungere https://192.168.1.1
+
+	.. warning::
+		Avvertimento: Se la sottorete LAN predefinita entra in conflitto con la sottorete WAN, la sottorete LAN deve essere modificata prima di collegarla al resto della rete.
 
 L'indirizzo IP della LAN può essere cambiato e DHCP può essere
 disabilitato utilizzando la console:
@@ -3507,31 +3270,27 @@ disabilitato utilizzando la console:
    attivato. Questo può essere qualsiasi intervallo all'interno del data
    sottorete.
 
-**Nota:** Quando si assegna un nuovo indirizzo IP per la LAN, non può
-essere nella stessa sottorete del WAN o qualsiasi altra interfaccia
-attiva. Se ci sono altri dispositivi già presenti sulla sottorete LAN,
-può anche non essere impostato per lo stesso indirizzo IP di un host
-esistente.
+	.. note::  
+		Quando si assegna un nuovo indirizzo IP per la LAN, non può essere nella stessa sottorete del WAN o qualsiasi altra interfaccia attiva. Se ci sono altri dispositivi già presenti sulla sottorete LAN, può anche non essere impostato per lo stesso indirizzo IP di un host esistente.
 
 Se il server DHCP è disabilitato, i computer client su LAN deve avere un
-indirizzo IP nella sottorete pfSense della LAN configurato in modo
+indirizzo IP nella sottorete |firew4ll| della LAN configurato in modo
 statico, come ad esempio 192.168.1.5, con una maschera di sottorete che
-corrisponda a quello dato a pfSense, come ad esempio 255.255. 255.0.
+corrisponda a quello dato a |firew4ll|, come ad esempio 255.255. 255.0.
 
-Una volta che il computer è connesso alla stessa LAN di pfSense,
+Una volta che il computer è connesso alla stessa LAN di |firew4ll|,
 individuare l'indirizzo IP della LAN del firewall. La GUI è in ascolto
 su HTTPS per impostazione predefinita, ma se il browser tenta di
 connettersi tramite HTTP, sarà reindirizzato invece dal firewall alla
 porta HTTPS. Per accedere alla GUI direttamente senza il
-reindirizzamento, usare
-`*https://192.168.1.1* <https://192.168.1.1/>`__.
+reindirizzamento, usare: https://192.168.1.1
 
 Quando si carica la WebGUI, i firewall presenta prima una pagina di
 login. In questa pagina, inserire le credenziali di default:
 
-    **nome utente** Admin
+    **nome utente**: admin
 
-    **parola d'ordine** pfSense
+    **parola d'ordine**: firew4ll
 
 .. |image0| image:: media/image1.png
    :width: 0.26389in
@@ -3680,3 +3439,5 @@ login. In questa pagina, inserire le credenziali di default:
 .. |image48| image:: media/image40.png
    :width: 5.31944in
    :height: 5.22222in
+.. |image49| image:: media/image41.png
+   :align: center
