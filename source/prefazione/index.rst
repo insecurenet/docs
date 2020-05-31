@@ -1,5 +1,5 @@
 ************
-INTRODUZIONE
+Introduzione
 ************
 
 **Firew4LL-OS** è un sistema operativo basato su **FreeBSD** e derivante
