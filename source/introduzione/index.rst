@@ -73,8 +73,7 @@ carico
 Router LAN o WAN
 ----------------
 
-|firew4ll|, comunenmente viene configurato come router LAN, WAN e firewall perimetrale
- in reti di piccole dimensioni, in reti più grandi routing LAN e WAN svolgono ruoli separati.
+|firew4ll|, comunemente viene configurato come router LAN, WAN e firewall perimetrale in reti di piccole dimensioni, in reti più grandi routing LAN e WAN svolgono ruoli separati.
 
 Router LAN
 ~~~~~~~~~~
@@ -182,8 +181,7 @@ bge (vari chipset Broadcom), tra gli altri. Se un sistema combina una
 scheda Intel e una scheda Chelsio, le interfacce saranno rispettivamente
 igb0 e cxl0.
 
-.. seealso:: Le assegnazioni e la denominazione dell'interfaccia sono trattate
-ulteriormente in *Installazione e aggiornamento*.
+.. seealso:: Le assegnazioni e la denominazione dell'interfaccia sono trattate ulteriormente in *Installazione e aggiornamento*.
 
 Ricerca di informazioni e supporto
 ==================================
