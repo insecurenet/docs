@@ -1,4 +1,6 @@
-**TIPI DI INTERFACCIA E CONFIGURAZIONE**
+***************************
+Interfacce e configurazione
+***************************
 
 Gruppi di interfaccia
 =====================
