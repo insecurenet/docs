@@ -3,7 +3,7 @@ Interfacce e configurazione
 ***************************
 
 Gruppi di interfaccia
-=====================
+'''''''''''''''''''''
 
 A differenza delle altre interfacce di questo capitolo, un gruppo di
 interfaccia non è un tipo di interfaccia che può essere assegnato. I
@@ -308,7 +308,8 @@ come funziona PPPoE. Le opzioni per una WAN PPTP sono identiche alle
 opzioni PPPoE dello stesso nome. Fare riferimento alla sezione
 precedente per informazioni sulla configurazione.
 
-**L2TP (Protocollo di tunneling di livello 2)**
+(Protocollo di tunneling di livello 2)
+--------------------------------------
 
 L2TP, come è configurato qui, è usato per connettersi ad un ISP che lo
 richiede per l'autenticazione come tipo di WAN. L2TP funziona in modo
