@@ -211,30 +211,27 @@ Su |firew4ll| il comando wget deve essere suddiviso in più passaggi per gestire
 Per un firewall con HTTPS con certificato auto-firmato, il comando sarebbe il seguente:
 
 -  Inviare il modulo di login insieme al primo CSRF token e Salva il
-   secondo CSRF token:
+   secondo CSRF token::
 
-.. code-block:: none
-	$ wget -qO- --keep-session-cookies --save-cookies cookies.txt \
-	--no-check-certificate https://192.168.1.1/diag_backup.php \
-	| grep "name=' csrf_magic'" | sed 's/.*value="\(.*\)".*/\1/' > csrf.txt
+		$ wget -qO- --keep-session-cookies --save-cookies cookies.txt \
+		--no-check-certificate https://192.168.1.1/diag_backup.php \
+		| grep "name=' csrf_magic'" | sed 's/.*value="\(.*\)".*/\1/' > csrf.txt
 
 -  Inviare il modulo di accesso con il primo token CSRF e salvare il
    secondo token CSRF:
-
-.. code-block:: none
-	$ wget -qO- --keep-session-cookies --load-cookies cookies.txt \
-	--save-cookies cookies.txt --no-check-certificate \
-	--post-data "login=Login&usernamefld=admin&passwordfld=pfsense& csrf_magic=$(cat csrf.txt)" \
-	https://192.168.1.1/diag_backup.php	| grep "name=' csrf_magic'" \
-	| sed 's/.*value="\(.*\)".*/\1/' > csrf2.txt
+	::
+		$ wget -qO- --keep-session-cookies --load-cookies cookies.txt \
+		--save-cookies cookies.txt --no-check-certificate \
+		--post-data "login=Login&usernamefld=admin&passwordfld=firew4ll& csrf_magic=$(cat csrf.txt)" \
+		https://192.168.1.1/diag_backup.php	| grep "name=' csrf_magic'" \
+		| sed 's/.*value="\(.*\)".*/\1/' > csrf2.txt
 
 -  Ora lo script è collegato e può agire. Inviare il modulo di download
-   insieme al secondo token CSRF per salvare una copia di config.xml:
-
-.. code-block:: none
-	$ wget --keep-session-cookies --load-cookies cookies.txt --no-check-certificate \
-	--post-data "Submit=download&donotbackuprrd=yes& csrf_magic=$(head -n 1 csrf2.txt)" \
-	https://192.168.1.1/diag_backup.php -O config-hostname-`date +%Y%m%d%H%M%S`.xml
+   insieme al secondo token CSRF per salvare una copia di config.xml::
+		
+		$ wget --keep-session-cookies --load-cookies cookies.txt --no-check-certificate \
+		--post-data "Submit=download&donotbackuprrd=yes& csrf_magic=$(head -n 1 csrf2.txt)" \
+		https://192.168.1.1/diag_backup.php -O config-hostname-`date +%Y%m%d%H%M%S`.xml
 
 
 Sostituire il nome utente e la password con le credenziali per il
@@ -258,9 +255,8 @@ ad un altro sistema UNIX con scp. Utilizzare scp per spingere un backup
 a mano una sola volta può essere utile, ma l'utilizzo in modo
 automatizzato comporta alcuni rischi. La riga di comando per scp varierà
 a seconda della configurazione del sistema, ma sarà simile alla
-seguente:
+seguente::
 
-.. code-block:: none
 	# scp /cf/conf/config.xml \
 	user@backuphost:backups/config-`hostname`-`date +%Y%m%d%H%M%S`.xml
 
@@ -294,8 +290,7 @@ sistema UNIX ad un altro. Questo metodo non invoca il livello SCP/SFTP,
 che in alcuni casi potrebbe non funzionare correttamente se un sistema è
 già in uno stato di fallimento:
 
-.. code-block:: none
-	$ ssh root@192.168.1.1 cat /cf/conf/config.xml > backup.xml
+	``$ ssh root@192.168.1.1 cat /cf/conf/config.xml > backup.xml``
 
 Una volta eseguito, questo comando produrrà un file chiamato backup.xml
 nella directory di lavoro corrente che contiene la configurazione del
@@ -478,10 +473,10 @@ del dispositivo e le nuove etichette GEOM disponibili.
 
 ``# mount -t ufs /def/ufs/cf /mnt``
 
-Ora montare la partizione di configurazione:
+Ora montare la partizione di configurazione::
 
-``# cp /usr/backups/pfSense/config-alix.example.com-20090606185703.xml \
-	/mnt/conf/config.xml``
+	# cp /usr/backups/firew4ll/config-alix.example.com-20090606185703.xml \
+	/mnt/conf/config.xml
 
 
 Se per qualche motivo le etichette GEOM non sono utilizzabili, usare il
