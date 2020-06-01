@@ -32,15 +32,11 @@ per proteggere la vostra rete. Sia che siate alle prime armi, sia per i piu' esp
    trafficoshaper/index/index
    bilanciamento/index
    wireless/index
-   captiveportal/index
    ha/index
-   virtualization/index
    servizi/index
    monitoraggio/index
    pacchetti/index
    software3parti/index
-   catturapacchetti/index
-   ids-ips/index
    guidamenu/index
 
 .. toctree::
