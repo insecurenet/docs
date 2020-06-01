@@ -19,7 +19,7 @@ VPN - Virtual Private Network
 
 
 Scegliere una soluzione VPN
-''''''''''''''''''''''''''=
+'''''''''''''''''''''''''''
 
 Ogni soluzione VPN ha pro e contro. Questa sezione tratterà le
 considerazioni principali nella scelta di una soluzione VPN, fornendo le
