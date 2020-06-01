@@ -1,7 +1,7 @@
 **GUIDA AL MENU**
 
 Sistema
-=======
+'''''''
 
 Il menu del **Sistema** contiene opzioni per il firewall stesso, opzioni
 generali e avanzate, aggiornamenti, pacchetti aggiuntivi, utenti e
@@ -20,14 +20,14 @@ routing.
     generale*.
 
     **Sync con elevata disponibilità** Controlla il modo in cui i nodi
-    pfSense in un cluster ad alta disponibilità (HA) sincronizzano gli
+    |firew4ll| in un cluster ad alta disponibilità (HA) sincronizzano gli
     stati e la configurazione. Vedere *Elevata disponibilità*.
 
     **Disconnettersi** Esce dalla GUI, riportando l'utente alla
     schermata di accesso. Vedere *Gestione utenti e Autenticazione*.
 
     **Gestione di pacchetti** Componenti aggiuntivi dei software
-    aggiuntivi per pfSense per espandere la sua funzionalità. Vedere
+    aggiuntivi per |firew4ll| per espandere la sua funzionalità. Vedere
     *Pacchi*.
 
     **Routing** Gestisce gateway, route statiche e gruppi gateway per
@@ -37,17 +37,15 @@ routing.
     configurazione esegue la configurazione iniziale di base. Vedere
     ***Installazione guidata***.
 
-    **Aggiornare** Aggiorna pfSense all'ultima versione. Vedere
+    **Aggiornare** Aggiorna |firew4ll| all'ultima versione. Vedere
     *Aggiornamento tramite WebGUI*.
 
     **Gestione utenti** Gestire utenti, gruppi e server di
     autenticazione (RADIUS o LDAP) per l'accesso alla GUI, l'accesso
     VPN, ecc. Vedere *Gestione e autenticazione dell'utente*.
 
-**Nota:** se un utente dispone del privilegio *WebCfg - Sistema:
-Gestione della password dell’utente*, questa opzione di menu porta
-l'utente a una pagina in cui è possibile modificare la propria password
-ma non apportare modifiche ad altri utenti.
+	.. note::  
+		Se un utente dispone del privilegio *WebCfg - Sistema: Gestione della password dell’utente*, questa opzione di menu porta l'utente a una pagina in cui è possibile modificare la propria password ma non apportare modifiche ad altri utenti.
 
     **Impostazioni utente** Se le impostazioni per utente sono
     abilitate, questa pagina consente agli utenti di ignorare le opzioni
@@ -55,7 +53,7 @@ ma non apportare modifiche ad altri utenti.
     generale**.
 
 Interfacce
-==========
+''''''''''
 
 Il menu **Interfacce** contiene una voce per l'assegnazione delle
 interfacce e voci per ciascuna interfaccia attualmente assegnata. Le
@@ -77,7 +75,7 @@ standard se non sono stati modificati (ad es. WAN, LAN, OPTx)
     *Configurazione dell'interfaccia*.
 
 Firewall
-========
+''''''''
 
 Le voci del menu **Firewall** configurano le regole del firewall, le
 regole NAT e la loro struttura di supporto.
@@ -102,19 +100,19 @@ regole NAT e la loro struttura di supporto.
     traffico/Qualità di servizio (QoS). Vedere *Shaper del traffico*.
 
     **IP virtuali** Configura gli indirizzi IP virtuali che consentono a
-    pfSense di gestire il traffico per più di un indirizzo IP per
+    |firew4ll| di gestire il traffico per più di un indirizzo IP per
     interfaccia, in genere per le regole NAT o la disponibilità elevata.
     Vedere *Indirizzi IP virtuali*.
 
 Servizi
-=======
+'''''''
 
 Il menu **Servizi** contiene elementi che controllano i servizi forniti
 dai daemon in esecuzione sul firewall. Vedere *Servizi*.
 
-    **Portale captive** Controlla il servizio Cadel portale captive che
+    **captive portal** Controlla il servizio Cadel captive portal che
     indirizza gli utenti a una pagina Web per l'autenticazione prima di
-    consentire l'accesso a Internet. Vedere *Portale captive*.
+    consentire l'accesso a Internet. Vedere *captive portal*.
 
     **Relay DHCP** Configura il servizio di relay di DHCP che inoltra le
     richieste DHCP da un segmento di rete a un altro. Vedere *Relay DHCP
@@ -174,7 +172,7 @@ dai daemon in esecuzione sul firewall. Vedere *Servizi*.
     in remoto i dispositivi dei client locali. Vedere *Attivare la LAN*.
 
 VPN
-===
+'''
 
 Il menu VPN contiene elementi relativi alle reti private virtuali (VPN),
 tra cui IPsec, OpenVPN e L2TP. Vedere *Reti private virtuali*.
@@ -189,12 +187,12 @@ tra cui IPsec, OpenVPN e L2TP. Vedere *Reti private virtuali*.
     configurazione specifica del client. Vedere *OpenVPN*.
 
 Stato
-=====
+'''''
 
 Le voci del menu **Stato** mostrano informazioni sullo stato e registri
 per vari componenti e servizi del sistema.
 
-    **Portale captive** Quando il portale captive è abilitato, questa
+    **captive portal** Quando il captive portal è abilitato, questa
     voce mostra lo stato dell'utente e del voucher. Vedere *Portale
     captive*.
 
@@ -204,7 +202,7 @@ per vari componenti e servizi del sistema.
     *Controllare lo stato CARP*.
 
     **Pannello di controllo** Un collegamento alla pagina principale del
-    firewall pfSense, che visualizza informazioni generali sul sistema.
+    firewall |firew4ll|, che visualizza informazioni generali sul sistema.
     Vedere *Pannello di controllo*.
 
     **Locazioni di DHCP** Mostra un elenco di tutte le locazioni di DHCP
@@ -273,7 +271,7 @@ per vari componenti e servizi del sistema.
     un'interfaccia wireless. Vedere\ *Controllare lo stato del wireles*.
 
 Diagnostica
-===========
+'''''''''''
 
 Le voci nel menu **Diagnostica** eseguono varie attività diagnostiche e
 amministrative.
@@ -374,7 +372,7 @@ amministrative.
     `**traceroute** <#_bookmark299>`__.
 
 Questa sezione è una guida alle scelte di menu standard disponibili in
-pfSense. Questa guida aiuterà a identificare rapidamente lo scopo di una
+|firew4ll|. Questa guida aiuterà a identificare rapidamente lo scopo di una
 determinata opzione di menu e fare riferimento ai luoghi del libro in
 cui tali opzioni sono discusse in modo più dettagliato.
 
