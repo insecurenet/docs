@@ -49,10 +49,7 @@ routing.
 	.. note::
 		Se un utente dispone del privilegio *WebCfg - Sistema: Gestione della password dell’utente*, questa opzione di menu porta l'utente a una pagina in cui è possibile modificare la propria password ma non apportare modifiche ad altri utenti.
 
-    **Impostazioni utente** Se le impostazioni per utente sono
-    abilitate, questa pagina consente agli utenti di ignorare le opzioni
-    di comportamento predefinite disponibili in **Impostazione
-    generale**.
+**Impostazioni utente** Se le impostazioni per utente sono abilitate, questa pagina consente agli utenti di ignorare le opzioni di comportamento predefinite disponibili in **Impostazione generale**.
 
 Interfacce
 ''''''''''
