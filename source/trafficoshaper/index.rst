@@ -1,16 +1,19 @@
-**SHAPER DEL TRAFFICO**
+**************
+Traffic Shaper
+**************
 
-Cosa può fare lo stabilizzatore (shaper) del traffico per una rete
-==================================================================
+Cosa puo' fare lo stabilizzatore (shaper) del traffico per una rete
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 L'idea di base dello stabilizzatore (shaping) il traffico è alzare e
 abbassare le priorità dei pacchetti o tenerli sotto una certa velocità.
 Questo concetto sembra semplice, tuttavia, il numero di modi in cui
 questo concetto può essere applicato è vasto. Questi sono solo alcuni
 esempi comuni che si sono dimostrati popolari con gli utenti del
-software pfSense.
+software |firew4ll|.
 
-1. **Mantenere la navigazione senza intoppi**
+Mantenere la navigazione stabile
+================================
 
 I collegamenti asimmetrici, in cui la velocità di download differisce
 dalla velocità di upload, sono comuni, specialmente con DSL. Alcuni
@@ -37,19 +40,19 @@ upload e download sono le stesse, ma può ancora essere auspicabile se la
 larghezza di banda in uscita disponibile è fortemente utilizzata.
 
 Mantenere le chiamate VoIP chiare
----------------------------------
+=================================
 
 Se le chiamate Voice sull’IP utilizzano lo stesso circuito dei dati, i
 caricamenti e i download potrebbero degradare la qualità delle chiamate.
-Il software pfSense può dare la priorità al traffico delle chiamate
+Il software |firew4ll| può dare la priorità al traffico delle chiamate
 sopra altri protocolli, e garantire che le chiamate passino attraverso
 chiaramente senza interruzioni, anche durante lo streaming dei video ad
 alta definizione di Netflix. Invece di interrompere la chiamata, lo
 shaper riduce la velocità degli altri trasferimenti per lasciare spazio
 alle chiamate.
 
-Ridurre il ritardo di gioco
----------------------------
+Ridurre il Lag (ritard) nei giochi
+==================================
 
 Lo shaper ha anche opzioni per dare la priorità al traffico associato ai
 giochi in rete. Anlogamente alla priorità delle chiamate VoIP, l'effetto
@@ -58,9 +61,9 @@ gioco, il tempo di risposta del gioco dovrebbe essere ancora veloce come
 se il resto della connessione fosse inattivo.
 
 Tenere sotto controllo le applicazioni P2P
-------------------------------------------
+==========================================
 
-Abbassando la priorità del traffico associato a porte peer-a-peer note,
+Abbassando la priorità del traffico associato a porte Peer-to-Peer note,
 gli amministratori possono essere più tranquilli sapendo che anche se
 questi programmi sono in uso, non ostacoleranno altro traffico sulla
 rete. A causa della sua priorità più bassa, altri protocolli saranno
@@ -68,7 +71,7 @@ favoriti sul traffico P2P, che sarà limitato quando altri servizi hanno
 bisogno della larghezza di banda.
 
 Applicare i limiti di larghezza di banda
-----------------------------------------
+========================================
 
 I limitatori possono applicare un limite di larghezza di banda a un
 gruppo di dispositivi, come a tutto il traffico su un'interfaccia, o il
@@ -76,43 +79,25 @@ mascheramento sui limitatori può applicarli per un indirizzo IP o per
 una rete. In questo modo il firewall può garantire che nessuna persona
 possa consumare tutta la larghezza di banda disponibile.
 
-Limitazioni dell’hardware
-=========================
+Limitazioni hardware
+''''''''''''''''''''
 
-Lo shaping del traffico viene eseguito con l'aiuto di **ALTQ**.
-Sfortunatamente, solo un sottoinsieme di tutte le schede di rete
-supportate è in grado di utilizzare queste funzionalità perché i driver
-devono essere modificati per supportare lo shaping con ALTQ. Le seguenti
-schede di rete sono in grado di utilizzare lo shaping del traffico:
+L' ottimizzazione del traffico viene eseguito con l'aiuto di **ALTQ**.
+Sfortunatamente, solo un sottoinsieme di tutte le schede di rete supportate è in grado di utilizzare queste funzionalità perché i driver devono essere modificati per supportare lo shaping con ALTQ. Le seguenti schede di rete sono in grado di utilizzare lo ottimizzazione del traffico::
 
-ae(4), age(4), alc(4), ale(4), an(4), aue(4), axe(4), bce(4), bfe(4),
-bge(4),
+ae(4), age(4), alc(4), ale(4), an(4), aue(4), axe(4), bce(4), bfe(4), bge(4), bridge(4), cas(4), cpsw(4), cxl(4), dc(4), de(4), ed(4), em(4), ep(4), epair(4), et(4), fxp(4), gem(4), hme(4), hn(4), igb(4), ix(4), jme(4), l2tp(4), le(4), lem(4), msk(4), mxge(4), my(4), ndis(4), nfe(4), ng(4), nge(4), npe(4), nve(4), ovpnc(4), ovpns(4), ppp(4), pppoe(4), pptp(4), re(4), rl(4), sf(4), sge(4), sis(4), sk(4), ste(4), stge(4), ti(4), tun(4), txp(4), udav(4), ural(4), vge(4), vlan(4), vmx(4), vr(4), vte(4), vtnet(4), xl(4)
 
-bridge(4), cas(4), cpsw(4), cxl(4), dc(4), de(4), ed(4), em(4), ep(4),
-epair(4),
-
-et(4), fxp(4), gem(4), hme(4), hn(4), igb(4), ix(4), jme(4), l2tp(4),
-le(4),
-
-lem(4), msk(4), mxge(4), my(4), ndis(4), nfe(4), ng(4), nge(4), npe(4),
-nve(4),
-
-ovpnc(4), ovpns(4), ppp(4), pppoe(4), pptp(4), re(4), rl(4), sf(4),
-sge(4),
-
-sis(4), sk(4), ste(4), stge(4), ti(4), tun(4), txp(4), udav(4), ural(4),
-vge(4), vlan(4), vmx(4), vr(4), vte(4), vtnet(4), xl(4)
 
 I limitatori utilizzano un sistema di back-end diverso, che opera
-attraverso le pipe dummynet in ipfw e non attraverso **ALTQ**. In quanto
+attraverso le ``dummynet`` pipe in ``ipfw`` e non attraverso **ALTQ**. In quanto
 tali, tutte le schede di rete possono essere utilizzate con i
 limitatori, senza restrizioni. Se un firewall contiene una scheda che
 non supporta ALTQ, può utilizzare invece i limitatori.
 
 Tipi di pianificatore ALTQ
-==========================
+''''''''''''''''''''''''''
 
-Il software pfSense contiene diversi tipi di pianificatori ALTQ per
+Il software |firew4ll| contiene diversi tipi di pianificatori ALTQ per
 coprire una vasta gamma di scenari di shaping. Le opzioni per ALTQ sono:
 
     **Accodamento prioritario** **(PRIQ)** Gestisce la priorità delle
@@ -136,9 +121,9 @@ e le procedure guidate mostreranno le opzioni appropriate e creeranno le
 code in base alla disciplina ALTQ scelta.
 
 Avvertimenti sulle prestazioni
-------------------------------
+==============================
 
-L'attivazione di dello shaping del traffico con ALTQ pone un onere
+L'attivazione di dello ottimizzazione del traffico con ALTQ pone un onere
 aggiuntivo sull'hardware e ci sarà una potenziale perdita complessiva
 delle prestazioni della rete. Sui sistemi che hanno potenza da
 risparmiare, questo potrebbe non essere evidente. Su sistemi che operano
@@ -147,7 +132,7 @@ degrado delle prestazioni. Considerare la perdita peggiore rispetto al
 lavoro senza lo shaper dipende dal carico di lavoro individuale.
 
 Accodamento prioritario (PRIQ)
-------------------------------
+==============================
 
 PRIQ è una delle discipline più semplici da configurare e comprendere.
 Le code sono tutte direttamente sotto la coda di root, non esiste una
@@ -164,9 +149,9 @@ abbia pochi o nessun pacchetto gestito se le code di priorità più
 elevate consumano tutte le risorse disponibili.
 
 Curva gerarchica del servizio equo (HFSC)
------------------------------------------
+=========================================
 
-La disciplina HFSC dello shaping del traffico è molto potente. È utile
+La disciplina HFSC dello ottimizzazione del traffico è molto potente. È utile
 per servizi come VoIP e per i video per fornire una quantità minima
 garantita di larghezza di banda.
 
@@ -176,7 +161,7 @@ secondarie nidificate sotto le code primarie (ecc.). Ogni coda può avere
 una larghezza di banda impostata e le relative opzioni.
 
 Opzioni di coda specifiche per HFSC
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------------
 
 HFSC supporta alcune opzioni di coda che non sono supportate da altre
 discipline. È attraverso queste opzioni che raggiunge l'elaborazione in
@@ -229,10 +214,10 @@ può avere un sacco di tentativi ed errori, e forse utilizzare un sacco
 di aritmetica, ma potrebbe valerne la pena per garantire che il traffico
 di rete sia regolato correttamente. Per ulteriori informazioni sui
 valori **m1**, **d** e **m2** per diversi scenari, visitare il forum
-sullo shaping del traffico di pfSense.
+sullo ottimizzazione del traffico di |firew4ll|.
 
 Accodamento basato su classi (CBQ)
-----------------------------------
+==================================
 
 L'accodamento basato su classi, o CBQ, è simile a HFSC in quanto può
 avere un albero di code nidificate sotto altre code. Supporta i limiti
@@ -246,14 +231,14 @@ Con CBQ, le priorità della coda vanno da 7 con numeri più alti che
 indicano priorità più alta. Le code di uguale priorità vengono elaborate
 in modo round-robin.
 
-**Nota:** sebbene le code secondarie possano prendere in prestito dalla
+.. note::  sebbene le code secondarie possano prendere in prestito dalla
 coda primaria, la somma della larghezza di banda delle code secondarie
 non può superare la larghezza di banda della primaria. Pertanto, CBQ non
 è un'alternativa ai limitatori per i limiti di larghezza di banda
 individuali (ad esempio per indirizzo IP).
 
 Opzioni di coda specifiche per CBQ
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------
 
 La disciplina CBQ supporta il concetto di *prestito*, il che significa
 che se la casella di selezione **Prendere in prestito da altre code
@@ -263,8 +248,8 @@ primarie. Ciò consentirà solo a una coda secondaria di ottenere fino
 alla larghezza di banda dellla coda primaria immediata, se disponibile,
 non da altre code primarie.
 
-1. .. rubric:: Gestione attiva delle code con CoDel
-      :name: gestione-attiva-delle-code-con-codel
+Gestione attiva delle code con CoDel
+====================================
 
    La disciplina della gestione attiva delle code con CoDel (AQM) è
    l'abbreviazione per il ritardo controllato ed è pronunciata “coddle”.
@@ -294,7 +279,7 @@ non da altre code primarie.
    CoDel non è configurabile utilizzando la procedura guidata, ma non
    richiede una configurazione complessa:
 
--  Passare a **Firewall>Shaper del traffico**, per scheda
+-  Passare a **Firewall>Traffic Shaper**, per scheda
    **Interfaccia**
 
 -  Selezionare un'interfaccia (ad es. **WAN**)
@@ -308,8 +293,8 @@ non da altre code primarie.
 -  Ripetere se necessario per tutte le altre interfacce di tipo WAN
    attive
 
-   1. .. rubric:: Accodamento equo (FAIRQ)
-         :name: accodamento-equo-fairq
+Accodamento equo (FAIRQ)
+========================
 
 In FAIRQ, le code vengono monitorate dalla priorità più alta a quella
 più bassa, ma il pianificatore tenta di distribuire in modo equo la
@@ -331,18 +316,14 @@ coda definita.
 FAIRQ non è attualmente supportato nella procedura guidata dello shaper
 del traffico e richiede una configurazione manuale.
 
-Configurazione dello shaper del traffico ALTQ con la procedura guidata
-======================================================================
+Configurazione dello Traffic Shaper ALTQ con la procedura guidata
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-La prima volta si consiglia di configurare lo shaper del traffico
+La prima volta si consiglia di configurare lo Traffic Shaper
 utilizzando la procedura guidata, che guida gli amministratori
 attraverso il processo di configurazione dello shaper.
 
-**Suggerimento:** a causa della complessità delle code e delle regole
-dello shaper, iniziare da zero è piuttosto complicato. Se un firewall ha
-bisogno di regole personalizzate, passare attraverso la procedura
-guidata e approssimare i requisiti, quindi fare regole personalizzate in
-seguito.
+.. tip:: a causa della complessità delle code e delle regole dello shaper, iniziare da zero è piuttosto complicato. Se un firewall ha bisogno di regole personalizzate, passare attraverso la procedura guidata e approssimare i requisiti, quindi fare regole personalizzate in seguito.
 
 Ogni fase della procedura guidata imposta code e regole univoche che
 controllano il traffico assegnato in tali code. Per configurare tutto
@@ -351,19 +332,16 @@ fare clic su **Avanti** per tutti i passaggi rimanenti. La procedura
 guidata richiede che le opzioni siano abilitate su almeno un passaggio,
 ma non importa quale passaggio.
 
-**Nota:** completare la procedura guidata e fare clic su **Finire** alla
-fine sostituirà **tutte** le code dello shaper esistenti e le regole
-fluttuanti create dalla procedura guidata, incluse quelle clonate dalle
-regole della procedura guidata, con le code e le regole della nuova
-configurazione della procedura guidata.
+.. note::  
+	completare la procedura guidata e fare clic su **Finire** alla fine sostituirà **tutte** le code dello shaper esistenti e le regole dinamiche create dalla procedura guidata, incluse quelle clonate dalle regole della procedura guidata, con le code e le regole della nuova configurazione della procedura guidata.
 
-Scelta di una procedura guidata
--------------------------------
+Scelta della procedura guidata
+==============================
 
-Per iniziare con la procedura guidata dello shaping del traffico,
-passare a **Firewall>Shaping del traffico** e fare clic sulla scheda
+Per iniziare con la procedura guidata dello ottimizzazione del traffico,
+passare a **Firewall>ottimizzazione del traffico** e fare clic sulla scheda
 **Procedura guidata**. In questa pagina viene visualizzato un elenco di
-procedure guidate di shaper del traffico disponibili, tra cui:
+procedure guidate di Traffic Shaper disponibili, tra cui:
 
     **LAN/WAN multiple** Utilizzata quando il firewall ha una o più WAN
     e una o più LAN. Questa è la procedura guidata più comune e copre la
@@ -374,7 +352,7 @@ procedure guidate di shaper del traffico disponibili, tra cui:
     shaper.
 
 Avvio della procedura guidata
------------------------------
+=============================
 
 Ogni nome della procedura guidata è seguito dal nome del file della
 procedura guidata, che è un collegamento. Fare clic sul collegamento per
@@ -401,8 +379,8 @@ In questo esempio il firewall ha solo un'interfaccia WAN e una LAN.
 
 Fig. 1: Inserire il conteggio dell'interfaccia
 
-1. .. rubric:: Reti e velocità
-      :name: reti-e-velocità
+Reti e velocità
+===============
 
    Questo passaggio, mostrato nella figura *Configurazione dello
    shaper*, definisce le interfacce di rete che saranno all'interno e
@@ -448,8 +426,8 @@ Fig. 1: Inserire il conteggio dell'interfaccia
 
 -  Fare clic su **Avanti** per procedere con il passo successivo
 
-   1. .. rubric:: Voce su IP
-         :name: voce-su-ip
+VOIP
+====
 
 La procedura guidata contiene diverse opzioni per la gestione del
 traffico delle chiamate VoIP, mostrato in figura *Voce su IP*. La
@@ -470,21 +448,16 @@ procedura guidata.
     essere utilizzati da questi provider, piuttosto che corrispondere
     per indirizzo.
 
-**Nota:** questa scelta corrisponde in base alle porte SIP e RTP, tra
-gli altri, quindi può corrispondere al traffico da altre fonti, anche se
-utilizzano le stesse porte del servizio selezionato.
+	.. note::  
+		questa scelta corrisponde in base alle porte SIP e RTP, tra gli altri, quindi può corrispondere al traffico da altre fonti, anche se utilizzano le stesse porte del servizio selezionato.
 
 **Server SIP Upstream** L'IP del PBX o del trunk di SIP upstream o un
 alias contenente gli indirizzi IP o le reti per i trunk SIP. Quando
 impostato, questo sovrascrive il campo **Provider** e corrisponderà
 invece al traffico in base a questi indirizzi.
 
-**Nota:** questa scelta corrisponde a tutto il traffico UDP da e verso
-gli indirizzi specificati. Nella maggior parte dei casi questo è OK, ma
-se ci sono altri servizi basati su UDP non VoIP sullo stesso indirizzo
-remoto, potrebbe corrispondere anche a quel traffico. Tali casi sono
-rari, tuttavia, quindi questa opzione tende ad essere più affidabile
-rispetto alla corrispondenza per porta.
+	.. note::  
+		questa scelta corrisponde a tutto il traffico UDP da e verso gli indirizzi specificati. Nella maggior parte dei casi questo è OK, ma se ci sono altri servizi basati su UDP non VoIP sullo stesso indirizzo remoto, potrebbe corrispondere anche a quel traffico. Tali casi sono rari, tuttavia, quindi questa opzione tende ad essere più affidabile rispetto alla corrispondenza per porta.
 
 |image1|
 
@@ -496,26 +469,16 @@ Fig. 2: Configurazione dello shaper
     di banda richiesta da ciascuna sessione. Questa impostazione viene
     utilizzata da HFSC e CBQ e deve essere lasciata vuota per PRIQ.
 
-**Nota:** la prenotazione della larghezza di banda per un servizio come
-VoIP non può superare il 30% della larghezza di banda disponibile sul
-link. Ad esempio, su un collegamento di 10Mbit/s, lo shaper non può
-riservare più di 3Mbit/s.
+	.. note::  
+		la prenotazione della larghezza di banda per un servizio come VoIP non può superare il 30% della larghezza di banda disponibile sul link. Ad esempio, su un collegamento di 10Mbit/s, lo shaper non può riservare più di 3Mbit/s. 
 
     **Download per connessione LAN** La quantità di larghezza di banda
     di download da garantire per i dispositivi VoIP. Questa impostazione
     viene utilizzata da HFSC e CBQ e deve essere lasciata vuota per
     PRIQ.
 
-**Nota:** la migliore pratica è quella di utilizzare il trunk SIP
-**remoto** o l'indirizzo PBX perché altrimenti lo shaper potrebbe non
-essere in grado di abbinare correttamente il traffico. Ad esempio,
-utilizzando gli indirizzi IP dei telefoni, lo shaper può corrispondere
-solo al traffico in una direzione o per niente. Ciò è dovuto al modo in
-cui lo shaper corrisponde al traffico con le regole fluttuanti in una
-direzione in uscita. NAT si applica prima che il traffico venga abbinato
-quando si esce da una WAN, quindi le regole dello shaper non possono
-corrispondere alle connessioni in uscita in base agli indirizzi IP
-privati locali.
+.. note::  
+	la migliore pratica è quella di utilizzare il trunk SIP **remoto** o l'indirizzo PBX perché altrimenti lo shaper potrebbe non essere in grado di abbinare correttamente il traffico. Ad esempio, utilizzando gli indirizzi IP dei telefoni, lo shaper può corrispondere solo al traffico in una direzione o per niente. Ciò è dovuto al modo in cui lo shaper corrisponde al traffico con le regole dinamiche in una direzione in uscita. NAT si applica prima che il traffico venga abbinato quando si esce da una WAN, quindi le regole dello shaper non possono corrispondere alle connessioni in uscita in base agli indirizzi IP privati locali.
 
 Per utilizzare queste opzioni:
 
@@ -538,8 +501,8 @@ Per utilizzare queste opzioni:
 
 Fig. 3: Voce su IP
 
-1. .. rubric:: Casella di penalità
-      :name: casella-di-penalità
+Casella di penalità
+===================
 
    La casella di penalità, raffigurata nella figura *Casella di
    penalità*, è un luogo per relegare gli utenti dal comportamento
@@ -574,34 +537,35 @@ Fig. 3: Voce su IP
 
 Fig. 4: Casella di penalità
 
-Reti peer-a-peer
-----------------
+Reti peer-to-peer (P2P)
+======================
 
-Il passo successivo, mostrato in figura *Reti Peer-a-Peer*, imposta i
-controlli per molti protocolli di rete Peer-a-Peer (P2P). In base alla
+Il passo successivo, mostrato in figura *Reti Peer-to-Peer*, imposta i
+controlli per molti protocolli di rete Peer-to-Peer (P2P). In base alla
 progettazione, i protocolli P2P utilizzeranno tutta la larghezza di
 banda disponibile a meno che non vengano messi in atto limiti. Se il
 traffico P2P sarà presente su una rete, la migliore pratica è garantire
 che non degraderà altro traffico.
 
-**Nota:** i protocolli P2P tentano deliberatamente di evitare il
-rilevamento. Bittorrent è particolarmente colpevole di questo
-comportamento. Spesso utilizza porte non standard o casuali o porte
-associate ad altri protocolli. Identificare tutto il traffico P2P può
-essere difficile o impossibile.
+.. note::  
+	I protocolli P2P tentano deliberatamente di evitare il rilevamento. Bittorrent è particolarmente colpevole di questo comportamento. Spesso utilizza porte non standard o casuali o porte associate ad altri protocolli. Identificare tutto il traffico P2P può essere difficile o impossibile.
 
     **Abilitare** Una casella di selezione per abilitare le impostazioni
     del traffico P2P in questo passaggio. Quando deselezionata, le
     opzioni sono disabilitate e queste code e regole non verranno
     aggiunte dalla procedura guidata.
 
-    **Peer-a-Peer cattura tutto** Fa sì che qualsiasi traffico non
+    **Peer-to-Peer cattura tutto** Fa sì che qualsiasi traffico non
     riconosciuto venga assunto come traffico P2P e tale traffico avrà la
     sua priorità abbassata di conseguenza.
 
-    **Larghezza di banda** La quantità di larghezza di banda che il
-    traffico non classificato può consumare, al massimo, quando P2P
-    cattura tutto è attivo.
+		**Larghezza di banda** La quantità di larghezza di banda che il traffico non classificato può consumare, al massimo, quando P2P cattura tutto è attivo.
+	
+	.. warning:: 
+		questa opzione acquisisce effettivamente la coda dello shaping del traffico predefinita e ne riduce la priorità. Quando questa opzione è attiva, è fondamentale che tutto il traffico legittimo sia abbinato a regole che impostano una priorità superiore alla priorità della coda P2P cattura tutto.
+		
+		Il passaggio Alzare/Abbassare le altre applicazioni della procedura guidata può essere d'aiuto qui, ma alla fine l'implementazione di questa attività richiede spesso regole manuali aggiuntive.
+
 
 **Abilitare/Disabilitare protocolli P2P specifici** Queste opzioni
 identificano vari protocolli P2P noti. Il firewall assegnerà porte e
@@ -609,7 +573,7 @@ protocolli associati a ciascuna opzione abilitata come traffico P2P.
 
 Per utilizzare le opzioni in questo passaggio:
 
--  Selezionare la **priorità più bassa del traffico Peer-a-Peer**
+-  Selezionare la **priorità più bassa del traffico Peer-to-Peer**
 
 -  Opzionalmente abilitare le funzionalità di **P2P cattura tutto**
 
@@ -628,10 +592,10 @@ Per utilizzare le opzioni in questo passaggio:
 
 |image4|
 
-Fig. 5: Reti Peer-a-Peer
+Fig. 5: Reti Peer-to-Peer
 
-Giochi Di Rete
---------------
+Giochi in Rete
+==============
 
 I giochi Online in genere si basano sulla bassa latenza per esperienze
 di giocatori accettabili. Se un utente della rete tenta di scaricare
@@ -655,11 +619,7 @@ velocemente.
     corrispondono al traffico per giochi specifici che si discostano
     dalle categorie generali nella sezione precedente.
 
-**Suggerimento:** per dare la priorità a un gioco che non è elencato,
-selezionare qualsiasi altro gioco dall'elenco in modo che la procedura
-guidata crei le code e le regole da utilizzare come base di riferimento.
-Dopo aver completato la procedura guidata, modificare le regole
-risultanti per abbinare il gioco non elencato.
+.. tip:: per dare la priorità a un gioco che non è elencato, selezionare qualsiasi altro gioco dall'elenco in modo che la procedura guidata crei le code e le regole da utilizzare come base di riferimento. Dopo aver completato la procedura guidata, modificare le regole risultanti per abbinare il gioco non elencato.
 
 Per utilizzare le opzioni in questo passaggio:
 
@@ -677,8 +637,8 @@ Per utilizzare le opzioni in questo passaggio:
 
 Fig. 6: Giochi Di Rete
 
-Sollevamento o abbassamento di altre applicazioni
--------------------------------------------------
+Priorità o secondarietà di altre applicazioni
+=================================================
 
 L'ultima schermata di configurazione della procedura guidata dello
 shaper, vista in figura *Alzare o abbassare le altre applicazioni,*
@@ -695,10 +655,7 @@ sono un impedimento per i dipendenti. In una casa, lo streaming
 multimediale può essere più importante e altri servizi possono avere la
 loro priorità abbassata dallo shaper.
 
-**Suggerimento:** come per altri passaggi di questa procedura guidata
-dello shaper, se un protocollo non è elencato, selezionare un protocollo
-simile e quindi regolare le regole dopo aver completato la procedura
-guidata.
+.. tip:: Come per altri passaggi di questa procedura guidata dello shaper, se un protocollo non è elencato, selezionare un protocollo simile e quindi regolare le regole dopo aver completato la procedura guidata.
 
     **Attivare** Una casella di selezione per abilitare le impostazioni
     di questo passaggio. Quando deselezionata, le opzioni sono
@@ -712,10 +669,7 @@ guidata.
     essere data una *priorità più alta*, *priorità più bassa*, o
     lasciato alla *priorità predefinita*.
 
-**Suggerimento:** se **P2P cattura tutto** è attivo, si consiglia
-vivamente di utilizzare questo passaggio per garantire che questi altri
-protocolli siano riconosciuti e trattati normalmente, piuttosto che
-penalizzati dalla regola P2P cattura tutto predefinita.
+		.. tip:: Se l'opzione **P2P cattura tutto** è attivo, si consiglia vivamente di utilizzare questo passaggio per garantire che questi altri protocolli  siano riconosciuti e trattati normalmente, piuttosto che penalizzati dalla regola P2P cattura tutto predefinita.
 
 Per utilizzare le opzioni in questo passaggio:
 
@@ -733,16 +687,16 @@ Per utilizzare le opzioni in questo passaggio:
 
 Fig. 7: Alzare o abbassare le altre applicazioni
 
-1. .. rubric:: Completamento della procedura guidata
-      :name: completamento-della-procedura-guidata
+Completamento della procedura guidata
+=====================================
 
    Fare clic su **Finire** per completare la procedura guidata. Il
    firewall creerà quindi tutte le regole e le code per le opzioni
    abilitate, quindi ricaricherà il set di regole per attivare le nuove
-   impostazioni dello shaper del traffico.
+   impostazioni dello Traffic Shaper.
 
    A causa del firewall che funziona in modo stateful, il firewall può
-   applicare solo le modifiche nello shaping del traffico alle nuove
+   applicare solo le modifiche nello ottimizzazione del traffico alle nuove
    connessioni. Affinché le nuove impostazioni dello shaping del
    traffico siano completamente attive su tutte le connessioni,
    cancellare gli stati.
@@ -757,18 +711,18 @@ Fig. 7: Alzare o abbassare le altre applicazioni
 
 -  Fare clic su **Ripristinare**
 
-   1. .. rubric:: Procedura guidata dello shaper e IPv6
-         :name: procedura-guidata-dello-shaper-e-ipv6
+Procedura guidata dello shaper e IPv6
+=====================================  
 
 La procedura guidata dello shaper crea regole solo per il traffico IPv4.
 Le regole possono essere regolate manualmente o clonate e impostate per
 IPv6.
 
 Monitoraggio delle code
-=======================
+'''''''''''''''''''''''
 
 Monitorare lo shaper utilizzando **Stato>Code** per garantire che lo
-shaping del traffico funzioni come previsto. Come si può vedere in
+ottimizzazione del traffico funzioni come previsto. Come si può vedere in
 figura *Code WAN di base*, questa schermata mostra ogni coda elencata
 per nome, il suo utilizzo corrente e altre statistiche correlate.
 
@@ -776,7 +730,7 @@ per nome, il suo utilizzo corrente e altre statistiche correlate.
 
 Fig. 8: Code WAN di base
 
-    **Coda** Il nome della coda dello shaper del traffico.
+    **Coda** Il nome della coda dello Traffic Shaper.
 
     **Statistiche** Una barra grafica che mostra come "completa" è
     questa coda.
@@ -804,7 +758,7 @@ Fig. 8: Code WAN di base
     trasmessi, oltre la dimensione totale della coda.
 
 Personalizzazione avanzata
-==========================
+''''''''''''''''''''''''''
 
 Le regole e le code generate dalla procedura guidata dello shaper
 potrebbero non essere adatte per una rete. I dispositivi di rete possono
@@ -817,30 +771,30 @@ relativamente facile modificare o copiare tali regole per apportare
 modifiche ad altri protocolli.
 
 Modificare le code dello shaper
--------------------------------
+===============================
 
 Le code sono dove la larghezza di banda e le priorità sono allocate
 dallo shaper. Ogni coda ha impostazioni specifiche per il pianificatore
 che è stato scelto nella procedura guidata (*tipi di pianificatore
 ALTQ*). Le code possono anche essere assegnate ad altri attributi che
 controllano il loro comportamento. Le code possono essere gestite in
-**Firewall>Shaper del traffico**. Fare clic su un nome di coda
+**Firewall>Traffic Shaper**. Fare clic su un nome di coda
 nell'elenco o nell'albero mostrato nelle schede **Tramite interfaccia**
 o **Tramite coda**, come mostrato nella figura *Elenco delle code dello
-shaper del traffico*
+Traffic Shaper*
+
+.. warning::
+	La creazione o la modifica di code è solo per utenti avanzati. È un compito complesso con risultati potenti, ma senza una conoscenza approfondita delle impostazioni coinvolte la migliore pratica è quella di attenersi alle code generate dalla procedura guidata piuttosto che cercare di creare nuove code.
 
 Per modificare una coda, fare clic sul suo nome nell'elenco/albero.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Per eliminare una coda, fare clic una volta per modificare la coda, quindi fare clic su |image8| Eliminare questa coda. Non eliminare una coda se è ancora riferimento per una regola firewall.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Per aggiungere una nuova coda, fare clic sull'interfaccia o sulla coda primaria in cui verrà posizionata la nuova coda, quindi fare clic su |image9| Aggiungere una nuova coda.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |image10|
 
-Fig. 9: Elenco delle code dello shaper del traffico
+Fig. 9: Elenco delle code dello Traffic Shaper
 
 Quando si modifica una coda, ciascuna delle opzioni deve essere
 attentamente considerata. Per ulteriori informazioni su queste
@@ -860,7 +814,7 @@ libro *Filtro dei pacchetti di PF con OpenBSD* .
     quando c'è un sovraccarico, quindi posizionare le code di
     conseguenza. Ad esempio, il traffico VoIP ha la priorità più alta,
     quindi sarebbe impostato su un 7 su CBQ o 15 su PRIQ. Il traffico di
-    rete Peer-a-peer, che può essere ritardato a favore di altri
+    rete Peer-to-Peer, che può essere ritardato a favore di altri
     protocolli, sarebbe impostato su 1.
 
     **Larghezza di banda (code di root)** La quantità di larghezza di
@@ -933,23 +887,23 @@ tornare all'elenco delle code, quindi fare clic su **Applicare le
 modifiche** per ricaricare le code e attivare le modifiche.
 
 Modificare le regole dello shaper
----------------------------------
+=================================
 
-Le regole dello shaping del traffico controllano il modo in cui il
+Le regole dello ottimizzazione del traffico controllano il modo in cui il
 traffico viene assegnato in code. Se una nuova connessione corrisponde a
-una regola dello shaper del traffico, il firewall assegnerà i pacchetti
+una regola dello Traffic Shaper, il firewall assegnerà i pacchetti
 per tale connessione nella coda specificata da tale regola.
 
 La corrispondenza dei pacchetti viene gestita dalle regole del firewall,
-in particolare nella scheda **Fluttuanti**. Per modificare le regole
+in particolare nella scheda **Dinamiche**. Per modificare le regole
 dello shaper:
 
 -  Passare a **Firewall>Regole**
 
--  Fare clic sulla scheda **Fluttuanti**
+-  Fare clic sulla scheda **Dinamiche**
 
 -  Trovare la regola da modificare nell'elenco, come mostrato nella
-       figura *Elenco delle regole dello shaper del traffico*
+       figura *Elenco delle regole dello Traffic Shaper*
 
 -  Fare clic su |image11| per modificare una regola esistente o su
        |image12| per creare una copia di una regola
@@ -961,24 +915,20 @@ dello shaper:
 
 Le code possono essere applicate utilizzando le regole di *passaggio*
 sulle schede dell'interfaccia, ma la procedura guidata crea solo regole
-sulla scheda **Fluttuanti** utilizzando l'azione *corrispondenza* che
+sulla scheda **Dinamiche** utilizzando l'azione *corrispondenza* che
 non influisce sul fatto che una connessione sia passata o bloccata; fa
 solo code al traffico. Poiché queste regole funzionano allo stesso modo
 di qualsiasi altra regola, qualsiasi criterio utilizzato per abbinare le
 connessioni può essere utilizzato per fare la coda.
 
-**Vedere anche:**
-
-Per ulteriori informazioni sulle regole fluttuanti, vedere *Regole
-fluttuanti* e *Configurazione delle regole del firewall* per
-informazioni sulle regole del firewall in generale.
+.. seealso:: Per ulteriori informazioni sulle regole dinamiche, vedere *Regole dinamiche* e *Configurazione delle regole del firewall* per informazioni sulle regole del firewall in generale.
 
 |image13|\ 
 
-Fig. 10: Elenco delle regole dello shaper del traffico
+Fig. 10: Elenco delle regole dello Traffic Shaper
 
 Suggerimenti per la corrispondenza delle regole dello shaper
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------------------------------
 
 Le connessioni possono essere difficili da abbinare correttamente a
 causa di diversi fattori, tra cui:
@@ -1003,7 +953,7 @@ dal firewall, ci sono modi per aggirare queste limitazioni in alcuni
 casi.
 
 Per abbinare da una sorgente di indirizzo privato in uscita nelle regole
-fluttuanti della WAN, prima contrassegnare il traffico mentre passa su
+dinamiche della WAN, prima contrassegnare il traffico mentre passa su
 un'interfaccia locale. Ad esempio, abbinare in entrata sulla LAN e usare
 il campo **Tag** avanzato per impostare un valore, quindi usare il campo
 **Taggato** sulla regola fluttuante del lato WAN per abbinare la stessa
@@ -1022,15 +972,15 @@ RTP (ad esempio 10000 - 20000).
 Se BitTorrent è consentito su una rete ma deve essere modellato,
 dedicare un dispositivo locale specifico a cui è consentito utilizzare
 bittorrent e quindi stabilizzare tutte le connessioni da/per quel
-dispositivo come il traffico Peer-a-Peer.
+dispositivo come il traffico Peer-to-Peer.
 
-1. .. rubric:: Rimozione delle impostazioni dello shaper del traffico
-      :name: rimozione-delle-impostazioni-dello-shaper-del-traffico
+Rimozione delle impostazioni dello Traffic Shaper
+=================================================
 
-   Per rimuovere tutte le code e le regole dello shaper del traffico
+   Per rimuovere tutte le code e le regole dello Traffic Shaper
    create dalla procedura guidata:
 
--  Passare a **Firewall>Shaper del traffico**
+-  Passare a **Firewall>Traffic Shaper**
 
 -  Fare clic sulla scheda **Per interfaccia**
 
@@ -1038,19 +988,19 @@ dispositivo come il traffico Peer-a-Peer.
 
 -  Fare clic su **OK** sul prompt di conferma
 
-   1. .. rubric:: Limitatori
-         :name: limitatori
+Limitatori
+''''''''''
 
-I limitatori sono un metodo alternativo di shaping del traffico. I
+I limitatori sono un metodo alternativo di ottimizzazione del traffico. I
 limitatori utilizzano dummynet(4) per stabilire i limiti di larghezza di
 banda ed eseguire altre attività di assegnazione delle priorità e non si
 basano su ALTQ. I limitatori sono attualmente l'unico modo per ottenere
 l'indirizzo per IP o la limitazione della velocità di banda per rete
-utilizzando il software di pfSense. I limitatori sono utilizzati anche
+utilizzando il software di |firew4ll|. I limitatori sono utilizzati anche
 internamente dal portale captive per i limiti di larghezza di banda per
 utente.
 
-I limitatori sono gestiti in **Firewall>Shaper del traffico** nella
+I limitatori sono gestiti in **Firewall>Traffic Shaper** nella
 scheda **Limitatori**.
 
 Come HFSC e CBQ, i limitatori possono essere annidati con code
@@ -1075,7 +1025,7 @@ problemi e test (o per essere dannoso e giocare uno scherzo a qualcuno),
 e non si trovano spesso in produzione.
 
 Usi per limitatori
-------------------
+==================
 
 L'uso principale per i limitatori è quello di applicare limiti di
 larghezza di banda per gli utenti o protocolli specifici, ad esempio
@@ -1086,7 +1036,7 @@ utilizzare un massimo di 3Mbit/s ciascuno" o”La rete ospite e la rete
 pubblica possono utilizzare 1Mbit/s per ogni segmento".
 
 I limitatori sono l'unico tipo di pianificatori disponibile nel software
-pfSense che è in grado di superare la sottoscrizione (oversubscription)
+|firew4ll| che è in grado di superare la sottoscrizione (oversubscription)
 in questo modo. Lo shaper ALTQ richiede che tutte le code secondarie
 riassumano fino a non più della velocità della coda primaria, ma i
 limitatori mascherati consentono un limite impostato a tutti gli
@@ -1110,7 +1060,7 @@ ciò consentirebbe al server SIP di utilizzare tutta la larghezza di
 banda desiderata, ma avrebbe sempre un minimo di 2Mbit/s per se stesso.
 
 Come funzionano i limitatori
-----------------------------
+============================
 
 I limitatori, come ALTQ, mantengono il traffico a un certo punto facendo
 cadere o ritardando i pacchetti per ottenere una velocità di linea
@@ -1124,13 +1074,13 @@ di una coda in un limitatore non lo affamerà mai per la larghezza di
 banda.
 
 Limitatori e IPv6
------------------
+=================
 
 I limitatori funzionano con IPv6, anche se richiede regole IPv4 e IPv6
 separate da applicare correttamente i limitatori.
 
 Limitazioni
------------
+===========
 
 Le pipe dei limitatori non hanno l’idea di prendere in prestito
 larghezza di banda da altri tubi. Un limite è sempre un limite superiore
@@ -1154,28 +1104,20 @@ sull'aumento della quantità di mbuf disponibili, vedere *Ottimizzazione
 dell’hardware e risoluzione dei problemi*.
 
 Limitatori e Multi-WAN
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 Quando si utilizzano limitatori con Multi-WAN, i limiti per i gateway
 non predefiniti devono essere applicati utilizzando le regole *in
 uscita* e configurato con il gateway appropriato.
 
 Creazione di limitatori
------------------------
+=======================
 
-I limitatori sono gestiti in Firewall>Shaper del traffico nella scheda Limitatori. 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+I limitatori sono gestiti in Firewall>Traffic Shaper nella scheda Limitatori. 
 Per creare un nuovo limitatore di livello root (pipa), fare clic su |image15| Nuovo limitatore.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 Per creare un limitatore secondario (coda), fare clic su un limitatore esistente in base al quale può essere creato e fare clic su |image16| Aggiungere una nuova coda.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Suggerimento:** in quasi tutti i casi, i limitatori esistono in coppie
-dello stesso livello (ad esempio due pipe o due code): uno per il
-traffico in entrata e uno per il traffico in uscita. Quando si creano
-nuovi limitatori o code, crearne uno per ogni direzione.
+.. tip:: In quasi tutti i casi, i limitatori esistono in coppie dello stesso livello (ad esempio due pipe o due code): uno per il traffico in entrata e uno per il traffico in uscita. Quando si creano nuovi limitatori o code, crearne uno per ogni direzione.
 
     **Abilitare** Selezionare la casella per abilitare questo
     limitatore. Se il limitatore è disabilitato, non sarà disponibile
@@ -1185,22 +1127,16 @@ nuovi limitatori o code, crearne uno per ogni direzione.
     la selezione sulle regole del firewall. Il nome deve essere
     alfanumerico e può anche includere - e \_.
 
-**Suggerimento:** quando si sceglie un nome, evitare di utilizzare In e
-Out poiché lo stesso limitatore, se utilizzato su WAN e LAN, sarebbe
-utilizzato nella direzione *In* su un'interfaccia e in direzione *Out*
-su un altro. La migliore pratica è quella di utilizzare verso Down o
-Download e Up o Upload.
+.. tip:: Quando si sceglie un nome, evitare di utilizzare In e Out poiché lo stesso limitatore, se utilizzato su WAN e LAN, sarebbe utilizzato nella direzione *In* su un'interfaccia e in direzione *Out* su un altro. La migliore pratica è quella di utilizzare verso Down o Download e Up o Upload.
 
-    **Larghezza di banda (Pipa)** Questa sezione definisce un valore di
-    larghezza di banda per la pipa, o più larghezze di banda se le
+    **Larghezza di banda (Pipe)** Questa sezione definisce un valore di
+    larghezza di banda per il pipe, o più larghezze di banda se le
     pianificazioni sono coinvolte. Questa opzione non viene visualizzata
     quando si modifica un limitatore fsecondario (coda).
 
-    **Larghezza di banda** La parte numerica della larghezza di banda
-    per la pipa, ad esempio 3 o 500.
+		**Larghezza di banda** La parte numerica della larghezza di banda per il pipe, ad esempio 3 o 500.
 
-    **Tipo di BW** L’unità per il campo della **larghezza di banda**,
-    come *Mbit/s*, *Kbit/s* o *Bit/s*.
+		**Tipo di BW** L’unità per il campo della **larghezza di banda**, come *Mbit/s*, *Kbit/s* o *Bit/s*.
 
     **Pianificazione** Se il firewall ha definito delle pianificazioni
     (*regole basate sul tempo*), il firewall le offre in questo elenco.
@@ -1218,15 +1154,15 @@ Download e Up o Upload.
     specifica della larghezza di banda.
 
     **Maschera** Questo elenco a discesa controlla come il limitatore
-    maschererà gli indirizzi nella pipa o nella coda.
+    maschererà gli indirizzi nelil pipe o nella coda.
 
     **Nessuno** Se impostato su *nessuno*, il limitatore non esegue
-    alcun mascheramento. La larghezza di banda della pipa verrà
+    alcun mascheramento. La larghezza di banda delil pipe verrà
     applicata a tutto il traffico nel suo complesso.
 
     **Indirizzo di sorgente/destinazione** Quando un limitatore è
     impostato per *indirizzo di sorgente* o *indirizzo di destinazione*,
-    il limite di larghezza di banda della pipa verrà applicato su base
+    il limite di larghezza di banda delil pipe verrà applicato su base
     all’indirizzo IP o su base sottorete, a seconda dei bit di
     mascheramento, utilizzando la direzione scelta nel mascheramento.
 
@@ -1255,10 +1191,10 @@ Download e Up o Upload.
     **Opzioni avanzate** Opzioni aggiuntive che variano quando si
     modifica una pipa o una coda.
 
-    **Ritardo (pipe)** L'opzione di **ritardo** si trova solo sulle pipe
+    **Ritardo (pipe)** L'opzione di **ritardo** si trova solo suli pipe
     dei limitatori. Introduce un ritardo artificiale (latenza),
     specificato in millisecondi, nella trasmissione di qualsiasi
-    pacchetto nella pipa del limitatore. Questo viene in genere lasciato
+    pacchetto nelil pipe del limitatore. Questo viene in genere lasciato
     vuoto in modo che i pacchetti vengano trasmessi il più velocemente
     possibile dal firewall. Questo può essere utilizzato per simulare
     connessioni ad alta latenza come uplink satellitari per test di
@@ -1286,26 +1222,23 @@ Download e Up o Upload.
     in modo efficiente. Collegamenti ad alta velocità possono avere
     bisogno di più slot.
 
-**Suggerimento:** nei casi in cui ci sono diversi limitatori o
-limitatori con valori di grandi **dimensioni della coda**, potrebbe
-essere necessario impostare un **sistema sintonizzabile** per aumentare
-il valore della rete.inet.ip.dummynet.pipe\_slot\_limit sopra il numero
-totale di lotti di coda configurati tra tutte le pipe e le code.
+	.. tip:: 
+		nei casi in cui ci sono diversi limitatori o limitatori con valori di grandi **dimensioni della coda**, potrebbe essere necessario impostare un **sistema sintonizzabile** per aumentare il valore della rete.inet.ip.dummynet.pipe\_slot\_limit sopra il numero totale di lotti di coda configurati tra tutte i pipe e le code.
 
-    **Dimensione del secchio (bucket)** La dimensione del secchio,
+    **Dimensione del  (bucket)** La dimensione del secchio,
     specificata anche negli slot, imposta la dimensione della tabella
     hash utilizzata per l'archiviazione delle code. Il valore
     predefinito è 64. Deve essere un valore numerico compreso tra 16 e
     65536, incluso. Questo valore viene in genere lasciato vuoto.
 
-**Vedere anche:**
+.. seealso:: 
 
 Per ulteriori informazioni su questi valori, consultare la pagina
 principale di ipfw(8), nella sezione intitolata "Configurazione dello
-shaper del traffico(Dum-mynet)”.
+Traffic Shaper(Dum-mynet)”.
 
 Assegnazione e utilizzo di limitatori
--------------------------------------
+=====================================
 
 I limitatori vengono assegnati utilizzando le regole del firewall
 tramite i selettori di **pipe In/Out** in **Opzioni avanzate**.
@@ -1331,11 +1264,11 @@ limitatore **In** che un limitatore **Out**, ma solo il limitatore
 direzione.
 
 I limitatori possono essere applicati alle normali regole di interfaccia
-o alle regole fluttuanti. Durante il floating nella direzione *out*, le
+o alle regole dinamiche. Durante il floating nella direzione *out*, le
 selezioni In/Out vengono capovolte concettualmente.
 
 Controllo dell'utilizzo limitatore
-----------------------------------
+==================================
 
 Informazioni sui limitatori attivi possono essere trovate in
 **Diagnostica>Informazioni sul limitatore**. Qui, ogni limitatore e coda
@@ -1347,15 +1280,15 @@ corrente che si sposta all'interno del limitatore. Nel caso di
 limitatori mascherati, il firewall visualizza la larghezza di banda di
 ciascun indirizzo IP o gruppo mascherato.
 
-Shaping del traffico e VPN
-==========================
+Ottimizzazione del traffico e VPN
+'''''''''''''''''''''''''''''''''
 
 Le seguenti discussioni riguardano principalmente lo shaping ALTQ. I
 limitatori funzioneranno bene con le VPN come farebbero con qualsiasi
 altra interfaccia e regole. Solo lo shaper ALTQ richiede una
 considerazione speciale.
 
-Lo shaping del traffico con VPN è un argomento difficile perché il
+Lo ottimizzazione del traffico con VPN è un argomento difficile perché il
 traffico VPN è considerato separato dal, ma anche una parte del,
 traffico WAN attraverso il quale scorre. Se la WAN è 10 Mbit/s, allora
 la VPN può anche utilizzare 10Mbit/s, ma non ci sono in realtà 20Mbit/s
@@ -1374,7 +1307,7 @@ shaper e queste regole possono essere utilizzate come esempio per
 abbinare altri protocolli.
 
 OpenVPN
--------
+=======
 
 Con OpenVPN, sul sistema operativo esistono più interfacce, una per VPN.
 Questo può rendere la stabilizzazione più facile in alcuni casi. Le
@@ -1382,7 +1315,7 @@ caratteristiche di OpenVPN possono anche rendere più facile modellare il
 traffico su WAN e ignorare il tunnel stesso.
 
 Stabilizzazione interna al tunnel
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------
 
 Se sul tunnel vengono trasportate più classi di traffico, è necessario
 effettuare la prioritizzazione del traffico all'interno del tunnel.
@@ -1394,7 +1327,7 @@ dello shaper come se si trattasse di un'interfaccia WAN separata e
 classificare il traffico come al solito.
 
 Stabilizzazione esterna al tunnel (superarare TOS, passtos)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------------------------------------
 
 Se la preoccupazione principale è stabilizzare il traffico VoIP su una
 VPN, un'altra scelta da considerare è l'opzione passtos in OpenVPN,
@@ -1411,15 +1344,10 @@ codice di Diffserv*, tale corrispondenza dovrebbe verificarsi nel
 pacchetto che crea uno stato del firewall e non sui pacchetti specifici
 che attraversano tale stato.
 
-**Nota:** poiché questa opzione indica ad OpenVPN di copiare i dati dal
-pacchetto interno al pacchetto esterno, espone alcune informazioni sul
-tipo di traffico che attraversa la VPN. Indipendentemente dal fatto che
-la divulgazione delle informazioni, anche se minore, vale il rischio per
-i guadagni offerti dalla corretta priorità dei pacchetti dipende dalle
-esigenze dell'ambiente di rete.
+.. note::  Poiché questa opzione indica ad OpenVPN di copiare i dati dal pacchetto interno al pacchetto esterno, espone alcune informazioni sul tipo di traffico che attraversa la VPN. Indipendentemente dal fatto che la divulgazione delle informazioni, anche se minore, vale il rischio per i guadagni offerti dalla corretta priorità dei pacchetti dipende dalle esigenze dell'ambiente di rete.
 
 IPsec
------
+=====
 
 IPsec è presentato al sistema operativo su una singola interfaccia, non
 importa quanti tunnel sono configurati e non importa quali WAN sono
@@ -1428,20 +1356,20 @@ IPsec, specialmente quando si cerca di modellare il traffico all'interno
 di un particolare tunnel IPsec.
 
 Anche l'interfaccia IPsec non si può utilizzare da sola come interfaccia
-con la procedura guidata. Le regole fluttuanti possono corrispondere al
+con la procedura guidata. Le regole dinamiche possono corrispondere al
 traffico della coda sull'interfaccia IPsec, ma nella maggior parte dei
 casi solo il traffico in entrata verrà accodato come previsto. I
 risultati effettivi possono variare.
 
 Risoluzione dei problemi di shaper
-==================================
+''''''''''''''''''''''''''''''''''
 
-Shaping del traffico/QoS è un argomento difficile e può rivelarsi
+ottimizzazione del traffico/QoS è un argomento difficile e può rivelarsi
 complesso da ottenere la prima volta. Questa sezione copre diverse
 insidie comuni.
 
-Traffico Bittorrent che non utilizza la coda P2P
-------------------------------------------------
+Traffico Bittorrent non utilizza la coda P2P
+============================================
 
 Bittorrent è noto per non utilizzare porte standard. I client possono
 dichiarare quale porta altri client utilizzano per raggiungerli, il che
@@ -1456,7 +1384,7 @@ ogni tipo di traffico desiderabile e trattare la coda predefinita con
 priorità bassa.
 
 Stabilizzazione del traffico UPnP
----------------------------------
+=================================
 
 Fuori dalla scatola, il traffico consentito dal demone UPnP finirà nella
 coda predefinita. Ciò accade perché le regole generate dinamicamente dal
@@ -1484,18 +1412,18 @@ Questo trucco funziona solo con lo shaper ALTQ. In questo momento, il
 firewall non è in grado di assegnare il traffico UPnP a un limitatore.
 
 Calcoli della larghezza di banda della coda ACK
------------------------------------------------
+===============================================
 
 Questo è un argomento complesso e la maggior parte degli utenti lo
 sorvola e indovina un valore sufficientemente alto. Per spiegazioni più
 dettagliate con formule matematiche, controllare la sezione shaping del
-traffico dei forum pfSense. C'è un post sticky in quella scheda che
+traffico dei forum |firew4ll|. C'è un post sticky in quella scheda che
 descrive il processo in grande dettaglio, e c'è anche un foglio di
 calcolo scaricabile che può essere utilizzato per facilitare il
 processo.
 
 Perché <x> non è correttamente stabilizzato?
---------------------------------------------
+============================================
 
 La ragione è quasi sempre una di queste scelte:
 
@@ -1521,10 +1449,10 @@ alternativa è isolare il traffico su un dispositivo specifico sulla rete
 e quindi corrispondere in base all'indirizzo del dispositivo client.
 
 La velocità di connessione della WAN cambia
--------------------------------------------
+===========================================
 
 Per aggiornare la velocità di una WAN in caso di modifica, cambiare le
-code appropriate in **Firewall>Shaper del traffico** per riflettere la
+code appropriate in **Firewall>Traffic Shaper** per riflettere la
 nuova velocità.
 
 Le code che devono essere aggiornate sono:
@@ -1547,20 +1475,20 @@ guidata.
 
 Lo shaping, del traffico o il servizio di qualità (Quality of Service,
 QoS) della rete, è un mezzo per dare priorità al traffico di rete. Senza
-lo shaping del traffico, i pacchetti vengono elaborati su una base first
+lo ottimizzazione del traffico, i pacchetti vengono elaborati su una base first
 in/first out (primo ad entrare/primo ad uscire) dal firewall. QoS offre
 un mezzo per dare priorità a diversi tipi di traffico, assicurando che i
 servizi ad alta priorità ricevano la larghezza di banda di cui hanno
 bisogno prima di servizi con priorità minore.
 
-Per semplicità, il sistema di shaping del traffico nel software di
-pfSense può anche essere indicato come lo “shaper” , e l'atto di shaping
+Per semplicità, il sistema di ottimizzazione del traffico nel software di
+|firew4ll| può anche essere indicato come lo “shaper” , e l'atto di shaping
 del traffico può essere chiamato “shaping”.
 
-Tipi di shaping del traffico
-============================
+Tipi di ottimizzazione del traffico
+'''''''''''''''''''''''''''''''''''
 
-Ci sono due tipi di QoS disponibili nel software pfSense: ALTQ e
+Ci sono due tipi di QoS disponibili nel software |firew4ll|: ALTQ e
 limitatori.
 
 Il framework di ALTQ viene gestito tramite pf ed è strettamente legato
@@ -1572,14 +1500,14 @@ regole personalizzate per attività più complesse. Tuttavia ALTQ è
 inefficiente, quindi il throughput massimo potenziale di un firewall
 viene abbassato in modo significativo quando è attivo.
 
-Il software pfSense supporta anche un concetto di shaper separato
+Il software |firew4ll| supporta anche un concetto di shaper separato
 chiamato Limitatori. I limitatori applicano limiti di larghezza di banda
 rigidi per un gruppo o per indirizzo IP o rete. All'interno di questi
 limiti di larghezza di banda, i limitatori possono anche gestire le
 priorità del traffico.
 
 Nozioni di base sulla stabilizzazione del traffico
-==================================================
+''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Per gli amministratori che non hanno familiarità con lo shaping del
 traffico, è come un buttafuori in un club esclusivo. I VIP (pacchetti
@@ -1597,14 +1525,14 @@ stabilizzato lasciando l'interfaccia LAN dal firewall. Allo stesso modo,
 il traffico che va dalla LAN a Internet (caricamento) viene stabilizzato
 quando si lascia la WAN.
 
-Per ALTQ, ci sono code di shaping del traffico e regole di shaping del
+Per ALTQ, ci sono code di ottimizzazione del traffico e regole di shaping del
 traffico. Le code allocano larghezza di banda e priorità. Le regole di
-shaping del traffico controllano il modo in cui il traffico viene
+ottimizzazione del traffico controllano il modo in cui il traffico viene
 assegnato in quelle code. Le regole per lo shaper funzionano come le
 regole del firewall e consentono le stesse caratteristiche di
 corrispondenza. Se un pacchetto corrisponde a una regola di shaper,
 verrà assegnato nelle code specificate da tale regola. Nel software
-pfSense, le regole shaper vengono gestite principalmente nella scheda
+|firew4ll|, le regole shaper vengono gestite principalmente nella scheda
 **Floating** utilizzando l'azione *Corrispondenza* che assegna il
 traffico in code, ma le regole su qualsiasi interfaccia possono
 assegnare il traffico in code utilizzando l'azione *Passare*.
@@ -1654,7 +1582,7 @@ uno per il traffico di direzione " upload.
 .. |image12| image:: media/image13.png
    :width: 0.26389in
    :height: 0.26389in
-.. |image13| image:: media/image14.jpeg
+.. |image13| image:: media/image14.png
    :width: 6.54167in
    :height: 3.00000in
 .. |image14| image:: media/image9.png
