@@ -1985,7 +1985,7 @@ senza rapido selezionata sono le regole del moderatore del traffico
 delle regole di corispondenza.
 
 Interfaccia
-==========-
+===========
 
 La selezione dell'\ **interfaccia** per le regole variabili è diversa
 da quella per le regole di interfaccia normali: si tratta di una casella
@@ -1995,7 +1995,7 @@ selezionarle una per una, o utilizzare altre combinazioni di
 click/trascinare o shift-click per selezionare più interfacce.
 
 Direzione
-========-
+=========
 
 Le regole variabili non si limitano alla direzione in entrata come le
 regole di interfaccia. Esse possono anche agire nella direzione di

@@ -6,7 +6,7 @@ Cosa significa Firew4LL?
 ''''''''''''''''''''''''
 
 Da un'idea di Francesco Pellegrino di |insecurenet| e grazie all'iniziativa del 
-|pin|, promosso dalla |regionepuglia|, nasce il progetto ** |firew4ll| **, parola 
+|pin|, promosso dalla |regionepuglia|, nasce il progetto |firew4ll|, parola 
 formata dalle 3 parole: "Firewall", "4", "All", letteralmente **Firewall per tutti**,
 che consiste nello sviluppo di un appliance con a bordo un sistema operativo, 
 derivante dal fork di *pfSense*, completamente tradotto in italiano corredato da 

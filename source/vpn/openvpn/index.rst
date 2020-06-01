@@ -823,7 +823,7 @@ di esempio verrà utilizzata per aiutare a spiegare le opzioni
 disponibili nella procedura guidata.
 
 Prima di iniziare la procedura guidata 
-======================================-
+=======================================
 
 Prima di avviare la procedura guidata per configurare il server di
 accesso remoto, ci sono alcuni dettagli che devono essere pianificati.
@@ -1066,7 +1066,7 @@ scegliere **Aggiungere un nuovo certificato**. Se non vengono definiti
 Certificati, questo passaggio viene saltato.
 
 Aggiunta di un certificato server
-================================-
+=================================
 
 Questa schermata crea un nuovo certificato server che verrà utilizzato
 per verificare l'identità del server ai client. Il certificato server
@@ -1282,7 +1282,7 @@ tunnel OpenVPN, che è desiderabile per questo esempio, quindi questa
 casella è selezionata.
 
 Completamento della procedura guidata
-====================================-
+=====================================
 
 Fare clic su **Finire** e la procedura guidata è ora completa; il tunnel
 è completamente configurato e pronto per le connessioni dei client. Da
@@ -2708,7 +2708,7 @@ configurazione più avanzati.
 
 
 Politica di routing con OpenVPN
-==============================-
+===============================
 
 Quando l'interfaccia OpenVPN è assegnata e abilitata, viene aggiunta una
 voce gateway automatica in **Sistema>Routing**, nella scheda
@@ -2728,7 +2728,7 @@ parte prima che raggiunga la connessione internet effettiva.
 	non utilizzare questo gateway automatico per i percorsi statici. Utilizzare il campo della Rete remota nella configurazione VPN. La definizione di un percorso statico utilizzando il gateway OpenVPN automatico non funzionerà correttamente.
 
 NAT con OpenVPN
-==============-
+===============
 
 Quando viene assegnata L'interfaccia OpenVPN, le regole NAT possono
 essere applicate allo stesso modo di qualsiasi altra interfaccia. Ciò è
@@ -3292,7 +3292,7 @@ consultare questa sezione per informazioni sulla risoluzione dei
 problemi più comuni.
 
 Controllare lo stato di OpenVPN
-==============================-
+===============================
 
 Il primo posto dove guardare è **Stato>OpenVPN**. Lo stato della
 connessione per ogni VPN è mostrato lì. Se una VPN è collegata, è in
@@ -3422,7 +3422,7 @@ si trova il problema. La cattura dei pacchetti è coperta in dettaglio in
 *Cattura dei pacchetti*.
 
 Le route non verranno inviate a un client
-========================================-
+=========================================
 
 Quando si tenta di utilizzare l'impostazione di **rete locale** o
 un'istruzione push per inviare i percorsi a un client e il client non li

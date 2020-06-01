@@ -33,7 +33,7 @@ sarà più accessibile da WAN. Questo non influisce sull'accesso su altre
 interfacce, ma solo sull'interfaccia che contiene la Port Forward.
 
 Port forward e NAT 1:1
-=====================--
+=======================
 
 Anche le port forward hanno la precedenza sul NAT 1:1. Se una porta
 forward è definita su un indirizzo IP esterno che inoltra una porta ad
@@ -293,7 +293,7 @@ potenziali. Vedere *UPnP & NAT-PMP* per maggiori informazioni sulla
 configurazione e l'utilizzo di UPnP e NAT-PMP.
 
 Reindirizzamento del traffico con la Port Forward
-================================================--
+==================================================
 
 Un altro uso di port forward è per reindirizzare in modo trasparente il
 traffico da una rete interna. Le port forward che specificano
@@ -493,7 +493,7 @@ configurare il NAT 1:1 per ottenere la mappatura indicata nella tabella
 Fig. 8: Voce del NAT 1:1 per l'intervallo CIDR /30.
 
 NAT 1:1 sull’IP della WAN IP, anche conosciuto come "DMZ" su Linksys
-==================================================================--
+====================================================================
 
 Alcuni router per consumatori come quelli di Cisco/Linksys hanno quella
 che chiamano una funzionalità "DMZ" che inoltrerà tutte le porte e i
@@ -1079,7 +1079,7 @@ Le opzioni per ciascuna regola NAT in uscita sono:
 Queste regole possono ospitare la maggior parte di scenari NAT, grandi o piccoli.
 
 Tracciare le regole del NAT in uscita
-====================================-
+=====================================
 
 Come indicato nella figura *Timestamp delle regole del firewall*, un
 timestamp viene aggiunto ad una voce del NAT in uscita che indica quando
@@ -1289,7 +1289,7 @@ un proxy TFTP configurato in **Sistema>Aanzate** nella scheda **Firewall
 e NAT**. Vedere *Proxy TFTP* per maggiori informazioni.
 
 PPTP / GRE
-=========-
+==========
 
 Le limitazioni con PPTP in |firew4ll| sono causate da limitazioni nella
 capacità di pf legate al protocollo GRE del NAT. In quanto tali, le

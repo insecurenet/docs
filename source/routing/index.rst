@@ -163,7 +163,7 @@ causando problemi. Il gateway può essere forzato in stato *down* in modo
 che altri gateway possano essere preferiti fino a quando si stabilizza.
 
 Descrizione
-==========-
+===========
 
 Una **descrizione** facoltativa della voce gateway per riferimento. Una
 breve nota sul perché il gateway o l'interfaccia è usato può essere
@@ -405,7 +405,7 @@ percorsi statici su LAN.
 Fig. 2: Configurazione della route statica
 
 Bypassare le regole del firewall per il traffico sulla stessa interfaccia
-========================================================================-
+=========================================================================
 
 In molte situazioni, quando si utilizzano rotte statiche, il traffico
 finisce per essere instradato in modo asimmetrico. Ciò significa che il
@@ -845,7 +845,7 @@ Quando si diagnosticano problemi di flusso di traffico, una delle prime
 cose da verificare sono i percorsi noti per |firew4ll|.
 
 Visualizzazione delle route
-==========================-
+===========================
 
 Ci sono due modi per visualizzare i percorsi: tramite la WebGUI, e
 tramite la riga di comando.
@@ -966,7 +966,7 @@ Per le voci dinamiche, questo campo mostra quanto tempo ci vuole prima
 che questa route scada se non viene usata di nuovo.
 
 Utilizzare traceroute
-====================-
+=====================
 
 Traceroute è uno strumento utile per testare e verificare percorsi e
 funzionalità multi-WAN, tra gli altri usi. Mostra ogni "salto" lungo il

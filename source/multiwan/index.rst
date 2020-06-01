@@ -31,7 +31,7 @@ WAN dalla procedura guidata di gestione del traffico.
 	Le interfacce locali e di altro tipo possono avere un gateway definito in **Sistema>Routing**, a condizione che tale gateway non sia scelto nell'ambito della configurazione dell'interfaccia, ad esempio in **Interfacce>LAN**.
 
 Politica di routing
-==================-
+===================
 
 La politica del routing si riferisce ai mezzi di instradamento del
 traffico da più di un indirizzo IP di destinazione del traffico, come
@@ -140,7 +140,7 @@ Questa sezione fornisce indicazioni sugli obiettivi comuni delle
 Multi-wan e su come vengono raggiunti con |firew4ll|.
 
 Aggregazione della larghezza di banda
-====================================-
+=====================================
 
 Uno dei desideri primari con le multiWAN è l'aggregazione della
 larghezza di banda. Con il bilanciamento del carico, |firew4ll| può aiutare
@@ -249,7 +249,7 @@ Questa sezione contiene gli avvertimenti e le considerazioni specifiche
 per multiWAN in |firew4ll|.
 
 WAN multiple che condividono un singolo IP del gateway 
-======================================================-
+=======================================================
 
 A causa del modo in cui pf gestisce le connessioni multiWAN, il
 traffico può essere diretto solo utilizzando l'indirizzo IP del gateway
@@ -685,7 +685,7 @@ specificano come il traffico verrà tradotto man mano che lascia quella
 WAN.
 
 MultiWAN e NAT in uscita manuale
-================================-
+=================================
 
 Se il **NAT in uscita manuale** deve essere utilizzato con multiWAN,
 assicurarsi che le regole NAT siano configurate per tutte le interfacce
@@ -722,7 +722,7 @@ principale è inattiva. Questo comportamento è configurabile, per
 informazioni su questa impostazione, vedere *Disabilitare reply-to*.
 
 MultiWAN e NAT 1:1
-==================-
+===================
 
 Le voci del NAT 1:1 sono specifiche per una singola interfaccia WAN e,
 come il NAT in uscita, controllano solo ciò che accade al traffico
@@ -809,7 +809,7 @@ carico:
 Fig. 1: Esempio di aggiramento della politica di routing
 
 Unire failover e bilanciamento del carico
-============================================-
+=============================================
 
 Come mostrato nella figura *Esempio di aggiramento della politica di
 routing*, il failover e il bilanciamento del carico possono essere
@@ -861,7 +861,7 @@ come previsto. Le seguenti sezioni descrivono come testare ogni porzione
 della configurazione della multiWAN.
 
 Testare il failover
-==================-
+===================
 
 Testare la Multi-wan in modo controllato immediatamente dopo la
 configurazione è un passo chiave nel processo. Non commettere l'errore
@@ -914,7 +914,7 @@ gateway nota la perdita, la perdita alla fine passerà oltre le soglie di
 allarme configurate e sarà contrassegnata come down.
 
 Verificare la funzionalità del bilanciamento del carico
-======================================================-
+=======================================================
 
 Questa sezione descrive come verificare le funzionalità di una
 configurazione di bilanciamento del carico.
@@ -1019,7 +1019,7 @@ Assicurarsi che la regola di politica del routing sia quella di far
 passare il traffico.
 
 La politica di routing non funziona per il traffico web o tutto il traffico
-==========================================================================-
+===========================================================================
 
 Quando un pacchetto proxy che può catturare in modo trasparente il
 traffico HTTP viene utilizzato, come squid, sovrascrive qualsiasi
@@ -1240,7 +1240,7 @@ firewall ha tre linee DSL da 5 Mbit/s in un bundle, potrebbe
 potenzialmente ottenere 15Mbit/s da una singola connessione.
 
 Requisiti
-========-
+=========
 
 Il più grande ostacolo per MLPPP è che l'ISP deve supportarlo sui
 circuiti collegati al firewall. Pochi ISP sono disposti a sostenere

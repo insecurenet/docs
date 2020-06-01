@@ -112,7 +112,7 @@ appropriato per una determinata rete dipende dalle circostanze
 specifiche, dal livello di rischio e dai problemi di sicurezza.
 
 Utilizzare la VLAN1 predefinita
-==============================-
+===============================
 
 Poiché la VLAN 1 è la VLAN predefinita (“nativa”), può essere usata in
 modo inaspettato dallo switch. È simile all'uso di una politica di
@@ -139,7 +139,7 @@ attraverso 4094 tra cui scegliere, è senza dubbio meglio ignorare la
 VLAN 1 quando si progetta un nuovo schema della VLAN.
 
 Utilizzare la VLAN predefinita di una porta trunk
-================================================-
+=================================================
 
 Quando il traffico contrassegnato VLAN viene inviato su un tronco sulla
 VLAN nativa, i tag nei pacchetti che corrispondono alla VLAN nativa

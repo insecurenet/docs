@@ -710,7 +710,7 @@ connessioni VPN come stampanti, telecamere, sistemi HVAC e altri
 hardware incorporati.
 
 Esempio di configurazione sito-a-sito
-====================================-
+=====================================
 
 La chiave per creare un tunnel IPsec funzionante è garantire che
 entrambe le parti abbiano impostazioni corrispondenti per
@@ -1611,7 +1611,7 @@ sistemi operativi hanno client VPN nativi e non hanno bisogno di
 software extra.
 
 Configurazione del client IKEv2 per windows
-==========================================-
+===========================================
 
 Windows 8 e versioni successive supportano facilmente le VPN di IKEv2 e
 Windows 7 anche se i processi sono leggermente diversi. La procedura in
@@ -2256,7 +2256,7 @@ firewall stesso specificando una sorgente quando si emette un ping.
 Ci sono due metodi per eseguire questo test: la GUI e la shell.
 
 Specificare una sorgente del ping nella GUI
-==========================================-
+===========================================
 
 Nella GUI, un ping può essere inviato con una sorgente specifica come
 segue:
@@ -2380,7 +2380,7 @@ gestito lungo la strada. L’NAT Traversal (NAT- T) incapsula
 l’ESP nel traffico della porta UDP 4500 per risolvere questi problemi.
 
 Il tunnel si stabilisce ma il traffico non passa 
-================================================-
+=================================================
 
 Il sospetto principale se un tunnel si stabilisce ma non passa il
 traffico sono le regole del firewall con IPsec. Se il sito A non può
@@ -2494,7 +2494,7 @@ VPN** e quindi inserire un valore. Un buon punto di partenza sarebbe
 punto di rottura è colpito, quindi indietreggiare un po' da lì.
 
 Disconnessione “casuale” del tunnel/Guasti DPD sul router incorporato
-====================================================================-
+=====================================================================
 
 Se i tunnel Ipsec vengono fatto cadere su un ALIX o altro hardware
 incorporato che sta spingendo i limiti della sua CPU, DPD sul tunnel
@@ -2509,7 +2509,7 @@ segno che l'hardware venga guidato oltre la sua capacità. Se ciò accade,
 considerare di sostituire il firewall con un modello più potente.
 
 I tunnel si creano e funzionano ma non riescono a rinegoziare
-============================================================-
+=============================================================
 
 In alcuni casi un tunnel funzionerà correttamente, ma una volta che la
 durata della fase 1 o della fase 2 scade il tunnel non riuscirà a
@@ -2958,7 +2958,7 @@ problemi di IPsec*. Il lato che inizia spesso non riesce a capire
 perché, quindi controllare prima i registri sul lato che risponde.
 
 Differenze terminologiche
-========================-
+=========================
 
 Un'altra fonte frequente di guasti sono le differenze nella terminologia
 tra i fornitori. Qui ci sono alcune cose comuni da tenere presente:
@@ -3163,7 +3163,7 @@ associazioni di sicurezza attive è conservata nel database
 dell'associazione di sicurezza (Security Association Database , SAD).
 
 Politica di sicurezza
-====================-
+=====================
 
 Una politica di sicurezza gestisce le specifiche complete del tunnel
 IPsec. Come per le associazioni di sicurezza, queste sono a senso unico,

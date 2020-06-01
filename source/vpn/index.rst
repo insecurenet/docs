@@ -171,7 +171,7 @@ iOS ha anche un client nativo OpenVPN. Per maggiori informazioni, vedere
 *iOS*.
 
  Compatibilità con I firewall
-============================-
+=============================
 
 I protocolli VPN possono causare difficoltà per molti firewall e
 dispositivi NAT. Questo è principalmente rilevante per la connettività

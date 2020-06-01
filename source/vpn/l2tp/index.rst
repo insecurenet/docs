@@ -94,7 +94,7 @@ utenti* qui sotto per maggiori dettagli sul sistema di autenticazione
 integrato.
 
 Salvare le modifiche per avviare il server L2TP
-==============================================-
+===============================================
 
 Dopo aver compilato gli elementi di cui sopra, fare clic su **Salvare**.
 Ciò salverà la configurazione e avvierà il server L2TP.
