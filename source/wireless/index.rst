@@ -1,4 +1,6 @@
-**WIRELESS**
+********
+Wireless
+********
 
 Dispositivi Wireless Consigliati
 ''''''''''''''''''''''''''''''''
@@ -301,7 +303,7 @@ le impostazioni come qualsiasi altra interfaccia wireless.
 
 .. note::  L'interfaccia assegnata deve essere configurata per utilizzare la stessa modalità specificata quando è stato creato il VAP.
 
-Wireless WAN 
+Wireless WAN
 ''''''''''''
 
 Una scheda wireless in un firewall che esegue |firew4ll| può essere utilizzata come interfaccia WAN primaria o WAN aggiuntiva in una distribuzione Multi-WAN.
@@ -410,7 +412,7 @@ visualizzati navigando in **Stato>Wireless** come mostrato nella figura
 Prima di visualizzare questa voce di menu, è necessario configurare
 un'interfaccia wireless.
 
-|image6|\ 
+|image6|\
 
 Fig. 5: Stato wireless
 
@@ -557,7 +559,7 @@ segmento wireless sarà sullo stesso dominio broadcast e sottorete IP
 delle porte cablate. Per i router con uno switch integrato, una
 qualsiasi delle porte dello switch LAN in genere funzionerà.
 
-.. note::  
+.. note::
 	*Non collegare la porta WAN o Internet sul router wireless!* Questo metterà la rete wireless su un dominio di trasmissione diverso dal resto della rete e il router wireless eseguirà il NAT sul traffico tra il wireless e la LAN. Ciò si traduce anche in doppio NAT di traffico tra la rete wireless e Internet. Questa pratica non è sempre indicata, e porterà a problemi in alcune circostanze, soprattutto se la comunicazione deve avvenire tra i client LAN wireless e cablati.
 
 Decidere dove connettere l'interfaccia LAN dal router wireless dipende
@@ -738,7 +740,7 @@ utilizzando lo stesso adattatore fisico.
     più elevate. Per questa rete, dal momento che non ce ne sono altri
     in giro, il canale *1* è una buona scelta.
 
-	.. note:: 
+	.. note::
 		Scegliere sempre un canale specifico. Non selezionare  *Automatico* per il canale di un punto di accesso. La convalida dell'input sulle versioni correnti di |firew4ll| impedisce che venga selezionata.
 
     Quando si utilizzano altri standard, o si usano wireless in paesi
@@ -758,7 +760,7 @@ utilizzando lo stesso adattatore fisico.
     seleziona un canale, perché alcuni canali, soprattutto nella banda
     5GHz, variano ampiamente nei loro livelli di potenza consentiti.
 
-    .. seealso:: 
+    .. seealso::
 		Strumenti di indagine come NetSurveyor, InSSIDer, Wi-Spy, e innumerevoli altre applicazioni per vari sistemi operativi, telefoni, tablet, e così vi possono aiutare a scegliere un canale meno occupato o un’area dello spettro più libera. Il chilometraggio può variare.
 
     **Impostazione della distanza** Misurata in metri e supportata solo
@@ -939,7 +941,7 @@ sono spiegate.
 
 .. seealso:: Il pacchetto freerADIUS di |firew4ll| può essere utilizzato per questo scopo.
 
-.. note::  
+.. note::
 	alcuni vecchi sistemi operativi potrebbero non gestire correttamente 802.1X o potrebbero avere lunghi ritardi dopo tentativi di autenticazione non riusciti, ma in genere esistono soluzioni alternative per tali problemi tramite aggiornamenti o patch del sistema operativo.
 
 I client devono anche essere configurati per accedere correttamente al
@@ -1029,7 +1031,7 @@ default andrà bene in questo caso. Per creare la regola:
 
 -  Fare clic su **Applicare le modifiche**
 
-.. seealso:: 
+.. seealso::
 
 Per ulteriori informazioni sulla creazione di regole firewall, vedere
 *Firewal*\ l
@@ -1061,7 +1063,7 @@ virtuali. Questi metodi possono essere utilizzati se un punto di accesso
 esterno viene utilizzato su un'interfaccia OPT o una scheda wireless
 interna come punto di accesso.
 
-.. note::  
+.. note::
 	In teoria, il server PPPoE potrebbe anche essere utilizzato in questo ruolo, ma il supporto sarebbe impossibile su alcuni client e non banale sulla maggior parte degli altri, quindi in genere non è un'opzione praticabile se combinato con wireless.
 
 Protezione wireless aggiuntiva con il captive portal
@@ -1076,7 +1078,7 @@ utilizzare le proprie credenziali della Directory attiva per
 autenticarsi mentre si è in rete wireless. La configurazione del portale
 captive è coperta in *captive portal*.
 
-.. note::  
+.. note::
 	se l'unico requisito è l'autenticazione RADIUS per utente, una soluzione migliore per RADIUS è 802.1X anziché utilizzare il captive portal, a meno che non ci siano client presenti che non supportano 802.1X.
 
 Il captive portal è più probabile che venga utilizzato su reti wireless
@@ -1119,7 +1121,7 @@ dell'interfaccia WLAN possono aiutare nella risoluzione dei problemi.
 Ciò presuppone che la porta UDP predefinita 1194 sia in uso. Se è stato
 scelto un altro protocollo o porta, regolare la regola di conseguenza.
 
-|image9|\ 
+|image9|\
 
 Fig. 7: Regole per consentire solo OpenVPN da wireless
 
@@ -1166,7 +1168,7 @@ l'accesso ad altre reti private. L'alias RFC1918 a cui si fa riferimento
 nella figura include l'elenco delle reti private RFC1918, .168.0.0/16,
 172.16.0.0/12, e 10.0.0.0/8.
 
-|image10|\ 
+|image10|\
 
 Fig. 8: Regole per consentire solo l'accesso a Internet da wireless
 
