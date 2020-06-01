@@ -1,4 +1,6 @@
-**GUIDA AL MENU**
+**************
+Guida del menu
+**************
 
 Sistema
 '''''''
@@ -44,7 +46,7 @@ routing.
     autenticazione (RADIUS o LDAP) per l'accesso alla GUI, l'accesso
     VPN, ecc. Vedere *Gestione e autenticazione dell'utente*.
 
-	.. note::  
+	.. note::
 		Se un utente dispone del privilegio *WebCfg - Sistema: Gestione della password dell’utente*, questa opzione di menu porta l'utente a una pagina in cui è possibile modificare la propria password ma non apportare modifiche ad altri utenti.
 
     **Impostazioni utente** Se le impostazioni per utente sono
