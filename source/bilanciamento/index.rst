@@ -1,23 +1,23 @@
-**BILANCIAMENTO DEL CARICO DELSERVER**
+********************************
+Bilanciamento del carico di rete
+********************************
 
-1. .. rubric:: Opzioni di configurazione del bilanciamento del carico
-      del server
-      :name: opzioni-di-configurazione-del-bilanciamento-del-carico-del-server
 
-   1. **Pool**
+Configurazione
+''''''''''''''
+
+Pool
+====
 
 Per configurare i pool:
 
 -  Passare a **Servizi>Bilanciamento del carico**
-
 -  Fare clic sulla scheda **Pool**
-
 -  Fare clic su |image0| **Aggiungere** per aggiungere un nuovo pool
-
 -  Configurare le opzioni del pool come spiegato di seguito:
 
     **Nome** Un nome per il pool. Il nome è il modo per fare riferimento
-    al pool durante la configurazione del server virtuale che utilizzerà
+    al pool durante la configurazione del virtual server che utilizzerà
     questo pool. Questo nome deve rispettare gli stessi limiti di un
     alias o di un nome di interfaccia. Solo lettere e numeri, l'unico
     separatore consentito è il trattino basso. .. Nota:: questo nome non
@@ -32,10 +32,10 @@ Per configurare i pool:
 
     **Porta** Questa è la porta su cui i server sono in ascolto
     internamente. Questa può essere diversa dalla porta esterna, che
-    viene definita in seguito nella configurazione del server virtuale.
+    viene definita in seguito nella configurazione del virtual server.
     Un alias può anche essere utilizzato per definire più porte,
     tuttavia, se viene utilizzato un alias, bisogna utilizzare lo stesso
-    alias della porta qui e nella configurazione del server virtuale.
+    alias della porta qui e nella configurazione del virtual server.
 
     **Riprovare** Questo definisce il numero di volte in cui un server
     verrà contattato dal monitor prima di essere dichiarato inattivo.
@@ -72,9 +72,10 @@ Se è necessario un failover automatico, creare un secondo pool da
 utilizzare come Pool di fall-back, contenente il set di backup degli
 indirizzi IP del server.
 
-1. **Server virtuali**
+Virtual Server
+==============
 
-Configurare un server virtuale per gestire le connessioni client:
+Configurare un virtual server per gestire le connessioni client:
 
 -  Passare a **Servizi>Bilanciamento del carico**
 
@@ -83,9 +84,9 @@ Configurare un server virtuale per gestire le connessioni client:
 -  Fare clic su |image3| Aggiungere per aggiungere un nuovo Server
    virtuale
 
--  Configurare le opzioni del server virtuale come spiegato di seguito:
+-  Configurare le opzioni del virtual server come spiegato di seguito:
 
-    **Nome** Nome del server virtuale. Questo è per riferimento, ma deve
+    **Nome** Nome del virtual server. Questo è per riferimento, ma deve
     anche rispettare gli stessi limiti di un alias o nome
     dell'interfaccia. Solo lettere e numeri, l'unico separatore
     consentito è un trattino basso. Non ci sono spazi o barre.
@@ -95,7 +96,7 @@ Configurare un server virtuale per gestire le connessioni client:
     limiti di formattazione.
 
     **Indirizzo IP** Dove gli indirizzi IP vengono inseriti per
-    l'utilizzo da parte del server virtuale. È di solito l'indirizzo IP
+    l'utilizzo da parte del virtual server. È di solito l'indirizzo IP
     della WAN o un indirizzo IP virtuale della WAN. Deve essere un
     indirizzo IP statico. Un VIP del CARP può essere utilizzata anche
     per una configurazione ad elevata disponibilità. Per ulteriori
@@ -103,20 +104,19 @@ Configurare un server virtuale per gestire le connessioni client:
     riferimento a *Elevata disponibilità*. È possibile utilizzare un VIP
     Alias IP o un proxy dell’ARP del VIP (solo modalità TCP). Inoltre,
     un Alias può anche essere utilizzato qui per specificare più
-    indirizzi IP su cui questo server virtuale può accettare
+    indirizzi IP su cui questo virtual server può accettare
     connessioni.
 
-**Nota:** in modalità TCP, gli indirizzi IP qui specificati non sono
-associati a livello del sistema operativo, il che significa che relayd
-come demone non è associato e in ascolto direttamente su queste porte.
+	.. note:: 
+		in modalità TCP, gli indirizzi IP qui specificati non sono associati a livello del sistema operativo, il che significa che relayd come demone non è associato e in ascolto direttamente su queste porte.
 
-**Porta** Questa è la porta su cui il server virtuale accetterà le
+**Porta** Questa è la porta su cui il virtual server accetterà le
 connessioni. Può essere diversa dalla porta utilizzata internamente dai
 server del pool. Un alias può essere utilizzato per definire più porte,
 tuttavia, se lo stesso alias di porta deve essere utilizzato qui e nella
 configurazione del Pool.
 
-**Pool del server virtuale** Dove viene selezionato il pool configurato
+**Pool del virtual server** Dove viene selezionato il pool configurato
 in precedenza. Le connessioni all'indirizzo IP e alla porta definite in
 questa schermata verranno indirizzate agli indirizzi IP e alle porte
 configurate nel pool.
@@ -149,15 +149,18 @@ a seconda di cosa farà questo relay.
 
    -  Fare click su **Applicare le modifiche**
 
-      1. .. rubric:: Monitoraggi
-            :name: monitoraggi
+.. warning::
+	se tutti i membri del Pool di virtual serveri e i membri del pool di fall-back sono inattivi, relayd agirà come se il bilanciamento del carico non gestisse le connessioni per l'indirizzo IP e la porta del virtual server. Se l'indirizzo IP e la porta utilizzati sono utilizzati anche da un altro servizio o regola NAT, potrebbe essere accidentalmente esposto ai client.      
+	
+Monitoraggi
+===========
 
 Esistono cinque tipi di Monitor predefiniti di base: ICMP, TCP, HTTP,
 HTTPS e SMTP. Ulteriori tipi personalizzati possono essere aggiunti per
 rilevare meglio specifici tipi di guasti.
 
 Monitoraggi predefiniti
-~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------
 
 I monitoraggi predefiniti sono inclusi nella configurazione predefinita
 e sono:
@@ -181,7 +184,7 @@ e sono:
     un fallimento.
 
 Creazione di monitoraggi personalizzati
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------
 
 I monitoraggi inclusi non sono sufficienti per le esigenze di un sito, o
 hanno bisogno di un aggiustamento, quindi i monitoraggi personalizzati
@@ -246,8 +249,8 @@ stringa, allora è considerato verso down.
 
 -  Fare click su **Salvare**
 
-   1. .. rubric:: Impostazioni
-         :name: impostazioni
+Impostazioni
+============
 
 Oltre alle opzioni per il pool o per il server, ci sono anche alcune
 opzioni globali che controllano il comportamento di relayd. Queste
@@ -274,7 +277,7 @@ scheda **Impostazioni**:
     questa quantità per adattarsi al carico.
 
 Regole del Firewall
--------------------
+===================
 
 L'ultimo passo nella configurazione del bilanciamento del carico è
 configurare le regole del firewall per consentire il traffico al pool.
@@ -293,11 +296,11 @@ del firewall. Per ulteriori informazioni sulle regole del firewall, fare
 riferimento a *Firewall*.
 
 Per la modalità *DNS*, le regole del firewall devono consentire il
-traffico direttamente all'indirizzo IP e alla porta del server virtuale,
+traffico direttamente all'indirizzo IP e alla porta del virtual server,
 non ai server del pool.
 
-Connessioni appiccicose
-~~~~~~~~~~~~~~~~~~~~~~~
+Connessioni affini Sticky
+-------------------------
 
 È disponibile un'opzione di configurazione aggiuntiva per il
 bilanciamento del carico del server, in **Sistema>Avanzate**, nella
@@ -325,6 +328,12 @@ carico. C'è una casella sotto l'opzione per controllare il **Timeout di
 tracciamento della sorgente** che può consentire alla conoscenza della
 relazione client/server di persistere più a lungo.
 
+.. warning::
+	Sticky è generalmente inaffidabile per questo scopo e può anche avere altri effetti collaterali indesiderati. I pacchetti proxy completi come HAProxy hanno meccanismi e opzioni di gran lunga migliori per mantenere le relazioni client/server.
+.. seealso::
+	Per ulteriori informazioni, è possibile accedere all'archivio degli Hangouts per visualizzare l’Hangout di gennaio 2015 sul bilanciamento del carico del server e sul Failover, che include informazioni sulla configurazione di HAProxy.
+
+
 Esistono quattro aree di configurazione per il bilanciamento del carico
 del server:
 
@@ -348,13 +357,13 @@ connessioni utente e contiene diversi server in un **Pool**. Il **Pool**
 utilizza un **Monitoraggio** per ciascun server per determinare se è in
 grado di accettare connessioni utente.
 
-Un server virtuale può avere un normale pool e un **pool di fall-back**
-da utilizzare se tutti i membri del normale **Pool di server virtuali**
+Un virtual server può avere un normale pool e un **pool di fall-back**
+da utilizzare se tutti i membri del normale **Pool di virtual serveri**
 sono inattivi. Questo può essere sfruttato per presentare una pagina di
 manutenzione o interruzione, ad esempio.
 
-Configurazione di esempio di bilanciamento del carico del server Web
-====================================================================
+Esempio di configurazione in bilanciamento di carico del server Web
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Questa sezione mostra come configurare il bilanciamento del carico
 dall'inizio alla fine per un ambiente con bilanciamento del carico con
@@ -364,16 +373,16 @@ due server web.
 
 Fig. 1: Esempio di bilanciamento del carico del server della rete
 
-Esempio di ambiente di rete
----------------------------
+Esempio ambiente di rete
+========================
 
 La figura *Esempio di bilanciamento del carico del server della rete*
 mostra l'esempio di un ambiente configurato in questa sezione. Consiste
 in un singolo firewall, che utilizza il suo indirizzo IP della WAN per
 il pool, con due server web su un segmento DMZ.
 
-1. .. rubric:: Configurazione pool
-      :name: configurazione-pool
+Configurazione pool
+===================
 
    Per configurare il pool:
 
@@ -405,16 +414,16 @@ il pool, con due server web su un segmento DMZ.
 
 Fig. 2: Configurazione pool
 
-Configurazione server virtuale
-------------------------------
+Configurazione virtual server
+=============================
 
 -  Fare clic sulla scheda **Server virtuali**
 
 -  Fare clic su |image8| **Aggiungere** per aggiungere un nuovo server
    virtuale
 
--  Configurare il server virtuale come mostrato nella figura
-   *Configurazione del server virtuale*, che utilizza le seguenti
+-  Configurare il virtual server come mostrato nella figura
+   *Configurazione del virtual server*, che utilizza le seguenti
    impostazioni:
 
     Nome WebVirtualServer
@@ -425,7 +434,7 @@ Configurazione server virtuale
 
     **Porta** 80
 
-    **Pool dei server virtuali** WebServer
+    **Pool dei virtual serveri** WebServer
 
     **Pool dei fall-back** *Nessuno*
 
@@ -437,20 +446,17 @@ Configurazione server virtuale
 
 |image9|
 
-Fig. 3: Configurazione del server virtuale
+Fig. 3: Configurazione del virtual server
 
-1. .. rubric:: Configurazione delle regole del firewall
-      :name: configurazione-delle-regole-del-firewall
+.. warning::
+	In questo esempio, se entrambi i server del pool sono inattivi, il server virtuale è inaccessibile. Il firewall agirà come se nessun server virtuale sia configurato. Se qualcosa sul firewall è associato alla porta 80, i client lo raggiungeranno. Ciò include il reindirizzamento della GUI del Web integrato per la porta 80, in modo che debba essere disabilitato in Sistema>Avanzate nella scheda Accesso dell’amministratore.
 
-   Le regole del firewall devono essere configurate per consentire
-   l'accesso ai server nel pool. Le regole devono consentire il traffico
-   verso gli indirizzi IP interni e la porta utilizzata e non sono
-   necessarie regole per l'indirizzo IP esterno e la porta utilizzata
-   nella configurazione del server virtuale.
+Configurazione regole del firewall
+==================================
 
-   Creare un alias contenente tutti i server nel pool, in modo che
-   l'accesso possa essere consentito con una singola regola del
-   firewall.
+Le regole del firewall devono essere configurate per consentire l'accesso ai server nel pool. Le regole devono consentire il traffico verso gli indirizzi IP interni e la porta utilizzata e non sono necessarie regole per l'indirizzo IP esterno e la porta utilizzata nella configurazione del virtual server.
+
+Creare un alias contenente tutti i server nel pool, in modo che l'accesso possa essere consentito con una singola regola del firewall.
 
 -  Passare a **Firewall>Alias**
 
@@ -516,7 +522,7 @@ Fig. 5: Aggiungere regola del firewall per i server Web
 Fig. 6: Regola del firewall per i server Web
 
 Visualizzare lo stato di bilanciamento del carico
--------------------------------------------------
+=================================================
 
 Ora che il bilanciamento del carico è configurato, per visualizzarne lo
 stato, passare a **Stato>Bilanciamento del carico** e fare clic sulla
@@ -543,7 +549,7 @@ monitoraggi ICMP, lo stato si aggiorna su Offline e il server viene
 rimosso dal pool.
 
 Verifica del bilanciamento del carico
--------------------------------------
+=====================================
 
 Per verificare il bilanciamento del carico, curl è l'opzione migliore
 per garantire che la cache del browser web e le connessioni persistenti
@@ -551,10 +557,17 @@ non influenzino i risultati dei test. curl è disponibile per ogni
 sistema operativo immaginabile e può essere scaricato dal sito web di
 curl. Per usarlo, è sufficiente eseguire:
 
+``curl http://mysite``
+
 In tale comando, sostituire 198.51.100.6 con l'indirizzo IP o il nome
 host del sito. Questo **deve** essere testato dall'esterno della rete
 (ad esempio da una rete remota o un client sulla WAN). Il seguente
-esempio illustra un test con curl dal lato WAN:
+esempio illustra un test con curl dal lato WAN::
+
+# curl http://198.51.100.6
+This is server www2 - 10.6.0.12
+# curl http://198.51.100.6
+This is server www1 - 10.6.0.11
 
 Quando si verifica inizialmente il bilanciamento del carico, configurare
 ciascun server per restituire una pagina che specifica il nome host,
@@ -563,14 +576,14 @@ rispondendo alla richiesta. Se le connessioni sticky non sono abilitate,
 un server diverso risponderà a ciascuna richiesta.
 
 Risoluzione dei problemi del bilanciamento del carico del server
-================================================================
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Questa sezione descrive come identificare e risolvere i problemi più
 comuni riscontrati dagli utenti con il bilanciamento del carico del
 server.
 
-Connessioni non bilanciate
---------------------------
+Connessioni non vengono bilanciate
+==================================
 
 Le connessioni non bilanciate sono sempre dovute a un errore della
 metodologia di test utilizzata e di solito sono specifiche per HTTP. I
@@ -591,7 +604,7 @@ IP di origine andranno a un singolo server a meno che non trascorra un
 lungo periodo di tempo tra i tentativi di connessione.
 
 Il server down non è contrassegnato come offline
-------------------------------------------------
+================================================
 
 Se un server va down ma non è contrassegnato come offline, è perché il
 monitoraggio eseguito dal demone di bilanciamento del carico ritiene che
@@ -603,7 +616,7 @@ esacerbato, poiché i server possono essere appesi o bloccati senza alcun
 servizio di ascolto e continuare a rispondere ai ping.
 
 Il server attivo non è contrassegnato come online
--------------------------------------------------
+=================================================
 
 Se un server è online, ma non contrassegnato come online, è perché non è
 online dal punto di vista dei monitoraggio del daemon di bilanciamento
@@ -622,15 +635,21 @@ scegliere l'interfaccia LAN del firewall come sorgente e l'indirizzo IP
 e la porta del server web come destinazione.
 
 Un altro modo per testare è con un prompt della shell sul firewall,
-utilizzando l'opzione 8 del menu console o SSH e il comando nc:
+utilizzando l'opzione 8 del menu console o SSH e il comando nc::
 
-Ed ecco un esempio di una connessione riuscita:
+# nc -vz 10.6.0.12 80
+nc: connect to 10.6.0.12 port 80 (tcp) failed: Operation timed out
+
+Ed ecco un esempio di una connessione riuscita::
+
+# nc -vz 10.6.0.12 80
+Connection to 10.6.0.12 80 port [tcp/http] succeeded!
 
 Se la connessione non riesce, risolvere ulteriormente il problema sul
 server web.
 
-Impossibile raggiungere un server virtuale da un client nella stessa sottorete del server pool
-----------------------------------------------------------------------------------------------
+Impossibile raggiungere un virtual server da un client nella stessa sottorete del server pool
+==============================================================================================
 
 I sistemi del client nella stessa sottorete dei server del pool non
 riescono a connettersi correttamente utilizzando questo metodo di
@@ -700,7 +719,7 @@ in modo round-robin. Per tecniche di bilanciamento più avanzate come
 l'hashing di origine, provare invece un pacchetto proxy inverso come
 **HAProxy**.
 
-**Vedere anche:**
+.. seealso:: 
 
 Per ulteriori informazioni, è possibile accedere all'archivio di
 Hangouts per visualizzare l’Hangout di gennaio 2015 sul bilanciamento
@@ -721,7 +740,7 @@ del carico del server e sul Failover.
 .. |image4| image:: media/image1.png
    :width: 0.26389in
    :height: 0.26389in
-.. |image5| image:: media/image3.jpeg
+.. |image5| image:: media/image3.png
    :width: 6.04167in
    :height: 1.93056in
 .. |image6| image:: media/image1.png
