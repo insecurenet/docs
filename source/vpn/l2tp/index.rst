@@ -1,7 +1,9 @@
-**VPN su L2TP**
+****
+L2TP
+****
 
 Regole del firewall e L2TP
-==========================
+''''''''''''''''''''''''''
 
 Per impostazione predefinita, quando il server L2TP è abilitato, le
 regole del firewall non verranno aggiunte automaticamente
@@ -10,8 +12,8 @@ del firewall deve essere aggiunta a qualsiasi interfaccia che il
 traffico L2TP inserirà, in genere WAN, WAN contenente il gateway
 predefinito, o IPsec.
 
-L2TP e Multi-WAN
-================
+L2TP e MultiWAN
+''''''''''''''''
 
 L2TP utilizza la porta UDP 1701. Poiché L2TP si basa su UDP, il server
 potrebbe avere problemi con qualsiasi WAN che non sia il gateway
@@ -20,20 +22,20 @@ più vicino al client, seguendo la tabella di routing, che è la WAN con
 il gateway predefinito per i client remoti.
 
 Configurazione del server con L2TP
-==================================
+''''''''''''''''''''''''''''''''''
 
 Per utilizzare L2TP, prima passare a **VPN>L2TP**. Selezionare
 **Abilitare il server L2TP**.
 
 Interfaccia
------------
+===========
 
 L'impostazione dell'\ **interfaccia** controlla dove il demone L2TP
 legherà e ascolterà le connessioni. Questa è in genere l’interfaccia
 *WAN* che accetta le connessioni in entrata.
 
 Indirizzamento dell’IP
-----------------------
+======================
 
 Prima di iniziare, determinare quali indirizzi IP utilizzare per il
 server L2TP e i client e quanti client simultanei supportare.
@@ -61,7 +63,7 @@ necessario. Compilare i campi del server\*\* DNS su L2TP **primario** e
 dei client.
 
 Autenticazione
---------------
+==============
 
     **Segreto** Richiesto da alcune implementazioni L2TP, simile a una
     password di gruppo o chiave pre-condivisa. Il supporto per questo
@@ -92,13 +94,13 @@ utenti* qui sotto per maggiori dettagli sul sistema di autenticazione
 integrato.
 
 Salvare le modifiche per avviare il server L2TP
------------------------------------------------
+==============================================-
 
 Dopo aver compilato gli elementi di cui sopra, fare clic su **Salvare**.
 Ciò salverà la configurazione e avvierà il server L2TP.
 
 Configurare le regole del firewall per i client L2TP
-----------------------------------------------------
+====================================================
 
 Passare a **Firewall>Regole** e fare clic sulla scheda **VPN su L2TP**.
 Queste regole controllano il traffico dai client L2TP. Fino a quando non
@@ -110,16 +112,15 @@ essere desiderata qui per scopi di test come mostrato nella figura
 *Regola del firewall della VPN su L2TP* e, una volta verificata la
 funzionalità, limitare il set di regole come desiderato.
 
-**Nota:** ricordare che una regola deve essere aggiunta all'interfaccia
-che riceve il traffico L2TP, in genere WAN o IPsec, per passare UDP al
-firewall con una porta di destinazione di 1701.
+.. note::  
+	ricordare che una regola deve essere aggiunta all'interfaccia che riceve il traffico L2TP, in genere WAN o IPsec, per passare UDP al firewall con una porta di destinazione di 1701.
 
 |image1|
 
 Fig. 2: Regola del firewall della VPN su L2TP
 
-1. .. rubric:: Aggiungere utenti
-      :name: aggiungere-utenti
+Aggiungere utenti
+=================
 
    L'aggiunta di utenti al sistema per gli utenti di L2TP integrato è
    semplice. Per aggiungere utenti locali:
@@ -153,9 +154,9 @@ Per modificare un utente esistente, fare clic su |image5| . Gli utenti
 possono essere eliminati cliccando su |image6|.
 
 L2TP con IPsec
-==============
+''''''''''''''
 
-Nelle versioni attuali di pfSense, L2TP / IPsec può essere configurato
+Nelle versioni attuali di |firew4ll|, L2TP / IPsec può essere configurato
 per i client mobili, anche se non è una configurazione che consigliamo.
 
 Come avvertito all'inizio del capitolo, il client Windows, tra gli
@@ -163,16 +164,14 @@ altri, e il demone IPSec di strongSwan non sono sempre compatibili,
 portando in molti casi al fallimento. Si consiglia vivamente di
 utilizzare un'altra soluzione come IKEv2 invece di L2TP/IPsec.
 
-**Vedere anche:**
-
-*Esempio di configurazione del server IKEv2* contiene una procedura
-dettagliata per la configurazione di IKEv2.
+.. seealso:: *Esempio di configurazione del server IKEv2* contiene una procedura dettagliata per la configurazione di IKEv2.
 
 Prima di configurare la porzione IPsec, impostare il server L2TP come
 descritto nella *Configurazione del server L2TP* e aggiungere utenti,
 regole del firewall, ecc..
 
-1. **Configurazione di IPsec**
+Configurazione di IPsec
+=======================
 
 Queste impostazioni sono state testate e trovate adatte per funzionare
 con alcuni client, ma altre impostazioni simili potrebbero anche
@@ -180,10 +179,10 @@ funzionare. Sentirsi liberi di provare altri algoritmi di crittografia,
 hash, ecc.
 
 Scheda dei client mobili
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 -  Passare alla scheda **VPN>IPsec**, nella scheda **Client mobili** su
-   pfSense
+   |firew4ll|
 
 -  Controllare **Abilitare il supporto dei client mobili di IPsec**
 
@@ -196,8 +195,8 @@ Scheda dei client mobili
 
 -  Fare click su **Salvare**
 
-Fase 1
-~~~~~~
+Phase 1
+-------
 
 -  Fare click sul pulsante **Creare la fase1** in alto se appare o
    modificare la fase 1 di IPsec per dispositivi mobileiesistente
@@ -222,8 +221,7 @@ Fase 1
 
 -  Impostare **Gruppo di chiavi DH** su *14 (2048 bit) *
 
-**Nota:** iOS e altre piattaforme potrebbero invece funzionare con un
-**gruppo di chiavi DH** di *2*.
+.. note::  iOS e altre piattaforme potrebbero invece funzionare con un **gruppo di chiavi DH** di *2*.
 
 -  Impostare **Durata di vita** su 28800
 
@@ -236,8 +234,8 @@ Fase 1
 
 -  Fare click su **Salvare**
 
-Fase 2
-~~~~~~
+Phase2 2
+------
 
 -  Fare clic su **Mostrare voci di fase 2** per visualizzare l’elenco
    della fase 2 di IPsec per i dispositivi mobili
@@ -262,22 +260,20 @@ Fase 2
 
 -  Fare click su **Salvare**
 
-Chiave pre-condivisa
-~~~~~~~~~~~~~~~~~~~~
+Pre-Shared Key
+--------------------
 
 La chiave pre-condivisa per la connessione, comune a tutti i client,
 deve essere configurata in modo speciale.
 
--  Passare a **VPN>IPsec**, scheda **Chiavi pre-condivise** su pfSense
+-  Passare a **VPN>IPsec**, scheda **Pre-Shared Key** su |firew4ll|
 
 -  Fare clic su |image9| **Aggiungere** per aggiungere un nuovo PSK
 
 -  Impostare **Identificatore** su tutti gli utenti
 
-**Nota:** il nome tutti gli utenti è una parola chiave speciale
-utilizzata da pfSense per configurare un PSK wildcard, che è necessario
-a L2TP/IPsec per funzionare. Non utilizzare altri **Identificatori** per
-questo PSK!
+.. note::  
+	il nome tutti gli utenti è una parola chiave speciale utilizzata da |firew4ll| per configurare un PSK wildcard, che è necessario a L2TP/IPsec per funzionare. Non utilizzare altri **Identificatori** per questo PSK!
 
 -  Impostare **Tipo di segreto** su *PSK*
 
@@ -288,8 +284,8 @@ questo PSK!
 
 -  Fare click su **Applicare le modifiche**
 
-   1. .. rubric:: Regole del firewall di IPsec
-         :name: regole-del-firewall-di-ipsec
+Regole del firewall di IPsec
+============================
 
       Le regole del firewall sono necessarie per passare il traffico
       dall'host del client su IPsec per stabilire il tunnel L2TP e
@@ -311,20 +307,16 @@ questo PSK!
 
 -  Impostare la **Sorgente** e la **Destinazione** su *Qualsiasi*
 
-**Nota:** questo non deve far passare tutto il traffico, ma deve almeno
-far passare L2TP (porta UDP 1701) all'indirizzo IP della WAN del
-firewall
+.. note::  questo non deve far passare tutto il traffico, ma deve almeno far passare L2TP (porta UDP 1701) all'indirizzo IP della WAN del firewall.
 
 -  Fare clic su **Salvare**
 
 -  Fare click su **Applicare le modifiche**
 
-   1. .. rubric:: Configurazione DNS
-         :name: configurazione-dns
+Configurazione DNS
+''''''''''''''''''
 
-      Se i server DNS vengono forniti ai client e viene utilizzato il
-      **risolutore del DNS** non associato, la sottorete scelta per i
-      client di L2TP deve essere aggiunta all'elenco di accesso.
+Se i server DNS vengono forniti ai client e viene utilizzato il **risolutore del DNS** non associato, la sottorete scelta per i client di L2TP deve essere aggiunta all'elenco di accesso.
 
 -  Passare a **Servizi>Risolutore del DNS**, scheda **Elenchi di
    accesso**
@@ -349,8 +341,8 @@ firewall
 
 -  Fare click su **Applicare le modifiche**
 
-   1. .. rubric:: Configurazione client
-         :name: configurazione-client
+Configurazione client
+=====================
 
       Quando si configurano i client, ci sono alcuni punti da cercare:
 
@@ -364,22 +356,22 @@ firewall
 -  Il tipo di autenticazione del client deve corrispondere a quello
    configurato sul server L2TP (ad es. *CHAP*)
 
-   1. .. rubric:: Risoluzione dei problemi con L2TP
-         :name: risoluzione-dei-problemi-con-l2tp
+Risoluzione dei problemi con L2TP
+'''''''''''''''''''''''''''''''''
 
 Questa sezione copre i passaggi di risoluzione dei problemi più comuni
 che gli utenti incontrano con L2TP.
 
 Impossibile connettersi
------------------------
+=======================
 
 Verificare che le regole del firewall siano state aggiunte
 all'interfaccia esterna in cui il traffico L2TP entra nel firewall.
 Assicurarsi inoltre che il client si connetta all'indirizzo IP
 dell'interfaccia scelto nelle impostazioni L2TP.
 
-Connesso a L2TP ma non può passare il traffico
-----------------------------------------------
+Connesso a L2TP ma non lascia passare il traffico
+=================================================
 
 Assicurarsi che le regole del firewall siano state aggiunte
 all'interfaccia **VPN su L2TP** come descritto in *Configurare le regole
@@ -394,51 +386,35 @@ sottorete non attraverserà mai la VPN perché è sulla rete locale. Questo
 relativamente oscura quando si utilizza una VPN.
 
 La connessione non riesce con un client di Windows
---------------------------------------------------
+==================================================
 
 Se il livello IPsec sembra essere completato, ma nessun traffico L2TP
 passa, è probabile che sia nota un'incompatibilità tra Windows e il
-demone di strongSwan utilizzato su pfSense. Al momento non esiste una
+demone di strongSwan utilizzato su |firew4ll|. Al momento non esiste una
 soluzione nota se non spostare il sistema Windows da dietro il NAT o
 utilizzare una VPN di stile diverso come IKEv2.
 
-1. .. rubric:: Traffico L2TP bloccato in uscita
-      :name: traffico-l2tp-bloccato-in-uscita
+Traffico L2TP bloccato in uscita
+================================
 
-   In alcuni casi, ad esempio quando combinato con IPsec, il traffico
-   L2TP può anche richiedere una gestione speciale tramite regole
-   fluttuanti. Viene visualizzato come traffico bloccato nella direzione
-   *in uscita* nei log del firewall, che mostra un'interfaccia server di
-   L2TP.
+In alcuni casi, ad esempio quando combinato con IPsec, il traffico L2TP può anche richiedere una gestione speciale tramite regole dinamiche. Viene visualizzato come traffico bloccato nella direzione *in uscita* nei log del firewall, che mostra un'interfaccia server di L2TP.
 
-   Se ciò accade, aggiungere una regola fluttuante come segue:
+Se ciò accade, aggiungere una regola fluttuante come segue:
 
 -  Passare a **Firewall>Regole**, scheda **Fluttuanti**
-
--  Fare clic su |image13| **Aggiungere** per aggiungere una nuova regola
-   alla parte superiore dell'elenco
-
+-  Fare clic su |image13| **Aggiungere** per aggiungere una nuova regola alla parte superiore dell'elenco
 -  Impostare **Azione** su *Passare*
-
 -  Selezionare **Rapido**
-
 -  Selezionare *VPN su L2TP* per l'\ **interfaccia**
-
 -  Impostare **Direzione** su *In uscita*
-
 -  Impostare **Protocollo** su *TCP*
-
--  Impostare **Sorgente/Destinazione** in base alle esigenze o impostare
-   su *Qualsiasi*
-
+-  Impostare **Sorgente/Destinazione** in base alle esigenze o impostare su *Qualsiasi*
 -  Funzioni avanzate:
-
    -  Impostare le **Flag di TCP** a *Qualsiasi flag*
-
    -  Imposta il **Tipo di stato** in *Stato sloppy*
-
-   1. .. rubric:: Registri L2TP
-         :name: registri-l2tp
+   
+L2TP Log
+''''''''
 
 Una registrazione per gli eventi di login e logout viene mantenuto su
 **Stato>Registri di sistema**, nella scheda **VPN**, sotto gli **Accessi
@@ -448,24 +424,25 @@ Ogni login e logout viene registrato con un timestamp e un nome utente,
 e ogni login mostrerà anche l'indirizzo IP assegnato al client L2TP. Il
 registro completo può essere trovato nella scheda **L2TP grezzo**.
 
-pfSense può fungere da server VPN su L2TP. L2TP è puramente un
+|firew4ll| può fungere da server VPN su L2TP. L2TP è puramente un
 protocollo del tunnel che non offre alcuna crittografia propria, quindi
 è tipicamente combinato con qualche altra tecnica di crittografia, come
 Ipsec.
 
-**Vedere anche:**
+.. warning::
+	supporta L2TP/IPsec, tuttavia, alcuni client non funzioneranno correttamente in molti comuni scenari. Lo scenario di problema più comune è un client di Windows dietro il NAT, in tal caso il client Windows e il demone IPSec di strongSwan non sono pienamente compatibili, il che porta al fallimento. In queste situazioni, si consiglia di utilizzare invece IKEv2.
 
-Per la discussione generale dei vari tipi di implementazioni VPN
-disponibili in pfSense e dei loro pro e contro, vedere
+.. seealso::
+	Esempio di configurazione del server per IKEv2 contiene una procedura dettagliata per la configurazione di IKEv2, che è una soluzione molto più flessibile.
 
-*Reti private virtuali*.
+.. seealso:: Per la discussione generale dei vari tipi di implementazioni VPN disponibili in |firew4ll| e dei loro pro e contro, vedere *Reti private virtuali*.
 
 Avviso di sicurezza L2TP
-========================
+''''''''''''''''''''''''
 
 L2TP da solo non è crittografato, quindi non è destinato al traffico
 privato. Alcuni dispositivi, come Android, offrono un client solo su
-L2TP che è in grado di connettersi a pfSense, ma dovrebbe essere
+L2TP che è in grado di connettersi a |firew4ll|, ma dovrebbe essere
 utilizzato solo per il traffico che è già crittografato, o se il
 traffico non è considerato privato. Ad esempio, effettuare il tunnel del
 traffico Internet in modo che sembra provenire da un'altra posizione.

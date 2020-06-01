@@ -1299,13 +1299,9 @@ dipenderà dal metodo di autenticazione scelto durante la creazione del
 server OpenVPN.
 
 .. seealso:: 
+	Maggiori dettagli sull'aggiunta di utenti possono essere trovati in *Gestione e autenticazione degli utenti*. Maggiori informazioni sulla gestione dei certificati utente possono essere trovate in *Certificati utente*.
 
-Maggiori dettagli sull'aggiunta di utenti possono essere trovati in
-*Gestione e 'autenticazione degli utenti*. Maggiori informazioni sulla
-gestione dei certificati utente possono essere trovate in *Certificati
-utente*.
-
-1. \ **Utenti locali**
+	**Utenti locali**
 
    Per aggiungere un utente che può connettersi a OpenVPN, devono essere
    aggiunti alla Gestione utente come segue:
@@ -1344,11 +1340,7 @@ utente*.
 
 Per esportare il certificato e la chiave di un utente:
 
-.. note::  questa parte può essere saltata se si utilizza il pacchetto di
-esportazione del client di OpenVPN, descritto in *Pacchetto di
-esportazione del client di OpenVPN*. Il pacchetto di esportazione del
-client è un modo molto più semplice per scaricare configurazioni del
-client e il file di installazione.
+.. note::  questa parte può essere saltata se si utilizza il pacchetto di esportazione del client di OpenVPN, descritto in *Pacchetto di esportazione del client di OpenVPN*. Il pacchetto di esportazione del client è un modo molto più semplice per scaricare configurazioni del client e il file di installazione.
 
 -  Passare **a Sistema>Gestione utenti** nella scheda **Certificati**
 
@@ -1379,11 +1371,11 @@ firewall in modo da riflettere una relazione del certificato utente.
 Tuttavia, è possibile creare i certificati da soli utilizzando la
 gestione dei certificati come descritto nei *Certificati utente*
 
-2. .. rubric:: Installazione del client di OpenVPN
-      :name: installazione-del-client-di-openvpn
+Installazione del client di OpenVPN
+'''''''''''''''''''''''''''''''''''
 
-   1. .. rubric:: Pacchetto di esportazione del client di OpenVPN
-         :name: pacchetto-di-esportazione-del-client-di-openvpn
+Pacchetto di esportazione del client di OpenVPN
+===============================================
 
 Il modo più semplice per configurare un client OpenVPN sulla maggior
 parte delle piattaforme è utilizzare il pacchetto di esportazione del
@@ -1506,9 +1498,7 @@ Le opzioni per il pacchetto includono:
     nelle schermate di configurazione di OpenVPN, ma dal punto di vista
     del client.
 
-.. note::  non esiste alcun meccanismo per salvare queste impostazioni,
-quindi devono essere controllate e impostate ogni volta che la pagina
-viene visitata.
+.. note::  non esiste alcun meccanismo per salvare queste impostazioni, quindi devono essere controllate e impostate ogni volta che la pagina viene visitata.
 
 Lista dei pacchetti di installazione del client
 -----------------------------------------------
@@ -1545,9 +1535,8 @@ in questo capitolo era per SSL/TLS + Autenticazione utente con utenti
 locali, quindi viene mostrata una voce per utente sul sistema che ha un
 certificato creato dalla stessa CA del server OpenVPN.
 
-.. note::  se non vengono visualizzati utenti o se manca un utente
-specifico nell'elenco, l'utente non esiste o l'utente non dispone di un
-certificato appropriato. Vedere *Utenti locali* per la procedura
+.. note::  
+	se non vengono visualizzati utenti o se manca un utente specifico nell'elenco, l'utente non esiste o l'utente non dispone di un certificato appropriato. Vedere *Utenti locali* per la procedura
 corretta per creare un utente e un certificato.
 
 Tipi di pacchetto di installazione del client
@@ -1558,7 +1547,7 @@ configurazione e i file associati in modi diversi. Ognuno può ospitare
 un diverso tipo di client potenziale.
 
 Configurazioni standard
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
     **Archivio** Scarica un archivio ZIP contenente il file di
     configurazione, la chiave TLS del server se definita e un file
@@ -1572,14 +1561,9 @@ Configurazioni standard
     informazioni.
 
 Configurazioni in linea
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
-Questa scelta scarica un singolo file di configurazione con i
-certificati e le chiavi in linea. Questo formato è ideale per l'uso su
-tutte le piattaforme, in particolare i client di Android e iOS o per
-copiare manualmente una configurazione su un sistema che ha già
-installato un client. Questa opzione funzionerà per qualsiasi tipo di
-client basato su OpenVPN versione 2.1 o successiva.
+	Questa scelta scarica un singolo file di configurazione con i certificati e le chiavi in linea. Questo formato è ideale per l'uso su tutte le piattaforme, in particolare i client di Android e iOS o per copiare manualmente una configurazione su un sistema che ha già installato un client. Questa opzione funzionerà per qualsiasi tipo di client basato su OpenVPN versione 2.1 o successiva.
 
     **Android** Utilizzato con il client OpenVPN di Android menzionato
     in *Android 4.x e versioni successive*.
@@ -1594,7 +1578,7 @@ client basato su OpenVPN versione 2.1 o successiva.
     Tunnelblick.
 
 Archivio telefonico SIP
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Se il server OpenVPN è configurato come SSL/TLS solo *senza*
 autenticazione, appariranno opzioni per esportare le configurazioni del
@@ -1603,9 +1587,10 @@ Esempi notevoli sono i telefoni Yealink T28 e T38G e SNOM.
 L'installazione del client sul telefono varia in base al modello,
 controllare la documentazione del produttore per ulteriori informazioni.
 
-.. note::  Assicurarsi che il telefono abbia una corretta configurazione
-dell'orologio e/o server NTP, altrimenti i certificati non verranno
-convalidati e la VPN non si connetterà.
+.. note::  
+	Assicurarsi che il telefono abbia una corretta configurazione dell'orologio e/o server NTP, altrimenti i certificati non verranno convalidati e la VPN non si connetterà.
+.. warning::
+	In genere questi telefoni supportano solo l'uso di SHA1 come hash del certificato. Assicurarsi che i certificati CA, il certificato del server e client siano tutti generati utilizzando SHA1 o potrebbero non riuscire. Essi possono anche supportare solo un insieme limitato di algoritmi di crittografia come AES-128-CBC. Consultare la documentazione del telefono per i dettagli
 
 Programma d’installazione di Windows
 ------------------------------------
@@ -1647,6 +1632,11 @@ sopra, ma per il client OpenVPN di viscosity è utilizzato in OS X e
 Windows. Se il client di viscosity è già installato, scaricare questo
 pacchetto e fare clic su di esso per importarlo nel client.
 
+.. warning::
+	in Windows Vista, 7, 8, 10 e versioni successive con UAC (Controllo dell’account dell’utente, User Account Control) abilitato, il client deve essere eseguito come amministratore. Cliccare con il tasto destro sull'icona della GUI di OpenVPN e fare clic su Eseguire come amministratore per farlo funzionare. Può connettersi senza diritti amministrativi, ma non può aggiungere il percorso necessario per dirigere il traffico sulla connessione OpenVPN, lasciandolo inutilizzabile. Le proprietà del collegamento possono essere impostate per avviare sempre il programma come Amministratore. Questa opzione si trova nella scheda Compatibilità delle proprietà di scelta rapida. Un modo per aggirare questo requisito è controllare la gestione di OpenVPN prima di esportare per utilizzare una GUI di gestione OpenVPN alternativa su Windows.
+	Il client di viscosity è disponibile anche per Windows e non richiede privilegi amministrativi per funzionare correttamente.
+
+
 Installazione di Windows
 ========================
 
@@ -1665,10 +1655,16 @@ Nessuna configurazione di questa interfaccia è necessaria in quanto la
 sua configurazione verrà estratta dal server OpenVPN o dalla
 configurazione del client.
 
-Client e installazione di Mac OS X
+.. warning::
+	In Windows Vista, 7, 8, 10 e versioni successive con UAC (Controllo dell’account dell’utente) abilitato, il client deve essere eseguito come amministratore. Fare clic con il tasto destro sull'icona della GUI di OpenVPN e fare clic su Eseguire come amministratore per farlo funzionare. Può connettersi senza diritti amministrativi, ma non può aggiungere il percorso necessario per dirigere il traffico sulla connessione OpenVPN, lasciandolo inutilizzabile. Le proprietà del collegamento possono essere impostate per avviare sempre il programma come amministratore. Questa opzione si trova nella scheda compatibilità delle proprietà di scelta rapida. Un modo per aggirare questo requisito è controllare la gestione di OpenVPN prima di esportare per utilizzare una GUI di gestione OpenVPN alternativa su Windows.
+	Il client di viscosity è disponibile anche per Windows e non richiede privilegi amministrativi per funzionare correttamente.
+
+
+Installazione Client Mac OS X
 ==================================
 
-Ci sono tre opzioni client per Mac OS X.:
+Opzioni client OpenVPN
+----------------------
 
 -  Il client della riga di comando OpenVPN. La maggior parte degli
        utenti preferisce un client grafico, quindi questa opzione non
@@ -1685,18 +1681,18 @@ Ci sono tre opzioni client per Mac OS X.:
 Sia Tunnelblick che viscosity sono facilmente installati, senza opzioni
 di configurazione durante l'installazione.
 
-Configurazione di viscosity
+Installare viscosity
 ---------------------------
 
 Quando si utilizza il client di viscosity, può essere configurato
 manualmente o il pacchetto di esportazione del client OpenVPN può essere
-utilizzato per importare la configurazione. Viscosity fornisce uno
-strumento di configurazione della GUI che può essere utilizzato per
-generare la configurazione del client di OpenVPN sottostante. La CA e i
-certificati possono essere importati manualmente e tutti i parametri
-possono essere impostati manualmente. Questa sezione copre
-l'importazione di un pacchetto di viscosity dal pacchetto di
-esportazione.
+utilizzato per importare la configurazione. 
+
+.. note:: 
+	Viscosity fornisce uno strumento di configurazione della GUI che può essere utilizzato per generare la configurazione del client di OpenVPN sottostante. La CA e i certificati possono essere importati manualmente e tutti i parametri possono essere impostati manualmente. 
+	
+Importazione configurazione di "Viscosity"
+------------------------------------------
 
 -  Scaricare una copia del **pacchetto viscosity** per il client dal
    pacchetto di esportazione del client di OpenVPN
@@ -1722,6 +1718,9 @@ Fig. 2: Importazione di viscosity
 -  Viscosity sarà in esecuzione dopo l'importazione, e può essere
    trovato nella barra dei menu
 
+Verificare importazione
+-----------------------
+
 -  Fare clic sull'icona di blocco aggiunto alla barra dei menu nella
    parte superiore dello schermo
 
@@ -1738,16 +1737,22 @@ Fig. 3: Preferenze per viscosity
 
 -  Chiudere la schermata Preferenze
 
--  Fare clic sul blocco nella barra dei menu
+Collegati alla VPN
+------------------
+
+-  Fare clic sull'icona lucchetto nella barra dei menu
 
 -  Fare clic sul nome della connessione VPN per connettersi come
    mostrato in figura *Collegare viscosity*. Dopo alcuni secondi, il
    blocco nella barra dei menu diventerà verde per mostrarlo collegato
    correttamente.
 
--  Fare clic su di esso e quindi fare clic su **Dettagli** come mostrato
-   nella figura *Menu di viscosity* per vedere le informazioni di
-   connessione
+Controlla dettagli connesione
+-----------------------------
+
+-  Fare clic sull'icona lucchetto nella barra dei menu
+
+-  Fare clic su **Dettagli** come mostrato    nella figura *Menu di viscosity* per vedere le informazioni di    connessione
 
    |image9|
 
@@ -1789,8 +1794,8 @@ registri*). Se c'è qualche problema di connessione, rivedere i registri
 qui per aiutare a determinare il problema. Vedere anche *Risoluzione dei
 problemi di OpenVPN*.
 
-iOS
-==-
+Client iOS e installazione
+==========================
 
 iOS è anche in grado di eseguire OpenVPN in modo nativo utilizzando il
 client di OpenVPN Connect per iOS disponibile in App Store. Questa
@@ -1895,13 +1900,10 @@ predefinito “archivio di configurazione " non funzionerà, anche se
 alcuni utenti hanno segnalato il funzionamento importando i file di
 configurazione estratti dal pacchetto di viscosity.
 
-1. .. rubric:: Androide 4.x e versioni successive
-      :name: androide-4.x-e-versioni-successive
+Client Android e installazioni
+==============================
 
-   Per i dispositivi che eseguono Android 4.0 o una versione più
-   recente, c'è un'app OpenVPN gratuita nel Play store di Google che
-   funziona in modo eccellente senza bisogno di accesso dalla root. Si
-   chiama OpenVPN per Android da Arne Schwabe.
+Per i dispositivi che eseguono Android 4.0 o una versione più recente, c'è un'app OpenVPN gratuita nel Play store di Google che funziona in modo eccellente senza bisogno di accesso dalla root. Si chiama OpenVPN per Android di Arne Schwabe.
 
    Il pacchetto di esportazione del client di OpenVPN su |firew4ll| può
    esportare una **configurazione in linea** di tipo **Android** e il
@@ -1925,24 +1927,23 @@ modificare il nome e altri dettagli. Toccare la VPN per connettersi. Se
 il profilo è configurato per l'autenticazione dell'utente, l'app
 richiederà credenziali durante la connessione.
 
-.. note::  il client di OpenVPN Connect per Android funziona anche su
-Android 4.x e non richiede la root. Funziona in modo identico al client
-di iOS con lo stesso nome. Manca la possibilità di configurare
-completamente la VPN nella GUI, quindi non è raccomandato. Utilizzare
-l’esportazione della **Configurazione in linea** del tipo di **OpenVPN
-Connect** per l'utilizzo con quel client sia su Android che su iOS.
+.. note::  
+	Il client di OpenVPN Connect per Android funziona anche su Android 4.x e non richiede la root. Funziona in modo identico al client di iOS con lo stesso nome. Manca la possibilità di configurare completamente la VPN nella GUI, quindi non è raccomandato. Utilizzare l’esportazione della **Configurazione in linea** del tipo di **OpenVPN Connect** per l'utilizzo con quel client sia su Android che su iOS.
 
-Installazione di FreeBSD
-========================
+Client FreeBSD e Installazione
+==============================
 
-Se il client ha un'installazione di FreeBSD in magazzino, OpenVPN può
-essere trovato nella collezione delle porte. Per installare OpenVPN,
-eseguire quanto segue dalla **root**:
+Se il client ha un'installazione di FreeBSD pronta, OpenVPN può essere trovato tra i suoi ports. Per installare OpenVPN, eseguire quanto segue dalla **root**::
 
-In alternativa, può essere installato dai pacchetti:
+# cd /usr/ports/security/openvpn && make install clean
 
-Installazione di Linux
-======================
+In alternativa, può essere installato dai pacchetti::
+
+# pkg install openvpn
+
+
+Client Linux e Installazione
+============================
 
 L'installazione di OpenVPN su Linux varierà a seconda della
 distribuzione preferita e del metodo di gestione delle installazioni
@@ -1955,10 +1956,12 @@ specificità. Basta cercare su Internet la distribuzione di scelta e
 
 Le distribuzioni basate su Ubuntu hanno una gestione OpenVPN integrata
 con la Gestione di rete, ma richiede l'installazione di un modulo
-aggiuntivo.
+aggiuntivo con il seguente comando:
 
-Configurazione manuale client
-============================-
+``apt install openvpn-server``
+
+Configurazione manuale del client
+=================================
 
 L'esecuzione di un'installazione del client manuale invece di utilizzare
 il pacchetto di esportazione del client di OpenVPN richiede ulteriori
@@ -1994,38 +1997,41 @@ TLS.
 Creare la configurazione
 ------------------------
 
-Dopo aver copiato i certificati nel client, è necessario creare il file di configurazione del client di OpenVPN. Questo può essere fatto con qualsiasi editor di file di testo normale come Blocco note su Windows. Quanto segue mostra le opzioni più utilizzate:
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Dopo aver copiato i certificati nel client, è necessario creare il file di configurazione del client di OpenVPN. Questo può essere fatto con qualsiasi editor di file di testo normale come Blocco note su Windows. Quanto segue mostra le opzioni più utilizzate::
 
-remoto Specifica l'host e la porta del server OpenVPN remoto. Qui è possibile specificare un indirizzo IP o FQDN.
------------------------------------------------------------------------------------------------------------------
+client
+dev tun
+proto udp
+remote vpn.example.com 1194
+ping 10
+resolv-retry infinite
+nobind
+persist-key
+persist-tun
+ca ca.crt
+cert username.crt
+key username.key
+verb 3
+comp-lzo
+tls-auth tls.key 1
+auth-user-pass
 
-proto Specifica il protocollo utilizzato dalla connessione OpenVPN. Cambiare questa riga in proto tcp se TCP viene utilizzato sul server di OpenVPN
----------------------------------------------------------------------------------------------------------------------------------------------------
+	**remote** Specifica l'host e la porta del server OpenVPN remoto. Qui è possibile specificare un indirizzo IP o FQDN.
+	**proto** Specifica il protocollo utilizzato dalla connessione OpenVPN. Cambiare questa riga in proto tcp se TCP viene utilizzato sul server di OpenVPN
+	**CA, cert, key** Deve essere modificato di conseguenza per ogni client per riflettere i nomi dei file salvati in precedenza.
+	**tls-auth** Se l'autenticazione TLS non viene utilizzata, la riga TLS-auth può essere omessa.
+	**auth-user-pass Se la VPN di accesso remoto non include l'autenticazione con nome utente e password, omettere questa riga.
 
-CA, cert, chiave Deve essere modificato di conseguenza per ogni client per riflettere i nomi dei file salvati in precedenza.
-----------------------------------------------------------------------------------------------------------------------------
+.. seealso::  Per un riferimento più completo alle direttive OpenVPN, fare riferimento al manuale OpenVPN per la versione del client installata
 
-tls-auth Se l'autenticazione TLS non viene utilizzata, la riga TLS-auth può essere omessa.
-------------------------------------------------------------------------------------------
-
-auth-user-pass Se la VPN di accesso remoto non include l'autenticazione con nome utente e password, omettere questa riga.
--------------------------------------------------------------------------------------------------------------------------
-
-.. seealso:: 
--------------
-
-Per un riferimento più completo alle direttive OpenVPN, fare riferimento al manuale OpenVPN per la versione del client installata
----------------------------------------------------------------------------------------------------------------------------------
-
-Distribuzione di configurazione e chiavi ai client
+Distribuzione di configurazione e chiavi aii client
 --------------------------------------------------
 
 Il modo più semplice per distribuire le chiavi e la configurazione
 OpenVPN ai client è tramite il pacchetto di esportazione del client di
 OpenVPN. Se quel pacchetto non è una scelta valida, posizionare i file
 necessari in un archivio ZIP o in un archivio autoestraente che estrae
-automaticamente C:\\Program file\\OpenVPN\\config. Questo deve essere
+automaticamente ``C:\Program Files\OpenVPN\config``. Questo deve essere
 trasmesso in modo sicuro per l'utente finale, e non deve mai essere
 passato su reti non attendibili in chiaro.
 
@@ -2035,19 +2041,12 @@ ancora integrata nella maggior parte dei sistemi operativi. Questa
 sezione fornisce una panoramica dell'installazione su diversi sistemi
 operativi comuni.
 
-.. seealso:: 
-
-Per ulteriori informazioni, è possibile accedere all'archivio degli
-Hangouts per guardare gli Hangouts di settembre e ottobre 2015 sulle VPN
-di accesso remoto che coprono le installazioni dei client per la maggior
-parte dei sistemi operativi.
-
 |image15|
 
 Fig. 10: Rete con esempio di sito-a-sito per OpenVPN
 
-Esempio di sito-a-sito (chiave condivisa)
-''''''''''''''''''''''''''''''''''''''''=
+Esempio di sito-a-sito (Shared Key)
+'''''''''''''''''''''''''''''''''''''''''
 
 Questa sezione descrive il processo di configurazione di una connessione
 con sito-a-sito utilizzando un tunnel di OpenVPN in stile **Chiave
@@ -2222,21 +2221,13 @@ firewall sull'interfaccia WAN lato client perché il client avvia solo
 connessioni in uscita. Il server non avvia mai le connessioni per il
 client.
 
-.. note::  con le configurazioni PKI di accesso remoto, in genere i
-percorsi e le altre opzioni di configurazione non sono definiti nella
-configurazione del client, ma vengono spinti dal server al client. Con
-le distribuzioni di chiavi condivise, i percorsi e altri parametri
-devono essere definiti su entrambe le estremità, se necessario (come
-descritto in precedenza e successivamente nelle *opzioni di
-configurazione personalizzate*), le opzioni non possono essere inviate
-dal server ai client quando si utilizzano chiavi condivise.
+.. note::  
+	Con le configurazioni PKI di accesso remoto, in genere i percorsi e le altre opzioni di configurazione non sono definiti nella configurazione del client, ma vengono spinti dal server al client. Con le distribuzioni di chiavi condivise, i percorsi e altri parametri devono essere definiti su entrambe le estremità, se necessario (come descritto in precedenza e successivamente nelle *opzioni di configurazione personalizzate*), le opzioni non possono essere inviate dal server ai client quando si utilizzano chiavi condivise. 
 
-Testing the connection
+Provare la connessione
 ======================
 
-The connection will immediately be active upon saving on the client
-side. Try to ping across to the remote end to verify connectivity. If
-problems arise, refer to `*Troubleshooting OpenVPN* <#_bookmark488>`__.
+Il collegamento sarà immediatamente attivo al momento del salvataggio sul lato client. Provate a fare ping verso l'estremità remota per verificare la connettività. In caso di problemi, consultare la sezione Risoluzione dei problemi di OpenVPN.
 
 Configurazione di esempio da sito a Sito (SSL/TLS)
 ''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -2287,19 +2278,10 @@ sono necessari due elementi:
 
    Maggiori dettagli su questo argomento seguiranno nell'esempio.
 
-   1. .. rubric:: Configurare il lato server con SSL/TLS
-         :name: configurare-il-lato-server-con-ssltls
+Configurare il server con SSL/TLS
+=================================
 
-      Prima che la VPN possa essere configurata, è necessaria una
-      struttura del certificato per questa VPN. Creare una CA univoca
-      per questa VPN e da tale CA creare un certificato server e quindi
-      un certificato utente per ciascun sito remoto. Per i siti client,
-      utilizzare un CN che li identifica in modo univoco in qualche
-      modo, come il loro nome di dominio completo o un sito abbreviato o
-      il nome host. Per le specifiche di creazione di una CA e
-      certificati, vedere *Gestione dei certificati*. Per questo
-      esempio, la CA sarà chiamata S2SCA, il server CN sarà serverA, i
-      client saranno clientB e clientC.
+Prima che la VPN possa essere configurata, è necessaria una struttura del certificato per questa VPN. Creare una CA univoca per questa VPN e da tale CA creare un certificato server e quindi un certificato utente per ciascun sito remoto. Per i siti client, utilizzare un CN che li identifica in modo univoco in qualche modo, come il loro nome di dominio completo o un sito abbreviato o il nome host. Per le specifiche di creazione di una CA e certificati, vedere *Gestione dei certificati*. Per questo esempio, la CA sarà chiamata S2SCA, il server CN sarà serverA, i client saranno clientB e clientC.
 
 -  Passare a **VPN>OpenVPN**, scheda **Server**
 
@@ -2311,40 +2293,20 @@ sono necessari due elementi:
    appropriati per questa rete o i valori predefiniti in caso di dubbi.
 
     **Modalità del server** Selezionare *Peer a Peer (SSL/TLS)*
-
     **Protocollo** Selezionare *UDP*
-
     **Modalità del dispositivo** Selezionare *tun*
-
     **Interfaccia** Selezionare *WAN*
-
-    Porta locale Immettere meno che non ci sia un altro server OpenVPN
-    attivo, nel qual caso utilizzare una porta diversa
-
+    **Porta locale** Immettere meno che non ci sia un altro server OpenVPN attivo, nel qual caso utilizzare una porta diversa
     **Descrizione** Inserire qui il testo per descrivere la connessione
+    **Autenticazione TLS** Seleziona questa casella per eseguire l'autenticazione TLS quanto quella SSL
+    **Autorità di certificazione Peer** Selezionare la CA creata  all'inizio di questo processo
+    **Elenco delle revoche dei certificati dei peer** Se è stato creato un CRL, selezionalo qui
+    **Certificato del server** Selezionare il certificato del server creato all'inizio di questo processo
+    **Rete del tunnel IPv4** Inserire la rete del tunnel scelta, 10.3.101.0/24
+    **Rete locale IPv4** Inserire le reti LAN per tutti i siti, incluso il server: 10.3.0.0/24, 10.5.0.0/24, 10.7.0.0/24
 
-    **Autenticazione TLS** Seleziona questa casella per eseguire
-    l'autenticazione TLS quanto quella SSL
-
-    **Autorità di certificazione Peer** Selezionare la CA creata
-    all'inizio di questo processo
-
-    **Elenco delle revoche dei certificati dei peer** Se è stato creato
-    un CRL, selezionalo qui
-
-    **Certificato del server** Selezionare il certificato del server
-    creato all'inizio di questo processo
-
-    **Rete del tunnel IPv4** Inserire la rete del tunnel scelta,
-    10.3.101.0/24
-
-    **Rete locale IPv4** Inserire le reti LAN per tutti i siti, incluso
-    il server: 10.3.0.0/24, 10.5.0.0/24, 10.7.0.0/24
-
-.. note::  Se ci sono più reti sul lato server che devono essere
-raggiunte dai client, come reti raggiungibili tramite percorsi statici,
-altre VPN e così via, aggiungerle come voci aggiuntive nella casella
-della rete locale con IPv4.
+.. note::  
+	Se ci sono più reti sul lato server che devono essere raggiunte dai client, come reti raggiungibili tramite percorsi statici, altre VPN e così via, aggiungerle come voci aggiuntive nella casella della rete locale con IPv4.
 
 **Rete remota IPv4** Inserire solo le reti LAN client: 10.5.0.0 / 24,
 10.7.0.0 / 24
@@ -2378,14 +2340,9 @@ della rete locale con IPv4.
        indirizzi statici.
 
 -  Impostare la **destinazione** si *indirizzo WAN*
-
 -  Impostare la **porta di destinazione** su questa istanza
-
--  Immettere una **descrizione**, ad esempio VPN per il multi-Sito della
-       OpenVPN
-
+-  Immettere una **descrizione**, ad esempio VPN per il multi-Sito di OpenVPN
 -  Fare clic su **Salvare**
-
 -  Fare click su **Applicare le modifiche**
 
 È inoltre necessario aggiungere una regola all'interfaccia **OpenVPN**
@@ -2437,14 +2394,13 @@ tutto il traffico è OK, quindi viene fatta la seguente regola:
    per i client.
 
 -  Passare a **Sistema>Gestione dei certificati**
-
 -  Fare clic sui collegamenti per esportare i seguenti elementi:
+	- Certificato CA
+	- Certificato del sito del client (.crt) per ogni posizione del client.
+	- Chiave del sito del client (.key) per ogni posizione del client.
 
-   -  
-   -  Certificato del sito del client (.crt) per ogni posizione del
-      client.
-
-   -  Chiave del sito del client (.key) per ogni posizione del client.
+.. warning:: 
+	non esportare la chiave CA, il certificato del server o la chiave del server. Non sono necessari sui client e copiarli inutilmente indebolisce significativamente la sicurezza della VPN.
 
 Ciò completa la configurazione del server, quindi, ora passare a
 configurare i client.
@@ -2537,7 +2493,7 @@ di problemi, fare riferimento alla *Risoluzione dei problemi di
 OpenVPN*.
 
 Controllo dello stato dei client e dei server OpenVPN
-''''''''''''''''''''''''''''''''''''''''''''''''''''=
+'''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 La pagina dello stato si OpenVPN in **Stato>OpenVPN** mostra lo stato di
 ciascun server e client OpenVPN. I controlli di avvio/arresto del
@@ -2570,8 +2526,8 @@ attiva.
 Fig. 14: Stato di OpenVPN che mostra un server attivo, uno in attesa di
 una connessione e un client che tenta di riconnettersi
 
-2. .. rubric:: Consentire il traffico al server di OpenVPN
-      :name: consentire-il-traffico-al-server-di-openvpn
+Consentire il traffico al server di OpenVPN
+'''''''''''''''''''''''''''''''''''''''''''
 
    Dopo aver impostato un server OpenVPN, è necessaria una regola
    firewall per consentire il traffico al server OpenVPN.
@@ -2651,7 +2607,7 @@ modificare le regole in base alle esigenze. Un set di regole rigoroso è
 più sicuro, ma più difficile da creare.
 
 Client OpenVPN e accesso a Internet
-''''''''''''''''''''''''''''''''''=
+'''''''''''''''''''''''''''''''''''
 
 Per i client di accesso remoto OpenVPN per raggiungere Internet tramite
 la connessione OpenVPN, è necessario un NAT in uscita per tradurre il
@@ -2664,9 +2620,9 @@ OpenVPN o le reti remote.
 .. seealso:: 
 
 *NAT in uscita* per maggiori dettagli sul NAT in uscita.
-
-2. .. rubric:: Assegnazione delle interfacce OpenVPN
-      :name: assegnazione-delle-interfacce-openvpn
+ 
+Assegnazione delle interfacce OpenVPN
+'''''''''''''''''''''''''''''''''''''
 
    Per eseguire un filtro NAT, la politica del routing o il tunnel
    specifico complesso, l'interfaccia OpenVPN deve essere assegnata come
@@ -2689,8 +2645,8 @@ OpenVPN o le reti remote.
 -  Consentire un controllo più preciso della porta forward e del NAT in
    uscita per la VPN
 
-   1. .. rubric:: Assegnazione e configurazione dell'interfaccia
-         :name: assegnazione-e-configurazione-dellinterfaccia
+Assegnazione e configurazione dell'interfaccia
+==============================================
 
 -  Passare a **Interfacce>(assegnare)**
 
@@ -2719,9 +2675,8 @@ Fig. 16: Assegnare l’interfaccia OpenVPN
 -  Selezionare *nessuno* sia per il **tipo di configurazione IPv4** che
    per il **tipo di configurazione IPv6**
 
-.. note::  Questo non configura alcuna informazione sull'indirizzo IP
-dell'interfaccia, che è necessaria poiché la OpenVPN stessa deve
-configurare queste impostazioni.
+.. note::  
+	Questo non configura alcuna informazione sull'indirizzo IP dell'interfaccia, che è necessaria poiché la OpenVPN stessa deve configurare queste impostazioni.
 
 -  Fare click su **Salvare**
 
@@ -2746,17 +2701,11 @@ traffico che entra in questa interfaccia VPN esca dalla stessa
 interfaccia. Questo può aiutare con alcuni scenari NAT e di
 configurazione più avanzati.
 
-.. note::  le regole aggiunte qui vengono elaborate dopo le regole della
-scheda OpenVPN, che vengono selezionate per prime. Per corrispondere
-alle regole di una scheda VPN assegnata, il traffico **non deve
-corrispondere** alle regole della scheda OpenVPN. Rimuovere le regole di
-stile “Consentire tutto” dalla scheda OpenVPN e creare invece regole più
-specifiche.
+.. note::  
+	le regole aggiunte qui vengono elaborate dopo le regole della scheda OpenVPN, che vengono selezionate per prime. Per corrispondere alle regole di una scheda VPN assegnata, il traffico **non deve corrispondere** alle regole della scheda OpenVPN. Rimuovere le regole di stile “Consentire tutto” dalla scheda OpenVPN e creare invece regole più specifiche.
 
-.. seealso:: 
+.. seealso::  Per ulteriori informazioni sulle regole del firewall, fare riferimento a *Firewall*.
 
-Per ulteriori informazioni sulle regole del firewall, fare riferimento a
-*Firewall*.
 
 Politica di routing con OpenVPN
 ==============================-
@@ -2773,10 +2722,10 @@ eseguito sull'interfaccia VPN prima che se ne vada (per i servizi VPN
 come PIA, StrongVPN e simili) o il NAT deve essere fatto dall'altra
 parte prima che raggiunga la connessione internet effettiva.
 
-.. seealso:: 
+.. seealso:: Vedere *Politica di routing* per ulteriori informazioni sulla politica di routing.
 
-Vedere *Politica di routing* per ulteriori informazioni sulla politica
-di routing.
+.. warning::
+	non utilizzare questo gateway automatico per i percorsi statici. Utilizzare il campo della Rete remota nella configurazione VPN. La definizione di un percorso statico utilizzando il gateway OpenVPN automatico non funzionerà correttamente.
 
 NAT con OpenVPN
 ==============-
@@ -2788,7 +2737,7 @@ SPECIFICHE le regole NAT a questa connessione VPN (NAT in uscita,
 inoltro della porta o NAT 1:1)
 
 NAT con connessioni OpenVPN
-''''''''''''''''''''''''''=
+'''''''''''''''''''''''''''
 
 Per molti scenari NAT avanzati che utilizzano OpenVPN, è necessario
 assegnare l'interfaccia come descritto in *Assegnazione di interfacce
@@ -2808,12 +2757,8 @@ raggiungere gli altri sistemi tramite ARP. Con il NAT, tuttavia, il lato
 remoto può essere fatto funzionare come se stesse usando una sottorete
 diversa.
 
-.. note::  l'utilizzo del NAT funzionerà per molti protocolli, ma alcuni
-che sono comunemente desiderabili tra le connessioni VPN, principalmente
-la condivisione di file SMB/CIFS tra gli host di Windows, non
-funzioneranno in combinazione con il NAT. Se viene utilizzato un
-protocollo che non è in grado di funzionare con il NAT, non è una
-soluzione praticabile.
+.. note::  
+	l'utilizzo del NAT funzionerà per molti protocolli, ma alcuni che sono comunemente desiderabili tra le connessioni VPN, principalmente la condivisione di file SMB/CIFS tra gli host di Windows, non funzioneranno in combinazione con il NAT. Se viene utilizzato un protocollo che non è in grado di funzionare con il NAT, non è una soluzione praticabile.
 
 Figura *Sito-a-sito con sottoreti in conflitto* mostra un esempio in cui
 entrambe le estremità utilizzano la stessa sottorete. Dopo aver
@@ -2854,7 +2799,7 @@ Fig. 18: Configurazione del NAT 1:1 del sito A
 Fig. 19: Configurazione del NAT 1:1 del sito B
 
 OpenVPN e Multi-WAN
-''''''''''''''''''=
+'''''''''''''''''''
 
 OpenVPN può supportare la Multi-WAN, con alcuni avvertimenti in
 determinate circostanze. Questa sezione copre le connessioni Multi-WAN
@@ -2880,7 +2825,7 @@ utilizzare entrambe le WAN in concomitanza con la VPN. Se utilizzato con
 i client di OpenVPN, l'interfaccia in uscita verrà commutata in base ai
 livelli del gruppo di gateway.
 
-Server OpenVPN e Multi-WAN
+Server OpenVPN e MultiWAN
 ==========================
 
 I server OpenVPN possono essere utilizzati con qualsiasi connessione
@@ -2899,9 +2844,8 @@ Per ogni interfaccia WAN è necessaria una regola del firewall. Questo
 metodo dovrebbe essere considerato come un'ultima risorsa e utilizzato
 solo se gli altri metodi non sono attuabili.
 
-.. note::  questo funziona a causa della natura orientata alla
-connessione di TCP. L'OpenVPN può rispondere all'altra estremità con la
-sorgente corretta conservata poiché fa parte di una connessione aperta.
+.. note::  
+	questo funziona a causa della natura orientata alla connessione di TCP. L'OpenVPN può rispondere all'altra estremità con la sorgente corretta conservata poiché fa parte di una connessione aperta.
 
 Server OpenVPN che utilizza UDP
 -------------------------------
@@ -2916,8 +2860,8 @@ tabella di routing ritiene sia il percorso migliore per raggiungere
 l'altro lato. Per le WAN non predefinite, questo non sarà il percorso
 corretto.
 
-Metodo del server multiplo
---------------------------
+Metodo server multiplo
+----------------------
 
 In alcuni casi, ogni WAN deve avere il proprio server OpenVPN. Gli
 stessi certificati possono essere usati per tutti i server. Solo due
@@ -2930,8 +2874,8 @@ parti della configurazione OpenVPN devono cambiare:
     **Interfaccia** Ogni server OpenVPN deve specificare
     un'\ **interfaccia** WAN diversa.
 
-Metodo della porta forward
---------------------------
+Metodo del port forward
+-----------------------
 
 Un'opzione più semplice e flessibile è quella di associare il server
 OpenVPN all'interfaccia *LAN* o all’\ *host locale* e utilizzare una
@@ -2957,7 +2901,10 @@ Questo può essere utilizzato in combinazione con una distribuzione
 server OpenVPN con Multi-WAN per fornire il failover automatico per i
 client. Se i server OpenVPN sono in esecuzione sugli indirizzi IP
 198.51.100.3 e 203.0.113.5, entrambi che utilizzano la porta 1194, le
-righe remote nel file di configurazione del client saranno le seguenti:
+righe remote nel file di configurazione del client saranno le seguenti::
+
+remote 198.51.100.3 1194 udp
+remote 203.0.113.5 1194 udp
 
 Per i client configurati su |firew4ll|, il primo remoto viene configurato
 dal **\*Campo dell’host o dell’indirizzodel server nella GUI**. **Il
@@ -2975,8 +2922,8 @@ trovare indesiderabili:
 -  **Non** opera il "fail-back". Una volta che un client si connette al
    secondo indirizzo IP del server rimarrà lì fino alla disconnessione.
 
-   1. .. rubric:: Client di OpenVPN e Multi-WAN
-         :name: client-di-openvpn-e-multi-wan
+Client OpenVPN e MultiWAN
+=========================
 
 Per utilizzare UN'interfaccia opt WAN, selezionarla come interfaccia. I
 client OpenVPN configurati sul firewall rispetteranno l'interfaccia
@@ -2988,8 +2935,8 @@ tabella di routing del sistema quando effettua la connessione al server
 OpenVPN. In questo caso sarà necessario un percorso statico manuale per
 indirizzare il traffico verso l'endpoint remoto sulla WAN desiderata.
 
-1. .. rubric:: OpenVPN Site-to-Site con Multi-WAN e OSPF
-      :name: openvpn-site-to-site-con-multi-wan-e-ospf
+OpenVPN Site-to-Site con MultiWAN e OSPF
+=========================================
 
    Basandosi sui concetti esposti in precedenza nel capitolo, è
    possibile configurare una VPN ridondante utilizzando un protocollo di
@@ -3101,8 +3048,8 @@ in uscita non necessarie in modalità client. Quando le transizioni di
 stato del VIP del CARP al MASTER, le istanze OpenVPN vengono avviate
 automaticamente.
 
-Connessioni OpenVPN con un bridge
-''''''''''''''''''''''''''''''''=
+Connessioni OpenVPN con bridge
+''''''''''''''''''''''''''''''
 
 Le configurazioni di OpenVPN discusse a questo punto sono state tutte
 instradate, utilizzando le interfacce *tun*. Questo è il metodo
@@ -3161,7 +3108,7 @@ Creare il bridge
 Una volta creato il server con il *tap* di OpenVPN, l'interfaccia di
 OpenVPN deve essere assegnata e collegata all'interfaccia interna.
 
-Assegnare una interfaccia OpenVPN
+Assegnare un'interfaccia OpenVPN
 ---------------------------------
 
 Per includere l'interfaccia VPN in un bridge, questa deve essere
@@ -3208,6 +3155,11 @@ Questa sezione copre le opzioni personalizzate più utilizzate
 singolarmente. Ce ne sono molte altre, anche se raramente necessarie. La
 Pagina principale di OpenVPN le descrive tutte.
 
+.. warning::
+	prestare attenzione quando si aggiungono opzioni personalizzate, poiché non viene applicata alcuna convalida di input per garantire la validità delle opzioni utilizzate. Se un'opzione viene utilizzata in modo errato, il client o il server OpenVPN potrebbero non avviarsi. Visualizzare i registri OpenVPN in Stato>Registri di sistema nella scheda OpenVPN per garantire che le opzioni utilizzate siano valide. Qualsiasi opzione non valida comporterà un messaggio di registro, seguito dall'opzione che ha causato l'errore::
+	Options error: Unrecognized option or missing parameter(s)
+
+
 Opzioni di routing
 ==================
 
@@ -3219,9 +3171,16 @@ virgole.
 L'opzione di configurazione personalizzata della route può anche essere
 utilizzata, ma non è più necessaria. Tuttavia, alcuni utenti
 preferiscono questo metodo. L'esempio seguente aggiunge un percorso per
-10.50.0.0/24:
+10.50.0.0/24::
 
-Per aggiungere più percorsi, separarli con un punto e virgola:
+route 10.50.0.0 255.255.255.0;
+route 10.254.0.0 255.255.255.0;
+
+Per aggiungere più percorsi, separarli con un punto e virgola::
+
+route 10.50.0.0 255.255.255.0;
+route 10.254.0.0 255.255.255.0;
+
 
 L'opzione di configurazione della route viene utilizzata per aggiungere
 percorsi localmente per le reti raggiungibili tramite la VPN. Per una
@@ -3229,7 +3188,11 @@ configurazione del server OpenVPN tramite PKI, è possibile anche inviare
 percorsi aggiuntivi ai client. La GUI può configurarli utilizzando il
 campo della **Rete locale**. Per inviare manualmente i percorsi per
 10.50.0.0/24 e 10.254.0.0/24 a tutti i client, utilizzare la seguente
-opzione di configurazione personalizzata:
+opzione di configurazione personalizzata::
+
+push "route 10.50.0.0 255.255.255.0";
+push "route 10.254.0.0 255.255.255.0";
+
 
 Reindirizzamento del gateway predefinito
 ----------------------------------------
@@ -3242,7 +3205,10 @@ contro numerosi attacchi che sono un rischio su reti non attendibili.
 Questo è configurabile ora nella GUI, selezionando la casella di
 **Reindirizzamento del gateway** nella configurazione dell'istanza
 OpenVPN. Per fare questo manualmente, aggiungere la seguente opzione
-personalizzata:
+personalizzata::
+
+push "redirect-gateway def1"
+
 
 Lo stesso valore può essere utilizzato come opzione personalizzata sul
 lato client inserendo redirect-gateway def1 senza specificare push .
@@ -3250,7 +3216,7 @@ lato client inserendo redirect-gateway def1 senza specificare push .
 *uno*, non dalla lettera "L".)
 
 Condivisione di una porta con OpenVPN e un server Web
-''''''''''''''''''''''''''''''''''''''''''''''''''''=
+'''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Per essere più subdolo o attento con un server OpenVPN, sfruttare la
 capacità di condivisione delle porte in OpenVPN che permette di passare
@@ -3271,7 +3237,9 @@ all'indirizzo IP della WAN o al VIP utilizzato per OpenVPN sulla porta
 ulteriori regole della porta forward o del firewall.
 
 Nelle opzioni personalizzate dell'istanza OpenVPN, aggiungere quanto
-segue:
+segue::
+
+port-share x.x.x.x 443
 
 Dove x.x.x.x è l'indirizzo IP interno del server web a cui verrà
 inoltrato il traffico non VPN.
@@ -3280,11 +3248,10 @@ Ora, se un client OpenVPN è puntato sull’indirizzo pubblico, si
 connetterà e funzionerà correttamente, e se un browser Web è puntato
 sullo stesso indirizzo IP, sarà collegato al server web.
 
-.. note::  ciò richiede l'utilizzo di TCP e può comportare prestazioni
-VPN ridotte.
+.. note::  ciò richiede l'utilizzo di TCP e può comportare prestazioni VPN ridotte.
 
 Controllo dei parametri del client tramite RADIUS
-''''''''''''''''''''''''''''''''''''''''''''''''=
+'''''''''''''''''''''''''''''''''''''''''''''''''
 
 Quando si utilizza RADIUS come sorgente di autenticazione per una VPN,
 |firew4ll| supporta la ricezione di alcuni parametri di configurazione del
@@ -3333,8 +3300,8 @@ attesa, si sta riconnettendo, ecc, sarebbe indicato su quella schermata.
 Per ulteriori informazioni, vedere *Controllo dello stato dei client e
 dei server OpenVPN*.
 
-1. .. rubric:: Controllare il registro del firewall
-      :name: controllare-il-registro-del-firewall
+Controllare il registro del firewall
+====================================
 
    Se una connessione VPN non si stabilisce o si stabilisce ma non passa
    il traffico, controllare i registri del firewall in **Stato>Registri
@@ -3345,8 +3312,8 @@ dei server OpenVPN*.
    aggiungere regole alla scheda **OpenVPN** per consentire il traffico
    lì.
 
-2. .. rubric:: Alcuni host funzionano, ma non tutti
-      :name: alcuni-host-funzionano-ma-non-tutti
+Alcuni host funzionano, ma non tutti
+====================================
 
 Se il traffico tra alcuni host sulla VPN funziona correttamente, ma
 alcuni host non lo fanno, la causa è di solito una di queste quattro
@@ -3387,10 +3354,13 @@ Controllare i registri OpenVPN
 
 Passare a **Stato>Registri di sistema** e fare clic sulla scheda
 **OpenVPN** per visualizzare i registri OpenVPN. Al momento della
-connessione, OpenVPN registrerà messaggi simili al seguente esempio:
+connessione, OpenVPN registrerà messaggi simili al seguente esempio::
 
-.. note::  il numero seguente openvpn sarà diverso, è l'ID del processo
-di OpenVPN che crea la connessione.
+openvpn[32194]: UDPv4 link remote: 1.2.3.4:1194
+openvpn[32194]: Peer Connection Initiated with 192.168.110.2:1194
+openvpn[32194]: Initialization Sequence Completed
+
+.. note::  il numero seguente openvpn sarà diverso, è l'ID del processo di OpenVPN che crea la connessione.
 
 Se i messaggi *inizializzati dalla connessione remota del peer* e del
 *link da remoto* non vengono visualizzati quando si tenta la
@@ -3399,7 +3369,7 @@ errata, quindi il client non sta connettendosi al server corretto o le
 regole firewall errate bloccano la connessione del client.
 
 Garantire che nessuna connessione IPsec sia sovrapposta
-======================================================-
+=======================================================
 
 A causa del modo in cui IPSec si lega al kernel di FreeBSD, qualsiasi
 connessione IPsec abilitata che corrisponde alle sottoreti locali e
@@ -3412,7 +3382,7 @@ siano state rimosse guardando **Stato>IPsec** nella scheda **SPD**. Se
 sono presenti, rimuoverle da quella schermata.
 
 Controllare la tabella di routing del sistema
-============================================-
+=============================================
 
 Passare a **Diagnostica>Route** e rivedere i percorsi noti dal firewall.
 Per le VPN con sito-a-sito, saranno presenti percorsi per le reti remote
@@ -3475,9 +3445,8 @@ riceve correttamente, potrebbero accadere un paio di cose:
        client che server) per indirizzare il traffico verso sottoreti
        sull'altra estremità del tunnel.
 
-   1. .. rubric:: Perché non posso eseguire il ping di alcuni indirizzi
-         dell'adattatore di OpenVPN?
-         :name: perché-non-posso-eseguire-il-ping-di-alcuni-indirizzi-delladattatore-di-openvpn
+Perché non posso eseguire il ping di alcuni indirizzi dell'adattatore di OpenVPN?
+=================================================================================
 
 In modalità server SSL/TLS che utilizza una **topologia** di stile
 *net30*, OpenVPN non risponderà al ping su determinati indirizzi
@@ -3487,8 +3456,7 @@ mezzo per determinare se il tunnel sta passando correttamente il
 traffico. Invece, effettuare il ping di qualcosa nella sottorete remota,
 come l'indirizzo IP LAN del server.
 
-.. note::  Questo non è rilevante quando si utilizza una **topologia** di
-stile *sottorete*
+.. note::  Questo non è rilevante quando si utilizza una **topologia** di stile *sottorete*
 
 Secondo la parte "*FAQ sulla OpenVPN*"\_, nella sezione intitolata
 *Perché l'opzione “ifconfig-pool” di OpenVPN utilizza una sottorete /30
@@ -3501,9 +3469,19 @@ preoccupa di rispondere ai ping su questo indirizzo, mentre 192.168.1.1
 è un vero indirizzo IP nei server O/S, quindi risponderà ai ping.
 
 Questo può sembrare un po' contro-intuitivo, poiché sul server di
-ifconfig in uscita è simile a:
+ifconfig in uscita è simile a::
 
-Mentre il client mostra:
+tun0: flags=8051<UP,POINTOPOINT,RUNNING,MULTICAST> metric 0 mtu 1500
+	inet6 fe80::202:b3ff:fe03:8028%tun0 prefixlen 64 scopeid 0xc
+	inet 192.168.100.1 --> 192.168.100.2 netmask 0xffffffff
+	Opened by PID 27841
+
+Mentre il client mostra::
+
+tun0: flags=8051<UP,POINTOPOINT,RUNNING,MULTICAST> metric 0 mtu 1500
+	inet6 fe80::202:b3ff:fe24:978c%tun0 prefixlen 64 scopeid 0xa
+	inet 192.168.100.6 --> 192.168.100.5 netmask 0xffffffff
+	Opened by PID 1949
 
 In questo caso,.5 o.1. probabilmente non risponderanno al *ping*.
 L’indirizzo .5 non risponderà perché si tratta di un indirizzo virtuale,
@@ -3557,15 +3535,15 @@ OpenVPN in modo che sappiano quali reti vengono instradate per un
 certificato specifico.
 
 Perché i client OpenVPN ottengono tutti lo stesso indirizzo IP?
-==============================================================-
+===============================================================
 
 Se lo stesso certificato viene utilizzato per tutti i client, che
 scoraggiamo fortemente, ai client viene assegnato lo stesso indirizzo IP
 quando si connettono. Per aggirare questo problema, controllare
 **Duplicare le connessioni** nella configurazione del server.
 
-Importazione dei parametri Dh OpenVPN
-====================================-
+Importazione dei parametri DH OpenVPN
+=====================================
 
 Quando si importa una configurazione OpenVPN esistente in |firew4ll|, non è
 necessario importare i parametri DH. I parametri DH non sono specifici
@@ -3578,9 +3556,7 @@ devono corrispondere su entrambi i lati del tunnel, e quelli nuovi
 possono essere fatti in qualsiasi momento. Non è necessario importare un
 set esistente di parametri DH.
 
-.. note::  per impostazione predefinita, |firew4ll| utilizza una serie di
-parametri DH pre-generati. Un nuovo set può essere generato manualmente
-se lo si desidera, vedere *Lunghezza dei parametri DH* per i dettagli.
+.. note::  per impostazione predefinita, |firew4ll| utilizza una serie di parametri DH pre-generati. Un nuovo set può essere generato manualmente se lo si desidera, vedere *Lunghezza dei parametri DH* per i dettagli. 
 
 OpenVPN è una soluzione VPN con SSL di open source che può essere
 utilizzata per client di accesso remoto e con connettività sito-a-sito.
@@ -3614,27 +3590,17 @@ nonché l’esecuzione della procedura guidata del server di accesso remoto
 di OpenVPN, le configurazioni dei client ed esempi di più scenari di
 connessione sito-a-sito.
 
-.. note::  sebbene OpenVPN sia una VPN con SSL, non è una VPN con SSL
-“senza client” nel senso dato dai fornitori di firewall commerciali. Il
-client OpenVPN deve essere installato su tutti i dispositivi client. In
-realtà nessuna soluzione VPN è veramente "senza client", e questa
-terminologia non è altro che uno stratagemma di marketing. Per una
-discussione più approfondita sulle VPN con SSL, questo post di Matthew
-Grooms, uno sviluppatori di strumenti per IPsec e |firew4ll|, negli archivi
-dell’elenco mail fornisce alcune informazioni eccellenti.
+.. note::  
+	sebbene OpenVPN sia una VPN con SSL, non è una VPN con SSL “senza client” nel senso dato dai fornitori di firewall commerciali. Il client OpenVPN deve essere installato su tutti i dispositivi client. In realtà nessuna soluzione VPN è veramente "senza client", e questa terminologia non è altro che uno stratagemma di marketing. Per una discussione più approfondita sulle VPN con SSL, questo post di Matthew Grooms, uno sviluppatori di strumenti per IPsec e |firew4ll|, negli archivi dell’elenco mail fornisce alcune informazioni eccellenti.
 
 Per la discussione generale dei vari tipi di VPN disponibili in |firew4ll|
 e dei loro pro e contro, vedere *Reti private virtuali.*
 
-.. seealso:: 
-
-Per ulteriori informazioni, è possibile accedere all'archivio degli
-Hangouts per visualizzare l'Hangout di settembre 2014 sui concetti di
-OpenVPN avanzati e l'Hangout di settembre 2015 sulle VPN di accesso
-remoto
+.. seealso::  
+	Per ulteriori informazioni, è possibile accedere all'archivio degli Hangouts per visualizzare l'Hangout di settembre 2014 sui concetti di OpenVPN avanzati e l'Hangout di settembre 2015 sulle VPN di accesso remoto
 
 OpenVPN e certificati
-''''''''''''''''''''=
+'''''''''''''''''''''
 
 L'utilizzo dei certificati è il mezzo preferito per eseguire le VPN di
 accesso remoto, poiché consente di revocare l'accesso per le singole
