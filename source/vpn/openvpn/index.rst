@@ -746,13 +746,13 @@ Impostazioni del proxy
     **Nome Utente** e **Password** vengono presentati in modo che
     l'autenticazione proxy possa essere configurata.
 
-Risoluzione del nome host del server
+Risoluzione del hostname del server
 ------------------------------------
 
 Quando viene selezionato **Server per risolvere infinitamente**, il nome
 host del server verrà risolto ad ogni tentativo di connessione. Quando
 deselezionato, OpenVPN tenterà solo di risolverlo una volta. Quando si
-utilizza un nome host per l'indirizzo del server remoto, questa opzione
+utilizza un hostname per l'indirizzo del server remoto, questa opzione
 deve essere selezionata.
 
 Impostazioni di autenticazione utente
@@ -912,7 +912,7 @@ LDAP, il fornitore del software o la documentazione.
 
     **Nome** Nome descrittivo per questo server LDAP, per riferimento.
 
-    **Nome host o indirizzo IP** Il nome host o l’indirizzo IP del
+    **Hostname o indirizzo IP** L'hostname o l’indirizzo IP del
     server LDAP.
 
     **Porta** La porta su cui può essere contattato il server LDAP. La
@@ -925,7 +925,7 @@ LDAP, il fornitore del software o la documentazione.
     almeno per i server locali o i test iniziali. Se il server è remoto
     o attraversa collegamenti di rete non attendibili, SSL è una scelta
     più sicura. Se si desidera utilizzare SSL, il certificato CA dal
-    server LDAP deve essere importato in |firew4ll| e il **Nome host o
+    server LDAP deve essere importato in |firew4ll| e il **Hostname o
     l'indirizzo IP** di cui sopra deve corrispondere al valore nel campo
     **Nome comune** del certificato server.
 
@@ -984,7 +984,7 @@ fornitore del software o la documentazione.
 
     **Nome** Nome descrittivo per questo server RADIUS, per riferimento.
 
-    **Nome host o indirizzo IP** Il nome host o indirizzo IP del server
+    **Hostname o indirizzo IP** L'hostname o indirizzo IP del server
     RADIUS.
 
     **Porta** **di autenticazione** Porta utilizzata dal server RADIUS
@@ -1078,7 +1078,7 @@ modulo.
 
     **Nome descrittivo** Questo è il campo Nome comune (CN) per il
     certificato server e viene utilizzato anche per fare riferimento al
-    certificato in |firew4ll|. L'utilizzo del nome host del firewall è una
+    certificato in |firew4ll|. L'utilizzo del hostname del firewall è una
     scelta comune per un certificato server, ad esempio vpn.esempio.com.
     Sebbene sia consentito l'utilizzo di spazi in questo campo,
     sconsigliamo vivamente l'utilizzo di spazi in un campo Nome comune
@@ -1403,7 +1403,7 @@ Le opzioni per il pacchetto includono:
     lista. L'elenco sarà vuoto se non ci sono server OpenVPN in modalità
     di accesso remoto.
 
-    **Risoluzione del nome host** Controlla come viene formattata la
+    **Risoluzione del hostname** Controlla come viene formattata la
     voce “remoto” del client.
 
     **Indirizzo IP dell’interfaccia** Quando viene scelto, l'indirizzo
@@ -1422,18 +1422,18 @@ Le opzioni per il pacchetto includono:
     precedente, ma utilizza la prima voce DNS dinamica che trova
     corrispondente alla destinazione scelta.
 
-    **Nome host di installazione** Inserisce il nome host del firewall,
+    **Hostname di installazione** Inserisce l'hostname del firewall,
     definito in **Sistema>Configurazione generale**, nella
-    configurazione del client. Il nome host deve esistere nel DNS
+    configurazione del client. L'hostname deve esistere nel DNS
     pubblico in modo che possa essere risolto dai client.
 
-    **Voci del nome host del DNS dinamico** Ogni nome host del DNS
+    **Voci del hostname del DNS dinamico** Ogni hostname del DNS
     dinamico configurato sul firewall è elencato qui. Questi sono in
     genere la scelta migliore per l'esecuzione di un server su una
     singola WAN con un indirizzo IP dinamico.
 
     **Altro** Presenta una casella di testo in cui è possibile inserire
-    un nome host o un indirizzo IP per il client da utilizzare.
+    un hostname o un indirizzo IP per il client da utilizzare.
 
     **CN del server per la verifica** Specifica come il client
     verificherà l'identità del certificato del server. Il CN del
@@ -2179,7 +2179,7 @@ Configurazione lato client
     condivisa)*.
 
     **Host o indirizzo del server** Immettere qui l'indirizzo IP
-    pubblico o il nome host del server OpenVPN (ad es. 198.51.100.3).
+    pubblico o l'hostname del server OpenVPN (ad es. 198.51.100.3).
 
     **Descrizione** Inserire il testo per descrivere la connessione (ad
     esempio VPN del sito A di EsempioCo)
@@ -2281,7 +2281,7 @@ sono necessari due elementi:
 Configurare il server con SSL/TLS
 =================================
 
-Prima che la VPN possa essere configurata, è necessaria una struttura del certificato per questa VPN. Creare una CA univoca per questa VPN e da tale CA creare un certificato server e quindi un certificato utente per ciascun sito remoto. Per i siti client, utilizzare un CN che li identifica in modo univoco in qualche modo, come il loro nome di dominio completo o un sito abbreviato o il nome host. Per le specifiche di creazione di una CA e certificati, vedere *Gestione dei certificati*. Per questo esempio, la CA sarà chiamata S2SCA, il server CN sarà serverA, i client saranno clientB e clientC.
+Prima che la VPN possa essere configurata, è necessaria una struttura del certificato per questa VPN. Creare una CA univoca per questa VPN e da tale CA creare un certificato server e quindi un certificato utente per ciascun sito remoto. Per i siti client, utilizzare un CN che li identifica in modo univoco in qualche modo, come il loro nome di dominio completo o un sito abbreviato o l'hostname. Per le specifiche di creazione di una CA e certificati, vedere *Gestione dei certificati*. Per questo esempio, la CA sarà chiamata S2SCA, il server CN sarà serverA, i client saranno clientB e clientC.
 
 -  Passare a **VPN>OpenVPN**, scheda **Server**
 
@@ -2433,7 +2433,7 @@ Dopo aver importato i certificati, creare il client di OpenVPN:
     **Interfaccia** Selezionare *WAN*
 
     **Host o indirizzo del server** Immettere qui l'indirizzo IP
-    pubblico o il nome host del server OpenVPN (ad es. 51.100.3)
+    pubblico o l'hostname del server OpenVPN (ad es. 51.100.3)
 
     **Porta server** Immettere 1194 o qualsiasi porta sia stata
     configurata sul server
@@ -2886,7 +2886,7 @@ l'interfaccia prevista.
 
 Questo metodo richiede un piccolo intervento manuale quando viene
 utilizzato con il pacchetto di esportazione del client. L'opzione di
-**risoluzione del nome host** deve essere impostata su uno dei metodi di
+**risoluzione del hostname** deve essere impostata su uno dei metodi di
 inoltro automatico della porta, altrimenti le impostazioni di
 esportazione predefinite lo lascerebbero tentare di connettersi
 all'indirizzo sbagliato. Vedere *Pacchetto di esportazione del client di

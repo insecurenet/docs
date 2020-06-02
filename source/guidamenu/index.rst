@@ -17,7 +17,7 @@ routing.
     i certificati e gli elenchi di revoche di certificati (x.509).
     Vedere *Gestione dei certificati*.
 
-    **Impostazioni generali** Impostazioni generali come nome host,
+    **Impostazioni generali** Impostazioni generali come hostname,
     dominio e server DNS. Vedere *Opzioni della configurazione
     generale*.
 
@@ -277,7 +277,7 @@ amministrative.
 
     **Tabella ARP** Visualizza un elenco di dispositivi visti localmente
     dal firewall. L'elenco include un indirizzo IP, un indirizzo MAC, un
-    nome host, l'interfaccia in cui è stato visualizzato il dispositivo
+    hostname, l'interfaccia in cui è stato visualizzato il dispositivo
     e altre informazioni correlate.
 
     **Autenticazione** Verifica l'autenticazione su un server RADIUS o
@@ -314,7 +314,7 @@ amministrative.
 
     **Tabella NDP** Mostra un elenco di dispositivi IPv6 locali visti
     dal firewall. L'elenco include un indirizzo IPv6, un indirizzo MAC,
-    un nome host (se noto al firewall) e l'interfaccia.
+    un hostname (se noto al firewall) e l'interfaccia.
 
     **Acquisizione pacchetti** Esegue un'acquisizione di pacchetti per
     ispezionare il traffico, quindi visualizzare o scaricare i

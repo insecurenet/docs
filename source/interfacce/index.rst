@@ -884,9 +884,9 @@ Questa opzione attiva anche diversi campi aggiuntivi nella pagina. Nella
 maggior parte dei casi questi campi aggiuntivi possono essere lasciati
 in bianco.
 
-    **Nome host** Alcuni ISP richiedono il nome host per
+    **Hostname** Alcuni ISP richiedono l'hostname per
     l'identificazione del client. Il valore nel campo **Nome dell’host**
-    viene inviato come identificativo del client DHCP e nome host quando
+    viene inviato come identificativo del client DHCP e hostname quando
     si richiede un contratto di locazione DHCP.
 
     **​​Indirizzo IPv4 dell’Alias** Questo valore è usato come indirizzo

@@ -724,7 +724,7 @@ DNS suddiviso (Split)
 
 Un'alternativa preferibile alla Nat Reflection è la distribuzione di
 un'infrastruttura DNS suddivisa. DNS split si riferisce ad una
-configurazione DNS in cui, per un dato nome host, il DNS pubblico di
+configurazione DNS in cui, per un dato hostname, il DNS pubblico di
 Internet si risolve all'indirizzo IP pubblico e il DNS della rete
 interna si risolve all'indirizzo IP interno privato. I mezzi per
 accogliere questo variano a seconda delle specifiche dell'infrastruttura
@@ -767,7 +767,7 @@ Il DNS Forwarder funziona in modo identico a questo proposito. Se il
 Forwarder DNS è abilitato al posto del risolutore del DNS, aggiungere
 gli override lì.
 
-È richiesto un override per ogni nome host in uso dietro il firewall.
+È richiesto un override per ogni hostname in uso dietro il firewall.
 
 |image13|
 

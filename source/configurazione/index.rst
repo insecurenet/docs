@@ -73,10 +73,10 @@ Configurazione del NTP e della zona oraria
 
 La prossima schermata (Figura *Schermata del NTP e della timezone*) contiene impostazioni relative all'ora.
 
-    **Nome host del server dell'ora** Un nome dell’host del server con
+    **Hostname del server dell'ora** Un nome dell’host del server con
     protocollo dell'ora della rete (NTP) o indirizzo IP. Fintanto un
     server con NTP specifico non sia richiesto, come uno sulla LAN, la
-    cosa migliore è lasciare il nome host del server dell’orario
+    cosa migliore è lasciare l'hostname del server dell’orario
     predefinito 0.|firew4ll|.pool.ntp.org. Questo valore prenderà un server
     qualsiasi da un pool di host noti.
 
@@ -554,7 +554,7 @@ configurazione*.
 
 Il **nome dell'host** e il nome di dominio sono combinati per comporre
 il nome di dominio completamente qualificato (FQDN) di questo firewall.
-Per esempio, se il **nome host** è fw1 e il dominio è esempio.com,
+Per esempio, se il **hostname** è fw1 e il dominio è esempio.com,
 allora l'FQDN è fw1.esempio.com.
 
 Impostazioni del server DNS
@@ -865,7 +865,7 @@ Il caso più comune per disabilitare questo sarebbe quando il firewall di
 posta è impostato per utilizzare un server DNS interno che restituirà
 risposte private ​​(RFC1918) per il nome dell’host. Quando si accede al
 firewall tramite indirizzo IP, questi controlli non vengono eseguiti
-perché l'attacco è rilevante solo quando si usa un nome host.
+perché l'attacco è rilevante solo quando si usa un hostname.
 
 .. tip:: Invece di disabilitare tutte le protezioni del rebinding del DNS, può essere selettivamente disabilitato per il dominio
 nel risolutore o l’inoltro del DNS. Vedere *Risolutore del DNS e protezione del rebinding del DNS* e *Inoltro del DNS e protezione del rebinding del DNS*.
@@ -889,7 +889,7 @@ del HTTP_REFERER, ma controllare leggermente il loro comportamento,
 compilare nomi host alternativi nella casella. Per impostazione
 predefinita il sistema consentirà l'accesso al nome dell'host
 configurato sul firewall e a tutti gli indirizzi IP configurati sul
-firewall. L'aggiunta di un nome host nel campo permetterà di utilizzare
+firewall. L'aggiunta di un hostname nel campo permetterà di utilizzare
 questi nomi dellìhost per l'accesso alla GUI e per l'URL di riferimento.
 
 Attacco MITM (Man-in-the-Middle)/Attenzione
@@ -1982,7 +1982,7 @@ l'inoltro dal firewall o accettare connessioni SMTP autenticate.
     mantenendo attive le impostazioni SMTP per altri utilizzi come ad
     esempio i pacchetti che utilizzano e-mail.
 
-    **Server dell’e-mail** Il nome host o l'indirizzo IP del server di
+    **Server dell’e-mail** L'hostname o l'indirizzo IP del server di
     posta elettronica tramite cui verranno inviate le notifiche.
 
     **Porta SMTP del server di e-mail** La porta da utilizzare durante
@@ -2061,7 +2061,7 @@ accessibile s Windows e anche su FreeBSD / Linux.
 
     **Nome di notifica** Il nome del sistema che produce le notifiche.
     Il valore predefinito di avviso growl |firew4ll| può essere
-    sufficiente, personalizzarlo con il nome host firewall o qualsiasi
+    sufficiente, personalizzarlo con l'hostname firewall o qualsiasi
     altro valore per differenziarlo.
 
     **Indirizzo IP** L'indirizzo IP a cui il firewall invierà notifiche
@@ -2363,7 +2363,7 @@ generateguicert
 Questo script crea un nuovo certificato auto-firmato per il firewall e
 lo attiva per l'impiego nella GUI. Questo è utile nei casi in cui il
 certificato precedente è valido o altrimenti non utilizzabile. Si
-riempie anche nei dettagli del certificato utilizzando il nome host del
+riempie anche nei dettagli del certificato utilizzando l'hostname del
 firewall e altre informazioni personalizzate, per meglio identificare
 l'host.
 

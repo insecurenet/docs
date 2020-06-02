@@ -234,7 +234,7 @@ apportate modifiche alle assegnazioni dell'interfaccia, devono essere
 replicate in modo identico su entrambi i nodi.
 
 Quindi, connettersi alla GUI e utilizzare la procedura guidata di
-configurazione per configurare ciascun firewall con un nome host univoco
+configurazione per configurare ciascun firewall con un hostname univoco
 e indirizzi IP statici non conflittuali. Se necessario, fare riferimento
 alla *procedura guidata di configurazione*.
 

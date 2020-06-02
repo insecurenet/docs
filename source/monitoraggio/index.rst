@@ -318,7 +318,7 @@ Per avviare la registrazione in remoto:
 
     **Server di log remoti** Inserire fino a tre server remoti
     utilizzando le caselle contenute in questa sezione. Ogni server
-    remoto può utilizzare un indirizzo IP o un nome host e un numero di
+    remoto può utilizzare un indirizzo IP o un hostname e un numero di
     porta opzionale. Se la porta non è specificata, si assume la porta
     di syslogd predefinita, 514.
 
@@ -388,8 +388,8 @@ Configurazione di un server Syslog su FreeBSD
 
 L'impostazione di un server syslog su un server FreeBSD richiede solo un
 paio di passaggi. In questo esempio, sostituire 192.168.1.1 con
-l'indirizzo IP del firewall, sostituire exco-rtr con il nome host del
-firewall e sostituire exco-rtr.example.com con il nome host completo e
+l'indirizzo IP del firewall, sostituire exco-rtr con l'hostname del
+firewall e sostituire exco-rtr.example.com con l'hostname completo e
 il dominio del firewall. Questo esempio utilizza 192.168.1.1 perché la
 migliore pratica è quella di inviare messaggi syslog utilizzando
 l'indirizzo interno di un firewall, non un'interfaccia WAN.
@@ -692,7 +692,7 @@ Questo widget è il widget principale, la visualizzazione di una vasta
 gamma di informazioni sul sistema in esecuzione. Le informazioni
 visualizzate includono:
 
--  **Nome** Il nome host completamente qualificato configurato del
+-  **Nome** L'hostname completamente qualificato configurato del
    firewall.
 
 -  **Versione** La versione corrente in esecuzione di |firew4ll| sul
@@ -909,7 +909,7 @@ nella legenda la nasconderà dalla vista.
 
 .. tip:: Se una fonte dei dati ha un picco grande, fare clic  sul suo nome nella legenda per rimuoverlo dal grafico. Con l'origine dei dati più grande rimossa, saranno visibili maggiori dettagli dalle altre fonti rimanenti.
 
-Il nome host del firewall, il periodo di tempo del grafico e la
+L'hostname del firewall, il periodo di tempo del grafico e la
 risoluzione del grafico vengono stampati lungo la parte inferiore del
 grafico, insieme al tempo in cui è stato generato il grafico.
 
@@ -1733,7 +1733,7 @@ utilizzando le seguenti opzioni:
 
     **Indirizzo IP** L’indirizzo IP dell'host.
 
-    **Nome host** Il nome host breve che corrisponde all'indirizzo IP,
+    **Hostname** L'hostname breve che corrisponde all'indirizzo IP,
     come elencato nelle mappature statiche DHCP, nelle sostituzioni host
     del risolutore del DNS o nelle sostituzioni host del forwarder del
     DNS.
@@ -2127,7 +2127,7 @@ Il contenuto di queste tabelle può essere visualizzato in
 **Diagnostica>Tabelle**, che visualizza le tabelle di sistema e definite
 dall'utente. In quella pagina, selezionare la **tabella** desiderata dal
 menu a discesa di tabella e il firewall visualizzerà il suo contenuto.
-Se un alias contiene un nome host, il contenuto dell'alias viene
+Se un alias contiene un hostname, il contenuto dell'alias viene
 popolato da DNS. La visualizzazione della tabella risultante qui
 conferma quali indirizzi IP sono nella tabella in quel momento.
 
@@ -2176,14 +2176,14 @@ Testare il DNS
 ''''''''''''''
 
 **Diagnostica>Ricerca DNS** esegue semplici query al DNS forward e
-inverso per ottenere informazioni su un indirizzo IP o un nome host e
+inverso per ottenere informazioni su un indirizzo IP o un hostname e
 anche per testare i server DNS utilizzati dal firewall.
 
 Per eseguire una ricerca DNS:
 
 -  Passare a **Diagnostica>Ricerca DNS**
 
--  Immettere un **nome host** o un indirizzo IP da interrogare
+-  Immettere un **hostname** o un indirizzo IP da interrogare
 
 -  Fare clic su **Ricerca**
 
@@ -2223,14 +2223,14 @@ Per eseguire un test:
 
 -  Passare a **Diagnostica>Porta di prova**
 
--  Compilare i campi della pagina. I campi **Nome host** **e Porta**
+-  Compilare i campi della pagina. I campi **Hostname** **e Porta**
    sono obbligatori, il resto è facoltativo.
 
 -  Fare clic su |image50| **Testare**.
 
 In questa pagina sono disponibili le seguenti opzioni:
 
-    **Nome host** Questo è l'indirizzo IP o il nome host del sistema di
+    **Hostname** Questo è l'indirizzo IP o l'hostname del sistema di
     destinazione. Questo è un campo richiesto.
 
     **Porta** Questa è la porta TCP sull'host di destinazione da
@@ -2255,10 +2255,10 @@ In questa pagina sono disponibili le seguenti opzioni:
 
     **Protocollo IP** Questa opzione seleziona *IPv4* o *IPv6* per
     controllare quale tipo di indirizzo IP viene utilizzato quando viene
-    assegnato un nome host. Se la connessione è forzata a IPv4 o IPv6 e
-    il nome host non contiene un risultato utilizzando tale protocollo,
+    assegnato un hostname. Se la connessione è forzata a IPv4 o IPv6 e
+    l'hostname non contiene un risultato utilizzando tale protocollo,
     si verificherà un errore. Ad esempio, se costretto a IPv4 e dato un
-    nome host che restituisce solo un indirizzo IPv6 (AAAA record), non
+    hostname che restituisce solo un indirizzo IPv6 (AAAA record), non
     funzionerà.
 
 I dati e le informazioni che |firew4ll| raccoglie e visualizza è ogni bit

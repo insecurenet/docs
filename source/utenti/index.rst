@@ -289,7 +289,7 @@ RADIUS
     **Nome descrittivo** Il nome di questo server RADIUS. Questo nome
     sarà usato per identificare il server in tutta la GUI |firew4ll|.
 
-    **Nome host o indirizzo IP** L'indirizzo del server RADIUS. Questo
+    **Hostname o indirizzo IP** L'indirizzo del server RADIUS. Questo
     può essere un nome di dominio completamente qualificato, o un
     indirizzo IP IPv4.
 
@@ -363,11 +363,11 @@ Per aggiungere un nuovo server LDAP:
 
 -  Compilare i campi come descritto di seguito:
 
-    **Nome host** o **indirizzo IP** L'indirizzo del server LDAP. Può
+    **Hostname** o **indirizzo IP** L'indirizzo del server LDAP. Può
     essere un nome di dominio completamente qualificato, un indirizzo IP
     IPv4 o un indirizzo IP IPv6.
 
-.. note:: Se viene utilizzato SSL, qui deve essere specificato un nome host e deve corrispondere al **nome comune** del certificato del server presentato dal server LDAP e tale nome host deve essere risolto nell'indirizzo IP del server LDAP, ad es. *CN=ldap.esempio.com*, e *ldap.esempio.com è 192.168.1.5*. L'unica eccezione è che l'indirizzo IP del server è anche la CN del certificato server stesso. Questo può essere aggirato in alcuni casi, creando un override dell’host del Forwader DNS per fare in modo che il certificato del server CN risolva l'indirizzo IP corretto se non corrispondono in questa infrastruttura di
+.. note:: Se viene utilizzato SSL, qui deve essere specificato un hostname e deve corrispondere al **nome comune** del certificato del server presentato dal server LDAP e tale hostname deve essere risolto nell'indirizzo IP del server LDAP, ad es. *CN=ldap.esempio.com*, e *ldap.esempio.com è 192.168.1.5*. L'unica eccezione è che l'indirizzo IP del server è anche la CN del certificato server stesso. Questo può essere aggirato in alcuni casi, creando un override dell’host del Forwader DNS per fare in modo che il certificato del server CN risolva l'indirizzo IP corretto se non corrispondono in questa infrastruttura di
 rete e non possono essere facilmente corretti.
 
     **Valore della porta** Questa impostazione specifica la porta su cui
@@ -525,7 +525,7 @@ accettare query da questo firewall come client con un segreto condiviso.
 
     **Genere** *Raggio*
 
-    **Nome host o indirizzo IP** 192.2.0.5
+    **Hostname o indirizzo IP** 192.2.0.5
 
     **Segreto condiviso** segretosegreto
 
@@ -546,7 +546,7 @@ In questo esempio, |firew4ll| è impostato per connettersi a un server OpenLDAP 
 
     **Genere** *LDAP*
 
-    **Nome host o indirizzo IP** ldap.esempio.com
+    **Hostname o indirizzo IP** ldap.esempio.com
 
     **Porta** 636
 
@@ -590,7 +590,7 @@ estesa per accettare qualsiasi utente.
 
     **genere** *LDAP*
 
-    **Nome host o indirizzo IP** 192.0.2.230
+    **Hostname o indirizzo IP** 192.0.2.230
 
     **Porta** 389
 
@@ -622,7 +622,7 @@ Questo esempio utilizza TCP semplice, ma se l'autorità di certificazione
 per la struttura AD viene importato sotto il gestore del certificato in
 |firew4ll|, SSL può essere utilizzato anche selezionando tale opzione e
 scegliendo il CA appropriato dall’elenco a discesa delle autorità di
-certificazione peer, e impostare il nome host al nome comune del
+certificazione peer, e impostare l'hostname al nome comune del
 certificato server.
 
 Risoluzione dei problemi
@@ -723,7 +723,7 @@ Fig. 1: Esempio della cattura fallita LDAP
 Il gestore utente in |firew4ll| fornisce la possibilità di creare e gestire
 più account utente. Questi account possono essere utilizzati per
 accedere alla GUI, utilizzare i servizi VPN come OpenVPN e IPsec, e
-utilizzare il Portale Captive.
+utilizzare il Captive Portal.
 
 Il Gestore Utente può essere utilizzato anche per definire fonti di
 autenticazione esterne come RADIUS e LDAP.
@@ -749,7 +749,7 @@ nuovamente alla Gestione utenti.
     tramite la gestione utenti per xauth, e RADIUS per IKEv2 con
     EAP-RADIUS.
 
-    **Portale captive** Supporta gli utenti locali in Gestione utenti, e
+    **Captive portal** Supporta gli utenti locali in Gestione utenti, e
     gli utenti RADIUS tramite le impostazioni nella pagina Portale
     captive.
 

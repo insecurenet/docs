@@ -125,7 +125,7 @@ Generale:
     **Bypassare il proxy per questi IP di sorgente** Se alcuni indirizzi IP dei client locali devono bypassare il proxy, inserirli in questa casella. Più indirizzi, reti o nomi di alias possono essere inseriti separati da un punto e virgola.
     **Bypass il proxy per questi IP di destinazione** Se alcuni server remoti devono bypassare il proxy, inserirli in questa casella. Più indirizzi, reti o nomi di alias possono essere inseriti separati da un punto e virgola.
     **Abilitare la registrazione degli accessi** Se |firew4ll| è in esecuzione su un'installazione completa (NON incorporata/NanoBSD) e si desidera creare report di accesso Web, selezionare questa     casella.
-    **Nome host visibile** Immettere il nome host del firewall come presentato ai client nei messaggi di errore del proxy.
+    **Hostname visibile** Immettere l'hostname del firewall come presentato ai client nei messaggi di errore del proxy.
     **E-mail dell'amministratore** Inserire un indirizzo di contatto utilizzabile. Se un utente rileva un errore proxy, questo verrà mostrato all'utente in modo che possano contattare l'indirizzo per il supporto.
 
 Salvare le impostazioni, quindi passare alla scheda **Cache locale** e configurarla come segue:

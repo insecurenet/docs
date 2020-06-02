@@ -325,11 +325,11 @@ Una stringa arbitraria da usare come identificatore.
 DNS Dinamico
 ------------
 
-Un nome host da risolvere e utilizzare come identificatore. Questo è
+Un hostname da risolvere e utilizzare come identificatore. Questo è
 utile soprattutto se il firewall è dietro il NAT e non ha alcuna
 conoscenza diretta del suo indirizzo IP esterno a parte un hostname del
 DNS dinamico. Questo non è rilevante o disponibile per un
-**identificatore peer** in quanto il nome host può essere utilizzato
+**identificatore peer** in quanto l'hostname può essere utilizzato
 direttamente nel campo **gateway remoto** e utilizzare l'\ *indirizzo IP
 del peer* per l'identificatore.
 
@@ -1317,7 +1317,7 @@ Creare un certificato del server
    come desiderato, vengono copiati dalla CA e possono essere lasciati
    così come sono
 
--  Immettere il **nome comune** come nome host del firewall esistente
+-  Immettere il **nome comune** come hostname del firewall esistente
    nel DNS. Se i client si connettono tramite l’indirizzo IP,
    posizionare l'indirizzo IP qui
 
@@ -1326,7 +1326,7 @@ Creare un certificato del server
 
 -  Inserire DNS nel campo **Tipo**
 
--  Immettere nuovamente il nome host del firewall *come esiste nel DNS*
+-  Immettere nuovamente l'hostname del firewall *come esiste nel DNS*
    **di nuovo** nel campo **Valore**
 
 -  Fare clic su |image23| **Aggiungere** per aggiungere un altro nuovo
@@ -1468,7 +1468,7 @@ essere configurata come segue:
     **Metodo di autenticazione** Impostare su *EAP-MSCHAPv2*
 
     **Mio identificatore** Scegliere il *Distinguished Name* dall'elenco a
-    discesa e quindi inserire il nome host del firewall, come è stato
+    discesa e quindi inserire l'hostname del firewall, come è stato
     inserito nel certificato del server, vpn.esempio.com
 
     **Identificatore di peer Impostare** su *qualsiasi*
@@ -1709,7 +1709,7 @@ saranno simili alla seguente procedura.
 
 -  Fare clic su **Usare la mia connessione Internet (VPN)**
 
--  Inserire l'indirizzo IP o il nome host del server nel campo
+-  Inserire l'indirizzo IP o l'hostname del server nel campo
    **Indirizzo Internet**, come mostrato nella figura *Schermata di
    configurazione della connessione VPN di IKEv2 per Windows*
 
@@ -2047,10 +2047,10 @@ Fig. 42: Prompt per creare VPN in OS X
 
 -  Fare clic su **Creare**
 
--  Immettere il nome host del firewall nel DNS come **indirizzo del
+-  Immettere l'hostname del firewall nel DNS come **indirizzo del
    server**
 
--  Immettere nuovamente il nome host del firewall in **ID remoto**
+-  Immettere nuovamente l'hostname del firewall in **ID remoto**
 
 .. note::  Questo deve corrispondere al nome comune del certificato del server e alla voce SAN.
 
@@ -2173,9 +2173,9 @@ VPN:
 
 -  Inserire un testo per la **descrizione** (ad es. **VPN EsempioCo**)
 
--  Immettere il nome host del firewall nel DNS come server
+-  Immettere l'hostname del firewall nel DNS come server
 
--  Immettere nuovamente il nome host del firewall in **ID Remoto**
+-  Immettere nuovamente l'hostname del firewall in **ID Remoto**
 
 .. note::  Questo deve corrispondere al nome comune e alla voce SAN del certificato del server..
 

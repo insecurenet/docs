@@ -225,7 +225,7 @@ Monitoraggio come spiegato di seguito:
     un'immagine, che è improbabile che si muova o cambi.
 
     **Host** Se il server esegue più host virtuali, questo campo
-    definisce quale nome host viene inviato con la richiesta in modo che
+    definisce quale hostname viene inviato con la richiesta in modo che
     la risposta prevista possa essere ricevuta.
 
     **Codice HTTP** Questo definisce la risposta prevista dal server,
@@ -570,7 +570,7 @@ This is server www2 - 10.6.0.12
 This is server www1 - 10.6.0.11
 
 Quando si verifica inizialmente il bilanciamento del carico, configurare
-ciascun server per restituire una pagina che specifica il nome host,
+ciascun server per restituire una pagina che specifica l'hostname,
 l'indirizzo IP o entrambi, quindi è reso evidente quale server sta
 rispondendo alla richiesta. Se le connessioni sticky non sono abilitate,
 un server diverso risponderà a ciascuna richiesta.

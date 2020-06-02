@@ -661,7 +661,7 @@ Utilizzare hostname in Alias
 
 I nomi host possono essere usati anche in alias. Qualsiasi hostname può
 essere inserito in un host o in un alias di rete e sarà periodicamente
-risolto e aggiornato dal firewall. Se un nome host restituisce più
+risolto e aggiornato dal firewall. Se un hostname restituisce più
 indirizzi IP, tutti gli indirizzi IP restituiti vengono aggiunti
 all'alias. Questo è utile per il monitoraggio delle voci del DNS
 dinamico per consentire agli utenti specifici nei servizi da indirizzi
@@ -2760,7 +2760,7 @@ simili molto grandi. La maggior parte dei siti di piccole e medie
 dimensioni può essere efficacemente bloccato utilizzando questo metodo
 in quanto raramente cambiano gli indirizzi IP.
 
-Un nome host può anche essere all'interno di un alias di rete.
+Un hostname può anche essere all'interno di un alias di rete.
 L'hostname verrà risolto periodicamente e aggiornato se necessario.
 Questo è più efficace che cercare manualmente gli indirizzi IP, ma sarà
 comunque breve se il sito restituisce i record del DNS in un modo che

@@ -120,7 +120,7 @@ Fig. 1: Aggiungere un nuovo client RADIUS
 
 -  Immettere un nome descrittivo per il firewall, come mostrato nella
    figura *Aggiungere nuovo indirizzo client RADIUS*. Questo può essere
-   il nome host o FQDN.
+   l'hostname o FQDN.
 
 -  Immettere l'indirizzo (IP o DNS) per il firewall, che deve essere
    l'indirizzo IP da cui |firew4ll| avvierà le richieste RADIUS o un nome
@@ -590,19 +590,19 @@ Per aggiungere una voce DynDNS nella GUI di |firew4ll|:
 
     **Interfaccia** *WAN*
 
-    **Nome host** Il nome host completo, ad esempio
+    **Hostname** L'hostname completo, ad esempio
     xxxxx.dyn.example.com
 
     **TTL** 30
 
-    **Nome chiave** Di nuovo il nome host completo, esattamente:
+    **Nome chiave** Di nuovo l'hostname completo, esattamente:
     xxxxx.dyn.example.com
 
     **Host del tipo di chiave**
 
-    **Chiave** Chiave segreta per questo nome host
+    **Chiave** Chiave segreta per questo hostname
 
-    **Server** L'indirizzo IP o il nome host del server BIND
+    **Server** L'indirizzo IP o l'hostname del server BIND
 
     **Protocollo** Non selezionato
 

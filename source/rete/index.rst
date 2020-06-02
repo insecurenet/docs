@@ -394,7 +394,7 @@ più comuni per distribuire IPv6 sono:
 - **DHCPv6** Indirizzo ottenuto automaticamente da DHCPv6 a un server upstream. La delega del prefisso può anche essere utilizzata con DHCPv6 per recapitare una sottorete indirizzata a un client DHCPv6.
 - **(SLAC)Configurazione automatica dell'indirizzo senza stato** Determina automaticamente l'indirizzo IPv6 consultando i messaggi d’annuncio del router e generando un indirizzo IP all'interno di un prefisso. Questo non è molto utile per un router, in quanto non è possibile instradare una rete per "l'interno" del firewall. Può essere utile per le modalità dell'appliance.
 - **Tunnel 6RD** Metodo di tunneling del traffico IPv6 all'interno di    IPv4. Viene utilizzato dagli ISP per una rapida implementazione di IPv6.
-- **Tunnel 6a4** Simile al 6RD ma con diversi meccanismi e limitazioni.
+- **Tunnel 6to4** Simile al 6RD ma con diversi meccanismi e limitazioni.
 - **Tunnel GIF** Tecnicamente non è un tipo di WAN diretto, ma è comunemente usato. Il cliente costruisce un tunnel GIF IPv4 a un
 provider per il tunneling del traffico IPv6.
 
@@ -650,7 +650,7 @@ Salvo diversamente specificato, si può presumere che IPv6 sia supportato
 da |firew4ll| in una determinata area o funzionalità.
 
 Alcune aree degne di nota di |firew4ll| che non supportano IPv6 sono:
-Portale Captive e la maggior parte dei provider DynDNS.
+Captive Portal e la maggior parte dei provider DynDNS.
 
 Per consentire IPv6:
 
@@ -988,7 +988,7 @@ Se si desidera DynDNS, può essere configurato come segue:
 -  Selezionare WAN come **interfaccia da monitorare**.
 
 -  Immettere l'\ **ID tunnel** dalla configurazione del broker tunnel
-       nel campo **Nome host**.
+       nel campo **Hostname**.
 
 -  Immettere il **nome utente** per il sito del broker di tunnel.
 

@@ -67,7 +67,7 @@ Il metodo più comune utilizzato da qui è quello di creare un'autorità di cert
 
    -  Selezionare il **codice del paese** dall'elenco. Questo è il
       codice del paese riconosciuto-ISO, non un dominio di primo livello
-      con nome host.
+      con hostname.
 
    -  Indicare lo **Stato** o la **provincia** in modo completo, non
       abbreviato.
@@ -81,7 +81,7 @@ Il metodo più comune utilizzato da qui è quello di creare un'autorità di cert
 
    -  Inserire il **nome comune** (CN). Questo campo è il nome interno
       che identifica la CA. A differenza di un certificato, il CN per
-      una CA non ha bisogno di essere il nome host, o qualcosa di
+      una CA non ha bisogno di essere l'hostname, o qualcosa di
       specifico. Ad esempio, potrebbe essere chiamato *VPNCA* o *MiaCA*.
 
 .. note:: Anche se è tecnicamente valido, evitare l'uso di spazi nel CN.
@@ -360,7 +360,7 @@ esistente.
 
    -  Selezionare il **codice paese** dalla lista. Questo è il codice
       ISO del paese riconosciuto, non un dominio di livello superiore
-      con nome host.
+      con hostname.
 
    -  Inserire lo **Stato** o **Provincia** scritto per intero, non
       abbreviato.
@@ -388,7 +388,7 @@ esistente.
    richiesto o se il suo scopo non è chiaro.
 
    -  Inserire un **Tipo** per il nome alternativo. Questo deve
-      contenere uno dei *DNS* (FQDN o nome host), *IP* (indirizzo IP),
+      contenere uno dei *DNS* (FQDN o hostname), *IP* (indirizzo IP),
       *URI*, o *e-mail*.
 
    -  Immettere un **Valore** per il Nome alternativo. Questo campo deve

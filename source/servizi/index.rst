@@ -142,7 +142,7 @@ Altre opzioni
     interfaccia qui.
 
     **Nome di dominio** Specifica il nome di dominio passato al client
-    per formarne il nome host completo. Se il **nome di dominio** viene
+    per formarne l'hostname completo. Se il **nome di dominio** viene
     lasciato vuoto, il nome di dominio del firewall inviato al client.
     In caso contrario, al client viene inviato questo valore.
 
@@ -261,7 +261,7 @@ Server TFTP
 
 Fare clic sul pulsante **Visualizzare avanzate** accanto a **TFTP** per
 visualizzare l'opzione server TFTP. Il valore nella casella server TFTP,
-se lo si desidera, deve essere un indirizzo IP o un nome host di un
+se lo si desidera, deve essere un indirizzo IP o un hostname di un
 server TFTP. Questo è più spesso utilizzato per i telefoni VoIP, e può
 anche essere indicato come "opzione 66" in altra documentazione per VoIP
 e DHCP.
@@ -386,8 +386,8 @@ dei due modi:
     generale. Per questo motivo, la WebGUI di |firew4ll| non consente di
     assegnare mappature IP statiche all'interno del pool DHCP.
 
-    **Nome host** Il nome host del client. Questo non deve corrispondere
-    al nome host effettivo impostato sul client. Il nome host impostato
+    **Hostname** L'hostname del client. Questo non deve corrispondere
+    al hostname effettivo impostato sul client. L'hostname impostato
     qui verrà utilizzato quando si registrano gli indirizzi DHCP nel
     forwarder del DNS.
 
@@ -438,7 +438,7 @@ Lease
 
 -  Indirizzo IP assegnato
 -  Indirizzo MAC del client
--  Il nome host (se presente) che il client ha inviato come parte della richiesta DHCP
+-  L'hostname (se presente) che il client ha inviato come parte della richiesta DHCP
 -  La descrizione di un host con una mappatura statica DHCP
 -  Gli orari di inizio e fine della lease
 -  Se la macchina è attualmente online o meno (nella tabella ARP del firewall)
@@ -467,7 +467,7 @@ Aggiungere alla mappa statica
 Per creare una mappatura statica da un lease dinamico, fare clic su
 |image7| a destra del lease. Questo pre-riempirà l'indirizzo MAC di
 quell'host nella schermata **Modificare la mappatura statica**.
-Aggiungere l'indirizzo IP, il nome host e la descrizione desiderati e
+Aggiungere l'indirizzo IP, l'hostname e la descrizione desiderati e
 fare clic su **Salvare**.
 
 Eliminare la lease
@@ -1034,7 +1034,7 @@ del DNS**
 
     **Registrazione DHCP** Quando è attivo, i nomi delle macchine
     interne per i client DHCP possono essere risolti utilizzando il DNS.
-    Funziona solo per i client che specificano un nome host nelle loro
+    Funziona solo per i client che specificano un hostname nelle loro
     richieste DHCP. Il nome di dominio da **Sistema>Configurazione
     generale** viene utilizzato come nome di dominio sugli host.
 
@@ -1058,14 +1058,14 @@ server DNS upstream. Questo è utile anche per le configurazioni del DNS
 diviso (vedi *DNS diviso*) e come mezzo semi-efficace per bloccare
 l'accesso a determinati siti web specifici.
 
-È possibile definire più record per lo stesso nome host e tutti gli
+È possibile definire più record per lo stesso hostname e tutti gli
 indirizzi IP verranno restituiti nel risultato. Questo può essere
 utilizzato per fornire sia un risultato IPv4 (A) che IPv6 (AAAA) per un
-singolo nome host.
+singolo hostname.
 
 .. note::  Non è consigliabile utilizzare solo la funzionalità di override del DNS come mezzo per bloccare l'accesso a determinati siti. Ci sono innumerevoli modi per aggirare questo. Fermerà gli utenti non tecnici, ma è facile da aggirare per quelli con più attitudine tecnica.
 
-    **Host** Questo campo definisce solo la parte del nome host del
+    **Host** Questo campo definisce solo la parte del hostname del
     record DNS (senza il dominio), ad esempio `www. <http://www/>`__.
     Può essere lasciato vuoto per creare un record di override per il
     dominio stesso (simile a un record “@” in un legame.)
@@ -1235,7 +1235,7 @@ Le opzioni disponibili per il forwarder DNS sono:
 
     **Registrazione di DHCP** Quando è attivo, i nomi delle macchine
     interne per i client DHCP possono essere risolti utilizzando DNS.
-    Funziona solo per i client che specificano un nome host nelle loro
+    Funziona solo per i client che specificano un hostname nelle loro
     richieste DHCP. Il nome di dominio da **Sistema>Configurazione
     generale** viene utilizzato come nome di dominio sugli host.
 
@@ -1246,7 +1246,7 @@ Le opzioni disponibili per il forwarder DNS sono:
     **Prefererire DHCP** Quando un indirizzo IP ha più nomi host, fare
     una ricerca inversa può dare un risultato non protetto se uno dei
     nomi host è tra le sovrascritture di host e il sistema utilizza un
-    altro nome host su DHCP. Selezionando questa opzione verranno
+    altro hostname su DHCP. Selezionando questa opzione verranno
     posizionati i nomi host ottenuti da DHCP sopra le mappature statiche
     nel file degli host sul firewall, facendoli prima consultare. Ciò
     influisce solo sulle ricerche inverse (PTR), poiché restituiscono
@@ -1270,7 +1270,7 @@ Le opzioni disponibili per il forwarder DNS sono:
     host venga inoltrato ai server DNS di upstream. Gli host senza nome
     verranno comunque controllati rispetto alle sovrascritture host e ai
     risultati DHCP, ma non verranno interrogati sui nomi del server
-    configurati sul firewall. Invece, se un nome host breve non esiste
+    configurati sul firewall. Invece, se un hostname breve non esiste
     localmente, un risultato NXDOMAIN (“non trovato”) viene restituito
     al client.
 
@@ -1426,9 +1426,9 @@ anche un'opzione personalizzata che consente a un URL *personalizzato*
 di ospitare un provider non supportato.
 
 Selezionare un provider, visitare il loro sito web, registrarsi per un
-account e impostare un nome host. Le procedure variano con ogni
+account e impostare un hostname. Le procedure variano con ogni
 fornitore, ma tutti hanno istruzioni sui loro siti web. Dopo aver
-configurato un nome host con un provider, configurare |firew4ll| con le
+configurato un hostname con un provider, configurare |firew4ll| con le
 impostazioni corrispondenti.
 
 La maggior parte dei fornitori hanno le stesse opzioni o simili. Ci sono
@@ -1453,27 +1453,27 @@ Per configurare un client DNS dinamico:
     un'interfaccia OPTx. La selezione di un gruppo di gateway per
     l'interfaccia consente alla voce DNS dinamica di passare la WAN in
     modo che possa consentire il failover Multi-WAN in entrata dei
-    servizi su questo nome host.
+    servizi su questo hostname.
 
-    **Nome host** Immettere il nome host creato presso il provider DNS
+    **Hostname** Immettere l'hostname creato presso il provider DNS
     dinamico. Questo è in genere il nome di dominio completo
     qualificato, come ad esempio myhost.example.com, eccetto per
     Namecheap dove questa è solo la parte host dell'indirizzo.
 
     **Nome di dominio** Per gli host di Namecheap, questa casella deve
-    essere impostata sulla parte di dominio del nome host completo.
+    essere impostata sulla parte di dominio del hostname completo.
 
     **MX** Un record MX (scambiatore di posta, mail Exchanger) è il modo
     in cui i server di posta Internet sanno dove consegnare la posta per
     un dominio. Alcuni provider DNS dinamici consentono di configurare i
     record MX tramite il client del DNS dinamico. Se il provider scelto
-    lo consente, immettere il nome host del server di posta che riceverà
+    lo consente, immettere l'hostname del server di posta che riceverà
     posta Internet per il dominio DNS dinamico.
 
     **Wildcard** Quando il DNS wildcard è abilitato su un nome DNS
     dinamico, tutte le query dei nomi host sotto il dominio specificato
-    si risolveranno all'indirizzo IP del nome host del DNS dinamico. Ad
-    esempio, se il nome host è example.dyndns.org, abilitare il wildcard
+    si risolveranno all'indirizzo IP del hostname del DNS dinamico. Ad
+    esempio, se l'hostname è example.dyndns.org, abilitare il wildcard
     farà in modo che \*.example.dyndns. org (a.example.dyndns.org,
     b.example.dyndns.org, etc.) risolva lo stesso come
     example.dyndns.org.
@@ -1527,7 +1527,7 @@ Namecheap
 
 Come accennato in precedenza nelle impostazioni di cui sopra, Namecheap
 richiede che il nome di dominio completo sia suddiviso nella parte del
-nome host e nella parte del nome di dominio in campi separati.
+hostname e nella parte del nome di dominio in campi separati.
 
 Quando si imposta il DNS dinamico per un dominio *Namecheap*, un token
 di autenticazione viene fornito da Namecheap. Questo va nel campo
@@ -1538,7 +1538,7 @@ Tunnelbroker di HE.net
 
 La scelta dell’\ *intermediario del tunnel (tunnel broker) di HE.net*
 aggiorna un indirizzo IP dell'endpoint del tunnel IPv6 quando l'IP della
-WAN cambia. Il **nome host** in questo caso è l'\ **ID del tunnel** da
+WAN cambia. Il **hostname** in questo caso è l'\ **ID del tunnel** da
 HE.net.
 
 Route 53
@@ -1604,7 +1604,7 @@ DNSSimple
 Configurazione degli aggiornamenti DNS dinamici RFC 2136
 --------------------------------------------------------
 
-**DNS dinamico RFC 2136** registra un nome host su qualsiasi server DNS
+**DNS dinamico RFC 2136** registra un hostname su qualsiasi server DNS
 che supporta gli aggiornamenti di stile RFC 2136. Questo può essere
 utilizzato per aggiornare i record DNS sui server DNS BIND e Windows,
 tra gli altri.
@@ -1637,7 +1637,7 @@ Per configurare un client DNS dinamico RFC 2136:
     **Interfaccia** L'indirizzo IP sull'interfaccia scelta verrà inviato
     durante l'esecuzione dell'aggiornamento DNS.
 
-    **Nome host** Il nome di dominio completo (FQDN) della voce del DNS
+    **Hostname** Il nome di dominio completo (FQDN) della voce del DNS
     dinamico da aggiornare. Ad esempio, myhost.example.com.
 
     **TTL** Il tempo di vita per la voce DNS, di pochi secondi. Valori
@@ -1664,7 +1664,7 @@ Per configurare un client DNS dinamico RFC 2136:
     /0/4bxF9A08n/zke/vANyQ''. Questo valore viene generato dal server
     DNS o dall'amministratore.
 
-    **Server** L'indirizzo IP o il nome host del server DNS a cui
+    **Server** L'indirizzo IP o l'hostname del server DNS a cui
     vengono inviati gli aggiornamenti.
 
     **Protocollo** Quando deselezionato, l'aggiornamento DNS viene
@@ -1756,7 +1756,7 @@ Per indicare al demone SNMP di inviare trap SNMP, selezionare
 **Abilitare**. Una volta che abilitare è stata selezionata, le altre
 opzioni possono essere modificate.
 
-    **Server del trap** Il server trap è il nome host o l'indirizzo IP a
+    **Server del trap** Il server trap è l'hostname o l'indirizzo IP a
     cui vengono inoltrati i trap SNMP.
 
     **Porta server del trap** Per impostazione predefinita, i trap SNMP
@@ -2460,7 +2460,7 @@ inviato il pacchetto magico.
 Salvare dalla lista dei lease del DHCP
 ======================================
 
-   Un indirizzo MAC e un nome host possono essere copiati in una nuova
+   Un indirizzo MAC e un hostname possono essere copiati in una nuova
    voce della mappatura WOL durante la visualizzazione delle lease
    di DHCP.
 

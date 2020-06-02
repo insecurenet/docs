@@ -37,8 +37,8 @@ Funzionalità e vantaggi
 
 Quando un cambiamento nella configurazione del firewall è fatto, viene crittografato automaticamente con la passphrase immesso nella configurazione del pacchetto e caricato su HTTPS ai server AutoConfigBackup. Solo configurazioni criptate vengono conservate sui server AutoConfigBackup. Questo dà un istantaneo, sicuro backup off-site dei file di configurazione del firewall senza alcun intervento da parte dell'utente una volta che il pacchetto è configurato.
 
-Compatibilità con la versione di|firew4ll|
-==========================================
+Compatibilità con la versione di |firew4ll|
+===========================================
 
 Il pacchetto AutoConfigBackup funziona con tutte le versioni supportate di |firew4ll|
 
@@ -47,8 +47,7 @@ Installazione e configurazione
 
 Per installare il pacchetto:
 
--  Passare a **Sistema>Gestione pacchetto**, scheda **Pacchetti
-   disponibili**
+-  Passare a **Sistema>Gestione pacchetto**, scheda **Pacchetti disponibili**
 
 -  Individuare **AutoConfigBackup** nella lista
 
@@ -62,27 +61,19 @@ Il firewall quindi scarica e installa il pacchetto. Una volta installato, il pac
 Impostare hostname
 ------------------
 
-Assicurarsi di configurare un nome host unico e un dominio su
-**Sistema>Impostazioni generali**. Le voci di configurazione in
-AutoConfigBackup sono memorizzate da FQDN (Nome di dominio pienamente 
-qualificato + dominio, ad esempio nome host + dominio), quindi ogni
-firewall sottoposto a backup deve avere un FQDN unico, altrimenti il
-sistema non può distinguere tra più installazioni.
+Assicurarsi di configurare un hostname unico e un dominio su**Sistema>Impostazioni generali**. Le voci di configurazione in AutoConfigBackup sono memorizzate da FQDN (Nome di dominio pienamente  qualificato + dominio, ad esempio hostname + dominio), quindi ogni firewall sottoposto a backup deve avere un FQDN unico, altrimenti il sistema non può distinguere tra più installazioni.
 
 Configurare AutoConfigBackup
 ----------------------------
 
-Il pacchetto è configurato in **Diagnostica> AutoConfigBackup**. Nella
-scheda **Impostazioni**, compilare le impostazioni come segue:
+Il pacchetto è configurato in **Diagnostica> AutoConfigBackup**. Nella scheda **Impostazioni**, compilare le impostazioni come segue:
 
-    **Nome utente dell’abbonamento** Il nome utente per l’account
-    dell’abbonamento di |firew4ll|
+    **Nome utente dell’abbonamento** Il nome utente per l’account dell’abbonamento di |firew4ll|
 
     **Password/Conferma dell’abbonamento** La password per l’account
     dell’abbonamento di |firew4ll|
 
-    **Password/Conferma con crittografia** Una passphrase arbitraria
-    usata per crittografare la configurazione prima del caricamento.
+    **Password/Conferma con crittografia** Una passphrase arbitraria usata per crittografare la configurazione prima del caricamento.
     Questa dovrebbe essere una password lunga e complessa per garantire
     la sicurezza della configurazione. I server AutoConfigBackup
     contengono solo copie criptate, che sono inutili senza questa
@@ -156,7 +147,7 @@ necessaria per il recupero in una nuova installazione.
 
 -  Installare |firew4ll| sul nuovo disco
 
--  Configurazione della LAN e della WAN, e assegnare il nome host e il
+-  Configurazione della LAN e della WAN, e assegnare l'hostname e il
    dominio esattamente come precedentemente configurato
 
 -  Installare il pacchetto **AutoConfigBackup**

@@ -997,7 +997,7 @@ banda ed eseguire altre attività di assegnazione delle priorità e non si
 basano su ALTQ. I limitatori sono attualmente l'unico modo per ottenere
 l'indirizzo per IP o la limitazione della velocità di banda per rete
 utilizzando il software di |firew4ll|. I limitatori sono utilizzati anche
-internamente dal portale captive per i limiti di larghezza di banda per
+internamente dal captive portal per i limiti di larghezza di banda per
 utente.
 
 I limitatori sono gestiti in **Firewall>Traffic Shaper** nella
