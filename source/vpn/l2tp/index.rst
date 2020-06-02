@@ -399,9 +399,9 @@ Traffico L2TP bloccato in uscita
 
 In alcuni casi, ad esempio quando combinato con IPsec, il traffico L2TP può anche richiedere una gestione speciale tramite regole dinamiche. Viene visualizzato come traffico bloccato nella direzione *in uscita* nei log del firewall, che mostra un'interfaccia server di L2TP.
 
-Se ciò accade, aggiungere una regola fluttuante come segue:
+Se ciò accade, aggiungere una regola dinamica come segue:
 
--  Passare a **Firewall>Regole**, scheda **Fluttuanti**
+-  Passare a **Firewall>Regole**, scheda **dinamiche**
 -  Fare clic su |image13| **Aggiungere** per aggiungere una nuova regola alla parte superiore dell'elenco
 -  Impostare **Azione** su *Passare*
 -  Selezionare **Rapido**

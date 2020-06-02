@@ -956,7 +956,7 @@ Per abbinare da una sorgente di indirizzo privato in uscita nelle regole
 dinamiche della WAN, prima contrassegnare il traffico mentre passa su
 un'interfaccia locale. Ad esempio, abbinare in entrata sulla LAN e usare
 il campo **Tag** avanzato per impostare un valore, quindi usare il campo
-**Taggato** sulla regola fluttuante del lato WAN per abbinare la stessa
+**Taggato** sulla regola dinamica del lato WAN per abbinare la stessa
 connessione che esce dal firewall. In alternativa, accodare il traffico
 mentre entra nella LAN con una regola di passaggio anziché quando esce
 da una WAN.

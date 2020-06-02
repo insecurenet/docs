@@ -522,7 +522,7 @@ IP dinamico
 -----------
 
 Selezionando questa casella si aggiunge l'opzione di configurazione
-*fluttuante (float)* alla configurazione OpenVPN. Ciò consente ai client
+*dinamica (float)* alla configurazione OpenVPN. Ciò consente ai client
 di mantenere la loro connessione se il loro indirizzo IP cambia. simile
 a MOBIKE per IKEv2 in IPsec. Per i client su connessioni Internet in cui
 l'IP cambia frequentemente o gli utenti mobili che si spostano

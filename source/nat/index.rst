@@ -527,7 +527,7 @@ uso come strumento di risoluzione dei problemi è descritto più avanti in
 questo libro in *Cattura dei pacchetti*.
 
 Ogni livello non è sempre colpito in configurazioni tipiche, ma l'uso di
-regole fluttuanti o del NAT in uscita manuale o altre configurazioni più
+regole dinamiche o del NAT in uscita manuale o altre configurazioni più
 complicate possono colpire ogni livello in entrambe le direzioni. Il
 diagramma copre solo gli scenari di base per il traffico in entrata e in
 uscita.
@@ -539,13 +539,13 @@ corrisponde, queste vengono saltate.
 -  port forward o NAT 1:1 sull'interfaccia LAN (ad es. proxy o
    reindirizzamenti DNS)
 
--  Regole del firewall per l'interfaccia LAN: Regole fluttuanti **in
+-  Regole del firewall per l'interfaccia LAN: Regole dinamiche **in
    ingresso** sulla LAN, poi regole per i gruppi di interfaccia,
    compresa l'interfaccia LAN, quindi regole sulla scheda LAN.
 
 -  NAT 1:1 o regole NAT in uscita su WAN
 
--  Regole fluttuanti che corrispondono a quelle **in uscita** su WAN
+-  Regole dinamiche che corrispondono a quelle **in uscita** su WAN
 
 In questo caso, le regole del firewall della scheda WAN e le porte
 forward non si applicano.
@@ -556,13 +556,13 @@ Per il traffico iniziato sulla WAN, l'ordine è lo stesso ma la direzione
 -  port forward o NAT 1:1 sull'interfaccia WAN (ad es. servizi
    pubblici)
 
--  Regole del firewall per l'interfaccia WAN: Regole fluttuanti **in
+-  Regole del firewall per l'interfaccia WAN: Regole dinamiche **in
    ingresso** su WAN, poi regole per i gruppi di interfaccia tra cui
    l'interfaccia WAN, poi le regole della scheda WAN.
 
 -  NAT 1:1 o regole NAT in uscita sulla LAN
 
--  Regole fluttuanti che corrispondono a quelle **in uscita** sulla LAN
+-  Regole dinamiche che corrispondono a quelle **in uscita** sulla LAN
 
 tcpdump è sempre la prima e l'ultima cosa a vedere il traffico, a
 seconda della direzione. In primo luogo, sull'interfaccia in entrata
@@ -606,7 +606,7 @@ su WAN. L'indirizzo IP interno della Port Forward è 10.3.0.15. Sia che
 si utilizzino port forward o NAT 1:1 o meno, le regole del firewall su
 tutte le interfacce WAN devono utilizzare l'indirizzo IP interno come
 destinazione. All'uscita da un'interfaccia, il NAT in uscita si applica
-prima delle regole del firewall, quindi ogni regola fluttuante che
+prima delle regole del firewall, quindi ogni regola dinamica che
 corrisponde a un'interfaccia in uscita deve corrispondere alla sorgente
 dopo che è stata tradotta dal NAT in uscita o dal NAT 1:1
 

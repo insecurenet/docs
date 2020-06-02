@@ -331,7 +331,7 @@ firewall per qualsiasi tipo di VPN viene utilizzato per proteggere il
 traffico. Una regola di blocco esplicita potrebbe anche essere aggiunta
 all'inizio delle regole WAN per garantire che questo traffico non possa
 entrare direttamente dalla WAN. Un metodo migliore è quello di
-utilizzare una regola fluttuante per rifiutare il traffico in uscita
+utilizzare una regola dinamica per rifiutare il traffico in uscita
 sulla WAN destinato ad un host delle reti locali degli host/da remoto
 con VPN. In questo modo il traffico insicuro non lascia mai i locali.
 Con la regola impostata per il registro, la “perdita” sarebbe ovvio per
@@ -347,7 +347,7 @@ riceve una risposta DNS AAAA con l'indirizzo IP con IPv6 per una risorsa
 remota, tenterebbe di connettersi prima su IPv6 piuttosto che usare la
 VPN. In casi come questo, sarebbe necessario fare attenzione ad
 assicurarsi che il DNS non contenga record in conflitto o che le regole
-fluttuanti iano aggiunte per evitare che questo traffico IPv6 fuoriusca
+dinamiche iano aggiunte per evitare che questo traffico IPv6 fuoriusca
 dalla WAN. Un articolo più approfondito su questo tipo di perdita di
 traffico può essere trovato nella bozza IETF denominata
 draft-gont-Opsec-vpn-leakages-00.
