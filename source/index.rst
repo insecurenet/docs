@@ -2,9 +2,7 @@
 Firew4ll Documentazione
 ***********************
 
-La documentazione, `gestita anche grazie alla community di pfSense`, offre
-istruzioni su come installare, configurare e gestire il software Firew4ll al meglio 
-per proteggere la vostra rete. Sia che siate alle prime armi, sia per i piu' esperti.
+La seguente documentazione offre istruzioni su come installare, configurare e gestire al meglio il software |firew4ll| per proteggere la vostra rete, sia che siate alle prime armi, sia che siate più esperti.
 
 .. tip:: La documentazione è in continua evoluzione e aggiornamento.
 
@@ -47,12 +45,8 @@ per proteggere la vostra rete. Sia che siate alle prime armi, sia per i piu' esp
 Guide raccomandate
 ------------------
 
-* :doc:`/ids-ips/setup-snort-package` - Guida per configurare Snort IDS/IPS con
-  rilevamento e filtraggio dell'ID dell'applicazione
-* :doc:`/virtualizzazione/index` - Diverse guide sulla virtualizzazione di Firew4ll
-* :doc:`/certificati/acme-package` - Confiurare certificati Let's Encrypt con
-  Pacchetto ACME.
-* :doc:`/multiwan/multi-wan` - imparare a configurare WAN failover e bilanciamento di carico con Firew4ll.
+* :doc:`/certificati/index` - Confiurare certificati Let's Encrypt con Pacchetto ACME.
+* :doc:`/multiwan/index` - Imparare a configurare WAN failover e bilanciamento di carico con |firew4ll|.
 
 Risorse commerciali
 -------------------------------
