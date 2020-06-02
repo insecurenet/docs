@@ -163,7 +163,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'quickstart.tex', u'Documentazione Firew4LL', 'Copyright 2020 - Insecurenet SRL', 
+  (master_doc, 'quickstart.tex', u'Documentazione Firew4LL', u'Copyright 2020 - Insecurenet SRL', 
    u'', 'manual'),
 ]
 
