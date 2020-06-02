@@ -163,8 +163,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'quickstart.tex', u'Documentazione Firew4LL\nCopyright 2020 - Insecurenet SRL',  
-   u'FP', 'manual'),
+  (master_doc, 'quickstart.tex', u'quickstart Documentation',
+   u'Francesco Pellegrino', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
