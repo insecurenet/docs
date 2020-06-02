@@ -1,3 +1,8 @@
+
+.. image:: /_static/logo.png
+   :align: left
+
+
 ***********************
 Firew4ll Documentazione
 ***********************
