@@ -26,10 +26,14 @@ Con Firew4ll-OS si può implementare un firewall in poche ore.
 
    :maxdepth: 3
 
-.. image:: _static/img/pin1.png
-   :align: left
+|image1|
 
 Nato grazie anche al supporto del |pin| (Pugliesi INnovativi) della |regionepuglia|.
 
-.. image:: _static/img/pin2.png
-   :align: center
+|image2|
+
+.. |image1| image:: /_static/img/pin1.png
+      :align: left
+
+.. |image2| image:: /_static/img/pin2.png
+      :align: center
