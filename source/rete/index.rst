@@ -11,6 +11,7 @@ Indirizzi IP privati
 Lo standard di rete RFC 1918 definisce le sottoreti IPv4 riservate per il solo uso nelle reti private (Tabella *RFC 1918 Spazio indirizzi IP privati*). RFC 4193 definisce gli indirizzi locali univoci (ULA) per IPv6 (Tabella *RFC 4193 Spazio degli indirizzi locali univoci*). Nella maggior parte degli ambienti, viene scelta e utilizzata una sottorete IP privata di RFC 1918 su tutti i dispositivi di rete interni. I dispositivi vengono quindi collegati a Internet tramite un firewall o un router che implementa il software Network Address Translation (NAT), come |firew4ll|. IPv6 viene completamente instradato dalla rete interna senza NAT dal Global Unicast Addresses (GUA). NAT sarà spiegato ulteriormente nella *traduzione degli indirizzi di rete*.
 
 Tabella 1: Spazio degli indirizzi IP privati RFC 1918
+
 +-------------------+---------------------------------+
 | Intervallo CIDR   | Intervallo indirizzi IP         |
 +===================+=================================+
@@ -22,6 +23,7 @@ Tabella 1: Spazio degli indirizzi IP privati RFC 1918
 +-------------------+---------------------------------+
 
 Tabella 2: Spazio indirizzi locali univoci RFC 4193
+
 +------------+----------------------------------------------------+
 | Prefisso   | Intervallo indirizzi IP                            |
 +============+====================================================+
@@ -46,6 +48,7 @@ Oltre ai blocchi definiti in *RFC 1918*, *RFC 5735* descrive blocchi riservati p
 Queste reti speciali includono:
 
 Tabella 3: Spazio per gli indirizzi riservati RFC 5735
+
 +-------------------+-----------------------------------------------+
 | Intervallo CIDR   | Scopo                                         |
 +===================+===============================================+
@@ -86,6 +89,7 @@ Conoscere e capire la notazione della subnet mask CIDR
 |firew4ll| utilizza la notazione CIDR (Routing dell’intra-dominio senza classe, Classless Inter-Domain Routing) anziché la subnet mask comune 255.x.x.x durante la configurazione di indirizzi e reti. Fare riferimento alla seguente tabella della sottorete CIDR per trovare l'equivalente CIDR di una subnet mask decimale.
 
 Table 4: Tabella delle sottoreti CIDR
+
 +----------------------+-----------------+-----------------------+----------------------+----------------------+
 | Maschera sottorete   | Prefisso CIDR   | Indirizzi IP totali   | Indirizzi IP utili   | Numero di reti /24   |
 +======================+=================+=======================+======================+======================+
@@ -182,6 +186,7 @@ Ad esempio, se sono richieste tre sottoreti /24 in una posizione, è necessario 
 La tabella seguente mostra le quattro sottoreti /24 utilizzate con la sottorete 10.70.64.0/22.
 
 Tabella 5: Riepilolo delle route CIDR
+
 +------------------------------------+
 | 10.70.64.0/22 divisi in reti /24   |
 +====================================+
@@ -203,11 +208,13 @@ convertire un prefisso CIDR in notazione decimale puntata.
 Immettere un prefisso CIDR o una maschera decimale punteggiata e fare clic sul pulsante Calcola per trovare la conversione.
 
 |image0|
+
 Fig. 1: Convertitore subnet mask
 
 Immettere la maschera decimale con i punti nella sezione Calcolatore di  rete/ nodo insieme a una delle reti /24. Cliccare su **Calcolare** per  riempire le caselle inferiori con l'intervallo coperto da quel particolare /24, come mostrato in Figura *Calcolatore di rete/ nodo*. In  questo esempio, l'indirizzo di rete è 10.70.64.0/22 e le reti  utilizzabili /24 sono da 67. Il termine "Indirizzo di trasmissione" in  questa tabella indica l'indirizzo più alto.
 
 |image1|
+
 Fig. 2: Calcolatore di rete/nodo
 
 Trovare una rete CIDR corrispondente
@@ -325,7 +332,7 @@ Determinazione di uno schema di indirizzamento IPv6
 A causa della maggiore lunghezza degli indirizzi, dell'ampio spazio disponibile anche in una sottorete di base /64 e della possibilità di utilizzare cifre esadecimali, c'è più libertà nel progettare gli indirizzi di rete dei dispositivi.
 
 Sui server che utilizzano più alias di indirizzi IP per host virtuali, jail, ecc., Uno schema di indirizzamento utile consiste nell'utilizzare la settima sezione dell'indirizzo IPv6 per indicare il server. Quindi utilizzare l'ottava sezione per i singoli alias IPv6. Questo raggruppa tutti gli IP in un singolo host riconoscibile. Ad esempio, il server stesso sarebbe *2001:db8:1:1::a:1* e quindi il primo alias IP sarebbe *2001:db8:1:1::a:2*, quindi \* *2001:db8:1:1::a:3*, ecc. Il prossimo
-server sarebbe \* *2001:db8:1:1::b:1* e ripete lo stesso schema.
+server sarebbe *2001:db8:1:1::b:1* e ripete lo stesso schema.
 Ad alcuni amministratori piace divertirsi con i loro indirizzi IPv6 usando lettere esadecimali e numeri/lettere equivalenti per ricavare parole dai loro indirizzi IP. Gli *elenchi di parole esadecimali sul Web* possono essere utilizzati per creare indirizzi IP più memorabili come *2001:db8:1:1::dead:beef*.
 
 Confusione decimale vs esadecimale
@@ -509,7 +516,9 @@ Iscriviti al servizio
 Prima di poter creare un tunnel, le richieste di eco ICMP devono essere concesse alla WAN. Una regola per passare richieste di eco ICMP da una fonte qualsiasi è una buona misura temporanea. Una volta scelto il punto finale del tunnel per HE.net, la regola può essere resa più specifica.
 
 Per iniziare su HE.net, registrati su www.tunnelbroker.net. Le reti /64 vengono allocate dopo la registrazione e la selezione di un server tunnel IPv6 regionale. Un riepilogo della configurazione del tunnel può essere visualizzato sul sito Web di HE.net come mostrato nella figura *Riepilogo di configurazione del tunnel HE.net*. Contiene informazioni importanti come l'\ **ID tunnel** dell'utente, l'\ **indirizzo IPv4 del server** (indirizzo IP del server tunnel), l'\ **indirizzo IPv4 del client** (l'indirizzo IP esterno del firewall), il **server** e gli **indirizzi IPv6 del client** (che rappresentano gli indirizzi IPv6 all'interno del tunnel), e i **prefissi IPv6 instradati**.
+
 |image2|
+
 Fig. 3: Riepilogo di configurazione del tunnel HE.net
 
 La scheda **Avanzate** sul sito del broker del tunnel ha due ulteriori opzioni degne di nota: un cursore MTU e una chiave di aggiornamento per l'aggiornamento dell'indirizzo del tunnel. Se utilizzata per terminare il tunnel GIF è PPPoE o un altro tipo di WAN con un MTU basso, spostare il cursore verso il basso in base alle esigenze. Ad esempio, un MTU comune per le linee PPPoE con un broker tunnel sarebbe 1452. Se la WAN ha un indirizzo IP dinamico, prendere nota della **chiave di aggiornamento** per un uso successivo in questa sezione.
@@ -530,7 +539,9 @@ Permettere ICMP
 
 Le richieste di echo ICMP devono essere consentite sull'indirizzo WAN che sta terminando il tunnel per assicurarsi che sia online e raggiungibile. Se l'ICMP è bloccato, il broker del tunnel potrebbe rifiutare di impostare il tunnel sull'indirizzo IPv4. Modificare la regola ICMP creata in precedenza in questa sezione o creare una nuova regola per consentire le richieste di eco ICMP. Impostare l'indirizzo IP di origine **dell'indirizzo IPv4 del server** nella configurazione del tunnel, come mostrato nella figura *Esempio di regola ICMP* per garantire la connettività.
 
+
 |image3|
+
 Fig. 4: Esempio di regola ICMP
 
 Creare e assegnare l'interfaccia GIF
@@ -562,6 +573,7 @@ Una volta creato, il tunnel GIF deve essere assegnato:
 
 
 |image6|
+
 Fig. 5: Esempio di tunnel GIF
 
 Configurare la nuova interfaccia OPT
@@ -589,14 +601,17 @@ Quando l'interfaccia è configurata come detto sopra, un gateway IPv6 dinamico v
 
 
 |image7|
+
 Fig. 6: Esempio dell’interfaccia del tunnel
 
 |image8|
+
 Fig. 7: Esempio del gateway del tunnel
 
 Passare a **Stato**> **Gateway** per visualizzare lo stato del gateway. Il gateway verrà visualizzato come "Online" se la configurazione ha esito positivo, come mostrato nella figura *Esempio di stato del tunnel del gateway*.
 
 |image9|
+
 Fig. 8: Esempio di stato del tunnel del gateway
 
 Impostare DNS con IPv6
@@ -665,6 +680,7 @@ Provalo!
 Una volta stabilite le regole del firewall, verificare la connettività IPv6. Un buon sito con cui fare una prova è test-ipv6.com. Un esempio dei risultati di output di una corretta configurazione da un client su LAN è mostrato nella figura *Risultati del test IPv6*.
 
 |image11|
+
 Fig. 9: Risultati test IPv6
 
 Aggiornamento dell'endpoint del tunnel
