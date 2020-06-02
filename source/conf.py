@@ -163,13 +163,13 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'quickstart.tex', u'quickstart Documentation',
-   u'Francesco Pellegrino', 'manual'),
+  (master_doc, 'quickstart.tex', u'Documentazione Firew4LL', 'Copyright 2020 - Insecurenet SRL', 
+   u'', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
-#latex_logo = None
+latex_logo = /_static/logo.png
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
