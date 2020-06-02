@@ -32,8 +32,8 @@ Nato grazie anche al supporto del |pin| (Pugliesi INnovativi) della |regionepugl
 
 |image2|
 
-.. |image1| image:: /_static/img/pin1.png
+.. |image1| image:: img/pin1.png
       :align: left
 
-.. |image2| image:: /_static/img/pin2.png
+.. |image2| image:: img/pin2.png
       :align: center
