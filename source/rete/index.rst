@@ -746,52 +746,52 @@ Il modello OSI ha un framework di rete composto da sette livelli. Questi livelli
 .. |image0| image:: media/image1.png
    :width: 6.50000in
    :height: 0.81944in
-   :align: center
+
 .. |image1| image:: media/image2.png
    :width: 6.51389in
    :height: 1.54167in
-   :align: center
+
 .. |image2| image:: media/image3.png
    :width: 6.12500in
    :height: 3.56944in
-   :align: center
+
 .. |image3| image:: media/image4.png
    :width: 6.51389in
    :height: 0.22222in
-   :align: center
+
 .. |image4| image:: media/image5.png
    :width: 0.27778in
    :height: 0.27778in
-   :align: center
+
 .. |image5| image:: media/image5.png
    :width: 0.26389in
    :height: 0.26389in
-   :align: center
+
 .. |image6| image:: media/image6.png
    :width: 6.54167in
    :height: 3.87500in
-   :align: center
+
 .. |image7| image:: media/image7.png
    :width: 6.52778in
    :height: 2.11111in
-   :align: center
+
 .. |image8| image:: media/image8.png
    :width: 6.50000in
    :height: 3.69444in
-   :align: center
+
 .. |image9| image:: media/image9.png
    :width: 6.52778in
    :height: 0.19444in
-   :align: center
+
 .. |image10| image:: media/image10.png
    :width: 0.26389in
    :height: 0.26389in
-   :align: center
+
 .. |image11| image:: media/image11.png
    :width: 6.51389in
    :height: 2.27778in
-   :align: center
+
 .. |image12| image:: media/image5.png
    :width: 0.26389in
    :height: 0.26389in
-   :align: center
+   
