@@ -5,11 +5,11 @@ Introduzione
 Cosa significa Firew4LL?
 ''''''''''''''''''''''''
 
-Da un'idea di Francesco Pellegrino di |insecurenet| e grazie all'iniziativa del 
-|pin|, promosso dalla |regionepuglia|, nasce il progetto |firew4ll|, parola 
+Da un'idea di Francesco Pellegrino di |insecurenet| e grazie all'iniziativa del
+|pin| promosso dalla |regionepuglia|, nasce il progetto |firew4ll|, parola
 formata dalle 3 parole: "Firewall", "4", "All", letteralmente **Firewall per tutti**,
-che consiste nello sviluppo di un appliance con a bordo un sistema operativo, 
-derivante dal fork di *pfSense*, completamente tradotto in italiano corredato da 
+che consiste nello sviluppo di un appliance con a bordo un sistema operativo,
+derivante dal fork di *pfSense*, completamente tradotto in italiano corredato da
 relativa documentazione.
 
 Perché FreeBSD?
@@ -32,9 +32,9 @@ Prestazioni della rete
 ----------------------
 
 Le prestazioni di rete in FreeBSD sono significativamente migliori di
-quelle di OpenBSD e altri os. Per distribuzioni di piccole e medie 
-dimensioni, questo in genere non ha importanza, su scale superiori è 
-il problema principale. 
+quelle di OpenBSD e altri os. Per distribuzioni di piccole e medie
+dimensioni, questo in genere non ha importanza, su scale superiori è
+il problema principale.
 
 Il supporto del multiprocessore per pf in FreeBSD consente una maggiore
 scalabilità ed è utilizzato da |firew4ll|, come si attesta in questa analisi
@@ -45,8 +45,8 @@ Familiarità e facilità fork
 ---------------------------
 
 Il codice di *m0n0wall* era basato su FreeBSD, e |firew4ll| è un fork
-di *pfSense* che è un fork di *m0n0wall*. 
-La modifica del sistema operativo di base richiederebbe modifiche 
+di *pfSense* che è un fork di *m0n0wall*.
+La modifica del sistema operativo di base richiederebbe modifiche
 proibitive e potrebbe aver introdotto limitazioni da altri
 sistemi operativi, richiedendo la rimozione o l'alterazione di
 funzionalità.
@@ -55,7 +55,7 @@ Funzionalità comuni
 '''''''''''''''''''
 
 |firew4ll| è in grado di soddisfare le esigenze di quasi ogni tipo e
-dimensione di ambiente di rete, da un SOHO (pmi o casa) a un data center. 
+dimensione di ambiente di rete, da un SOHO (pmi o casa) a un data center.
 Questa sezione illustra gli scenari più comuni.
 
 Firewall perimetrale
@@ -67,8 +67,7 @@ LAN e più reti DMZ. Sono inoltre configurabili BGP (Border Gateway
 Protocol), ridondanza della connessione e capacità di bilanciamento del
 carico
 
-.. seealso:: Queste funzionalità avanzate sono descritte in *Routing* e
-*Multi WAN*.
+.. seealso:: Queste funzionalità avanzate sono descritte in *Routing* e *Multi WAN*.
 
 Router LAN o WAN
 ----------------
@@ -84,8 +83,8 @@ trunking 802.1Q.
 
 .. note:: Viene descritto meglio nella sezione *VLAN*.
 
-In alcuni ambienti vengono utilizzate anche interfacce Ethernet multiple. 
-Gli ambienti con un alto traffico LAN con meno requisiti di filtraggio 
+In alcuni ambienti vengono utilizzate anche interfacce Ethernet multiple.
+Gli ambienti con un alto traffico LAN con meno requisiti di filtraggio
 possono invece necessitare di switch di livello 3 o di router basati su ASIC.
 
 Router WAN
@@ -98,20 +97,18 @@ prezzo molto più basso rispetto ad altre offerte commerciali.
 Apparecchi per usi speciali
 ---------------------------
 
-|firew4ll| può essere utilizzato per scenari di distribuzione meno comuni
-come dingolo servizio. Gli esempi includono: dispositivo VPN,
-dispositivi Sniffer e dispositivo server DHCP.
+|firew4ll| può essere utilizzato per scenari di distribuzione meno comuni come singolo servizio. Gli esempi includono: VPN, Sniffer e server DHCP.
 
 Dispositivo VPN
 ~~~~~~~~~~~~~~~
 
-|firew4ll| installato come un VPN server aggiunge funzionalità VPN senza 
+|firew4ll| installato come un VPN server aggiunge funzionalità VPN senza
 modificare l'infrastruttura firewall esistente, includendo più protocolli VPN.
 
 Dispositivo Sniffer
 ~~~~~~~~~~~~~~~~~~~
 
-|firew4ll|offre un'interfaccia web per l'analisi di pacchetti
+|firew4ll| offre un'interfaccia web per l'analisi di pacchetti
 tcpdump. I file .cap acquisiti vengono scaricati e analizzati in
 `Wireshark <http://www.wireshark.org/>`__.
 
@@ -144,8 +141,8 @@ principale connessione Internet.
 LAN
 ---
 
-Abbreviazione di *Local Area Network*, **LAN** è comunemente la rete privata. 
-In genere utilizza uno schema di *indirizzamento IP privato* per i client locali. 
+Abbreviazione di *Local Area Network*, **LAN** è comunemente la rete privata.
+In genere utilizza uno schema di *indirizzamento IP privato* per i client locali.
 Nelle reti  di piccole dimensioni, è in genere l'unica interfaccia interna.
 
 OPT
