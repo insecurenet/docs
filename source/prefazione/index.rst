@@ -10,7 +10,7 @@ anch'essa in italiano.
 
 Con Firew4ll-OS si può implementare un firewall in poche ore.
 
-     **– Francesco Pellegrino (InSecureNet SRL)**
+     **– Francesco Pellegrino (InSecureNet SRL) -**
 
 
 .. tip:: Grazie al lavoro di |insecurenet| è disponibile all'indirizzo: https://www.insecurelab.it/hackzionario un progetto per la semplificazione dei termini informatici.
@@ -24,11 +24,12 @@ Con Firew4ll-OS si può implementare un firewall in poche ore.
    commenti
 
 
+   :maxdepth: 3
 
-.. image:: _static/img/pin.png
-  :align: left
+.. image:: _static/img/pin1.png
+   :align: left
 
-Nato grazie anche al supporto del |pin| (Pugliese INnovativi) della |regionepuglia|.
+Nato grazie anche al supporto del |pin| (Pugliesi INnovativi) della |regionepuglia|.
 
 .. image:: _static/img/pin2.png
-  :align: center
+   :align: center
