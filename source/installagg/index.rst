@@ -15,7 +15,7 @@ software |firew4ll| (*Aggiornamento di un'installazione esistente*) che le
 mantiene aggiornate con la sicurezza, le correzioni di errori e le nuove
 funzionalità più recenti.
 
-Download del supporto di installazione 
+Download del supporto di installazione
 ''''''''''''''''''''''''''''''''''''''
 
 I clienti che hanno acquistato i firewall da |firew4ll| Store possono
@@ -25,62 +25,36 @@ Netgate contiene istruzioni specifiche per ciascun modello, quindi
 controllare quel sito prima di scaricare le immagini in base alle
 informazioni contenute in questo capitolo.
 
-Per l'hardware dal negozio |firew4ll| che non ha più supporto o per altro
-hardware, continua a leggere.
-
--  Passare a |firew4ll| in un browser Web su un PC client.
+-  Andare su https://www.firew4ll.com/download in un browser Web su un PC client.
 
 -  Fare clic su **Download**.
 
--  Selezionare **un tipo di file di installazione**.
-
--  Selezionare un'\ **architettura**:
+-  Selezionare l'**architettura**:
 
     **AMD64** **(64 bit)** per hardware Intel o AMD x86- 64 bit.
 
-    **Netgate** **ADI** per la maggior parte dei firewall serie SG dal
-    |firew4ll| Store, in particolare, i modelli che contengono una porta
-    console USB su COM2.
+  -  Selezionare una **piattaforma** per un'installazione a 64 bit:
 
--  Selezionare una **piattaforma** per un'installazione a 64 bit:
-
-    **Programma di installazione su una chiavetta USB** Un'immagine
-    disco che può essere scritta su una chiavetta USB (memstick) e
-    avviata sull'hardware di destinazione per l'installazione.
-
-    **Programma di installazione immagine su un CD (ISO)** Per
-    l'installazione da supporti ottici o per l'uso con IPMI o hypervisor
-    che possono essere avviati da immagini ISO.
-
--  Selezionare una **console** per le immagini del programma di
-   installazione sulla chiavetta USB:
-
-    **VGA** Installa utilizzando un monitor e una tastiera collegati
-    all'hardware di destinazione.
-
-    **Installazioni seriali** utilizzando una console seriale su COM1
-    dell'hardware di destinazione. Questa opzione richiede una porta
-    della console fisica.
-
--  Selezionare un **mirror** geograficamente vicino al PC client.
+    - **Programma di installazione su una chiavetta USB** Un'immagine disco che può essere scritta su una chiavetta USB (memstick) e avviata sull'hardware di destinazione per l'installazione.
+      - **VGA** Installa utilizzando un monitor e una tastiera collegati all'hardware di destinazione.
+      - **Installazioni seriali** utilizzando una console seriale su COM1 dell'hardware di destinazione. Questa opzione richiede una porta della console fisica.
+    - **Programma di installazione immagine su un CD (ISO)** Per l'installazione da supporti ottici o per l'uso con IPMI o hypervisor che possono essere avviati da immagini ISO.
 
 -  Fare clic su |image0| **Scarica**.
 
 -  Copiare il checksum SHA-256 visualizzata dalla pagina per verificare il
    download in un secondo momento.
 
-.. note:: Per visualizzare un elenco di tutti i file sul mirror, non selezionare alcuna opzione dai menu a discesa tranne un mirror, quindi fare clic su Download.
-
 I nomi dei file per la versione 0.1-RELEASE-p3 del software |firew4ll|
 sono:
 
-    **USB Memstick Installer (VGA)**
-    Firew4ll-CE-memstick-0.1-RELEASE-p3-amd64.img.gz
+  -  **USB Memstick Installer (VGA)**
+  Firew4ll-CE-memstick-0.1-RELEASE-p3-amd64.img.gz
 
-    **USB Memstick Installer (seriale)** 
+  -  **USB Memstick Installer (seriale)**
 	Firew4ll-CE-memstick-serial-0.1-RELEASE-p3-amd64.img.gz
 
-    **ISO Image installer** 
+  -  **ISO Image installer**
 	Firew4ll-CE-0.1-RELEASE-p3-amd64.iso.gz
 
 
@@ -102,6 +76,8 @@ scelta, ma termina con .sha256.
 Utilizzare la somma SHA-256 di accompagnamento dal sito di download o
 dal file .sha256 per verificare che il download sia stato completato
 correttamente e che sia una versione ufficiale del software |firew4ll|.
+
+.. warning:: Il checksum SHA-256 viene calcolato rispetto alle versioni compresse dei file scaricati. Confrontare l'hash prima di decomprimere il file.
 
 Verifica hash su Windows
 ========================
@@ -143,7 +119,9 @@ Verifica hash su BSD e Linux
 Il comando sha256 viene fornito di serie su FreeBSD e su molti altri
 sistemi operativi UNIX e simili a UNIX. Un hash SHA-256 può essere
 generato eseguendo il comando seguente all'interno della directory
-contenente il file scaricato:
+contenente il file scaricato::
+
+  # sha256 firew4ll-CE-memstick-0.1-RELEASE-p3-amd64.img.gz
 
 Confronta l'hash risultante con la somma SHA-256 visualizzata sul sito
 di download o il contenuto del file .sha256 scaricato dal sito Web
@@ -185,31 +163,31 @@ L'estensione .gz sul file indica che il file è compresso con gzip.
 L'immagine può essere decompressa su Windows usando 7-Zip o su BSD /
 Linux / Mac con i comandi gunzip o gzip -d.
 
-Scrittura del supporto di installazione 
+Scrittura del supporto di installazione
 =======================================
 
 La creazione di un disco di installazione richiede una procedura diversa
 a seconda del tipo di supporto. Seguire le istruzioni nella sezione
 appropriata per il tipo di supporto selezionato.
 
-Preparare una chiavetta USB 
+Preparare una chiavetta USB
 ---------------------------
 
-.. tip:: Attenzione: Fate molta attenzione quando scrivete le immagini dei dischi con |firew4ll|! Se il PC client contiene altri dischi rigidi è possibile selezionare il drive sbagliato e sovrascrivere una parte di quel drive con il disco di installazione. Questo rende il disco completamente illeggibile se non per alcuni programmi di recupero del disco.
+.. warning:: Fate molta attenzione quando scrivete le immagini dei dischi con |firew4ll|! Se il PC client contiene altri dischi rigidi è possibile selezionare il drive sbagliato e sovrascrivere una parte di quel drive con il disco di installazione. Questo rende il disco completamente illeggibile se non per alcuni programmi di recupero del disco.
 
 Collegare la chiavetta USB alla workstation
 -------------------------------------------
 
 Inizia collegando la chiavetta USB alla workstation contenente l'immagine del supporto di installazione.
 
-Individua il nome del dispositivo designato dal PC client per l'unità. 
+Individua il nome del dispositivo designato dal PC client per l'unità.
 Il dispositivo varia in base alla piattaforma, ecco alcuni esempi:
 
--  Linux: / dev / sdX dove X è una lettera minuscola. Cerca i messaggi
+-  Linux: ``/dev/sdX`` dove X è una lettera minuscola. Cerca i messaggi
    sull'unità allegata nei file di registro di sistema o eseguendo
    dmesg.
 
--  FreeBSD: / dev / daX dove X è una cifra decimale. Cerca i messaggi
+-  FreeBSD: ``/dev/daX`` dove X è una cifra decimale. Cerca i messaggi
    sull'unità allegata nei file di registro di sistema o eseguendo
    dmesg.
 
@@ -218,7 +196,7 @@ Il dispositivo varia in base alla piattaforma, ecco alcuni esempi:
    sistema e cerca i dischi disponibili per uno corrispondente
    all'unità.
 
--  Su Mac OS X: / dev / diskX dove X è una cifra decimale. Esegui
+-  Su Mac OS X: ``/dev/diskX`` dove X è una cifra decimale. Esegui
    l'elenco diskutil da un prompt dei comandi o utilizza **Disco
    Utilità** GUI.
 
@@ -282,12 +260,15 @@ Ora è il momento di scrivere l'immagine sulla chiavetta USB. La
 procedura esatta varia in base al sistema operativo.
 
 .. note:: Le seguenti istruzioni presuppongono che il file di immagine del supporto di installazione sia stato prima decompresso da un'utilità appropriata. Per i dettagli, consultare *Decomprimere il supporto di installazione*.
+.. warning:: Le operazioni in questa sezione sovrascriveranno completamente qualsiasi contenuto esistente sulla chiavetta USB! Controllare prima la chiavetta USB per eventuali file da salvare o eseguire il backup.
 
 Linux, FreeBSD, Mac OS X
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Su Linux, FreeBSD e Mac OSX, scrivi l'immagine sull'unità usando il
-comando dd. Prende questa forma generale:
+comando dd. Prende questa forma generale::
+
+  dd if=image_file_name of=usb_disk_device_name
 
 Scrivere sul disco in questo modo richiede generalmente privilegi
 elevati, quindi l'utente che scrive l'immagine avrà molto probabilmente
@@ -301,11 +282,17 @@ the command.
 
 Example dd disk writing commands:
 
--  Linux:
+-  Linux::
 
--  FreeBSD:
+  sudo dd if=Firew4ll-CE-memstick-0.1-RELEASE-p3-amd64.img of=/dev/sdb bs=4M
 
--  Mac OSX:
+-  FreeBSD::
+
+  sudo dd if=Firew4ll-CE-memstick-0.1-RELEASE-p3-amd64.img of=/dev/da1 bs=4m
+
+-  Mac OSX::
+
+  sudo dd if=Firew4ll-CE-memstick-0.1-RELEASE-p3-amd64.img of=/dev/rdisk3 bs=4m
 
 Il parametro bs = X è facoltativo e indica a dd di eseguire letture e
 scritture su blocchi di dati da 4 MB alla volta. La dimensione del
@@ -386,7 +373,7 @@ masterizzata in modo appropriato per i file di immagine non come un CD
 di dati contenente il singolo file ISO. Le procedure di masterizzazione
 variano in base al sistema operativo e al software disponibile.
 
-Masterizzazione in Windows 
+Masterizzazione in Windows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Windows 7 e versioni successive includono la possibilità di masterizzare
@@ -397,7 +384,7 @@ Consultare la documentazione per il programma di masterizzazione di CD.
 Una ricerca su Google con il nome del software di masterizzazione e burn
 iso aiuta anche a trovare le istruzioni.
 
-Masterizzare con Windows 
+Masterizzare con Windows
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Per masterizzare un'immagine disco in modalità base in Windows 7 o
@@ -495,13 +482,19 @@ Se un programma di masterizzazione GUI non è disponibile, potrebbe
 essere possibile masterizzare dalla riga di comando.
 
 Innanzitutto, determinare l'ID / LUN SCSI del dispositivo di
-masterizzazione (Numero unità logica) con il seguente comando:
+masterizzazione (Numero unità logica) con il seguente comando::
+
+  $ cdrecord --scanbus
+  scsibus6:
+  6,0,0	600) 'TSSTcorp' 'CDDVDW SE-S084C ' 'TU00' Removable CD-ROM
 
 Si noti che l'ID / LUN SCSI è 6,0,0 in questo esempio.
 
 Masterizzare l'immagine come nell'esempio seguente, sostituendo
 <velocità massima> con la velocità del masterizzatore (ad es. 24) e
-<lun> con l'ID SCSI / LUN del registratore:
+<lun> con l'ID SCSI / LUN del registratore::
+
+  $ sudo cdrecord --dev=<lun> --speed=<max speed> Firew4ll-CE-0.1-RELEASE-p3-amd64.iso
 
 Masterizzare in FreeBSD
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -515,7 +508,7 @@ GUI come K3B o Brasero Disc Burner se sono installate da porte.
 Per maggiori informazioni sulla creazione di CD in FreeBSD, vedere la
 voce per la masterizzazione di CD nel Manuale di FreeBSD.
 
-Verifica del disco 
+Verifica del disco
 ------------------
 
 Dopo aver scritto il disco, verificare che sia stato masterizzato
@@ -568,7 +561,7 @@ Oltre alla corretta connessione hardware, sul PC client deve essere
 disponibile anche un programma client per console seriale e la velocità
 seriale e altre impostazioni devono essere disponibili.
 
-Collegare un cavo seriale 
+Collegare un cavo seriale
 =========================
 
 Innanzitutto, un cavo seriale null modem deve essere collegato tra il
@@ -612,14 +605,13 @@ Linux
 seriale venga visualizzato come /dev/ttyUSB0. Cercare i messaggi sul
 dispositivo allegato nei file di registro di sistema o eseguendo dmesg.
 
-.. note::  Se il dispositivo non appare in / dev /, controllare se il
-dispositivo richiede driver aggiuntivi.
+.. note::  Se il dispositivo non appare in ``/dev/``, controllare se il dispositivo richieda driver aggiuntivi.
 
 FreeBSD
 -------
 
 È probabile che il dispositivo associato a un adattatore da USB a
-seriale venga visualizzato come / dev / cuaU0. Cercare i messaggi sul
+seriale venga visualizzato come /dev/cuaU0. Cercare i messaggi sul
 dispositivo allegato nei file di registro di sistema o eseguendo dmesg.
 
 Determinare le impostazioni della console seriale
@@ -633,15 +625,11 @@ Qualunque sia il client seriale utilizzato, assicurarsi che sia
 impostato per Speed (115200), Bit di dati (8), Parità (No) e Bit di stop
 (1) corretti. Questo è in genere scritto come 115200/8 / N / 1.
 
-.. note::  Per impostazione predefinita, alcuni componenti hardware hanno
-una velocità inferiore. PC Engines imposta automaticamente ALIX su
-38400/8 / N / 1 e l'hardware Soekris su 19200/8 / N / 1. Ciò è rilevante
-per il BIOS e l'output iniziale, non per |firew4ll|, che per impostazione
-predefinita è 115200.
+.. note::  Per impostazione predefinita, alcuni componenti hardware hanno una velocità inferiore. PC Engines imposta automaticamente ALIX su 38400 / 8 / N / 1 e l'hardware Soekris su 19200 / 8 / N / 1. Ciò è rilevante per il BIOS e l'output iniziale, non per |firew4ll|, che per impostazione predefinita è 115200.
 
-Molti client seriali hanno un valore predefinito di 9600/8 / N / 1,
+Molti client seriali hanno un valore predefinito di 9600 / 8 / N / 1,
 quindi è necessario regolare queste impostazioni per connettersi.
-Utilizzare 115200/8 / N / 1 con |firew4ll| indipendentemente
+Utilizzare 115200 / 8 / N / 1 con |firew4ll| indipendentemente
 dall'impostazione dell'hardware / BIOS.
 
 Per hardware che utilizza velocità seriali del BIOS diverse da 115200,
@@ -674,6 +662,10 @@ Windows
 
 PuTTY è la scelta gratuita più popolare per la comunicazione seriale su
 Windows. SecureCRT è un altro client che funziona bene.
+
+.. warning:: Non usare Hyperterminal. Anche se è già presente sul PC client, è inaffidabile e incline alla formattazione errata e alla perdita di dati.
+
+
 
 Mac OS X
 --------
@@ -720,7 +712,7 @@ PuTTY
       :name: selezionare-seriale-per-il-tipo-di-connessione
 
 -  .. rubric:: Immettere il nome del dispositivo della porta seriale per
-      la linea seriale, ad es. COM3 o / dev / ttyUSB0.
+      la linea seriale, ad es. COM3 o /dev/ttyUSB0.
       :name: immettere-il-nome-del-dispositivo-della-porta-seriale-per-la-linea-seriale-ad-es.-com3-o-dev-ttyusb0.
 
 -  .. rubric:: Immettere la velocità appropriata, ad es. 115200
@@ -735,11 +727,13 @@ Schermo GNU
 -  Aprire un terminale / prompt dei comandi
 
 -  Richiamare il comando screen usando il percorso alla porta seriale,
-   ad esempio:
+   ad esempio::
+     $ sudo screen /dev/ttyUSB0 115200
 
 In alcuni casi potrebbe esserci una mancata corrispondenza della
 codifica del terminale. In tal caso, eseguire la schermata in modalità
-UTF-8
+UTF-8::
+  $ sudo screen -U /dev/cu.SLAB_USBtoUART 115200
 
 Eseguire l'installazione
 ''''''''''''''''''''''''
@@ -832,7 +826,7 @@ Se la tastiera utilizzata per la console ha un layout diverso, bisogna
 trovarla nell'elenco e selezionarla. Dopo aver effettuato una selezione,
 tornare all'inizio dell'elenco e scegliere **Test** o **Continuare**.
 
-Selezionare la partizione 
+Selezionare la partizione
 -------------------------
 
 Il passo per la **partizione** preve la selezione del il filesystem per
@@ -849,11 +843,7 @@ Il processo varia leggermente a seconda del tipo di filesystem
 selezionato, quindi segui la sezione seguente che corrisponde al tipo di
 filesystem utilizzato da questo firewall.
 
-.. note::  Se il programma di installazione non riesce a trovare alcuna
-unità o se mostra unità errate, è possibile che l'unità desiderata sia
-collegata a un controller non supportato o a un controller impostato per
-una modalità non supportata nel BIOS. Vedere *Risoluzione dei problemi
-di installazione* per assistenza.
+.. note::  Se il programma di installazione non riesce a trovare alcuna unità o se mostra unità errate, è possibile che l'unità desiderata sia collegata a un controller non supportato o a un controller impostato per una modalità non supportata nel BIOS. Vedere *Risoluzione dei problemi di installazione* per assistenza.
 
 UFS
 ~~~
@@ -872,21 +862,10 @@ UFS
 
 -  Selezionare lo schema di partizione da utilizzare per il disco:
 
-   **GPT** Il layout della tabella delle partizioni GUID. Utilizzato
-   dalla maggior parte dei moderni sistemi x86. Potrebbe non funzionare
-   su versioni hardware / BIOS precedenti. **Provare prima questo
-   metodo**.
-
-   **BSD** Etichette senza un MBR, che era noto come "modalità
-   pericolosamente dedicata". Questo metodo dovrebbe funzionare sulla
-   maggior parte dell'hardware che non può utilizzare GPT. Questo era il
-   metodo utilizzato dalle versioni precedenti del software |firew4ll|.
-
-   **MBR** Selezionare questa opzione solo se GPT e BSD non funzionano
-   su un componente hardware specifico.
-
-   **Altri** Le altre opzioni non sono rilevanti per l'hardware in grado
-   di eseguire il software |firew4ll|.
+   - **GPT** Il layout della tabella delle partizioni GUID. Utilizzata dalla maggior parte dei moderni sistemi x86. Potrebbe non funzionare su versioni hardware / BIOS precedenti. **Provare prima questo metodo**.
+   - **BSD** Etichette senza un MBR, che era noto come "modalità pericolosamente dedicata". Questo metodo dovrebbe funzionare sulla maggior parte dell'hardware che non può utilizzare GPT. Questo era il metodo utilizzato dalle versioni precedenti del software |firew4ll|.
+   - **MBR** Selezionare questa opzione solo se GPT e BSD non funzionano su un componente hardware specifico.
+   - **Altri** Le altre opzioni non sono rilevanti per l'hardware in grado di eseguire il software |firew4ll|.
 
 -  Selezionare **Fine** per accettare il layout di partizione automatica
    scelto dall'installatore.
@@ -909,23 +888,10 @@ ZFS
    l'utilizzo di più dischi con ZFS sia RAID software, è abbastanza
    affidabile e migliore dell'uso di un singolo disco.
 
-   **stripe** Un singolo disco o più dischi aggiunti insieme per creare
-   un disco più grande. Per **i firewall con un singolo disco di
-   destinazione, questa è la scelta corretta**. (RAID 0)
-
-   **mirror** Due o più dischi che contengono tutti lo stesso contenuto
-   per ridondanza. Può continuare a funzionare anche se un disco si
-   spegne. (RAID 1)
-
-   **raid10** RAID 1 + 0, n x mirror a 2 vie. Una combinazione di stripe
-   e mirror, che conferisce ridondanza e capacità extra. Può perdere un
-   disco da qualsiasi coppia in qualsiasi momento.
-
-   **raidzX** RAID ridondante singolo, doppio o triplo. Utilizza 1, 2 o
-   3 dischi di parità con un pool per fornire capacità e ridondanza
-   extra, quindi uno, due o tre dischi possono fallire prima che un pool
-   venga compromesso. Sebbene simile a RAID 5 e 6, il design RAIDZ
-   presenta differenze significative.
+   - **stripe** Un singolo disco o più dischi aggiunti insieme per creare un disco più grande. Per **i firewall con un singolo disco di destinazione, questa è la scelta corretta**. (RAID 0)
+   - **mirror** Due o più dischi che contengono tutti lo stesso contenuto per ridondanza. Può continuare a funzionare anche se un disco si guasta. (RAID 1)
+   - **raid10** RAID 1 + 0, n x mirror a 2 vie. Una combinazione di stripe e mirror, che conferisce ridondanza e capacità extra. Può perdere un disco da qualsiasi coppia in qualsiasi momento.
+   - **raidzX** RAID ridondante singolo, doppio o triplo. Utilizza 1, 2 o 3 dischi di parità con un pool per fornire capacità e ridondanza extra, quindi uno, due o tre dischi possono fallire prima che un pool venga compromesso. Sebbene simile a RAID 5 e 6, il design RAIDZ presenta differenze significative.
 
 -  Selezionare i dischi da utilizzare con il **tipo di dispositivo
    virtuale** selezionato. Utilizzare i tasti freccia su e giù per
@@ -955,18 +921,18 @@ ZFS
    **GPT** + **Lenovo Fix** (**BIOS**) GPT con una correzione di avvio
    specifica per Lenovo.
 
--  Modificare le dimensioni di scambio predefinite (facoltativo)
-   selezionando **Dimensione scambio** e immettendo un nuovo valore. In
-   genere la dimensione ottimale è il doppio della RAM disponibile nel
-   firewall, ma con dischi più piccoli potrebbe essere troppo.
 
--  Lasciare le altre opzioni sullo schermo ai loro valori predefiniti.
+      -  Modificare le dimensioni di scambio predefinite (facoltativo)
+         selezionando **Dimensione scambio** e immettendo un nuovo valore. In
+         genere la dimensione ottimale è il doppio della RAM disponibile nel
+         firewall, ma con dischi più piccoli potrebbe essere troppo.
+      -  Lasciare le altre opzioni sullo schermo ai loro valori predefiniti.
 
--  Riportare la selezione su **Installare** e assicurarsi che
-   **Selezionare** sia evidenziato per l'azione nella parte inferiore
-   dello schermo.
+      -  Riportare la selezione su **Installare** e assicurarsi che
+         **Selezionare** sia evidenziato per l'azione nella parte inferiore
+         dello schermo.
 
--  Premere Invio per continuare
+      -  Premere Invio per continuare
 
 -  Selezionare **Sì** per confermare la selezione del disco di
    destinazione e riconoscere che il contenuto dei dischi di
@@ -974,7 +940,7 @@ ZFS
 
 -  Passare avanti per *continuare con l'installazione*.
 
-Continuare con l'installazione 
+Continuare con l'installazione
 ------------------------------
 
 -  Sedetevi, aspettate e bevete qualche sorso di caffè mentre il
@@ -984,7 +950,7 @@ Continuare con l'installazione
 -  Selezionare **No** quando viene richiesto di apportare le modifiche
    finali.
 
--  Selezionare **RiavviaRE** per riavviare il firewall
+-  Selezionare **Riavvire** per riavviare il firewall
 
 -  Rimuovere il supporto di installazione dal firewall durante il
    riavvio, quando l'hardware sta eseguendo il backup ma prima che si
@@ -1002,12 +968,7 @@ automaticamente i mapping dell'interfaccia.
 I profili di assegnazione automatica dell'interfaccia utilizzati dal
 firewall sono:
 
-    **RCC-VE 4860/8860** WAN: igb1, LAN: igb0
-
-    **RCC-VE 2220/2440** WAN: igb0, LAN: igb1
-
-    **APU** WAN: re1, LAN: re2
-
+    **|firew4ll|** WAN: re1, LAN: re2
     **Altri dispositivi** Per altri dispositivi il firewall cerca
     interfacce comuni e tenta di assegnarle in modo appropriato, ad
     esempio:
@@ -1018,7 +979,7 @@ firewall sono:
 
     WAN: re1, LAN: re2
 
-Il firmware di fabbrica per i dispositivi dello store di |firew4ll| include
+Il firmware di fabbrica per i dispositivi dello store di |firew4ll| includono
 mappature predefinite aggiuntive appropriate all'hardware, che varia a
 seconda dell'hardware ordinato con il dispositivo.
 
@@ -1039,17 +1000,13 @@ del loro stato di collegamento se supportato dalla scheda di rete. Lo
 stato del collegamento è indicato da (su) che appare dopo l'indirizzo
 MAC se viene rilevato un collegamento su quell'interfaccia.
 
-.. note::  L'indirizzo MAC (Media Access Control) di una scheda di rete è
-un identificatore univoco assegnato a ciascuna scheda e nessuna scheda
-di rete deve avere lo stesso indirizzo MAC. Se un indirizzo MAC
-duplicato è presente su una rete, per caso o per spoofing intenzionale,
-tutti i nodi in conflitto avranno problemi di connettività.
+.. note::  L'indirizzo MAC (Media Access Control) di una scheda di rete è un identificatore univoco assegnato a ciascuna scheda e nessuna scheda di rete deve avere lo stesso indirizzo MAC. Se un indirizzo MAC duplicato è presente su una rete, per caso o per spoofing intenzionale, tutti i nodi in conflitto avranno problemi di connettività.
 
 Dopo aver stampato l'elenco delle interfacce di rete, il firewall
 richiede la configurazione della VLAN. Se si desidera VLAN, rispondere
 Si, altrimenti, digitare No, quindi premere Invio.
 
-.. seealso: Per informazioni sulla configurazione di VLAN, vedere *VLAN*.
+.. seealso:: Per informazioni sulla configurazione di VLAN, vedere *VLAN*.
 
 Il firewall richiede di impostare prima l'interfaccia WAN. Poiché il
 firewall in genere contiene più di una scheda di rete, potrebbe
@@ -1087,15 +1044,7 @@ dell'interfaccia di rete è corretto, digitare S, quindi premere Invio.
 Se l'assegnazione non è corretta, digitare No e premere Invio per
 ripetere il processo di assegnazione.
 
-.. note::  Oltre alla normale modalità di routing / firewall con più
-interfacce, un firewall può anche funzionare in **modalità Appliance**
-in cui ha una sola interfaccia (**WAN**). Il firewall inserisce la
-regola di blocco della GUI sull'interfaccia WAN in modo che un client
-possa accedere all'interfaccia Web del firewall da quella rete. Le
-normali funzioni di routing e NAT non sono attive in questa modalità
-poiché non esiste alcuna interfaccia o rete interna. Questo tipo di
-configurazione è utile per dispositivi VPN, server DHCP e altri ruoli
-autonomi.
+.. note::  Oltre alla normale modalità di routing / firewall con più interfacce, un firewall può anche funzionare in **modalità Appliance** in cui ha una sola interfaccia (**WAN**). Il firewall inserisce la regola di blocco della GUI sull'interfaccia WAN in modo che un client possa accedere all'interfaccia Web del firewall da quella rete. Le normali funzioni di routing e NAT non sono attive in questa modalità poiché non esiste alcuna interfaccia o rete interna. Questo tipo di configurazione è utile per dispositivi VPN, server DHCP e altri ruoli autonomi.
 
 Assegnazione manuale di interfacce
 ==================================
@@ -1103,7 +1052,10 @@ Assegnazione manuale di interfacce
 Se la funzione di rilevamento automatico non ha funzionato, ci sono
 altri metodi per definire la differenza tra le schede di rete prima
 dell'installazione. Un modo è tramite l'indirizzo MAC, che il firewall
-stampa accanto ai nomi dell'interfaccia nella schermata di assegnazione:
+stampa accanto ai nomi dell'interfaccia nella schermata di assegnazione::
+
+  vmx0  00:0c:29:50:a4:04
+  vmx1  00:0c:29:50:ec:2f
 
 L'indirizzo MAC è talvolta stampato su un adesivo da qualche parte sulla
 scheda di rete. Per i sistemi virtualizzati, la configurazione della
@@ -1111,7 +1063,7 @@ macchina virtuale di solito contiene l'indirizzo MAC per ciascuna scheda
 di rete. Gli indirizzi MAC sono assegnati dal produttore e ci sono
 diversi database online che offrono funzionalità di ricerca inversa per
 gli indirizzi MAC al fine di trovare la società che ha creato la scheda:
-http://www.8086.net/tools/mac/, http:/ /www.coffer.com/ mac\_find / e
+http://www.8086.net/tools/mac/, http://www.coffer.com/mac_find/ e
 http://aruljohn.com/mac.pl, tra gli altri.
 
 Schede di rete di marche, modelli o talvolta chipset diversi possono
@@ -1138,15 +1090,15 @@ scheda nella schermata di assegnazione dell'interfaccia quando
 richiesto. Nell'esempio sopra, vmx0 sarà WAN e vmx1 sarà LAN. Per
 assegnare loro questi ruoli, seguire questa procedura:
 
--  Digitare vmx0 e premere Invio quando viene richiesto l'indirizzo WAN
+  -  Digitare vmx0 e premere Invio quando viene richiesto l'indirizzo WAN
 
--  Digitare vmx1 e premere Invio quando viene richiesto l'indirizzo LAN
+  -  Digitare vmx1 e premere Invio quando viene richiesto l'indirizzo LAN
 
--  Premere di nuovo Invio per interrompere il processo di assegnazione,
-   poiché questo esempio non contiene alcuna interfaccia opzionale.
+  -  Premere di nuovo Invio per interrompere il processo di assegnazione,
+     poiché questo esempio non contiene alcuna interfaccia opzionale.
 
--  Digitare S e premere Invio per confermare le assegnazioni
-   dell'interfaccia
+  -  Digitare S e premere Invio per confermare le assegnazioni
+     dell'interfaccia
 
 Tecniche di installazione alternative
 '''''''''''''''''''''''''''''''''''''
@@ -1170,11 +1122,7 @@ nel firewall di destinazione. Dopo l'avvio, il firewall richiederà
 l'assegnazione dell'interfaccia e quindi il resto della configurazione
 potrebbe essere eseguito normalmente.
 
-.. note::  Le versioni attuali del software |firew4ll| utilizzano tecniche
-come ID GPT, ID UFS e metadati ZFS per montare i dischi, quindi anche se
-il dispositivo potrebbe apparire utilizzando un driver del disco diverso
-sull'hardware di destinazione effettivo, il sistema operativo sarà
-comunque in grado di individuare e montare il disco appropriato.
+.. note::  Le versioni attuali del software |firew4ll| utilizzano tecniche come ID GPT, ID UFS e metadati ZFS per montare i dischi, quindi anche se il dispositivo potrebbe apparire utilizzando un driver del disco diverso sull'hardware di destinazione effettivo, il sistema operativo sarà comunque in grado di individuare e montare il disco appropriato.
 
 Installazione completa in VMware con reindirizzamento USB
 =========================================================
@@ -1339,8 +1287,7 @@ Avvio da USB
 
 Se l'avvio si interrompe con al prompt ``mountroot>`` durante l'avvio dal CD
 live, in genere con unità CD / DVD USB, passare al prompt dell'installazione
-dal menu di avvio ed eseguire quanto segue:
-.. code-block:: console
+dal menu di avvio ed eseguire quanto segue::
 	set kern.cam.boot_delay=10000
 	boot
 
@@ -1384,7 +1331,7 @@ cose che gli aggiornamenti del BIOS possono risolvere includono: mancato
 avvio, problemi di mantenimento del tempo, instabilità generale e altri
 problemi come la compatibilità hardware.
 
-Ripristinare le impostazioni del BIOS ai valori predefiniti di fabbrica 
+Ripristinare le impostazioni del BIOS ai valori predefiniti di fabbrica
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 I sistemi riciclati possono avere una configurazione BIOS atipica. La
@@ -1392,7 +1339,7 @@ maggior parte contiene un'opzione che consente di caricare le opzioni
 predefinite di fabbrica. Utilizzare questa opzione per resettare le
 impostazioni del BIOS.
 
-Altre impostazioni del BIOS 
+Altre impostazioni del BIOS
 ---------------------------
 
 Se il BIOS consente la configurazione della gestione dell'alimentazione,
@@ -1408,7 +1355,7 @@ una versione di sviluppo del software |firew4ll|. Controllare la pagina
 Snapshots per vedere se c'è uno sviluppo (ad esempio Beta o release
 candidate) da provare
 
-Altri problemi hardware 
+Altri problemi hardware
 -----------------------
 
 L'hardware di destinazione potrebbe essere difettoso, il che potrebbe
@@ -1423,7 +1370,7 @@ nessun componente si surriscaldi. Se si tratta di unhardware
 riutilizzato più vecchio, la pulizia dell'aria compressa / in scatola
 delle ventole e dei dissipatori di calore può fare miracoli.
 
-Aggiornamento di un'installazione esistente 
+Aggiornamento di un'installazione esistente
 '''''''''''''''''''''''''''''''''''''''''''
 
 Il software |firew4ll| può essere aggiornato in modo affidabile da una
@@ -1434,17 +1381,13 @@ versione supportata corrente, il firewall non sarà mai obsoleto.
 Rilasciamo periodicamente nuove versioni che contengono nuove
 funzionalità, aggiornamenti, correzioni di errori e varie altre
 modifiche. Nella maggior parte dei casi, aggiornare un'installazione di
-|firew4ll| è semplice. Se il firewall si sta aggiornando a una nuova
-versione che è solo una versione puntuale (ad esempio da 2.4.3 a 2.4.4),
-l'aggiornamento è più piccolo e probabilmente non causa problemi.
+|firew4ll| è semplice.
 
 Il problema più comune riscontrato durante gli aggiornamenti sono le
 regressioni specifiche dell'hardware da una versione di FreeBSD a
 un'altra, sebbene siano rare. Le versioni aggiornate riparano più
 hardware di quanto non si rompano, ma le regressioni sono sempre
-possibili. I salti più grandi, come da 2.1.5 a 2.4.4-RELEASE-p10, devono
-essere gestiti con cura e testati su hardware identico in un ambiente di
-test prima dell'uso in produzione.
+possibili.
 
 Pubblichiamo note di aggiornamento insieme a rilasci per aiutare a
 guidare eventuali potenziali insidie ​​di aggiornamento. Queste note
@@ -1459,19 +1402,14 @@ backup utilizzando WebGUI:
 
 -  Passare a **Diagnostica**> **Backup / Ripristino**
 
--  Impostare l'\ **area di backup** su *TUTTI* nella sezione
+-  Impostare l'**area di backup** su *TUTTI* nella sezione
    **Configurazione backup** della pagina
 
 -  Fare clic |image2| su **Scaricare**
 
 -  Salvare questo file in un luogo sicuro
 
-Conservare più copie del file di backup in diverse posizioni sicure. I
-clienti con un abbonamento |firew4ll| Gold dovrebbero considerare
-l'utilizzo del pacchetto **Backup configurazione automatica**. I clienti
-che utilizzano il pacchetto Backup configurazione automatica possono
-effettuare un backup manuale con una nota che identifica la modifica,
-che è crittografata e memorizzata sui nostri server.
+Conservare più copie del file di backup in diverse posizioni sicure. I clienti che utilizzano il pacchetto Backup configurazione automatica possono effettuare un backup manuale con una nota che identifica la modifica, che è crittografata e memorizzata sui nostri server.
 
 Aggiornamento
 =============
@@ -1480,11 +1418,11 @@ Esistono diversi metodi disponibili per l'aggiornamento di una normale
 installazione del software |firew4ll|. È possibile utilizzare WebGUI o la
 console.
 
-Aggiornamento tramite WebGUI 
+Aggiornamento tramite WebGUI
 ----------------------------
 
 La funzione di **aggiornamento automatico** contatta un server
-|firew4ll|.org e determina se esiste una versione di rilascio più recente
+|firew4ll| e determina se esiste una versione di rilascio più recente
 della versione sul firewall. Questo controllo viene eseguito quando un
 amministratore visita la dashboard o **Sistema> Aggiornamento**.
 
@@ -1506,23 +1444,9 @@ alla console del firewall, avviare il processo di aggiornamento
 selezionando l'opzione di menu 13.
 
 In alternativa, da un prompt della shell in esecuzione come root,
-eseguire manualmente il seguente comando:
+eseguire manualmente il seguente comando::
 
-Versioni precedenti 
--------------------
-
-Le versioni del software |firew4ll| precedenti alla 2.3 utilizzavano un
-metodo di aggiornamento diverso. Per le installazioni "complete", il
-firewall ha utilizzato un file tgz per copiare i nuovi file. Questo
-metodo era problematico e non viene più utilizzato. Tuttavia, per il
-momento, i file di aggiornamento in quel formato sono ancora forniti dal
-progetto al fine di aggiornare i firewall più vecchi.
-
-Su queste vecchie versioni, l'aggiornamento automatico continuerà a
-funzionare. Dopo aver eseguito l'aggiornamento automatico potrebbero
-essere disponibili versioni più recenti, quindi una volta che il
-firewall esegue una versione di |firew4ll| 2.4 o successiva, eseguire un
-altro aggiornamento se il firewall lo rileva, è necessario.
+  # pfSense-upgrade
 
 Reinstallazione / Aggiornamento della configurazione
 ----------------------------------------------------
@@ -1593,7 +1517,7 @@ maggior parte degli ambienti, tuttavia ci sono occasioni che richiedono
 lievi modifiche per migliorare la stabilità, le prestazioni o la
 longevità del filesystem.
 
-Abilitazione del supporto TRIM 
+Abilitazione del supporto TRIM
 ==============================
 
 Il programma di installazione per la versione di fabbrica di |firew4ll|
@@ -1605,7 +1529,7 @@ Sebbene sia possibile abilitare manualmente TRIM, il supporto è
 imprevedibile nell'hardware, quindi non forniamo istruzioni su come
 abilitare la funzione.
 
-Attivazione di un controllo del filesystem 
+Attivazione di un controllo del filesystem
 -------------------------------------------
 
 |firew4ll| eseguirà un controllo del filesystem (fsck) all'avvio quando

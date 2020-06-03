@@ -8,13 +8,9 @@ Requisiti minimi hardware
 I requisiti minimi per |firew4ll| 0.1-RELEASE-p3 sono:
 
 -  CPU 600 MHz o più veloce
-
 -  RAM 512 MB o più
-
 -  Unità disco da 4 GB o superiore (SSD, HDD, ecc.)
-
 -  Una o più schede di interfaccia di rete compatibili
-
 -  Unità USB di avvio o CD / DVD-ROM per l'installazione iniziale
 
 .. note:: I requisiti minimi non sono adatti a tutti gli ambienti; vedere la *Guida al dimensionamento dell'hardware* per i dettagli
@@ -176,7 +172,7 @@ accelerata dall'hardware.
 Gli acceleratori di crittografia hardware aumentano notevolmente la
 velocità effettiva massima della VPN ed eliminano in gran parte la
 differenza di prestazioni tra le cifre accelerate. La tabella *Velocità
-effettiva VPN per modello hardware, tutti i valori sono Mbit / s*
+effettiva VPN per modello hardware, tutti i valori sono in Mbit/s*
 illustra la velocità effettiva massima per i vari componenti hardware
 disponibili nell'archivio |firew4ll| quando si utilizza IPsec e OpenVPN.
 
@@ -187,7 +183,7 @@ operativo per pacchetto inferiore rispetto a OpenVPN, quindi per ora
 IPsec sarà quasi sempre più veloce di OpenVPN.
 
 Tabella 3: Velocità effettiva VPN per modello hardware, tutti i valori
-sono Mbit / s
+sono in Mbit/s
 
 +------------+--------------------------+-------------------------+
 |  Modello   | OpenVPN / AES-128+SHA1   | IPsec / IKEv2+AES-GCM   |
@@ -270,10 +266,9 @@ Modifiche comuni lungo queste linee per altro hardware sono disponibili
 nella pagina wiki della *documentazione per la sintonizzazione e la
 risoluzione dei problemi delle schede di rete.*
 
-.. note:: Le modifiche a /boot/loader.conf.local richiedono il riavvio
-del firewall\ **.**
+.. note:: Le modifiche a /boot/loader.conf.local richiedono il riavviodel firewall.
 
-Eusarimento del Mbuf 
+Eusarimento del Mbuf
 ====================
 
 Un problema comune riscontrato dagli utenti dei commmodity hardware è
@@ -286,8 +281,8 @@ più code o che sono altrimenti ottimizzate per le prestazioni rispetto
 all'utilizzo delle risorse. Inoltre, l'utilizzo di mbuf aumenta quando
 il firewall utilizza determinate funzionalità come *Limiters* Per
 aumentare la quantità di mbuf disponibili, aggiungere quanto segue a
-
-/boot/loader.conf.local:
+``/boot/loader.conf.local``::
+  kern.ipc.nmbclusters="1000000"
 
 Inoltre, le schede potrebbero aver bisogno di altri valori simili
 aumentati come kern.ipc.nmbjumbop. Oltre ai grafici sopra menzionati,
@@ -303,32 +298,25 @@ un driver vorrà utilizzare una coda per core della CPU. Esistono alcuni
 casi in cui ciò può portare a problemi di stabilità, che possono essere
 risolti riducendo il numero di code utilizzate dalla scheda di rete. Per
 ridurre il numero di code, specificare il nuovo valore in
-/boot/loader.conf.local, come ad esempio:
+``/boot/loader.conf.local``, come ad esempio::
+  hw.igb.num_queues=1
 
 Il nome dell'OID sysctl varia in base alla scheda di rete, ma di solito
-si trova nell'output di sysctl -a, sotto
-
-hw. <drivername>.
+si trova nell'output di sysctl -a, sotto hw. <drivername>.
 
 Disabilitare MSIX
 =================
 
 Un altro problema comune è una scheda di rete che non supporta
 correttamente MSIX nonostante le sue affermazioni. MSIX può essere
-disabilitato aggiungendo la seguente riga in */boot/loader.conf.local*:
+disabilitato aggiungendo la seguente riga in */boot/loader.conf.local*::
+  hw.pci.enable_msix=0
 
 La distribuzione del software |firew4ll| è compatibile con la maggior parte
 di hardware supportati da FreeBSD.
 
-|firew4ll| versione 2.4 e successive sono compatibili con l'hardware di
-architettura a 64 bit (amd64, x86-64) e il firewall basato su ARM
-SG-1000.
-
-|firew4ll| versione 2.3.x e precedenti erano compatibili con l'architettura
-hardware a 32 bit (i386, x86) e 64 bit (amd64, x86-64).
-
-Al momento non sono supportate architetture hardware alternative come
-ARM (diverse da SG-1000), PowerPC, MIPS, SPARC, ecc.
+|firew4ll| è compatibile con l'hardware di
+architettura a 64 bit (amd64, x86-64).
 
 Compatibilità Hardware
 ''''''''''''''''''''''
@@ -364,13 +352,13 @@ Quando un firewall richiede l'uso di VLAN, selezionare adattatori che
 supportano l'elaborazione VLAN nell'hardware. Questo è discusso in *LAN
 virtuali (VLAN).*
 
-Adattatori di rete USB 
+Adattatori di rete USB
 ----------------------
 
 Si sconsiglia di utilizzare adattatori di rete USB di qualsiasi marca /
 modello a causa della loro inaffidabilità e scarse prestazioni.
 
-Adattatori wireless 
+Adattatori wireless
 -------------------
 
 Gli adattatori e i dispositivi wireless supportati sono trattati in *Wireless*.

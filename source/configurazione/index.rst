@@ -116,13 +116,7 @@ tipi di connessione ISP comuni.
     informazioni sulle diverse tipologie di WAN, vedere *Configurazione
     e tipologie di interfaccia*
 
-.. note::  Se l'interfaccia WAN è wireless, saranno presentate opzioni
-aggiuntive dalla guida che non sono illustrate da questa guida della
-installazione di base. Fare riferimento a *Wireless* , che ha una
-sezione sulla WAN wireless del maggiori informazioni. Se qualcuna si
-queste informazioni fosse poco chiara, saltare la configurazione della
-WAN per ora, e poi eseguire la configurazione del wireless in un secondo
-momento.
+.. note::  Se l'interfaccia WAN è wireless, saranno presentate opzioni aggiuntive dalla guida che non sono illustrate da questa guida della installazione di base. Fare riferimento a *Wireless* , che ha una sezione sulla WAN wireless del maggiori informazioni. Se qualcuna si queste informazioni fosse poco chiara, saltare la configurazione della WAN per ora, e poi eseguire la configurazione del wireless in un secondo momento.
 
 |image6|
 
@@ -133,21 +127,9 @@ Fig. 4: Configurazione dell'interfaccia WAN
     di rete WAN. E' anche conosciuto come ‘sproofing’ dell'indirizzo
     MAC.
 
-.. note::  I problemi attenuati dallo sproofing dell'indirizzo MAC sono
-di solito temporanei e facilmente aggirabili. La migliore procedura è
-mantenere l'indirizzo MAC originale dell'hardware, ricorrendo allo
-sproofing solo quando assolutamente necessario.
+.. note::  I problemi attenuati dallo sproofing dell'indirizzo MAC sono di solito temporanei e facilmente aggirabili. La migliore procedura è mantenere l'indirizzo MAC originale dell'hardware, ricorrendo allo spoofing solo quando assolutamente necessario.
 
-    Cambiare l'indirizzo MAC può risultare utile per rimpiazzare un
-    pezzo esistente delle apparecchiature di rete. Alcuni ISP, in primo
-    luogo quelli forniti di cavi, non funzionano perfettamente se il
-    nuovo indirizzo MAC è rilevato. Alcuni provider internet richiedono
-    un ciclo di potenza del modem, altri richiedono la registrazione del
-    nuovo indirizzo sul telefono. In aggiunta, se questa connessione WAN
-    è su un segmento di rete con altri sistemi che lo posizionano via
-    ARP, cambiare il MAC da corrispondere e il vecchio pezzo potrebbe
-    anche rendere la transizione più facile, piuttosto che dover pulire
-    le memorie cache ARP o aggiornare le voci dell'ARP statica.
+    Cambiare l'indirizzo MAC può risultare utile per rimpiazzare un pezzo esistente delle apparecchiature di rete. Alcuni ISP, in primo luogo quelli forniti di cavi, non funzionano perfettamente se il nuovo indirizzo MAC è rilevato. Alcuni provider internet richiedono un ciclo di potenza del modem, altri richiedono la registrazione del nuovo indirizzo sul telefono. In aggiunta, se questa connessione WAN è su un segmento di rete con altri sistemi che lo posizionano via ARP, cambiare il MAC da  corrispondere e il vecchio pezzo potrebbe anche rendere la transizione più facile, piuttosto che dover pulire le memorie cache ARP o aggiornare le voci dell'ARP statica.
 
     **Unità di Trasmissione Massima (MTU)** Il campo MTU, mostrato nella
     figura *Configurazione generale della WAN*, può essere lasciato
@@ -165,7 +147,7 @@ sproofing solo quando assolutamente necessario.
     TCP rimanga adeguatamente piccola per connessioni internet
     particolari.
 
-|image7|\ 
+|image7|
 
 Fig. 5: Configurazione generale della WAN
 
@@ -228,9 +210,7 @@ Fig. 7: Impostazioni del nome dell'host DHCP
     alla chiamata su richiesta, e di solito è lasciato vuoto
     (disabilitato)
 
-.. note::  questa opzione richiede anche la disattivazione del
-monitoraggio del gateway, altrimenti la connessione non sarà mai
-inattiva.
+.. note::  questa opzione richiede anche la disattivazione del monitoraggio del gateway, altrimenti la connessione non sarà mai inattiva.
 
 |image10|
 
@@ -274,7 +254,7 @@ impostazioni della WAN sono state inserite
 
 |image12|\ Fig. 9: Configurazione della WAN PPTP
 
-|image13|\ 
+|image13|\
 
 Fig. 10: Opzioni di filtraggio dell'ingresso integrate
 
@@ -306,7 +286,7 @@ Rilasciare/rinnovare la locazione DHCP, o eseguire una “riparazione” o
 “diagnosi” sull'interfaccia di rete quando la configurazione guidata è
 finita.
 
-|image14|\ 
+|image14|\
 
 Fig. 11: Configurazione della LAN.
 
@@ -336,12 +316,9 @@ Fare clic su **ricaricare** (Figura *Ricaricare la WebGUI di |firew4ll|*) e
 la WebGUI applicherà le impostazioni dalla procedura guidata e
 ricaricherà i servizi modificati dalla procedura guidata.
 
-.. tip:: Se l'Indirizzo IP della LAN è stato cambiato dalla
-guida e la guida è stata iniziata dalla lan, regolare l'indirizzo IP del
-computer client di conseguenza dopo aver fatto click su ricaricare.
+.. tip:: Se l'Indirizzo IP della LAN è stato cambiato dalla guida e la guida è stata iniziata dalla lan, regolare l'indirizzo IP del computer client di conseguenza dopo aver fatto click su ricaricare.
 
-Quando viene richiesto di effettuare nuovamente l'accesso, inserire la
-password nuova. il nome utente rimane admin.
+Quando viene richiesto di effettuare nuovamente l'accesso, inserire la password nuova. il nome utente rimane admin.
 
 |image18|
 
@@ -434,13 +411,13 @@ Inoltre, ogni interfaccia può essere abilitata e disattivata a
 piacimento, a condizione che almeno un'interfaccia rimanga abilitata.
 
 .. seealso:: Per informazioni dettagliate sulla configurazione dell'interfaccia, vedere *Tipi e configurazione di interfaccia.*
- 
- La configurazione IPv4 può essere modificata tra *statico, DHCP, PPPoE, PPP, PPTP, L2TP,* o *niente* per       lasciare l'interfaccia senza un indirizzo IPv4. Quando si utilizza *IPv4 statico*, è possibile impostare un indirizzo IPv4, una subnet mask e il gateway IPv4. Se si sceglie una delle altre opzioni, i campi specifici del tipo appaiono per essere configurati.      
- 
- La configurazione IPv6 può essere impostata su *statico*, *DHCP6, SLAAC, Tunnel 6rd, Tunnel 6to4, Track interface,* o *niente* per lasciare l'interfaccia senza un indirizzo l’IPv6. Quando si seleziona *statico*, è possibile mpostare l’indirizzo IPv6, la lunghezza del prefisso e il gateway IPv6.
- 
- Se questa è un'interfaccia wireless, la pagina conterrà molte opzioni aggiuntive per configurare l'interfaccia. Consultare *Wireless* per i dettagli.
- 
+
+La configurazione IPv4 può essere modificata tra *statico, DHCP, PPPoE, PPP, PPTP, L2TP,* o *niente* per       lasciare l'interfaccia senza un indirizzo IPv4. Quando si utilizza *IPv4 statico*, è possibile impostare un indirizzo IPv4, una subnet mask e il gateway IPv4. Se si sceglie una delle altre opzioni, i campi specifici del tipo appaiono per essere configurati.
+
+La configurazione IPv6 può essere impostata su *statico*, *DHCP6, SLAAC, Tunnel 6rd, Tunnel 6to4, Track interface,* o *niente* per lasciare l'interfaccia senza un indirizzo l’IPv6. Quando si seleziona *statico*, è possibile mpostare l’indirizzo IPv6, la lunghezza del prefisso e il gateway IPv6.
+
+Se questa è un'interfaccia wireless, la pagina conterrà molte opzioni aggiuntive per configurare l'interfaccia. Consultare *Wireless* per i dettagli.
+
 .. note::  Selezionando un **Gateway** dall'elenco a discesa, o aggiungendo un nuovo gateway e selezionandolo, |firew4ll| tratterà quella interfaccia come un'interfaccia di tipo WAN per il NAT e le funzioni correlate. Questo non è auspicabile per interfacce interne come LAN o DMZ. I gateway possono ancora essere utilizzati su tali interfacce per percorsi statici e altri scopi *senza* selezionare un gateway qui sulla pagina delle interfacce.
 
 Gestione delle liste nella GUI
@@ -480,9 +457,7 @@ sulle icone trovate in altre parti del firewall. Per esempio, per
 trovare il significato delle icone usate solo nella gestione dei
 certificati, guardare in *Gestione dei certificati*
 
-.. tip:: Per determinare quale azione un'icona eseguirà,
-passare il mouse sopra l'icona con il puntatore e un suggerimento
-mostrerà una breve descrizione dello scopo dell'icona.
+.. tip:: Per determinare quale azione un'icona eseguirà, passare il mouse sopra l'icona con il puntatore e un suggerimento mostrerà una breve descrizione dello scopo dell'icona.
 
 Navigare velocemente nella GUI con le scorciatoie
 '''''''''''''''''''''''''''''''''''''''''''''''''
@@ -576,7 +551,7 @@ host usando il DNS.
     questi server DNS configurati, abilitare la modalità di inoltro nel
     risolutore del DNS o utilizzare l’inoltro del DNS.
 
-.. seealso:: 
+.. seealso::
 
 Per ulteriori informazioni sulla configurazione del risolutore del DNS
 vedere *Risolutore del DNS*
@@ -752,9 +727,7 @@ a discesa del **certificato SSL**. Il certificato predefinito di posta è
 un certificato auto-firmato generatore automaticamente. Questa non è una
 situazione ideale, ma e meglio che non avere affatto crittografia.
 
-.. tip:: Per usare un certificato e una chiave SSL firmati
-esternamente, importarli utilizzando gestione dei certificati, quindi
-selezionare qui il certificato.
+.. tip:: Per usare un certificato e una chiave SSL firmati esternamente, importarli utilizzando gestione dei certificati, quindi selezionare qui il certificato.
 
 il principale inconveniente nell’utilizzare un certificato
 personalizzato auto-generato è la mancanza di garanzia dell'identità
@@ -768,9 +741,8 @@ permanente. Internet Explorer mostrerà una schermata di avvertimento con
 un link per continuare, come Chrome. opera mostrerà una finestra di
 avviso.
 
-.. tip:: Per generare un nuovo certificato auto-firmato per la
-GUI, connettersi utilizzando la consola o ssh e da un prompt della
-shell, eseguire il following comando:
+.. tip:: Per generare un nuovo certificato auto-firmato per la GUI, connettersi utilizzando la consola o ssh e da un prompt della shell, eseguire il following comando::
+  pfSsh.php playback generateguicert
 
 Porta TCP
 ~~~~~~~~~
@@ -783,7 +755,7 @@ web standard per l'uso con inoltro di porta o altri servizi come un
 HAproxy. Per impostazione predefinita la WebGUI utilizza HTTPS sulla
 porta 443 con un reindirizzamento dalla porta 80 per la migliore
 compatibilità e facilitá di configurazione iniziale. Per modificare la
-porta, inserire un nuovo numero di porta nel campo Po\ **rta TCP**.
+porta, inserire un nuovo numero di porta nel campo **Porta TCP**.
 
 Numero Massimo di Processi
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -817,8 +789,7 @@ accettabile. Può essere disabilitato selezionando **disabilitare il
 completamento automatico dell'accesso del configuratore web**. Questo
 controlla solo il completamento automatico del modulo di accesso.
 
-.. seealso:: Attenzione: Pochi browser rispettano questa opzione. Molti di loro offrono comunque la possibilità di salvare le password anche quando il modulo
-specifica che non dovrebbe essere consentito. Questo comportamento deve essere controllato o modificato utilizzando le opzioni del browser
+.. warning:: Pochi browser rispettano questa opzione. Molti di loro offrono comunque la possibilità di salvare le password anche quando il modulo specifica che non dovrebbe essere consentito. Questo comportamento deve essere controllato o modificato utilizzando le opzioni del browser.
 
 Messaggi di accesso alla WebGUI
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -844,11 +815,7 @@ rimuove la regola di blocco automatico. Con questa regola disabilitata,
 è possibile controllare quali indirizzi IP LAN possono accedere alla
 WebGUI utilizzando le regole del firewall.
 
-.. note::  Il ripristino dell'indirizzo IP LAN dalla console di sistema
-ripristina anche la regola anti-blocco. Se l'accesso amministrativo è
-bloccato dopo l'abilitazione, scegliere l'opzione del menù della console
-2, quindi scegliere di impostare l'indirizzo IP LAN, e inserire nello
-stesso esatto indirizzo IP e le informazioni di accompagnamento.
+.. note::  Il ripristino dell'indirizzo IP LAN dalla console di sistema ripristina anche la regola anti-blocco. Se l'accesso amministrativo è bloccato dopo l'abilitazione, scegliere l'opzione del menù della console 2, quindi scegliere di impostare l'indirizzo IP LAN, e inserire nello stesso esatto indirizzo IP e le informazioni di accompagnamento.
 
 Controllo rebind del DNS
 ------------------------
@@ -867,8 +834,7 @@ risposte private ​​(RFC1918) per il nome dell’host. Quando si accede al
 firewall tramite indirizzo IP, questi controlli non vengono eseguiti
 perché l'attacco è rilevante solo quando si usa un hostname.
 
-.. tip:: Invece di disabilitare tutte le protezioni del rebinding del DNS, può essere selettivamente disabilitato per il dominio
-nel risolutore o l’inoltro del DNS. Vedere *Risolutore del DNS e protezione del rebinding del DNS* e *Inoltro del DNS e protezione del rebinding del DNS*.
+.. tip:: Invece di disabilitare tutte le protezioni del rebinding del DNS, può essere selettivamente disabilitato per il dominio nel risolutore o l’inoltro del DNS. Vedere *Risolutore del DNS e protezione del rebinding del DNS* e *Inoltro del DNS e protezione del rebinding del DNS*.
 
 Applicazione del HTTP_REFERER del browser
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -925,7 +891,7 @@ schede separate tendono a preferire il nome dell’host prima
 firewall con molte pagine in schede separare tendono a preferire il nome
 della pagina prima.
 
-SSH 
+SSH
 ---
 
 Il server SSH può essere abilitato per consentire l'accesso da remoto alla console e la gestione dei file. Un utente può connettersi con qualsiasi client standard ssh, come il client ssh della linea di comando OpenSSH, PuTTY, SecureCRT o iTerm. Per accedere all'account admin, si può usare il nome utente amministratore o l'account root, ed entrambi accettano la password di amministratore della WebGUI per il login.
@@ -946,13 +912,13 @@ gli accessi, allora possono anche utilizzare SCP.
 Abilitare SSH
 ~~~~~~~~~~~~~
 
-Per abilitare il servizio SSH, selezionare **Abilitare la shell sicura**. 
+Per abilitare il servizio SSH, selezionare **Abilitare la shell sicura**.
 Dopo aver salvato con questa opzione abilitata, il firewall genererà le chiavi SSH se non sono già presenti e poi avviare il servizio SSH.
 
 Metodo di autenticazione
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-SSH può essere configurato per consentire solo accessi basati su chiavi e non sulla password. Gli accessi basati sulle chiavi sono una pratica molto più sicura, anche se ci vuole più preparazione per configurare. 
+SSH può essere configurato per consentire solo accessi basati su chiavi e non sulla password. Gli accessi basati sulle chiavi sono una pratica molto più sicura, anche se ci vuole più preparazione per configurare.
 
 Per forzare l'autenticazione Basata Sulle chiavi, selezionare **Disabilitare l’accesso con password per la shell sicura**.
 
@@ -968,7 +934,7 @@ Spostare il server SSH su una porta alternativa fornisce un miglioramento trascu
 Le migliori pratiche per SSH
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Se questo firewall è installato in un ambiente che richiede di lasciare l'accesso SSH senza restrizioni da regole firewall, il che è pericoloso, è fortemente raccomandato di spostare il servizio SSH su una porta alternativa casuale e forzare l’autenticazione con la chiave. 
+Se questo firewall è installato in un ambiente che richiede di lasciare l'accesso SSH senza restrizioni da regole firewall, il che è pericoloso, è fortemente raccomandato di spostare il servizio SSH su una porta alternativa casuale e forzare l’autenticazione con la chiave.
 Spostandosi su una porta alternativa si eviterà il fastidio di un registro da molti, ma non tutti, tentativi di login SSH con forza bruta e scansioni casuali. Questo può essere ancora trovato con una scansione della porta, quindi il passaggio all'autenticazione basata su chiave deve sempre essere fatto su ogni server SSH accessibile al pubblico per eliminare la possibilità di attacchi di forza bruta.
 
 Più accessi non riusciti dallo stesso indirizzo IP comporteranno il blocco dell'indirizzo IP che cerca di autenticarsi.
@@ -985,7 +951,7 @@ Terminale seriale
 
 Quando il terminale seriale è impostato, la console è abilitata sulla prima porta seriale. Questa console riceverà i messaggi di avvio del kernel e un menu dopo che il firewall avrà terminato l'avvio. Questo non disabiliterà la tastiera onboard e la console video.
 
-Per connettersi alla console seriale, utilizzare un cavo null modem collegato at a porta seriale o ad un adattatore su un altro PC o dispositivo seriale. 
+Per connettersi alla console seriale, utilizzare un cavo null modem collegato at a porta seriale o ad un adattatore su un altro PC o dispositivo seriale.
 
 .. seealso:: Per ulteriori informazioni sul collegamento a una console seriale, vedere *Collegamento a una console seriale* e *Avviare un client seriale*. Quando si apportano modifiche alla console seriale, il firewall deve essere riavviato prima che abbia effetto.
 
@@ -1092,9 +1058,7 @@ Quando il filtro Disabilitare tutti i pacchetti è impostato, il firewall
 routing. Ciò avviene disabilitando completamente pf, e di conseguenza,
 NAT è disabilitato in quanto è anche gestito da pf.
 
-.. tip:: Per disabilitare solo il NAT, non utilizzare questa
-opzione. Consultare *Disabilitare il NAT in uscita* per ulteriori
-informazioni sul controllo del comportamento NAT in uscita.
+.. tip:: Per disabilitare solo il NAT, non utilizzare questa opzione. Consultare *Disabilitare il NAT in uscita* per ulteriori informazioni sul controllo del comportamento NAT in uscita.
 
 Disabilitare la normalizzazione nel firewall
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1230,9 +1194,9 @@ firewall ricorda il percorso attraverso cui la connessione è stata
 stabilita e instrada il traffico di risposta al gateway per
 quell'interfaccia.
 
-.. tip:: Le interfacce di tipo WAN sono interfacce che hanno un gateway impostato sulla configurazione del menu di **interfacce**, o interfacce che hanno un gateway dinamico come DHCP, PPPoE, o con interfacce OpenVPN, GIF o GRE assegnate. 
+.. tip:: Le interfacce di tipo WAN sono interfacce che hanno un gateway impostato sulla configurazione del menu di **interfacce**, o interfacce che hanno un gateway dinamico come DHCP, PPPoE, o con interfacce OpenVPN, GIF o GRE assegnate.
 
-In situazioni come il bridging questo comportamento è indesiderabile se l'indirizzo IP del gateway di WAN è diverso  dall'indirizzo IP del gateway degli host dietro l'interfaccia con il ponte. La disattivazione di reply-to permetterà ai client di comunicare con il gateway corretto. 
+In situazioni come il bridging questo comportamento è indesiderabile se l'indirizzo IP del gateway di WAN è diverso  dall'indirizzo IP del gateway degli host dietro l'interfaccia con il ponte. La disattivazione di reply-to permetterà ai client di comunicare con il gateway corretto.
 
 Un altro caso che ha problemi con reply-to comporta l'instradamento
 statico as altri sistemi in una più grande sottorete WAN. Disabiltare
@@ -1381,40 +1345,18 @@ un collegamento in quello stato verrà trattenuto nella tabella di stato.
 
 .. seealso:: Le descrizioni delle seguenti opzioni si riferiscono a condizioni di stato del firewall come descritto in *Sti di interpretazione*.
 
-    **Prima TCP** Il primo pacchetto di una connessione TCP.
-
-    **Apertura TCP** Lo stato prima che l'host di destinazione abbia
-    risposto (ad es SYN\_SENT: CHIUSO).
-
-    **Stabilita TCP** La connessione TCP stabilita in cui l'handshake a
-    tre vie è stata completata.
-
-    **Chiusura TCP** Un lato ha inviato un pacchetto TCP FIN.
-
-    **Attesa del FIN TCP** Entrambe le parti si sono scambiate pacchetti
-    FIN e la connessione verrà arrestata. Alcuni server possono
-    continuare a inviare pacchetti durante questo tempo.
-
-    **Chiusura TCP** Un lato ha inviato un pacchetto di ripristino della
-    connessione (TCP RST).
-
-    **Prima UDP** Il primo pacchetto UDP di una connessione è stato
-    ricevuto.
-
-    **UDP singolo** L'host di origine ha inviato un singolo pacchetto ma
-    la destinazione non ha risposto (es
-
-    SINGLE: NO\_TRAFFIC).
-
-    **UDP multipla** Entrambe le parti hanno inviato pacchetti.
-
-    **Prima ICMP** Un pacchetto ICMP è stato ricevuto.
-
-    **Errore ICMP** Un errore ICMP è stato ricevuto in risposta a un
-    pacchetto ICMP.
-
-    **Prima altro, Singolo altro, Multiplo altro** Come per UDP, ma per
-    altri protocolli.
+**Prima TCP** Il primo pacchetto di una connessione TCP.
+**Apertura TCP** Lo stato prima che l'host di destinazione abbia risposto (ad es: SYN_SENT: CHIUSO).
+**Stabilita TCP** La connessione TCP stabilita in cui l'handshake a tre vie è stata completata.
+**Chiusura TCP** Un lato ha inviato un pacchetto TCP FIN.
+**Attesa del FIN TCP** Entrambe le parti si sono scambiate pacchetti FIN e la connessione verrà arrestata. Alcuni server possono continuare a inviare pacchetti durante questo tempo.
+**Chiusura TCP** Un lato ha inviato un pacchetto di ripristino della connessione (TCP RST).
+**Prima UDP** Il primo pacchetto UDP di una connessione è stato ricevuto.
+**UDP singolo** L'host di origine ha inviato un singolo pacchetto ma  la destinazione non ha risposto (es: SINGLE: NO_TRAFFIC).
+**UDP multipla** Entrambe le parti hanno inviato pacchetti.
+**Prima ICMP** Un pacchetto ICMP è stato ricevuto.
+**Errore ICMP** Un errore ICMP è stato ricevuto in risposta a un pacchetto ICMP.
+**Prima altro, Singolo altro, Multiplo altro** Come per UDP, ma per altri protocolli.
 
 Scheda per le reti
 ==================
@@ -1484,7 +1426,7 @@ Se selezionata, questa opzione disabilita lo scaricamento del checksum dell’ha
 
 .. note::  Quando lo scaricamento del checksum è attivato, la cattura di un pacchetto vedrà vuoti (tutti zero) o checksum di pacchetti segnalati come errati. Questi sono normali quando la manipolazione del checksum avviene nell’hardware.
 
-Lo scaricamento del checksum viene interrotto in alcuni hardware, in particolare le schede Realtek e le schede virtualizzate/emulate come quelle su Xen/KVM. I sintomi tipici di scaricamento del checksum interrotto includono pacchetti corrotti e scarse prestazioni di throughput. 
+Lo scaricamento del checksum viene interrotto in alcuni hardware, in particolare le schede Realtek e le schede virtualizzate/emulate come quelle su Xen/KVM. I sintomi tipici di scaricamento del checksum interrotto includono pacchetti corrotti e scarse prestazioni di throughput.
 
 .. tip:: In casi di virtualizzazione come Xen/KVM può essere necessario disattivare lo scaricamento del checksum sull'host, nonché sulla VM. Se le prestazioni sono ancora scarse o si hanno errori su questi tipi di macchine virtuali, cambiare il tipo di scheda di rete, se possibile.
 
@@ -1503,7 +1445,7 @@ compito è già stato eseguito in altre parti della rete, rompendo così il
 principio end-to-end modificando i pacchetti che non sono stati
 originati su questa struttura.
 
-.. seealso:: Attenzione: Questa opzione non è auspicabile per i router e i firewall, ma può giovare alle postazioni di lavoro e agli elettrodomestici. E' disabilitato per impostazione predefinita, e dovrebbe rimanere disabilitato a meno che il firewall non agisca principalmente o esclusivamente in un ruolo di appliance/endpoint.
+.. warning:: Questa opzione non è auspicabile per i router e i firewall, ma può giovare alle postazioni di lavoro e agli elettrodomestici. E' disabilitato per impostazione predefinita, e dovrebbe rimanere disabilitato a meno che il firewall non agisca principalmente o esclusivamente in un ruolo di appliance/endpoint.
 
 
 Hardware Large Receive Offloading
@@ -1628,7 +1570,7 @@ raggiungere sempre lo stesso server fino a quando sta navigando in un
 sito. Questo comportamento potrebbe non essere richiesto a seconda del
 contenuto del server.
 
-.. tip:: Per un maggiore controllo su come le connessioni utente sono associate con i server in uno scenario di bilanciamento del carico, prendere in considerazione l'utilizzo del pacchetto HAProxy invece del bilanciatore di carico relayd integrato. HAProxy supporta diversi metodi per garantire che gli utenti siano correttamente indirizzati verso un server di backend. 
+.. tip:: Per un maggiore controllo su come le connessioni utente sono associate con i server in uno scenario di bilanciamento del carico, prendere in considerazione l'utilizzo del pacchetto HAProxy invece del bilanciatore di carico relayd integrato. HAProxy supporta diversi metodi per garantire che gli utenti siano correttamente indirizzati verso un server di backend.
 
 Il **Timeout di tracciamento della sorgente** per connessioni
 appiccicose controlla per quanto tempo l'associazione appiccicosa sarà
@@ -1734,7 +1676,7 @@ Hardware termico e crittografico
 --------------------------------
 
 Hardware crittografico
-~~~~~~~~~~~~~~~~~~~~~~      
+~~~~~~~~~~~~~~~~~~~~~~
 
 Ci sono alcune opzioni disponibili per accelerare le operazioni
 crittografiche tramite hardware. Alcune sono incorporate nel kernel,
@@ -1790,10 +1732,7 @@ Se il firewall non ha un chip sensore termico supportato, questa opzione
 non avrà alcun effetto. Per scaricare il modulo selezionato, impostare
 questa opzione su Nessuno/ACPI e quindi riavviare il sistema.
 
-.. note::  I moduli coretemp e amdtemp riportano dati termici
-direttamente dal core della CPU. Questo può o non può essere indicativo
-della temperatura in altre parti del sistema. Le temperature del case
-possono variare notevolmente dalle temperature sulla matrice CPU.
+.. note::  I moduli coretemp e amdtemp riportano dati termici direttamente dal core della CPU. Questo può o non può essere indicativo della temperatura in altre parti del sistema. Le temperature del case possono variare notevolmente dalle temperature sulla matrice CPU.
 
 Pianificazioni
 ~~~~~~~~~~~~~~
@@ -1839,14 +1778,9 @@ predefinito, il traffico corrisponderà invece a una regola diversa.
 Questo è utile se il traffico deve sempre e solo utilizzare una
 specifica WAN e non scorrere mai su qualsiasi altra rete WAN.
 
-.. tip:: Quando si utilizza questa opzione, creare una regola
-di rifiuto o di blocco in accordo con la politica della regola di
-routing con gli stessi criteri di corrispondenza. Questo consentirà di
-evitare il traffico da altre regole potenzialmente corrispondenti al di
-sotto di essa nel set di regole e di prendere un percorso non
-intenzionale.
+.. tip:: Quando si utilizza questa opzione, creare una regola di rifiuto o di blocco in accordo con la politica della regola di routing con gli stessi criteri di corrispondenza. Questo consentirà di evitare il traffico da altre regole potenzialmente corrispondenti al di sotto di essa nel set di regole e di prendere un percorso non intenzionale.
 
-Impostazioni del disco RAM 
+Impostazioni del disco RAM
 --------------------------
 
 Le directory /tmp e /var sono usate per scrivere file e contenere dati
@@ -1893,7 +1827,7 @@ periodicamente se configurato.
     meinri sono i dati che verranno persi in tal caso, ma backup più
     frequenti scrivono di più sul disco.
 
-.. warning:: 
+.. warning::
 	Attenzione: A parte i punti di cui sopra, ci sono diversi elementi per cui essere cauti quando si sceglie se utilizzare o meno l'opzione del disco di RAM. Usato impropriamente, questa opzione può portare alla perdita di dati o altri guasti imprevisti.
 	I log di sistema sono mantenuti in /var ma non sono sottoposti a backup come i database RRD e DHCP. I log verranno reimpostati nuovamente ad ogni riavvio. Per i log persistenti, utilizzare syslog da remoto per inviare i log a un altro dispositivo in rete.
 	I pacchetti potrebbero non tener conto dell'uso dei dischi della RAM e potrebbero non funzionare correttamente al momento dell'avvio o in altri modi. Provare ogni pacchetto, anche se non funziona immediatamente dopo il riavvio.
@@ -1922,10 +1856,7 @@ sviluppatore o di un rappresentante del supporto, possono decidere di
 modificare o aggiungere i valori in questa pagina in modo che essi siano
 impostati all'avvio del sistema.
 
-.. note::  I parametri sintonizzabili in questa pagina sono diversi dai
-Parametri sintonizzabili del caricatore. I Parametri sintonizzabili del
-caricatore sono valori di sola lettura dopo l'avvio del sistema, e
-questi valori devono essere impostati in /boot/loader.conf.local.
+.. note::  I parametri sintonizzabili in questa pagina sono diversi dai Parametri sintonizzabili del caricatore. I Parametri sintonizzabili del caricatore sono valori di sola lettura dopo l'avvio del sistema, e questi valori devono essere impostati in /boot/loader.conf.local.
 
 Creazione e modifica dei parametri sintonizzabili
 -------------------------------------------------
@@ -1942,9 +1873,7 @@ campi sono disponibili:
 
     **Valore** Il valore a cui verrà impostato il sintonizzabile.
 
-.. note::  Alcuni valori hanno requisiti di formattazione. A causa del
-gran numero di OID sysctl, la GUI non convalida che il dato valore
-funzionerà per il sintonizzabile prescelto.
+.. note::  Alcuni valori hanno requisiti di formattazione. A causa del gran numero di OID sysctl, la GUI non convalida che il dato valore funzionerà per il sintonizzabile prescelto.
 
     **Descrizione** Una descrizione facoltativa per riferimento.
 
@@ -2116,8 +2045,8 @@ funzioni su questo script:
    consente la regola anti-blocco nel caso in cui l'utente è stato
    bloccato fuori dalla GUI.
 
-   1. .. rubric:: Reimpostazione della password del configuratore web
-         :name: reimpostazione-della-password-del-configuratore-web
+Reimpostazione della password del configuratore web
+---------------------------------------------------
 
 Questa opzione di menu richiama uno script per reimpostare la password e
 lo stato di account dell’admin. La password viene reimpostata al valore
@@ -2136,7 +2065,6 @@ recuperare l'ingresso al firewall:
 -  Se l'account dell'amministratore è disattivato, lo script riattiva
    l'account.
 
--  
 
 Ripristino delle impostazioni di fabbrica
 =========================================
@@ -2145,7 +2073,7 @@ Questa opzione del menu ripristina la configurazione del sistema alle
 impostazioni di fabbrica. Tenterà inoltre di rimuovere tutti i pacchetti
 installati.
 
-.. note::  
+.. note::
 	Questa azione non apportare altre modifiche al file system. Se i file di sistema sono stati danneggiati o alterati in modo indesiderato, la pratica migliore è quella di fare una copia di backup, e reinstallare dal supporto di installazione.
 
 Questa azione è disponibile anche nella WebGUI in **Diagnostica>Impostazioni di fabbrica**.
@@ -2174,16 +2102,16 @@ pagina, a seconda del supporto hardware:
     firewall non può recuperare automaticamente da questo stato,
     l'accesso alla console è necessario per utilizzare la modalità
     utente singolo e riavviare il firewall.
-	
+
 .. warning::
 	Attenzione: In modalità utente singolo, le impostazioni predefinite filesystem di root di sola lettura e altri file system non sono montati. Il firewall inoltre non dispone di una connessione di rete attiva. Questa opzione deve essere utilizzata solo sotto la guida di un rappresentante del supporto o un utente di FreeBSD con conoscenze avanzate.
-    
-	**Riavviare ed eseguire un controllo del filesystem** Questo riavvia
+
+**Riavviare ed eseguire un controllo del filesystem** Questo riavvia
     il firewall e forze un controllo del filesystem utilizzando fsck, si
     esegue per cinque volte. Questa operazione in genere può correggere
-    i problemi con il file system sul firewall. 
+    i problemi con il file system sul firewall.
 
-.. note:: 
+.. note::
 	La modalità utente singolo e le opzioni di controllo del filesystem richiedono una lettera maiuscola da inserire per confermare l'azione. Ciò è necessario per evitare di attivare le opzioni accidentalmente. Le opzioni di riavvio e reroot possono essere inserite in maiuscolo o minuscolo.
 
 Questa azione è disponibile anche nella WebGUI in **Diagnostica>Riavvio**
@@ -2215,7 +2143,7 @@ Questa scelta del menù avvia una linea di comando nella shell. Una shell
 è molto utile e molto potente, ma ha anche il potenziale per essere
 molto pericolosa.
 
-.. note::  
+.. note::
 	La maggior parte degli utenti |firew4ll| non hanno bisogno di usare la shell, o anche di sapere che esiste.
 
 Le attività di configurazione complesse possono richiedere l'impiego
@@ -2242,7 +2170,7 @@ e ricevuto. Può aiutare le sessioni di pinpoint che attualmente
 utilizzano grandi quantità di larghezza di banda, e può anche aiutare a
 diagnosticare altri problemi di connessione di rete.
 
-	.. seealso:: 
+	.. seealso::
 		Vedere *Guardare gli stati con pfTop* per ulteriori informazioni su come utilizzare pfTop.
 
 Filtri Log
@@ -2254,7 +2182,7 @@ contengono molte più informazioni per linea della vista del registro
 nella WebGUI (**Stato> Registri di sistema, scheda Firewall**), ma non
 tutte queste informazioni sono facili da leggere.
 
-	.. tip:: 
+	.. tip::
 		Per una vista da console semplificata dei registri in tempo reale con dettagli bassi, utilizzare questo comando shell:
 
 Riavviare webConfigurator
@@ -2334,8 +2262,7 @@ enableallowallwan
 Questo script aggiunge il consenso a tutte le regole per IPv4 e IPv6 per
 l'interfaccia WAN.
 
-.. warning::
-	Attenzione: Essere estremamente attenti con questa opzione, è destinata ad essere una misura temporanea per ottenere l'accesso ai servizi sull'interfaccia WAN del firewall in situazioni in cui la rete LAN non è utilizzabile. Una volta che le regole di accesso corrette sono messe in atto, rimuovere le regole aggiunte da questo script.
+.. warning:: Essere estremamente attenti con questa opzione, è destinata ad essere una misura temporanea per ottenere l'accesso ai servizi sull'interfaccia WAN del firewall in situazioni in cui la rete LAN non è utilizzabile. Una volta che le regole di accesso corrette sono messe in atto, rimuovere le regole aggiunte da questo script.
 
 enablesshd
 ~~~~~~~~~~
@@ -2374,8 +2301,7 @@ Questo script complesso sincronizza il PHP e altre fonti di script con i
 file dal repository github di |firew4ll|. E’ più utile sullo snapshot di
 sviluppo per raccogliere le modifiche dall’impegno più recente.
 
-.. warning::
-	Avvertimento: Questo script può essere pericoloso da utilizzare in altre circostanze. utilizzare questo solo sotto la direzione di un rappresentante dello sviluppatore o un supporto tecnico.
+.. warning:: Questo script può essere pericoloso da utilizzare in altre circostanze. utilizzare questo solo sotto la direzione di un rappresentante dello sviluppatore o un supporto tecnico.
 
 Se lo script viene eseguito senza alcun parametro stampa un messaggio di
 aiuto che illustra il suo utilizzo. Maggiori informazioni possono essere
@@ -2465,7 +2391,7 @@ istanze, come ad esempio le voci OpenVPN o Captive Portal.
 Esempi:
 
 -  Fermare miniupnpd:
-	``pfSsh.php playback svc stop miniupnpdUU
+	``pfSsh.php playback svc stop miniupnpd``
 
 -  Riavviare il client OpenVPN con ID 2:
 	``pfSsh.php playback svc restart openvpn client 2``
@@ -2904,7 +2830,7 @@ sull'interfaccia LAN |firew4ll| e l'indirizzo IP per l'interfaccia LAN è
 192.168.1.1, l'indirizzo del gateway sui PC client deve essere impostato
 su 192.168.1.1.
 
-Problemi Regole Firewall 
+Problemi Regole Firewall
 ------------------------
 
 Se la regola di default "LAN verso tutti" è stata modificata o rimossa
@@ -2979,7 +2905,7 @@ manualmente il file di configurazione, anche se questo non è richiesto
 nella stragrande maggioranza delle distribuzioni. Alcune di queste
 opzioni sono coperte in altre parti di questa guida.
 
-.. warning:: 
+.. warning::
 	Attenzione: Anche per gli amministratori esperti è facile modificare erroneamente il file di configurazione. Tenere sempre i backup ed essere consapevoli che la rottura della configurazione si tradurrà in conseguenze indesiderate.
 
 Il metodo più semplice e sicuro per modificare il file di configurazione
@@ -3015,7 +2941,7 @@ bypassare misure di sicurezza.
 Prima di intraprendere qualsiasi di questi passaggi, provare le
 credenziali predefinite:
 
-    **Nome utente**: Admin
+    **Nome utente**: admin
 
     **Parola d'ordine**: firew4ll
 
@@ -3146,7 +3072,7 @@ Per disabilitare il firewall, collegarsi alla console fisica o SSH ed
 utilizzare l'opzione 8 per avviare una shell e digitare:
 
 	``# pfctl -d``
-	
+
 Questo comando disabiliterà il firewall, comprese tutte le funzioni NAT.
 L'accesso alla WebGUI è ora possibile da qualsiasi luogo, almeno per
 pochi minuti o fino a quando un processo sul firewall conceda allo
@@ -3226,13 +3152,13 @@ Se questo non funziona, provare questo comando:
 
 o:
 
-	``# squid -k shutdown
+	``# squid -k shutdown``
 
 Una volta che il processo squid è completamente terminato, utilizzare
 l'opzione del menu della console 11 per riavviare il processo WebGUI, e
 quindi tentare di accedere nuovamente alla WebGUI.
 
-	.. note::  
+	.. note::
 		Lavorare rapidamente o ripetere il comando di spegnimento, perché lo squid può essere riavviato automaticamente dai suoi script di monitoraggio interni a seconda del metodo utilizzato per fermare il processo
 
 La maggior parte della configurazione di |firew4ll| viene eseguita usando
@@ -3270,8 +3196,8 @@ disabilitato utilizzando la console:
    attivato. Questo può essere qualsiasi intervallo all'interno del data
    sottorete.
 
-	.. note::  
-		Quando si assegna un nuovo indirizzo IP per la LAN, non può essere nella stessa sottorete del WAN o qualsiasi altra interfaccia attiva. Se ci sono altri dispositivi già presenti sulla sottorete LAN, può anche non essere impostato per lo stesso indirizzo IP di un host esistente.
+.. note::
+  Quando si assegna un nuovo indirizzo IP per la LAN, non può essere nella stessa sottorete del WAN o qualsiasi altra interfaccia attiva. Se ci sono altri dispositivi già presenti sulla sottorete LAN, può anche non essere impostato per lo stesso indirizzo IP di un host esistente.
 
 Se il server DHCP è disabilitato, i computer client su LAN deve avere un
 indirizzo IP nella sottorete |firew4ll| della LAN configurato in modo
