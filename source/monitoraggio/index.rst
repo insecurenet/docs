@@ -87,12 +87,12 @@ I campi di filtraggio variano a seconda della scheda di registro, ma possono inc
 
 La scheda del registro di Firewall ha un diverso set di campi di filtraggio:
 
-	**Indirizzo IP di sorgente** L'indirizzo IP di sorgente elencato nella voce di registro. 
-	**Indirizzo IP di destinazione** L’indirizzo IP di destinazione elencato nella voce di registro. 
+	**Indirizzo IP di sorgente** L'indirizzo IP di sorgente elencato nella voce di registro.
+	**Indirizzo IP di destinazione** L’indirizzo IP di destinazione elencato nella voce di registro.
 	**Pass** Seleziona questa opzione per abbinare solo le voci di registro che hanno superato il traffico.
 	**Block** Selezionare questa opzione per abbinare solo le voci di registro che hanno bloccato il traffico.
 	**Interfaccia** Il nome descrittivo facile da utilizzare dell'interfaccia per la corrispondenza (ad esempio WAN, LAN, OPT2, DMZ)
-	**Porta sorgente** La porta sorgente della voce di registro da abbinare, se il protocollo utilizza le porte. 
+	**Porta sorgente** La porta sorgente della voce di registro da abbinare, se il protocollo utilizza le porte.
 	**Porta di destinazione** La porta di destinazione della voce di registro da corrispondere, se il protocollo utilizza le porte
 	**Protocollo** Il protocollo da abbinare, come TCP, UDP o ICMP.
 	**Flag di protocollo** Per TCP, questo campo corrisponde ai flag TCP nella voce di registro, ad esempio SA (SYN+ACK) o FA (FIN + ACK)
@@ -146,7 +146,7 @@ scheda **Impostazioni** includono:
     registri conterranno in media circa 2500 voci, ma potrebbero essere
     significativamente più o meno a seconda delle dimensioni delle
     singole voci di registro.
-	
+
 	.. warning::
 		la nuova dimensione del registro non avrà effetto fino a quando un registro non viene eliminato o reinizializzato. Questo può essere fatto individualmente da ogni scheda di registro o può essere fatto per tutti i registri utilizzando il |image20| Reset
 
@@ -237,7 +237,7 @@ scheda **Impostazioni** includono:
     dimensioni del file di registro e può anche essere utilizzato per
     cancellare informazioni irrilevanti/vecchie dai registri, se
     necessario.
-	
+
 	.. warning::
 		Reimpostare i file di registro non salverà le altre opzioni sulla pagina. Se le opzioni di questa pagina sono state modificate, fare clic su Salvare prima di tentare di reimpostare i file di registro.
 
@@ -325,10 +325,10 @@ Per avviare la registrazione in remoto:
     Un server syslog è in genere un server direttamente raggiungibile
     dal firewall |firew4ll| su un'interfaccia locale. La registrazione può
     anche essere inviata a un server attraverso una VPN.
-	
+
 	.. warning::
 		Non inviare i dati di registro direttamente attraverso qualsiasi connessione WAN o link sito-a-sito non crittografato, in quanto è testo semplice e potrebbe contenere informazioni sensibili.
-	
+
     **Contenuti di syslog da remoto** Le opzioni in questa sezione
     controllano quali messaggi di log verranno inviati al server di log
     remoto.
@@ -550,7 +550,7 @@ noto anche come ritardo o latenza, dalla quantità di perdita di
 pacchetti e dallo stato (online, avviso, down o raccolta di dati). I
 widget vengono aggiornati ogni pochi secondi tramite AJAX.
 
-Stato di Gmirror 
+Stato di Gmirror
 -----------------
 
 Questo widget mostrerà lo stato di un array del RAID del gmirror sul
@@ -2159,7 +2159,7 @@ seconda delle funzionalità abilitate:
    al suo traffico.
 
 -  **snort2c** Una tabella dinamica contenente i trasgressori bloccati
-   da pacchetti IDS / IPS, Snort e Suricata.
+   da pacchetti IDS/IPS, Snort e Suricata.
 
 -  **virusprot** Una tabella dinamica contenente indirizzi che hanno
    superato i limiti definiti sulle regole del firewall.

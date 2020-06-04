@@ -169,9 +169,9 @@ Diversi adattatori Intel hanno una restrizione di licenza con un avviso
 che appare nel registro di avvio. I driver *ipw(4)*, *iwi(4)* e *wpi(4)*
 dispongono di file di licenza che devono essere letti e concordati.
 Queste licenze sono registrate sul firewall in */usr/share/doc/legal
-/intel\_ipw /LICENSE*, / *usr/share/doc/legal/intel\_iwi/LICENSE*, e
+/intel_ipw /LICENSE*, */usr/share/doc/legal/intel_iwi/LICENSE*, e
 
-*/usr/share/doc/legal/intel\_wpi/LICENSE* rispettivamente. Per accettare
+*/usr/share/doc/legal/intel_wpi/LICENSE* rispettivamente. Per accettare
 la licenza, modificare */boot/loader.conf.locale* e aggiungere una riga
 per indicare la conferma della licenza, ad esempio:
 

@@ -11,7 +11,7 @@ I requisiti minimi per |firew4ll| 0.1-RELEASE-p3 sono:
 -  RAM 512 MB o più
 -  Unità disco da 4 GB o superiore (SSD, HDD, ecc.)
 -  Una o più schede di interfaccia di rete compatibili
--  Unità USB di avvio o CD / DVD-ROM per l'installazione iniziale
+-  Unità USB di avvio o CD/DVD-ROM per l'installazione iniziale
 
 .. note:: I requisiti minimi non sono adatti a tutti gli ambienti; vedere la *Guida al dimensionamento dell'hardware* per i dettagli
 
@@ -186,7 +186,7 @@ Tabella 3: Velocità effettiva VPN per modello hardware, tutti i valori
 sono in Mbit/s
 
 +------------+--------------------------+-------------------------+
-|  Modello   | OpenVPN / AES-128+SHA1   | IPsec / IKEv2+AES-GCM   |
+|  Modello   | OpenVPN/AES-128+SHA1     | IPsec/IKEv2+AES-GCM     |
 +============+==========================+=========================+
 |            | TCP 1400B                | TCP 1400B               |
 +------------+--------------------------+-------------------------+
@@ -224,7 +224,7 @@ Squid
 -----
 
 Squid è un server proxy HTTP con memorizzazione nella cache disponibile
-come pacchetto |firew4ll|. Le prestazioni di I / O del disco sono una
+come pacchetto |firew4ll|. Le prestazioni di I/O del disco sono una
 considerazione importante per gli utenti di Squid poiché determinano le
 prestazioni della cache. Al contrario, la velocità del disco è in gran
 parte irrilevante per la maggior parte dei firewall |firew4ll| poiché
@@ -334,12 +334,12 @@ FreeBSD e sono quindi compatibili con i firewall |firew4ll|. Tuttavia, non
 tutte le schede di rete sono uguali. L'hardware può variare notevolmente
 in termini di qualità da un produttore all'altro.
 
-Raccomandiamo le schede NIC Intel PRO / 1000 1Gb e PRO / 10GbE 10Gb
+Raccomandiamo le schede NIC Intel PRO/1000 1Gb e PRO/10GbE 10Gb
 perché hanno un solido supporto per i driver in FreeBSD e funzionano
 molto bene. La maggior parte dell'hardware venduto nel negozio |firew4ll|
 contiene schede di rete Intel.
 
-Delle varie altre schede PCIe / PCI supportate da FreeBSD, alcune
+Delle varie altre schede PCIe/PCI supportate da FreeBSD, alcune
 funzionano bene. Altre potrebbero avere problemi come le VLAN che non
 funzionano correttamente, non essere in grado di impostare velocità o
 duplex o avere prestazioni scadenti. In alcuni casi, FreeBSD può

@@ -170,7 +170,7 @@ avanzate come le restrizioni dell'ora del giorno.
 
 Ulteriori informazioni sui criteri di accesso remoto sono disponibili
 nella documentazione di Microsoft all'indirizzo
-http://technet.microsoft.com / it-it/library/cc785236% 28WS.10% 29.aspx.
+http://technet.microsoft.com/it-it/library/cc785236% 28WS.10% 29.aspx.
 
 Aggiunta di una politica di rete
 --------------------------------

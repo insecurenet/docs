@@ -58,7 +58,7 @@ sono installati:
 
 Fig. 2: Schermata pacchetto post-installazione
 
-|image8|\ 
+|image8|\
 
 Fig. 3: Elenco dei pacchetti installati
 
@@ -89,7 +89,7 @@ Una breve introduzione ai proxy Web e al resoconto: Squid, SquidGuard e Lightsqu
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Questa sezione non intende essere una procedura formale, dettagliata e completa per l'utilizzo di Squid e altri software proxy Web correlati, ma una guida rapida per metterli in funzione e coprire le domande più frequenti sulle loro capacità . Questa sezione tratta Squid per la memorizzazione nella cache di pagine Web e attività correlate, SquidGuard per il filtro e il controllo dell'accesso al contenuto Web e Lightsquid per la segnalazione delle attività degli utenti in base ai
-registri di accesso a Squid. 
+registri di accesso a Squid.
 
 Questa discussione presuppone che il firewall abbia una semplice LAN singola e una singola configurazione WAN. Se si verificano problemi durante questa configurazione, visitare la Wiki della documentazione di |firew4ll| e il Forum di |firew4ll| per ulteriore guida e assistenza.
 
@@ -311,7 +311,7 @@ Se nel report non sono presenti dati, verificare che **Abilitare la
 registrazione** sia impostato su Squid e che il traffico degli utenti
 stia attraversando il proxy come previsto.
 
-Proxy trasparenti e HTTP / HTTPS
+Proxy trasparenti e HTTP/HTTPS
 ================================
 
 Quando si utilizza un proxy, è possibile intercettare il traffico

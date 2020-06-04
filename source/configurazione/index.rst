@@ -996,7 +996,7 @@ essere riavviato prima che abbia effetto.
 
 .. note::  Mentre questo fermerà l'accidentale pressione di tasti e terrà fuori gli utenti occasionali, questo non è affatto un metodo di sicurezza perfetto. Una persona informata con accesso fisico può ancora ripristinare le password (vedere *Password dimenticata con una console bloccata*). Considerare altri metodi fisici di sicurezza se la sicurezza della console è un requisito.
 
-Scheda Firewall / NAT
+Scheda Firewall/NAT
 =====================
 
 Opzioni avanzate del firewall
@@ -1105,10 +1105,10 @@ dall'inizio adattivo, i valori di timeout vengono scalati linearmente
 con il fattore nella base di al numero di stati utilizzati tra i
 conteggi di stato inizio e fine. Il fattore di aggiustamento del timeout
 è calcolato come segue: (Numero di stati fino al raggiungimento del
-valore finale adattivo) / (Differenza tra i talori di fine adattivo e di
+valore finale adattivo)/(Differenza tra i talori di fine adattivo e di
 inizio adattivo).
 
-.. note::  Per esempio, si consideri un firewall con **inizio adattivo** impostato su 600000, **fine adattiva** impostata su 1200000 e **stati massimi del firewall** impostati su 1000000. In questa situazione, quando la dimensione della tabella di stato raggiunge 900.000 voci il timeout di stato sarà scalato al 50% del suo valore normale. (1.200.000 - 900.000) / (1.200.000 - 600.000) = 300.000 / 600.000 = 0.50, 50%. Continuando l'esempio, quando la tabella di stato è piena a 1.000.000 di stati i valori di timeout saranno ridotti a un terzo dei loro valori originali.
+.. note::  Per esempio, si consideri un firewall con **inizio adattivo** impostato su 600000, **fine adattiva** impostata su 1200000 e **stati massimi del firewall** impostati su 1000000. In questa situazione, quando la dimensione della tabella di stato raggiunge 900.000 voci il timeout di stato sarà scalato al 50% del suo valore normale. (1.200.000 - 900.000)/(1.200.000 - 600.000) = 300.000/600.000 = 0.50, 50%. Continuando l'esempio, quando la tabella di stato è piena a 1.000.000 di stati i valori di timeout saranno ridotti a un terzo dei loro valori originali.
 
 Stati massimi del firewall
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1799,7 +1799,7 @@ vengono salvati durante un corretto spegnimento o riavvio, e anche
 periodicamente se configurato.
 
     **Utilizzare i dischi RAM** Quando è selezionata, un disco di
-    memoria viene creato all'avvio per / tmp e / var / e la struttura
+    memoria viene creato all'avvio per /tmp e /var e la struttura
     associata viene inizializzata. Quando questa impostazione è
     attivata, si richiede un riavvio e viene forzato il salvataggio.
 
@@ -1807,7 +1807,7 @@ periodicamente se configurato.
     /tmp, in MiB. Il valore predefinito è 40, ma deve essere impostato
     su un valore più alto se non c’è RAM disponibile.
 
-    **Dimensioni del disco di RAM / Var** La dimensione del disco RAM
+    **Dimensioni del disco di RAM /var** La dimensione del disco RAM
     /var, in MiB. Il valore di default è 60, ma dovrebbe essere
     impostato con un valore molto più alto, soprattutto se verranno
     utilizzati i pacchetti. 512-1024 è un punto di partenza migliore, a
@@ -1978,7 +1978,7 @@ Growl
 Growl fornisce un metodo discreto di fornire notifiche sul desktop.
 Queste notifiche pop-up compaiono sul desktop e poi si nascondono o
 svaniscono. Growl è disponibile in App Store per Mac OSX, ed è
-accessibile s Windows e anche su FreeBSD / Linux.
+accessibile s Windows e anche su FreeBSD/Linux.
 
     **Disattivare le notigiche Growl** Se selezionata, il firewall non
     invierà notifiche Growl.
@@ -2233,7 +2233,7 @@ Questi script disabilitano e abilitano le funzioni di alta disponibilità
 CARP, e disattiverà gli indirizzi virtuali IP di tipo CARP. Questa
 azione non persiste dopo il riavvio.
 
-disablecarpmaint / enablecarpmaint
+disablecarpmaint/enablecarpmaint
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Questi script attivano e disattivano la modalità di manutenzione CARP,
@@ -2730,7 +2730,7 @@ di stato supplementare che indica se la connessione PPP è attiva. Se è
 down, provare a premere il pulsante\ |image47|\ **Connettere**. Se
 questo non funziona, effettuare un doppio controllo di tutte le
 impostazioni di interfaccia su **interfacce> WAN**, controllare o
-riavviare il provider CPE (modem via cavo / DSL, ecc), e, forse,
+riavviare il provider CPE (modem via cavo/DSL, ecc), e, forse,
 consultare il provider di servizi Internet per un aiuto per quanto
 riguarda le impostazioni e lo stato del circuito.
 

@@ -107,7 +107,7 @@ Configurare un virtual server per gestire le connessioni client:
     indirizzi IP su cui questo virtual server può accettare
     connessioni.
 
-	.. note:: 
+	.. note::
 		in modalità TCP, gli indirizzi IP qui specificati non sono associati a livello del sistema operativo, il che significa che relayd come demone non è associato e in ascolto direttamente su queste porte.
 
 **Porta** Questa è la porta su cui il virtual server accetterà le
@@ -150,8 +150,8 @@ a seconda di cosa farà questo relay.
    -  Fare click su **Applicare le modifiche**
 
 .. warning::
-	se tutti i membri del Pool di virtual serveri e i membri del pool di fall-back sono inattivi, relayd agirà come se il bilanciamento del carico non gestisse le connessioni per l'indirizzo IP e la porta del virtual server. Se l'indirizzo IP e la porta utilizzati sono utilizzati anche da un altro servizio o regola NAT, potrebbe essere accidentalmente esposto ai client.      
-	
+	se tutti i membri del Pool di virtual serveri e i membri del pool di fall-back sono inattivi, relayd agirà come se il bilanciamento del carico non gestisse le connessioni per l'indirizzo IP e la porta del virtual server. Se l'indirizzo IP e la porta utilizzati sono utilizzati anche da un altro servizio o regola NAT, potrebbe essere accidentalmente esposto ai client.
+
 Monitoraggi
 ===========
 
@@ -174,7 +174,7 @@ e sono:
     connessione viene rifiutata o scade, fallisce.
 
     **HTTP & HTTPS** Tenta di aprire una connessione al server e di
-    richiedere l’URL / utilizzando HTTP o HTTPS, a seconda di quale sia
+    richiedere l’URL utilizzando HTTP o HTTPS, a seconda di quale sia
     selezionato. Se viene restituito un codice di risposta come 200, è
     OK. Altrimenti, si considera un fallimento.
 
@@ -442,7 +442,7 @@ Configurazione virtual server
 
 -  Fare clic su **Applicare le modifiche**
 
--  
+-
 
 |image9|
 
@@ -502,7 +502,7 @@ Creare un alias contenente tutti i server nel pool, in modo che l'accesso possa 
 
 -  Fare clic su **Applicare le modifiche**
 
-|image12|\ 
+|image12|\
 
 Fig. 4: Alias per i server Web
 
@@ -719,7 +719,7 @@ in modo round-robin. Per tecniche di bilanciamento più avanzate come
 l'hashing di origine, provare invece un pacchetto proxy inverso come
 **HAProxy**.
 
-.. seealso:: 
+.. seealso::
 
 Per ulteriori informazioni, è possibile accedere all'archivio di
 Hangouts per visualizzare l’Hangout di gennaio 2015 sul bilanciamento

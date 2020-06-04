@@ -75,7 +75,7 @@ Quando si configurano le impostazioni TCP/IP su un dispositivo, è necessario sp
 Configurazione dell'indirizzo IP, della sottorete e del gateway
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-La configurazione TCP / IP di un host è composta da indirizzo, subnet mask (o lunghezza prefisso per IPv6) e gateway.  L'indirizzo IP combinato con la subnet mask è il **modo** in cui l'host identifica quali indirizzi IP si trovano sulla sua rete locale. Gli indirizzi esterni alla rete locale vengono inviati al gateway predefinito configurato dell'host, che si presume trasferirà il traffico alla destinazione desiderata. Un'eccezione a questa regola è una route statica che indica a un dispositivo di contattare specifiche sottoreti non locali raggiungibili tramite router connessi localmente. Questo elenco di gateway e route statiche viene conservato nella tabella di routing di ciascun host. Per visualizzare la tabella di routing utilizzata da |firew4ll|, vedere *Visualizzare Route*. Ulteriori informazioni sul routing sono disponibili in *Routing*.
+La configurazione TCP/IP di un host è composta da indirizzo, subnet mask (o lunghezza prefisso per IPv6) e gateway.  L'indirizzo IP combinato con la subnet mask è il **modo** in cui l'host identifica quali indirizzi IP si trovano sulla sua rete locale. Gli indirizzi esterni alla rete locale vengono inviati al gateway predefinito configurato dell'host, che si presume trasferirà il traffico alla destinazione desiderata. Un'eccezione a questa regola è una route statica che indica a un dispositivo di contattare specifiche sottoreti non locali raggiungibili tramite router connessi localmente. Questo elenco di gateway e route statiche viene conservato nella tabella di routing di ciascun host. Per visualizzare la tabella di routing utilizzata da |firew4ll|, vedere *Visualizzare Route*. Ulteriori informazioni sul routing sono disponibili in *Routing*.
 
 In una tipica distribuzione |firew4ll|, agli host vengono assegnati un indirizzo IP, una subnet mask e un gateway all'interno dell'intervallo LAN del dispositivo. L'indirizzo IP LAN su |firew4ll| diventa il gateway predefinito. Per gli host che si connettono tramite un'interfaccia diversa dalla LAN, utilizzare la configurazione appropriata per l'interfaccia a cui è collegato il dispositivo.
 
@@ -95,7 +95,7 @@ Table 4: Tabella delle sottoreti CIDR
 +======================+=================+=======================+======================+======================+
 | 255.255.255.255      | /32             | 1                     | 1                    | 1/256                |
 +----------------------+-----------------+-----------------------+----------------------+----------------------+
-| 255.255.255.254      | /31             | 2                     | 2\*                  | 1/128                |
+| 255.255.255.254      | /31             | 2                     | 2                    | 1/128                |
 +----------------------+-----------------+-----------------------+----------------------+----------------------+
 | 255.255.255.252      | /30             | 4                     | 2                    | 1/64                 |
 +----------------------+-----------------+-----------------------+----------------------+----------------------+
@@ -666,7 +666,7 @@ per consentire il flusso del traffico IPv6.
 -  Passare a **Firewall>Regole**, scheda **LAN**.
 -  Controllare l'elenco per una regola IPv6 esistente. Se esiste già una regola per il passaggio del traffico IPv6, non è necessaria alcuna azione aggiuntiva.
 -  Fare click su |image10| **Aggiungere** per aggiungere una nuova regola in fondo all'elenco
--  Impostare la versione **TCP / IP** su *IPv6*
+-  Impostare la versione **TCP/IP** su *IPv6*
 -  Immettere la sottorete LAN IPv6 come **Origine**
 -  Scegli una **destinazione** per *qualsiasi*.
 -  Fai clic su **Salvare**
@@ -716,7 +716,7 @@ Per modificare questo comportamento, |firew4ll| fornisce un metodo nella GUI per
 
 Una volta salvate le impostazioni, il firewall stesso preferirà IPv4 per la comunicazione in uscita.
 
-In tutto il mondo, la disponibilità di nuovi indirizzi IPv4 è in calo.  La quantità di spazio libero varia a seconda della regione, ma alcuni  hanno già esaurito le allocazioni e altri si stanno rapidamente avvicinando ai loro limiti. Al 31 gennaio 2011, IANA ha assegnato tutto il suo spazio ai registri Internet regionali (RIR). A loro volta, queste allocazioni RIR si sono esaurite in alcune località come APNIC (Asia / Pacifico), RIPE (Europa) e LACNIC (America Latina e Caraibi) per / 8 reti. Sebbene siano ancora disponibili alcune allocazioni più piccole, è sempre più difficile ottenere un nuovo spazio di indirizzi IPv4 in queste aree. ARIN (Nord America) si è esaurito il 24 settembre 2015.  Per tenere conto di ciò, IPv6 è stato creato in sostituzione di IPv4. Disponibile in alcune forme dagli anni '90, fattori come l'inerzia, la complessità e i costi di sviluppo o acquisto di router e software compatibili hanno rallentato la sua diffusione fino agli ultimi anni. Anche allora, è stato piuttosto lento con solo l'8% degli utenti di Google con connettività IPv6 entro luglio 2015.
+In tutto il mondo, la disponibilità di nuovi indirizzi IPv4 è in calo.  La quantità di spazio libero varia a seconda della regione, ma alcuni  hanno già esaurito le allocazioni e altri si stanno rapidamente avvicinando ai loro limiti. Al 31 gennaio 2011, IANA ha assegnato tutto il suo spazio ai registri Internet regionali (RIR). A loro volta, queste allocazioni RIR si sono esaurite in alcune località come APNIC (Asia/Pacifico), RIPE (Europa) e LACNIC (America Latina e Caraibi) per reti /8. Sebbene siano ancora disponibili alcune allocazioni più piccole, è sempre più difficile ottenere un nuovo spazio di indirizzi IPv4 in queste aree. ARIN (Nord America) si è esaurito il 24 settembre 2015.  Per tenere conto di ciò, IPv6 è stato creato in sostituzione di IPv4. Disponibile in alcune forme dagli anni '90, fattori come l'inerzia, la complessità e i costi di sviluppo o acquisto di router e software compatibili hanno rallentato la sua diffusione fino agli ultimi anni. Anche allora, è stato piuttosto lento con solo l'8% degli utenti di Google con connettività IPv6 entro luglio 2015.
 
 Nel corso degli anni, il supporto per IPv6 in software, sistemi  operativi e router è migliorato, quindi la situazione è pronta per  migliorare. Tuttavia spetta agli ISP iniziare a fornire agli utenti la  connettività IPv6. È una situazione da 22: i fornitori di contenuti sono  lenti a fornire IPv6 perché pochi utenti ce l'hanno. Nel frattempo, gli  utenti non ce l'hanno perché non c'è molto contenuto IPv6 e ancora meno  contenuto disponibile solo su IPv6. Gli utenti non sanno di averne  bisogno, quindi non richiedono il servizio dai loro ISP.
 
@@ -794,4 +794,3 @@ Il modello OSI ha un framework di rete composto da sette livelli. Questi livelli
 .. |image12| image:: media/image5.png
    :width: 0.26389in
    :height: 0.26389in
-   

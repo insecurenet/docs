@@ -137,15 +137,15 @@ bridge, compreso come crearli e gestirli, è in *Bridging*.
 OpenVPN
 '''''''
 
-Dopo la creazione di un'istanza OpenVPN, può essere assegnata in Interfacce>(assegnare). Assegnare un'interfaccia OpenVPN abilita le regole specifiche dell'interfaccia e consente di utilizzare l'interfaccia altrove nella GUI si richieda un'interfaccia assegnata. Questo attiva anche la creazione di un gateway dinamico. Questo gateway può essere usato per la politica di routing, o in un gruppo gateway per Multi-WAN. 
+Dopo la creazione di un'istanza OpenVPN, può essere assegnata in Interfacce>(assegnare). Assegnare un'interfaccia OpenVPN abilita le regole specifiche dell'interfaccia e consente di utilizzare l'interfaccia altrove nella GUI si richieda un'interfaccia assegnata. Questo attiva anche la creazione di un gateway dinamico. Questo gateway può essere usato per la politica di routing, o in un gruppo gateway per Multi-WAN.
 	.. seealso::
-		*Assegnazione delle interfacce* OpenVPN per maggiori informazioni. 
+		*Assegnazione delle interfacce* OpenVPN per maggiori informazioni.
 PPP
 '''
 
 Ci sono quattro tipi di interfacce PPP:
 
--  **PPP** semplice per 3G / 4G e dispositivi modem
+-  **PPP** semplice per 3G/4G e dispositivi modem
 
 -  **PPPoE** per le connessioni DSL o simili
 
@@ -186,7 +186,7 @@ Aggiungere o modificare una voce PPP come segue:
    sulla pagina. I tipi di collegamento sono spiegati in tutto il resto
    di questa sezione.
 
-PPP (3G / 4G, Modem)
+PPP (3G/4G, Modem)
 --------------------
 
 Il tipo di collegamento **PPP** viene utilizzato per parlare con un
@@ -205,7 +205,7 @@ il dispositivo dipendente per la linea PPP può essere una delle scelte
 disponibili, ma iniziare con l'ultimo dispositivo, quindi provare il
 primo, e poi altri in mezzo se nessuno funziona.
 
-Quando si configura una rete 3G / 4G, le opzioni per il **Provider del
+Quando si configura una rete 3G/4G, le opzioni per il **Provider del
 servizio** di riempire prima altri campi pertinenti sulla pagina.
 
 -  Scegliere un **Paese**, come ad esempio Stati Uniti, per attivare
@@ -341,7 +341,7 @@ queste opzioni, fare clic su\ |image5| **Visualizzare avanzate**.
     è stata impostata anche la **Chiamata su richiesta**, il firewall
     tornerà alla modalità chiamata su richiesta.
 
-	.. note:: 
+	.. note::
 		|firew4ll| eseguirà per default il monitoraggio del gateway, chegenereràgenererà due ping ICMP al secondo sull'interfaccia. Il Timeout inattivo non funzionerà in questo caso. Questo può essere risolto modificando il gateway per questo link PPP, e selezionando **Disabilitare il monitoraggio del gateway**.
 
     **Compressione (vjcomp)** Questa opzione controlla se verrà
@@ -372,7 +372,7 @@ queste opzioni, fare clic su\ |image5| **Visualizzare avanzate**.
     frammentare” dai suoi dati in uscita. Se questo comportamento non è
     desiderabile, controllare **Disabilita tcpmssfix**.
 
-	.. note:: 
+	.. note::
 		I valori MTU e MSS per l'interfaccia possono essere regolati anche nella pagina di configurazione dell'interfaccia sotto il menu **Interfacce**, come le **interfacce> WAN.**
 
     **Sequenza breve (ShortSeq)** Questa opzione è significativa solo se
@@ -522,7 +522,7 @@ Come creare o gestire un'interfaccia GIF:
 
 -  Fare clic su **Salva**
 
-	.. note:: 
+	.. note::
 		Se l'interfaccia GIF è assegnata in **Interfacce>(assegnare),** impostare il **tipo di configurazione IPv4** e il **tipo di configurazione IPv6** su *Nessuno*. Il firewall creerà automaticamente un gateway dinamico in questa situazione.
 
 LAGG (Aggregazione di Link)
@@ -548,7 +548,7 @@ Come creare o gestire interfacce LAGG:
     quando si modifica un'istanza esistente. Per aggiungere interfacce a
     questo LAGG, selezionare una o più interfacce in questo elenco.
 
-	.. note:: 
+	.. note::
 		Un'interfaccia può essere aggiunta ad un gruppo LAGG solo se non è assegnata. Se un'interfaccia non è presente nell'elenco, è probabile che sia già stata assegnata come interfaccia.
 
     **Protocollo LAGG** Attualmente esistono sei diverse modalità
@@ -587,7 +587,7 @@ Come creare o gestire interfacce LAGG:
     prima interfaccia selezionata nell'elenco, e continuerà in ordine
     fino a raggiungere la fine delle interfacce selezionate.
 
-.. note:: 
+.. note::
 	Per impostazione predefinita, il traffico può essere ricevuto solo sull'interfaccia attiva. Creare un sistema adattabile per ``net.link.lagg.failover_rx_all`` con il valore di 1 per consentire al traffico di essere ricevuto su ogni interfaccia del gruppo.
 
     **Bilanciamento del carico** La modalità di bilanciamento del carico
@@ -761,7 +761,7 @@ anche per *Autoselect*. Se l'interruttore o un altro dispositivo ha una
 velocità specifica e duplex forzato, deve essere corrisposto dal
 firewall.
 
-Blocco delle reti private 
+Blocco delle reti private
 =========================
 
 Quando il **blocco delle reti private** è attivo |firew4ll| inserisce
@@ -872,7 +872,7 @@ WAN:
 
 -  Cliccare su **Inserire**
 
-	.. note:: 
+	.. note::
 		Selezionando un gateway IPv4 dall'elenco a discesa o aggiungendo e selezionando un nuovo gateway, |firew4ll| tratterà questa interfaccia come un'interfaccia di tipo WAN per il NAT e le funzioni correlate. Questo non è auspicabile per interfacce interne come LAN o DMZ. I gateway possono ancora essere utilizzati su interfacce interne per percorsi statici senza selezionare un gateway IPv4 upstream qui sullo schermo delle interfacce.
 
 DHCP

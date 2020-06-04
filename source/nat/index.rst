@@ -187,7 +187,7 @@ Forward**. Sono disponibili le seguenti opzioni:
     separata sul firewall, qualsiasi traffico corrispondente a questa
     regola viene inoltrato al sistema di destinazione.
 
-.. note::  
+.. note::
 	Le regole che utilizzano *Passare* funzionano solo sull'interfaccia che contiene il gateway predefinito per il firewall, quindi non funzionano efficacemente con Multi-WAN.
 
 -  Fare clic su **Salvare**
@@ -488,7 +488,7 @@ La figura *Voce del NAT 1:1 per l'intervallo CIDR /30* mostra come
 configurare il NAT 1:1 per ottenere la mappatura indicata nella tabella
 \ *Ottetto finale che corrisponde alla mappatura CIDR /30*.
 
-|image9|\ 
+|image9|\
 
 Fig. 8: Voce del NAT 1:1 per l'intervallo CIDR /30.
 
@@ -570,7 +570,7 @@ prima di qualsiasi elaborazione NAT e firewall, e per ultimo
 sull'interfaccia in uscita. Mostra cosa c'è nel cavo. (Vedere *Cattura
 dei pacchetti*)
 
-.. seealso:: 
+.. seealso::
 	Vedere *Ordine di elaborazione della regola* per maggiori informazioni sull'ordine di elaborazione della regola del firewall.
 
 |image10|
@@ -841,10 +841,10 @@ corrispondenza. Anche se le regole sono presenti nella schermata NAT in
 uscita, non saranno rispettate a meno che la **modalità** non sia
 impostata su **NAT ibrido in uscita** o **NAT manuale in uscita**.
 
-.. note::  
+.. note::
 	Il NAT in uscita controlla solo ciò che accade al traffico *quando esce da un'interfaccia*. *Non* controlla l'interfaccia se il traffico esce dal firewall. Questo è gestito dalla tabella di routing (*Route statiche*) o dalla politica di routing (*Politica di routing*).
 
-Regole NAT in uscita di default 
+Regole NAT in uscita di default
 ===============================
 
 Quando si imposta la modalità del **NAT automatico in uscita** di
@@ -990,7 +990,7 @@ Le opzioni per ciascuna regola NAT in uscita sono:
     sempre lasciata vuoto per corrispondere a tutte le porte. Questo
     campo supporta l'uso di alias se il **Tipo** è impostato su *Rete*.
 
-.. note::  
+.. note::
 	Evitare di utilizzare un indirizzo sorgente come **qualsiasi** perché corrisponderà anche il traffico dal firewall stesso. Questo causerà problemi con il monitoraggio del gateway e altro traffico iniziato dal firewall.
 
     **Destinazione** Nella maggior parte dei casi, la **destinazione**
@@ -1012,7 +1012,7 @@ Le opzioni per ciascuna regola NAT in uscita sono:
     *altre sottoreti* per inserire manualmente una sottorete per la
     traduzione.
 
-.. note::  
+.. note::
 	Un alias contenente sottoreti non può essere utilizzato per la traduzione. Possono essere utilizzati solo alias host o una singola sottorete inserita manualmente.
 
     Utilizzando un alias host o una sottorete inserita manualmente, una
@@ -1288,7 +1288,7 @@ Se il traffico TFTP deve passare attraverso il firewall, è disponibile
 un proxy TFTP configurato in **Sistema>Aanzate** nella scheda **Firewall
 e NAT**. Vedere *Proxy TFTP* per maggiori informazioni.
 
-PPTP / GRE
+PPTP/GRE
 ==========
 
 Le limitazioni con PPTP in |firew4ll| sono causate da limitazioni nella
@@ -1681,7 +1681,7 @@ riferisce al traffico che entra in una rete da una rete remota. Il tipo
 più comune di NAT in entrata è la Port Forward, che è anche il tipo con
 cui molti amministratori hanno più familiarità.
 
-.. note::  
+.. note::
 	In generale, ad eccezione della Traduzione del prefisso di rete (NPt), il NAT su IPv6 non è supportato in |firew4ll|. Vi è una ulteriore discussione sull'argomento in *IPv6 e NAT*. Se non diversamente indicato, questo capitolo sta discutendo di NAT con IPv4
 
 .. seealso::

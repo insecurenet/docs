@@ -30,7 +30,7 @@ Creare un bridge (bridge)
 
 -  Fare clic su **Salvare** per completare il bridge.
 
-.. note::  
+.. note::
 	Un bridge può consistere in un'unica interfaccia membro, che può aiutare a migrare in una configurazione con un bridge assegnato, o per fare una semplice porta span/mirror.
 
 Opzioni avanzate del bridge
@@ -40,7 +40,7 @@ Ci sono numerose opzioni avanzate per un bridge e i suoi membri. Alcune
 di queste impostazioni sono abbastanza coinvolte, quindi vengono
 discusse singolarmente in questa sezione.
 
-Spanning Tree Options (Rapido) 
+Spanning Tree Options (Rapido)
 ==============================
 
 L’albero di spanning (spanning tree) è un protocollo che aiuta switch e dispositivi a determinare se c'è un ciclo (loop) e a tagliarlo come necessario per evitare che il ciclo danneggi la rete. Ci sono parecchie opzioni che controllano il comportamento dello spanning tree che permettono di fare certe ipotesi su porte specifiche o di garantire che alcuni bridge abbiano la priorità nel caso di un ciclo o di collegamenti ridondanti. Maggiori informazioni su STP possono essere trovate nella pagina principale di FreeBSD ifconfig(8), e su Wikipedia.
@@ -80,7 +80,7 @@ che un'interfaccia inizi a inoltrare i pacchetti quando l'albero di
 spanning è abilitato. Il valore predefinito è 15 secondi. Il minimo è 4
 secondi e il massimo è 30 secondi.
 
-.. note::  
+.. note::
 	Un ritardo più lungo sarà notato dai client direttamente connessi in quanto non saranno in grado di passare il traffico, anche per ottenere un indirizzo IP tramite DHCP, fino a quando la loro interfaccia entra in modalità di inoltro.
 
 Hello Time
@@ -142,7 +142,7 @@ rete bridge passivamente su un altro host collegato alle porte span del
 bridge con qualcosa come Snort, tcpdump, ecc. La porta span selezionata
 potrebbe non essere una porta membro sul bridge.
 
-Porte di EDGE / Porte automatiche di edge
+Porte di EDGE/Porte automatiche di edge
 =========================================
 
 Se un'interfaccia è impostata come una **porta Edge**, si presume sempre
@@ -153,7 +153,7 @@ switch. Le porte di default rilevano automaticamente lo stato edge, e
 possono essere selezionate sotto le porte di **edge automatico** per
 *disabilitare* questo comportamento automatico di rilevamento edge.
 
-Porte PTP / porte automatico PTP
+Porte PTP/porte automatico PTP
 ================================
 
 Se un'interfaccia è impostata come **porta PTP**, si presume sempre che
@@ -433,7 +433,7 @@ Quando si collegano due reti interne come descritto in *bridge interni*
 ci sono alcune considerazioni speciali da prendere per alcuni servizi
 sul firewall.
 
-.. note::  
+.. note::
 	Ci sono ulteriori requisiti e restrizioni quando si collegano le interfacce wireless perché la via 802.11 funzioni. Vedere *Bridging e wireless* per maggiori informazioni.
 
 DHCP e bridge interni
@@ -446,7 +446,7 @@ senza un indirizzo. In secondo luogo, una regola firewall aggiuntiva può
 essere necessaria in cima alle regole sulle interfacce membro per
 consentire il traffico DHCP.
 
-.. note::  
+.. note::
 	Questo vale solo per il filtraggio effettuato sulle interfacce dei membri, non per il filtraggio eseguito sul bridge.
 
 Quando si crea una regola per consentire il traffico su un'interfaccia,
@@ -636,7 +636,7 @@ impraticabile. Anche se non è raccomandato, questo tipo di bridge può
 essere utilizzato anche per unire due reti remote su alcuni tipi di
 connessioni VPN.
 
-.. seealso:: 
+.. seealso::
 
 Per ulteriori informazioni, è possibile accedere all'archivio degli
 Hangouts per visualizzare l’hangout di Maggio 2015 sui punti di accesso
@@ -658,7 +658,7 @@ In una configurazione firewall trasparente il firewall non riceve il
 traffico direttamente o agisce come un gateway, si limita a ispezionare
 il traffico come passa attraverso il firewall.
 
-.. note::  
+.. note::
 	I dispositivi sul lato interno di questo bridge devono continuare ad usare il gateway upstream come proprio gateway. Non impostare alcun indirizzo IP sul firewall come gateway per i dispositivi su un bridge trasparente.
 
 Il NAT non è possibile con questo stile di bridge perché il NAT richiede

@@ -161,7 +161,7 @@ file prima di scrivere questa immagine su un disco di installazione.
 
 L'estensione .gz sul file indica che il file è compresso con gzip.
 L'immagine può essere decompressa su Windows usando 7-Zip o su BSD /
-Linux / Mac con i comandi gunzip o gzip -d.
+Linux/Mac con i comandi gunzip o gzip -d.
 
 Scrittura del supporto di installazione
 =======================================
@@ -361,7 +361,7 @@ Se la scrittura del disco non riesce, specialmente su Windows, pulire la
 chiavetta USB come suggerito in *Pulizia della chiavetta USB* quindi
 riprovare. Se il problema persiste, provare con un’altra chiavetta USB.
 
-Preparare un CD / DVD
+Preparare un CD/DVD
 ---------------------
 
 Per utilizzare un file immagine ISO con un'unità disco ottico,
@@ -481,18 +481,18 @@ Altre applicazioni popolari includono K3B e Brasero Disc Burner.
 Se un programma di masterizzazione GUI non è disponibile, potrebbe
 essere possibile masterizzare dalla riga di comando.
 
-Innanzitutto, determinare l'ID / LUN SCSI del dispositivo di
+Innanzitutto, determinare l'ID/LUN SCSI del dispositivo di
 masterizzazione (Numero unità logica) con il seguente comando::
 
   $ cdrecord --scanbus
   scsibus6:
   6,0,0	600) 'TSSTcorp' 'CDDVDW SE-S084C ' 'TU00' Removable CD-ROM
 
-Si noti che l'ID / LUN SCSI è 6,0,0 in questo esempio.
+Si noti che l'ID/LUN SCSI è 6,0,0 in questo esempio.
 
 Masterizzare l'immagine come nell'esempio seguente, sostituendo
 <velocità massima> con la velocità del masterizzatore (ad es. 24) e
-<lun> con l'ID SCSI / LUN del registratore::
+<lun> con l'ID SCSI/LUN del registratore::
 
   $ sudo cdrecord --dev=<lun> --speed=<max speed> Firew4ll-CE-0.1-RELEASE-p3-amd64.iso
 
@@ -500,7 +500,7 @@ Masterizzare in FreeBSD
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 FreeBSD può usare le stesse opzioni cdrecord di Linux installando
-sysutils / cdrtools da porte o pacchetti, e può anche usare applicazioni
+sysutils/cdrtools da porte o pacchetti, e può anche usare applicazioni
 GUI come K3B o Brasero Disc Burner se sono installate da porte.
 
 **Vedere anche:**
@@ -623,14 +623,14 @@ console seriale.
 
 Qualunque sia il client seriale utilizzato, assicurarsi che sia
 impostato per Speed (115200), Bit di dati (8), Parità (No) e Bit di stop
-(1) corretti. Questo è in genere scritto come 115200/8 / N / 1.
+(1) corretti. Questo è in genere scritto come 115200/8/N/1.
 
-.. note::  Per impostazione predefinita, alcuni componenti hardware hanno una velocità inferiore. PC Engines imposta automaticamente ALIX su 38400 / 8 / N / 1 e l'hardware Soekris su 19200 / 8 / N / 1. Ciò è rilevante per il BIOS e l'output iniziale, non per |firew4ll|, che per impostazione predefinita è 115200.
+.. note::  Per impostazione predefinita, alcuni componenti hardware hanno una velocità inferiore. PC Engines imposta automaticamente ALIX su 38400/8/N/1 e l'hardware Soekris su 19200/8/N/1. Ciò è rilevante per il BIOS e l'output iniziale, non per |firew4ll|, che per impostazione predefinita è 115200.
 
-Molti client seriali hanno un valore predefinito di 9600 / 8 / N / 1,
+Molti client seriali hanno un valore predefinito di 9600/8/N/1,
 quindi è necessario regolare queste impostazioni per connettersi.
-Utilizzare 115200 / 8 / N / 1 con |firew4ll| indipendentemente
-dall'impostazione dell'hardware / BIOS.
+Utilizzare 115200/8/N/1 con |firew4ll| indipendentemente
+dall'impostazione dell'hardware/BIOS.
 
 Per hardware che utilizza velocità seriali del BIOS diverse da 115200,
 modificare la velocità di trasmissione in 115200 nell'impostazione del
@@ -724,11 +724,11 @@ PuTTY
 Schermo GNU
 -----------
 
--  Aprire un terminale / prompt dei comandi
+-  Aprire un terminale/prompt dei comandi
 
 -  Richiamare il comando screen usando il percorso alla porta seriale,
    ad esempio::
-     $ sudo screen /dev/ttyUSB0 115200
+  $ sudo screen /dev/ttyUSB0 115200
 
 In alcuni casi potrebbe esserci una mancata corrispondenza della
 codifica del terminale. In tal caso, eseguire la schermata in modalità
@@ -740,7 +740,7 @@ Eseguire l'installazione
 
 Questa sezione descrive il processo di installazione del software
 |firew4ll| su un'unità di destinazione, come un SSD o un HDD. In breve, ciò
-comporta l'avvio dalla pennetta o dal disco CD / DVD e quindi il
+comporta l'avvio dalla pennetta o dal disco CD/DVD e quindi il
 completamento dell'installer.
 
 .. note:: Se il programma di installazione rileva un errore durante il tentativo di avvio o installazione dal supporto di installazione, consultare *Risoluzione dei problemi di installazione*.
@@ -761,7 +761,7 @@ Per le installazioni da pennette USB, inserire la pennetta USB e quindi
 accendere il sistema di destinazione. Il BIOS potrebbe richiedere
 l'inserimento del disco prima dell'avvio dell'hardware.
 
-Per le installazioni da CD / DVD, accendere l'hardware, quindi
+Per le installazioni da CD/DVD, accendere l'hardware, quindi
 posizionare il CD in un'unità ottica.
 
 |firew4ll| inizierà l'avvio e avvierà automaticamente il programma di
@@ -862,7 +862,7 @@ UFS
 
 -  Selezionare lo schema di partizione da utilizzare per il disco:
 
-   - **GPT** Il layout della tabella delle partizioni GUID. Utilizzata dalla maggior parte dei moderni sistemi x86. Potrebbe non funzionare su versioni hardware / BIOS precedenti. **Provare prima questo metodo**.
+   - **GPT** Il layout della tabella delle partizioni GUID. Utilizzata dalla maggior parte dei moderni sistemi x86. Potrebbe non funzionare su versioni hardware/BIOS precedenti. **Provare prima questo metodo**.
    - **BSD** Etichette senza un MBR, che era noto come "modalità pericolosamente dedicata". Questo metodo dovrebbe funzionare sulla maggior parte dell'hardware che non può utilizzare GPT. Questo era il metodo utilizzato dalle versioni precedenti del software |firew4ll|.
    - **MBR** Selezionare questa opzione solo se GPT e BSD non funzionano su un componente hardware specifico.
    - **Altri** Le altre opzioni non sono rilevanti per l'hardware in grado di eseguire il software |firew4ll|.
@@ -881,10 +881,10 @@ ZFS
 
 -  Selezionare **Auto** (**ZFS**)
 
--  Selezionare **Tipo** / **Dischi pool**
+-  Selezionare **Tipo**/**Dischi pool**
 
 -  Selezionare il **tipo di dispositivo virtuale**. ZFS supporta più
-   dischi in vari modi per ridondanza e / o capacità aggiuntiva. Sebbene
+   dischi in vari modi per ridondanza e/o capacità aggiuntiva. Sebbene
    l'utilizzo di più dischi con ZFS sia RAID software, è abbastanza
    affidabile e migliore dell'uso di un singolo disco.
 
@@ -1044,7 +1044,7 @@ dell'interfaccia di rete è corretto, digitare S, quindi premere Invio.
 Se l'assegnazione non è corretta, digitare No e premere Invio per
 ripetere il processo di assegnazione.
 
-.. note::  Oltre alla normale modalità di routing / firewall con più interfacce, un firewall può anche funzionare in **modalità Appliance** in cui ha una sola interfaccia (**WAN**). Il firewall inserisce la regola di blocco della GUI sull'interfaccia WAN in modo che un client possa accedere all'interfaccia Web del firewall da quella rete. Le normali funzioni di routing e NAT non sono attive in questa modalità poiché non esiste alcuna interfaccia o rete interna. Questo tipo di configurazione è utile per dispositivi VPN, server DHCP e altri ruoli autonomi.
+.. note::  Oltre alla normale modalità di routing/firewall con più interfacce, un firewall può anche funzionare in **modalità Appliance** in cui ha una sola interfaccia (**WAN**). Il firewall inserisce la regola di blocco della GUI sull'interfaccia WAN in modo che un client possa accedere all'interfaccia Web del firewall da quella rete. Le normali funzioni di routing e NAT non sono attive in questa modalità poiché non esiste alcuna interfaccia o rete interna. Questo tipo di configurazione è utile per dispositivi VPN, server DHCP e altri ruoli autonomi.
 
 Assegnazione manuale di interfacce
 ==================================
@@ -1083,7 +1083,7 @@ aggiuntiva, tenere presente che alcuni sistemi elencheranno prima la
 scheda di rete integrata e altri no. Nei casi in cui l'ordine di analisi
 renda ambigue più schede NIC dello stesso tipo, potrebbero essere
 necessari tentativi ed errori per determinare il posizionamento delle
-porte e le combinazioni nome / numero del driver.
+porte e le combinazioni nome/numero del driver.
 
 Dopo aver identificato le schede di rete, digitare il nome di ciascuna
 scheda nella schermata di assegnazione dell'interfaccia quando
@@ -1129,14 +1129,14 @@ Installazione completa in VMware con reindirizzamento USB
 
 Il reindirizzamento USB in VMware Player e Workstation può essere
 utilizzato per l'installazione su un disco rigido. Quasi tutti gli
-adattatori da USB a SATA / IDE o simili funzioneranno a questo scopo. Le
+adattatori da USB a SATA/IDE o simili funzioneranno a questo scopo. Le
 seguenti istruzioni sono specifiche per VMware Workstation 12, ma
 funzioneranno anche su altre versioni recenti.
 
--  Collegare l'unità di destinazione all'adattatore SATA / IDE o al
-   writer SD / CF
+-  Collegare l'unità di destinazione all'adattatore SATA/IDE o al
+   writer SD/CF
 
--  Collegare l'adattatore / scrittore al PC client
+-  Collegare l'adattatore/scrittore al PC client
 
 -  Aprire VMware Workstation sul PC client
 
@@ -1144,7 +1144,7 @@ funzioneranno anche su altre versioni recenti.
    abilitato per impostazione predefinita)
 
 -  Impostare per collegare l'immagine ISO del programma di installazione
-   all'avvio nell'unità CD / DVD virtuale
+   all'avvio nell'unità CD/DVD virtuale
 
 -  Avviare la macchina virtuale
 
@@ -1208,11 +1208,11 @@ Detto questo, i problemi e le soluzioni più comuni sono:
     **Unità ottica sporca** Pulire l'unità con un disco di pulizia o una
     bomboletta di aria compressa o provare un'altra unità.
 
-    **Supporti ottici difettosi** Masterizzare un altro disco e / o
+    **Supporti ottici difettosi** Masterizzare un altro disco e/o
     masterizzare il disco a una velocità inferiore. Forse provare
     un'altra marca.
 
-    **Problemi relativi al cavo SATA / IDE** Provare un cavo SATA / IDE
+    **Problemi relativi al cavo SATA/IDE** Provare un cavo SATA/IDE
     diverso tra l'unità CD-ROM e il controller o la scheda madre
 
     **Problemi con il caricatore di avvio** Ci sono stati casi in cui
@@ -1286,7 +1286,7 @@ Avvio da USB
 ------------
 
 Se l'avvio si interrompe con al prompt ``mountroot>`` durante l'avvio dal CD
-live, in genere con unità CD / DVD USB, passare al prompt dell'installazione
+live, in genere con unità CD/DVD USB, passare al prompt dell'installazione
 dal menu di avvio ed eseguire quanto segue::
 	set kern.cam.boot_delay=10000
 	boot
@@ -1367,7 +1367,7 @@ gratuiti.
 
 Assicurati anche che tutte le ventole girino a velocità elevata e che
 nessun componente si surriscaldi. Se si tratta di unhardware
-riutilizzato più vecchio, la pulizia dell'aria compressa / in scatola
+riutilizzato più vecchio, la pulizia dell'aria compressa/in scatola
 delle ventole e dei dissipatori di calore può fare miracoli.
 
 Aggiornamento di un'installazione esistente
@@ -1400,7 +1400,7 @@ Effettuare un backup... e un piano di backup
 Prima di apportare modifiche a un firewall, è consigliabile eseguire un
 backup utilizzando WebGUI:
 
--  Passare a **Diagnostica**> **Backup / Ripristino**
+-  Passare a **Diagnostica**> **Backup/Ripristino**
 
 -  Impostare l'**area di backup** su *TUTTI* nella sezione
    **Configurazione backup** della pagina
@@ -1439,7 +1439,7 @@ Aggiornamento tramite la console
 
 Un aggiornamento può anche essere eseguito dalla console. L'opzione
 console è disponibile da qualsiasi mezzo disponibile per l'accesso alla
-console: video / tastiera, console seriale o SSH. Una volta connesso
+console: video/tastiera, console seriale o SSH. Una volta connesso
 alla console del firewall, avviare il processo di aggiornamento
 selezionando l'opzione di menu 13.
 
@@ -1448,7 +1448,7 @@ eseguire manualmente il seguente comando::
 
   # pfSense-upgrade
 
-Reinstallazione / Aggiornamento della configurazione
+Reinstallazione/Aggiornamento della configurazione
 ----------------------------------------------------
 
 Se un aggiornamento non funzionerà correttamente su un'installazione
