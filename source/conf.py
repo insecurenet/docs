@@ -27,7 +27,7 @@ sys.path.insert(0, os.path.abspath('.'))
 # -- General configuration ------------------------------------------------
 
 html_baseurl = 'https://firew4ll-docs.readthedocs.io/it/latest/'
-
+html_logo = '_static/img/logo.png'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
@@ -194,4 +194,3 @@ intersphinx_mapping = {'https://docs.python.org/': None}
 def setup(app):
    app.add_javascript("custom.js")
    app.add_stylesheet("custom.css")
-
