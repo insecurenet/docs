@@ -2,24 +2,24 @@
 Interfacce e configurazione
 ***************************
 
-Gruppi di interfaccia
+Gruppo di interfacce
 '''''''''''''''''''''
 
 A differenza delle altre interfacce di questo capitolo, un gruppo di
-interfaccia non è un tipo di interfaccia che può essere assegnato. I
-gruppi di interfaccia sono utilizzati per applicare regole di firewall o
+interfacce non è un tipo di interfaccia che può essere assegnato. I
+gruppi di interfacce sono utilizzati per applicare regole di firewall o
 NAT per un insieme di interfacce su una scheda comune. Se questo
-concetto è poco familiare, considerare come le regole del firewall per
+concetto è poco familiare, bisogna considerare come le regole del firewall per
 OpenVPN, il server PPPoE, o L2TP lavorano sul server. Ci sono più
 interfacce del sistema operativo sottostante, ma le regole per tutte
 loro sono gestite su una singola scheda per ogni tipo. Se molte
 interfacce di una funzione analoga sono presenti sul firewall e
-necessitano di regole praticamente identiche, un gruppo interfaccia può
+necessitano di regole praticamente identiche, un gruppo di interfacce può
 essere creato per aggiungere regole per tutte le interfacce allo stesso
 tempo. Le interfacce possono ancora avere le proprie regole individuali,
 che vengono elaborate dopo le regole del gruppo.
 
-Per creare un gruppo di interfaccia:
+Per creare un gruppo di interfacce:
 
 -  raggiungere a **Interfacce>(Assegnare)**, scheda **Gruppi di
    interfaccia**
@@ -52,7 +52,7 @@ L'ordine di elaborazione delle regole per un utente è:
 
 -  regole galleggianti
 
--  regole del gruppo di interfaccia
+-  regole del gruppo di interfacce
 
 -  regole riferite alla singola interfaccia
 
@@ -81,7 +81,7 @@ traffico trasmesso da una regola della scheda di gruppo.
 Uso con interfacce WAN
 ======================
 
-È sconsigliato l'utilizzo di gruppi di interfaccia con più reti WAN. Ciò
+È sconsigliato l'utilizzo di gruppi di interfacce con più reti WAN. Ciò
 potrebbe sembrare conveniente, ma le regole del gruppo non ricevono lo
 stesso trattamento delle regole della scheda WAN. Ad esempio, le regole
 su una scheda per l'interfaccia di tipo WAN (Gateway selezionato sulla
