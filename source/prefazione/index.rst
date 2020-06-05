@@ -16,8 +16,9 @@ Con Firew4ll-OS si può implementare un firewall in poche ore.
 .. tip:: Grazie al lavoro di |insecurenet| è disponibile all'indirizzo: https://www.insecurelab.it/hackzionario un progetto per la semplificazione dei termini informatici.
 
 
-
-"InsSecureNet è un progetto Vincitore |pin| - Iniziativa promossa dalle Politiche Giovanili della |regionepuglia| e ARTI e finanziata con risorse del FSE-PO Puglia 2014/2020 Azione 8.4 e del Fondo per lo Sviluppo e la Coesione".
+"\n"
+"\n"
+"InSecureNet è Vincitore |pin| - Iniziativa promossa dalle Politiche Giovanili della |regionepuglia| e ARTI e finanziata con risorse del FSE-PO Puglia 2014/2020 Azione 8.4 e del Fondo per lo Sviluppo e la Coesione".
 
 |image1|
 
