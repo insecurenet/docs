@@ -1,5 +1,5 @@
 
-.. image:: /_static/logo.png
+.. image:: /_static/img/logo.png
    :align: left
 
 
