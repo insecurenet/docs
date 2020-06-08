@@ -318,7 +318,7 @@ Fig. 5: Esempio di reindirizzamento con port forward (Negazione)
 
 Fig. 6: Esempio di reindirizzamento con port forward
 
-NAT 1-1
+NAT 1:1
 '''''''
 
 Il NAT (pronunciato "NAT uno a uno") mappa un indirizzo IPv4 esterno (di
@@ -1246,7 +1246,7 @@ inoltrato insieme alla porta 21 del TCP.
 Per i server FTP che forniscono la modalità attiva ai client, una porta
 forward è necessaria solo per la porta 21 del TCP.
 
-I server FTP e NAT 1-1
+I server FTP e NAT 1:1
 ----------------------
 
 Con il NAT 1:1, le regole del firewall devono consentire la porta 21 e
