@@ -32,7 +32,7 @@ La seguente documentazione offre istruzioni su come installare, configurare e ge
    vlan/index
    multiwan/index
    vpn/index
-   trafficoshaper/index/index
+   trafficoshaper/index
    bilanciamento/index
    wireless/index
    ha/index
