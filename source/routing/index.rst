@@ -27,7 +27,7 @@ Famiglie degli indirizzi gateway (IPv4 e IPv6)
 
 Quando si lavora con l'instradamento e i gateway, la funzionalità e le
 procedure sono le stesse sia per gli indirizzi IPv4 e IPv6, tuttavia
-tutti gli indirizzi per una data route devono coinvolgere gli indirizzi
+tutti gli indirizzi per una data rotta devono coinvolgere gli indirizzi
 della stessa famiglia. Ad esempio, una rete IPv6 deve essere instradata
 utilizzando un gateway/router IPv6. Non è possibile creare un percorso
 per una rete IPv6 utilizzando un indirizzo di gateway IPv4. Quando si
@@ -262,7 +262,7 @@ precisi, ma consumeranno più risorse. Valori più alti saranno meno
 sensibili al comportamento erratico e consumano meno risorse, al costo
 della precisione.
 
-.. note::  
+.. note::
 	Il grafico di qualità è mediato su secondi, non intervalli, così come l'\ **intervallo di prova** aumenta la precisione del grafico di qualità diminuisce.
 
 Intervallo di perdita
@@ -299,7 +299,7 @@ da sondare**, perché un allarme non può verificarsi tra i sondaggi.
 Usare i gateway non locali
 --------------------------
 
-L'opzione **Usare i gateway non locali tramite una route specifica
+L'opzione **Usare i gateway non locali tramite una rotta specifica
 dell'interfaccia** consente una configurazione non standard in cui
 esiste un indirizzo IP del gateway al di fuori di una sottorete
 dell'interfaccia. Alcuni fornitori che cercano di raschiare il fondo del
@@ -318,7 +318,7 @@ GUI per il failover del servizio, come OpenVPN, IPsec, e DNS dinamico.
 Per informazioni sull'impostazione di tali funzioni, vedere *Connessioni
 delle WAN multiple*.
 
-Route statiche
+Rotte statiche
 ''''''''''''''
 
 Si utilizzano percorsi statici quando gli host o le reti sono
@@ -331,15 +331,15 @@ rete sia raggiungibile. I router attraverso i quali queste altre reti
 sono raggiunte devono prima essere aggiunti come il gateway. Vedere
 *Gateway* per informazioni sull'aggiunta di gateway.
 
-Route statiche si trovano nella sezione **Sistema>Routing** nella scheda
-**Route**.
+Rotte statiche si trovano nella sezione **Sistema>Routing** nella scheda
+**Rotte**.
 
-Gestione route statiche
+Gestione rotte statiche
 =======================
 
-   Per aggiungere una route:
+   Per aggiungere una rotta:
 
--  Passare a **Sistema>Routing** nella scheda **Route**
+-  Passare a **Sistema>Routing** nella scheda **Rotte**
 
 -  Fare clic su |image6| **Aggiungere** per creare un nuovo percorso
    statico
@@ -355,16 +355,16 @@ Gestione route statiche
    **Disabilitato** Verifica se il percorso statico non deve essere
    utilizzato, solo definito.
 
-   **Descrizione** Alcuni testi per descrivere la route, il suo scopo,
+   **Descrizione** Testo per descrivere la rotte, il suo scopo,
    ecc.
 
 -  Fare clic su **Salvare**
 
 -  Fare clic su **Applicare modifiche**
 
-   Per gestire le route esistenti:
+   Per gestire le rotte esistenti:
 
--  Passare a **Sistema>Routing** nella scheda route
+-  Passare a **Sistema>Routing** nella scheda rotte
 
 -  Fare clic su |image7| accanto a una voce per modificare un percorso
    esistente
@@ -377,17 +377,17 @@ Gestione route statiche
 
 -  Fare clic su **Applicare modifiche**
 
-   1. .. rubric:: Esempio di route statica
-         :name: esempio-di-route-statica
+Esempio di rotta statica
+------------------------
 
-La figura *Route statiche* illustra uno scenario in cui è richiesto un
+La figura *Rotte statiche* illustra uno scenario in cui è richiesto un
 percorso statico.
 
 |image11|
 
-Fig. 1: Route statiche
+Fig. 1: Rotte statiche
 
-Poiché la rete 192.168.2.0/24 nella figura *Route statiche* non si trova
+Poiché la rete 192.168.2.0/24 nella figura *Rotte statiche* non si trova
 su un'interfaccia direttamente collegata a |firew4ll|, è necessario un
 percorso statico in modo che il firewall sappia come raggiungere quella
 rete. La figura *Configurazione della rotta statica* mostra il percorso
@@ -402,7 +402,7 @@ percorsi statici su LAN.
 
 |image12|
 
-Fig. 2: Configurazione della route statica
+Fig. 2: Configurazione della rotta statica
 
 Bypassare le regole del firewall per il traffico sulla stessa interfaccia
 =========================================================================
@@ -427,7 +427,7 @@ formale che il firewall può riconoscere per l'uso nel routing di stato.
 Negli scenari di routing asimmetrico, vi è un'opzione che può essere
 utilizzato per impedire al traffico legittimo di cadere. L'opzione
 aggiunge regole del firewall che permettono tutto il traffico tra le
-reti definite nelle route statiche che usano un insieme più permissivo
+reti definite nelle rotte statiche che usano un insieme più permissivo
 di regole e gestione dello stato. Per attivare questa opzione:
 
 -  Cliccare su **Sistema>Avanzate**
@@ -456,7 +456,7 @@ es. LAN) e un'altra nella scheda di **Floating**:
 
     **Protocollo** *TCP*
 
-    **Sorgente** I sistemi locali che utilizzano la route statica (ad
+    **Sorgente** I sistemi locali che utilizzano la rotta statica (ad
     es. *rete LAN*)
 
     **Destinazione** La rete all'altra estremità del percorso
@@ -482,7 +482,7 @@ es. LAN) e un'altra nella scheda di **Floating**:
 
     **Protocollo** *TCP*
 
-    **Sorgente** I sistemi locali che utilizzano la route statica (ad
+    **Sorgente** I sistemi locali che utilizzano la rotta statica (ad
     es. *rete LAN*)
 
     **Destinazione** La rete all'altra estremità del percorso
@@ -499,7 +499,7 @@ indicato come bloccato nei registri del firewall con flag TCP come
 "TCP:SA" o "TCP:PA", le regole possono essere modificate o copiate per
 corrispondere a tale traffico.
 
-.. note::  
+.. note::
 	Se è richiesto il filtraggio del traffico tra sottoreti indirizzate in modo statico, deve essere fatto sul router e non il firewall in quanto il firewall non è in una posizione sulla rete in cui può controllare efficacemente il traffico.
 
 |image15|
@@ -544,7 +544,7 @@ Questa sezione riguarda l'instradamento di indirizzi IP pubblici in cui
 una sottorete IP pubblica è assegnata a un'interfaccia interna su
 un'unica distribuzione di firewall.
 
-.. seealso:: 
+.. seealso::
 
 Se un cluster ad elevata disponibilità è in uso, vedere *Fornire
 ridondanza senza NAT*.
@@ -703,7 +703,7 @@ Fig. 9: Regole del firewall per la WAN
 Dopo aver configurato le regole del firewall come desiderato,
 l'impostazione è completa.
 
-.. note::  
+.. note::
 	Il traffico scorrerà dalla LAN a questa sottorete pubblica di default senza NAT. Se questo comportamento non è desiderato, regolare il firewall della LAN e le regole NAT di conseguenza. Inoltre, potrebbe essere necessario bypassare la politica di routing per consentire il passaggio dalla LAN a questa interfaccia.
 
 
@@ -833,30 +833,30 @@ La forma generale di configurazione per il pacchetto Quagga OSf4l è:
 -  Configurare le impostazioni generali come necessario con il router
        dell’ID, ID dell’area, e così via.
 
-.. seealso:: 
+.. seealso::
 
 *Site-to-Site dell’OpenVPN con Multi-WAN e OSf4l* contiene un esempio di
 configurazione di OSf4l.
 
-Risoluzione dei problemi con le route
+Risoluzione dei problemi con le rotte
 '''''''''''''''''''''''''''''''''''''
 
 Quando si diagnosticano problemi di flusso di traffico, una delle prime
 cose da verificare sono i percorsi noti per |firew4ll|.
 
-Visualizzazione delle route
+Visualizzazione delle rotte
 ===========================
 
 Ci sono due modi per visualizzare i percorsi: tramite la WebGUI, e
 tramite la riga di comando.
 
 Per visualizzare i percorsi nella WebGUI, navigare fino a
-**Diagnostica>Route** e l'output è mostrato in maniera simile a lla
-figura *Visualizzazione della route*.
+**Diagnostica>Rotte** e l'output è mostrato in maniera simile a lla
+figura *Visualizzazione della rotte*.
 
 |image29|
 
-Fig. 10: Visualizzazione della route
+Fig. 10: Visualizzazione della rotte
 
 L'uscita dalla linea di comando è simile a quello visto nella WebGUI::
 
@@ -900,9 +900,9 @@ Flag
 Ci sono un bel paio di flag, che sono tutte coperte nella pagina
 principale di FreeBSD per *netstat(1)*, riprodotti nella tabella
 
-*Tabella delle flag e dei significati delle route* con alcune modifiche.
+*Tabella delle flag e dei significati delle rotte* con alcune modifiche.
 
-Tabella 3: Tabella delle flag e dei significati delle route
+Tabella 3: Tabella delle flag e dei significati delle rotte
 
 +==========-+==================+======================================================================-+
 | Lettera   | Flag             | Significato                                                           |
@@ -931,7 +931,7 @@ Tabella 3: Tabella delle flag e dei significati delle route
 +==========-+==================+======================================================================-+
 | S         | RTF\_STATIC      | Aggiunto manualmente                                                  |
 +==========-+==================+======================================================================-+
-| U         | RTF\_UP          | Route utilizzabile                                                    |
+| U         | RTF\_UP          | rotte utilizzabile                                                    |
 +==========-+==================+======================================================================-+
 | X         | RTF\_XRESOLVE    | daemon esterno traduce il proto per l’indirizzo del link              |
 +==========-+==================+======================================================================-+
@@ -963,7 +963,7 @@ Scadenza
 --------
 
 Per le voci dinamiche, questo campo mostra quanto tempo ci vuole prima
-che questa route scada se non viene usata di nuovo.
+che questa rotta scada se non viene usata di nuovo.
 
 Utilizzare traceroute
 =====================
@@ -1005,7 +1005,7 @@ Unix usano i pacchetti UDP per impostazione predefinita. ICMP e UDP sono
 protocolli di livello 4, e traceroute è fatto a livello 3, quindi il
 protocollo utilizzato è in gran parte irrilevante, tranne quando si
 considera una politica di configurazione di routing. Traceroute da
-client Windows sarà sulla politica della route basata su quale regola
+client Windows sarà sulla politica della rotta basata su quale regola
 permette le richieste echo di ICMP, mentre i client come Unix saranno
 instradati dalla regola corrispondente alle porte UDP in uso.
 
@@ -1031,16 +1031,16 @@ traceroute to www.l.google.com (74.125.95.99), 64 hops max, 40 byte packets
 L'uscita mostra che ci sono voluti 10 salti per arrivare lì, e la
 latenza generalmente aumentat con ogni luppolo, che si prevede.
 
-.. note::  
+.. note::
 	Quando si utilizza la politica del routing, come con Multi-WAN, il firewall stesso potrebbe non apparire come un salto nel traceroute. Quando viene utilizzata la politia di routing, f4l non decrementa il TTL durante l'inoltro dei pacchetti, quindi traceroute non può rilevarlo come router intermedio.
 
-Route e VPN
+Rotte e VPN
 ===========
 
 A seconda della VPN utilizzata, una rotta potrebbe non essere
 visualizzata nella tabella per il lato lontano. IPsec non usa la tabella
 di routing, è invece gestito internamente nel kernel usando le voci del
-database della politica della sicurezza di IPsec (SPD). Le route
+database della politica della sicurezza di IPsec (SPD). Le rotte
 statiche non faranno mai in modo che il traffico sia diretto attraverso
 una connessione IPsec. OpenVPN utilizza la tabella di routing di sistema
 e come tali voci sono presenti per le reti raggiungibili tramite un
